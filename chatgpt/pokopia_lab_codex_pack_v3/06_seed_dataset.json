@@ -1,0 +1,534 @@
+{
+  "habitatTraits": [
+    {
+      "id": "bright",
+      "axis": "light",
+      "value": "bright",
+      "label": "Bright",
+      "oppositeTraitId": "dark"
+    },
+    {
+      "id": "dark",
+      "axis": "light",
+      "value": "dark",
+      "label": "Dark",
+      "oppositeTraitId": "bright"
+    },
+    {
+      "id": "humid",
+      "axis": "moisture",
+      "value": "humid",
+      "label": "Humid",
+      "oppositeTraitId": "dry"
+    },
+    {
+      "id": "dry",
+      "axis": "moisture",
+      "value": "dry",
+      "label": "Dry",
+      "oppositeTraitId": "humid"
+    },
+    {
+      "id": "warm",
+      "axis": "temperature",
+      "value": "warm",
+      "label": "Warm",
+      "oppositeTraitId": "cool"
+    },
+    {
+      "id": "cool",
+      "axis": "temperature",
+      "value": "cool",
+      "label": "Cool",
+      "oppositeTraitId": "warm"
+    },
+    {
+      "id": "lively",
+      "axis": "activity",
+      "value": "lively",
+      "label": "Lively",
+      "oppositeTraitId": "quiet"
+    },
+    {
+      "id": "quiet",
+      "axis": "activity",
+      "value": "quiet",
+      "label": "Quiet",
+      "oppositeTraitId": "lively"
+    }
+  ],
+  "favoriteCategories": [
+    {
+      "id": "cozy",
+      "name": "Cozy",
+      "slug": "cozy",
+      "description": "Comforting homey items",
+      "itemIds": [
+        "plush-cushion",
+        "warm-lamp"
+      ]
+    },
+    {
+      "id": "luxury",
+      "name": "Luxury",
+      "slug": "luxury",
+      "description": "Fancy premium items",
+      "itemIds": [
+        "gold-vase",
+        "velvet-chair"
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "slug": "nature",
+      "description": "Plants and outdoor-feeling items",
+      "itemIds": [
+        "potted-fern",
+        "stone-fountain"
+      ]
+    },
+    {
+      "id": "sweet",
+      "name": "Sweet",
+      "slug": "sweet",
+      "description": "Cute sugary / dessert-like items",
+      "itemIds": [
+        "berry-plate",
+        "pastel-cart"
+      ]
+    },
+    {
+      "id": "playful",
+      "name": "Playful",
+      "slug": "playful",
+      "description": "Fun energetic items",
+      "itemIds": [
+        "toy-block-set",
+        "party-balloons"
+      ]
+    }
+  ],
+  "specialties": [
+    {
+      "id": "gathering",
+      "name": "Gathering",
+      "slug": "gathering"
+    },
+    {
+      "id": "crafting",
+      "name": "Crafting",
+      "slug": "crafting"
+    },
+    {
+      "id": "decor",
+      "name": "Decor",
+      "slug": "decor"
+    },
+    {
+      "id": "support",
+      "name": "Support",
+      "slug": "support"
+    }
+  ],
+  "locations": [
+    {
+      "id": "starter-meadow",
+      "name": "Starter Meadow",
+      "slug": "starter-meadow"
+    },
+    {
+      "id": "moonlit-grove",
+      "name": "Moonlit Grove",
+      "slug": "moonlit-grove"
+    },
+    {
+      "id": "river-bend",
+      "name": "River Bend",
+      "slug": "river-bend"
+    },
+    {
+      "id": "sunny-plaza",
+      "name": "Sunny Plaza",
+      "slug": "sunny-plaza"
+    }
+  ],
+  "items": [
+    {
+      "id": "plush-cushion",
+      "name": "Plush Cushion",
+      "slug": "plush-cushion",
+      "favoriteCategoryIds": [
+        "cozy"
+      ],
+      "habitatTraitIds": [
+        "quiet"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Soft Cloth",
+          "quantity": 2
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Craft Table"
+        }
+      ]
+    },
+    {
+      "id": "warm-lamp",
+      "name": "Warm Lamp",
+      "slug": "warm-lamp",
+      "favoriteCategoryIds": [
+        "cozy"
+      ],
+      "habitatTraitIds": [
+        "warm",
+        "bright"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Iron Bits",
+          "quantity": 1
+        },
+        {
+          "itemName": "Glass",
+          "quantity": 1
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Craft Table"
+        }
+      ]
+    },
+    {
+      "id": "gold-vase",
+      "name": "Gold Vase",
+      "slug": "gold-vase",
+      "favoriteCategoryIds": [
+        "luxury"
+      ],
+      "craftable": false,
+      "sources": [
+        {
+          "type": "shop",
+          "label": "Premium Shop"
+        }
+      ]
+    },
+    {
+      "id": "velvet-chair",
+      "name": "Velvet Chair",
+      "slug": "velvet-chair",
+      "favoriteCategoryIds": [
+        "luxury",
+        "cozy"
+      ],
+      "craftable": false,
+      "sources": [
+        {
+          "type": "shop",
+          "label": "Premium Shop"
+        }
+      ]
+    },
+    {
+      "id": "potted-fern",
+      "name": "Potted Fern",
+      "slug": "potted-fern",
+      "favoriteCategoryIds": [
+        "nature"
+      ],
+      "habitatTraitIds": [
+        "humid"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Soil",
+          "quantity": 2
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Craft Table"
+        }
+      ]
+    },
+    {
+      "id": "stone-fountain",
+      "name": "Stone Fountain",
+      "slug": "stone-fountain",
+      "favoriteCategoryIds": [
+        "nature",
+        "luxury"
+      ],
+      "habitatTraitIds": [
+        "humid",
+        "cool"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Stone",
+          "quantity": 4
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Craft Table"
+        }
+      ]
+    },
+    {
+      "id": "berry-plate",
+      "name": "Berry Plate",
+      "slug": "berry-plate",
+      "favoriteCategoryIds": [
+        "sweet"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Berries",
+          "quantity": 3
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Kitchen"
+        }
+      ]
+    },
+    {
+      "id": "pastel-cart",
+      "name": "Pastel Cart",
+      "slug": "pastel-cart",
+      "favoriteCategoryIds": [
+        "sweet",
+        "playful"
+      ],
+      "craftable": false,
+      "sources": [
+        {
+          "type": "event",
+          "label": "Seasonal Event"
+        }
+      ]
+    },
+    {
+      "id": "toy-block-set",
+      "name": "Toy Block Set",
+      "slug": "toy-block-set",
+      "favoriteCategoryIds": [
+        "playful"
+      ],
+      "habitatTraitIds": [
+        "lively"
+      ],
+      "craftable": true,
+      "materials": [
+        {
+          "itemName": "Wood",
+          "quantity": 2
+        }
+      ],
+      "sources": [
+        {
+          "type": "craft",
+          "label": "Craft Table"
+        }
+      ]
+    },
+    {
+      "id": "party-balloons",
+      "name": "Party Balloons",
+      "slug": "party-balloons",
+      "favoriteCategoryIds": [
+        "playful"
+      ],
+      "habitatTraitIds": [
+        "bright",
+        "lively"
+      ],
+      "craftable": false,
+      "sources": [
+        {
+          "type": "field",
+          "label": "Festival Reward"
+        }
+      ]
+    }
+  ],
+  "pokemon": [
+    {
+      "id": "pikachu",
+      "dexNumber": 25,
+      "name": "Pikachu",
+      "slug": "pikachu",
+      "specialtyId": "support",
+      "favoriteCategoryIds": [
+        "playful",
+        "sweet"
+      ],
+      "idealHabitatTraitIds": [
+        "bright",
+        "lively",
+        "warm"
+      ],
+      "locationIds": [
+        "sunny-plaza"
+      ],
+      "imageUrl": "/images/pokemon/pikachu.png"
+    },
+    {
+      "id": "eevee",
+      "dexNumber": 133,
+      "name": "Eevee",
+      "slug": "eevee",
+      "specialtyId": "support",
+      "favoriteCategoryIds": [
+        "cozy",
+        "sweet"
+      ],
+      "idealHabitatTraitIds": [
+        "bright",
+        "quiet",
+        "warm"
+      ],
+      "locationIds": [
+        "starter-meadow"
+      ],
+      "imageUrl": "/images/pokemon/eevee.png"
+    },
+    {
+      "id": "bulbasaur",
+      "dexNumber": 1,
+      "name": "Bulbasaur",
+      "slug": "bulbasaur",
+      "specialtyId": "gathering",
+      "favoriteCategoryIds": [
+        "nature",
+        "cozy"
+      ],
+      "idealHabitatTraitIds": [
+        "humid",
+        "bright",
+        "quiet"
+      ],
+      "locationIds": [
+        "river-bend"
+      ],
+      "imageUrl": "/images/pokemon/bulbasaur.png"
+    },
+    {
+      "id": "psyduck",
+      "dexNumber": 54,
+      "name": "Psyduck",
+      "slug": "psyduck",
+      "specialtyId": "gathering",
+      "favoriteCategoryIds": [
+        "nature",
+        "playful"
+      ],
+      "idealHabitatTraitIds": [
+        "humid",
+        "lively",
+        "bright"
+      ],
+      "locationIds": [
+        "river-bend"
+      ],
+      "imageUrl": "/images/pokemon/psyduck.png"
+    },
+    {
+      "id": "meowth",
+      "dexNumber": 52,
+      "name": "Meowth",
+      "slug": "meowth",
+      "specialtyId": "decor",
+      "favoriteCategoryIds": [
+        "luxury",
+        "playful"
+      ],
+      "idealHabitatTraitIds": [
+        "bright",
+        "lively",
+        "warm"
+      ],
+      "locationIds": [
+        "sunny-plaza"
+      ],
+      "imageUrl": "/images/pokemon/meowth.png"
+    },
+    {
+      "id": "snorlax",
+      "dexNumber": 143,
+      "name": "Snorlax",
+      "slug": "snorlax",
+      "specialtyId": "support",
+      "favoriteCategoryIds": [
+        "cozy",
+        "luxury"
+      ],
+      "idealHabitatTraitIds": [
+        "quiet",
+        "warm",
+        "dark"
+      ],
+      "locationIds": [
+        "moonlit-grove"
+      ],
+      "imageUrl": "/images/pokemon/snorlax.png"
+    },
+    {
+      "id": "vulpix",
+      "dexNumber": 37,
+      "name": "Vulpix",
+      "slug": "vulpix",
+      "specialtyId": "decor",
+      "favoriteCategoryIds": [
+        "luxury",
+        "cozy"
+      ],
+      "idealHabitatTraitIds": [
+        "warm",
+        "bright",
+        "quiet"
+      ],
+      "locationIds": [
+        "sunny-plaza"
+      ],
+      "imageUrl": "/images/pokemon/vulpix.png"
+    },
+    {
+      "id": "oddish",
+      "dexNumber": 43,
+      "name": "Oddish",
+      "slug": "oddish",
+      "specialtyId": "crafting",
+      "favoriteCategoryIds": [
+        "nature",
+        "sweet"
+      ],
+      "idealHabitatTraitIds": [
+        "humid",
+        "dark",
+        "quiet"
+      ],
+      "locationIds": [
+        "moonlit-grove"
+      ],
+      "imageUrl": "/images/pokemon/oddish.png"
+    }
+  ]
+}

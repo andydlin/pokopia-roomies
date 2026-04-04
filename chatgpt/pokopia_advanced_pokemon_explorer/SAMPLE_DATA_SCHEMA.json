@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Pokopia Pokemon Explorer Dataset",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "number",
+      "slug",
+      "name",
+      "idealHabitat",
+      "specialties",
+      "favorites",
+      "favoriteItemCategories"
+    ],
+    "properties": {
+      "id": { "type": "string" },
+      "number": { "type": "integer" },
+      "slug": { "type": "string" },
+      "name": { "type": "string" },
+      "image": { "type": "string" },
+      "idealHabitat": { "type": "string" },
+      "specialties": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "favorites": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "favoriteItemCategories": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "tags": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "evolutionFamily": { "type": "string" },
+      "notes": { "type": "string" }
+    }
+  },
+  "examples": [
+    [
+      {
+        "id": "001-bulbasaur",
+        "number": 1,
+        "slug": "bulbasaur",
+        "name": "Bulbasaur",
+        "image": "/pokemon/bulbasaur.png",
+        "idealHabitat": "Bright",
+        "specialties": ["Grow"],
+        "favorites": ["Lots of Nature", "Healing"],
+        "favoriteItemCategories": ["Plants", "Garden Decor", "Comfort Items"],
+        "tags": ["starter", "grass"],
+        "evolutionFamily": "bulbasaur",
+        "notes": "Sample record only. Replace with real data."
+      },
+      {
+        "id": "004-charmander",
+        "number": 4,
+        "slug": "charmander",
+        "name": "Charmander",
+        "image": "/pokemon/charmander.png",
+        "idealHabitat": "Warm",
+        "specialties": ["Burn"],
+        "favorites": ["Rides", "Construction"],
+        "favoriteItemCategories": ["Ride Items", "Workshop Items"],
+        "tags": ["starter", "fire"],
+        "evolutionFamily": "charmander",
+        "notes": "Sample record only. Replace with real data."
+      },
+      {
+        "id": "025-pikachu",
+        "number": 25,
+        "slug": "pikachu",
+        "name": "Pikachu",
+        "image": "/pokemon/pikachu.png",
+        "idealHabitat": "Bright",
+        "specialties": ["Electrify"],
+        "favorites": ["Cute Things", "Rides"],
+        "favoriteItemCategories": ["Decor", "Ride Items"],
+        "tags": ["electric", "popular"],
+        "evolutionFamily": "pichu",
+        "notes": "Sample record only. Replace with real data."
+      }
+    ]
+  ]
+}
