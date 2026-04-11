@@ -1,12 +1,9 @@
-import { generatedFavoriteItems } from "./generated/favoriteItems";
-import type { Item } from "../lib/types";
+export { items, favoriteItems, nonFavoriteItems, itemById, itemBySlug } from "../domain/data";
 
-export const items: Item[] = generatedFavoriteItems.map((item) => ({
-  id: item.id,
-  name: item.name,
-  slug: item.sourceSlug,
-  favoriteCategoryIds: [...item.favoriteCategoryIds],
-  craftable: false,
-}));
-export const itemById = new Map(items.map((item) => [item.id, item]));
-export const itemBySlug = new Map(items.map((item) => [item.slug, item]));
+export const comfortItemCategoryOptions = [
+  { id: "decoration", label: "Decoration" },
+  { id: "food", label: "Food" },
+  { id: "relaxation", label: "Relaxation" },
+  { id: "road", label: "Road" },
+  { id: "toy", label: "Toy" },
+] as const;

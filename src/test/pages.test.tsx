@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { describe, expect, it, beforeEach } from "vitest";
+import { BuildersPage } from "../pages/BuildersPage";
+import { HabitatsPage } from "../pages/HabitatsPage";
 import { ItemsPage } from "../pages/ItemsPage";
 import { LookupPage } from "../pages/LookupPage";
 import { PokemonDetailPage } from "../pages/PokemonDetailPage";
@@ -13,20 +15,23 @@ describe("feature pages", () => {
     window.localStorage.clear();
   });
 
-  it("shows live optimizer results after selecting Pokemon", async () => {
+  it("shows live Roomies results after selecting Pokemon", async () => {
     const user = userEvent.setup();
     render(
-      <MemoryRouter initialEntries={["/items"]}>
-        <ItemsPage />
+      <MemoryRouter initialEntries={["/builder"]}>
+        <BuildersPage />
       </MemoryRouter>,
     );
 
     await user.click(screen.getByRole("button", { name: /Pikachu/i }));
     await user.click(screen.getByRole("button", { name: /Meowth/i }));
 
-    expect(screen.getByText(/Compatibility snapshot/i)).toBeInTheDocument();
-    expect(screen.getByText(/Best favorite categories for this draft/i)).toBeInTheDocument();
-    expect(screen.getByText(/Concrete items with the best coverage/i)).toBeInTheDocument();
+    expect(screen.getByText(/Build your group/i)).toBeInTheDocument();
+    expect(screen.getByText(/Pokemon Group/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/Ideal habitat:/i).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/Leaning toward/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Shared by everyone/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Try these favorites and items/i)).not.toBeInTheDocument();
   });
 
   it("renders combined reverse lookup results", () => {
@@ -79,5 +84,27 @@ describe("feature pages", () => {
 
     expect(screen.getAllByText("Sunny squad").length).toBeGreaterThan(0);
     expect(screen.getAllByText("Cozy growers").length).toBeGreaterThan(0);
+  });
+
+  it("renders all-items browsing page", () => {
+    render(
+      <MemoryRouter initialEntries={["/items"]}>
+        <ItemsPage />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByText(/^All items \(/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search items/i)).toBeInTheDocument();
+  });
+
+  it("renders habitats browsing page", () => {
+    render(
+      <MemoryRouter initialEntries={["/habitats"]}>
+        <HabitatsPage />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByText(/^All habitats \(/i)).toBeInTheDocument();
+    expect(screen.getByPlaceholderText(/Search habitats/i)).toBeInTheDocument();
   });
 });

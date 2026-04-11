@@ -64,6 +64,9 @@ export const parsePokemonDetail = (html, seed) => {
   ];
   const habitatMatches = [...html.matchAll(/href="\/pokemonpokopia\/habitatdex\/[^"]+\.shtml"><u>([^<]+)<\/u>/gi)];
   const locationMatches = [...html.matchAll(/href="\/pokemonpokopia\/locations\/[^"]+\.shtml"><u>([^<]+)<\/u>/gi)];
+  const typeMatches = [
+    ...html.matchAll(/href="\/pokedex-[^/]+\/[^"]+\.shtml"><img[^>]+alt="([^"]+)"[^>]*>/gi),
+  ];
   const timeWeatherBlock = html.match(
     /<b>Time<\/b><\/td><td width="50%" align="center"><b>Weather<\/b><\/td><\/tr>\s*<tr><td valign="top">\s*(.*?)<\/td><td valign="top">\s*(.*?)<\/tr><\/table>/is,
   );
@@ -83,6 +86,7 @@ export const parsePokemonDetail = (html, seed) => {
       .filter((favorite) => favorite.sourceSlug !== "none" && favorite.label.toLowerCase() !== "none"),
     habitatLabels: [...new Set(habitatMatches.map((match) => strip(match[1])))],
     locationLabels: [...new Set(locationMatches.map((match) => strip(match[1])))],
+    typeLabels: [...new Set(typeMatches.map((match) => strip(match[1])).filter(Boolean))],
     timeLabels: timeWeatherBlock
       ? strip(timeWeatherBlock[1])
           .split(" ")
@@ -160,6 +164,63 @@ export const parseFavoritesIndexPage = (html) =>
     label: strip(match[2]),
   }));
 
+export const parseItemsPage = (html) => {
+  const sectionPattern =
+    /<p><h2><a name="([^"]+)"><\/a>List of ([^<]+)<\/h2><\/p>\s*<table class="dextable"[\s\S]*?>([\s\S]*?)<\/table>/gi;
+  const rowPattern =
+    /<tr><td class="cen"><a href="(?:\/pokemonpokopia\/)?items\/([^"]+)\.shtml"><img[\s\S]*?<\/tr>/gi;
+  const namePattern =
+    /<td class="cen"><a href="(?:\/pokemonpokopia\/)?items\/[^"]+\.shtml"><u>([^<]+)<\/u><\/a><\/td>/i;
+  const tagPattern =
+    /<a href="(?:\/pokemonpokopia\/)?items\/([^"]+)\.shtml">[\s\S]*?<br\s*\/?>\s*([^<]+)\s*<\/a>/gi;
+  const explicitComfortTagIds = new Set(["decoration", "food", "relaxation", "road", "toy"]);
+
+  const itemsById = new Map();
+
+  for (const sectionMatch of html.matchAll(sectionPattern)) {
+    const sectionAnchor = strip(sectionMatch[1]);
+    const categoryLabel = strip(sectionMatch[2]);
+    const sectionHtml = sectionMatch[3];
+    const categoryId = slugify(categoryLabel);
+
+    for (const rowMatch of sectionHtml.matchAll(rowPattern)) {
+      const rowHtml = rowMatch[0];
+      const sourceSlug = strip(rowMatch[1]);
+      const itemId = itemIdFromSlug(sourceSlug);
+      const nameMatch = rowHtml.match(namePattern);
+      const name = nameMatch ? strip(nameMatch[1]) : sourceSlug;
+      const infoCells = [...rowHtml.matchAll(/<td class="fooinfo">([\s\S]*?)<\/td>/gi)];
+      const tagCell = infoCells[1]?.[1] ?? "";
+      const comfortTags = [...tagCell.matchAll(tagPattern)].map((match) => ({
+        id: slugify(strip(match[1])),
+        label: strip(match[2]),
+      }));
+      const comfortCategoryIds = [...new Set(comfortTags.map((tag) => tag.id).filter((id) => explicitComfortTagIds.has(id)))];
+      const comfortCategoryLabels = [...new Set(comfortTags.map((tag) => tag.label))];
+
+      if (!itemsById.has(itemId)) {
+        itemsById.set(itemId, {
+          id: itemId,
+          sourceSlug,
+          name,
+          imageUrl: `/assets/pokopia-items/${sourceSlug}.png`,
+          itemCategory: categoryId,
+          itemCategoryLabel: categoryLabel,
+          sourceSectionAnchor: sectionAnchor,
+          comfortCategoryIds,
+          comfortCategoryLabels,
+        });
+      } else if (comfortCategoryIds.length > 0) {
+        const existing = itemsById.get(itemId);
+        existing.comfortCategoryIds = [...new Set([...(existing.comfortCategoryIds ?? []), ...comfortCategoryIds])];
+        existing.comfortCategoryLabels = [...new Set([...(existing.comfortCategoryLabels ?? []), ...comfortCategoryLabels])];
+      }
+    }
+  }
+
+  return [...itemsById.values()].sort((left, right) => left.name.localeCompare(right.name));
+};
+
 export const parseHabitatsPage = (html) =>
   [
     ...html.matchAll(
@@ -174,6 +235,25 @@ export const parseHabitatsPage = (html) =>
     sourceUrl: toAbsolute(`pokemonpokopia/habitatdex/${match[2]}.shtml`),
     description: strip(match[5]),
   }));
+
+export const parseHabitatRequirements = (html) => {
+  const sectionMatch = html.match(
+    /<p><h2>Requirements<\/h2><\/p>\s*<table class="dextable"[\s\S]*?<\/table>/i,
+  );
+  if (!sectionMatch) return [];
+
+  const rowMatches = [
+    ...sectionMatch[0].matchAll(
+      /<tr><td class="cen">[\s\S]*?<\/td>\s*<td class="fooinfo">[\s\S]*?<u>([^<]+)<\/u>[\s\S]*?<\/td>\s*<td class="fooinfo">(\d+)<\/td>\s*<\/tr>/gi,
+    ),
+  ];
+
+  return rowMatches.map((match) => ({
+    itemId: slugify(strip(match[1])),
+    itemName: strip(match[1]),
+    quantity: Number.parseInt(match[2], 10),
+  }));
+};
 
 export const parseFlavorPageSection = (html, category) => {
   const anchor = category.sourceSlug;
@@ -205,12 +285,45 @@ export const parseItemDetail = (html, itemSlug, fallbackName) => {
   const favoriteMatches = [
     ...html.matchAll(/href="\/pokemonpokopia\/(favorites\/[^"]+\.shtml|flavors\.shtml|pokedex\/flavor\/[^"]+\.shtml)"><u>([^<]+)<\/u>/gi),
   ];
+  const recipeMaterials = [
+    ...html.matchAll(
+      /<tr><td ><a href="([^"]+)\.shtml"><img[^>]*><\/td><td ><a href="[^"]+"><u>([^<]+)<\/u><\/a>\s*\*\s*(\d+)<\/td><\/tr>/gi,
+    ),
+  ].map((match) => ({
+    itemId: itemIdFromSlug(match[1].split("/").at(-1) ?? match[1]),
+    itemName: strip(match[2]),
+    quantity: Number.parseInt(match[3], 10),
+  }));
+  const recipeLocationMatch = html.match(
+    /<h2>Recipe<\/h2>[\s\S]*?<tr><td class="fooblack">Location<\/td><td class="fooinfo">([\s\S]*?)<\/td><\/tr>/i,
+  );
+  const recipeLocation = recipeLocationMatch ? strip(recipeLocationMatch[1]) : null;
+  const locationsSectionMatch = html.match(/<h2>Locations<\/h2>[\s\S]*?<table[^>]*>([\s\S]*?)<\/table>/i);
+  const obtainabilityDetails = locationsSectionMatch
+    ? [
+        ...locationsSectionMatch[1].matchAll(
+          /<tr><td class="fooblack">([^<]+)<\/td><td class="fooinfo">([\s\S]*?)<\/td><\/tr>/gi,
+        ),
+      ]
+        .map((match) => {
+          const label = strip(match[1]);
+          const detail = strip(match[2]);
+          if (!label && !detail) return null;
+          if (!label) return detail;
+          if (!detail) return label;
+          return `${label}: ${detail}`;
+        })
+        .filter(Boolean)
+    : [];
 
   return {
     id: itemIdFromSlug(itemSlug),
     sourceSlug: itemSlug,
     name: titleMatch ? strip(titleMatch[1]) : fallbackName,
     itemCategoryLabel: categoryMatch ? strip(categoryMatch[1]) : "Unknown",
+    recipeMaterials,
+    recipeLocation,
+    obtainabilityDetails,
     favoriteCategories: favoriteMatches.map((match) => ({
       label: strip(match[2]),
       sourceType: match[1].includes("flavor") ? "flavor" : "favorite",

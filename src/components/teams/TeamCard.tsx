@@ -2,22 +2,22 @@ import { Link } from "react-router-dom";
 import { pokemonById } from "../../data/pokemon";
 import { scoreTeam } from "../../lib/compatibility";
 import type { SavedTeam } from "../../lib/types";
-import { getTeamMembers } from "../../lib/teams/teamHelpers";
+import { resolveTeamMembers } from "../../lib/teams/teamHelpers";
 import { Chip } from "../common/Chip";
 import { ScoreBadge } from "../common/ScoreBadge";
 
 export const TeamCard = ({ team }: { team: SavedTeam }) => {
-  const members = getTeamMembers(team.pokemonIds);
+  const { members, missingPokemonIds } = resolveTeamMembers(team.pokemonIds);
   const breakdown = scoreTeam(members);
 
   return (
     <article className="card-shell rounded-[2rem] p-5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <Link to={`/teams/${team.id}`} className="text-2xl font-semibold text-ink hover:text-moss">
+          <Link to={`/teams/${team.id}`} className="type-h2 text-ink hover:text-moss">
             {team.name}
           </Link>
-          <p className="mt-1 text-sm text-ink/60">Updated {new Date(team.updatedAt).toLocaleDateString()}</p>
+          <p className="type-body mt-1 text-ink/60">Updated {new Date(team.updatedAt).toLocaleDateString()}</p>
         </div>
         <ScoreBadge score={breakdown.totalScore} label={breakdown.summaryLabel} />
       </div>
@@ -25,6 +25,11 @@ export const TeamCard = ({ team }: { team: SavedTeam }) => {
       <div className="mt-4 flex flex-wrap gap-2">
         {members.map((entry) => (
           <Chip key={entry.id}>{pokemonById.get(entry.id)?.name ?? entry.id}</Chip>
+        ))}
+        {missingPokemonIds.map((pokemonId) => (
+          <Chip key={pokemonId} tone="warning">
+            Missing: {pokemonId}
+          </Chip>
         ))}
       </div>
 

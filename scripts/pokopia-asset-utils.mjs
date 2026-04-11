@@ -25,7 +25,10 @@ const extractRelativeMatches = (html, pageUrl, pattern) => {
 };
 
 export const extractPokemonSpriteSources = (html) =>
-  extractRelativeMatches(html, POKEMON_PAGE_URL, POKEMON_SRC_PATTERN);
+  extractRelativeMatches(html, POKEMON_PAGE_URL, POKEMON_SRC_PATTERN).map(({ filename }) => ({
+    filename,
+    sourceUrl: new URL(`/pokemonpokopia/pokemon/${filename}`, POKEMON_PAGE_URL).toString(),
+  }));
 
 export const extractItemSpriteSources = (html) =>
   extractRelativeMatches(html, ITEM_PAGE_URL, ITEM_SRC_PATTERN);

@@ -8,7 +8,9 @@ import {
   normalizeWeatherId,
   parseFavoriteCategoryPage,
   parseFavoritesIndexPage,
+  parseItemsPage,
   parseHabitatsPage,
+  parseHabitatRequirements,
   parseFlavorPageSection,
   parseItemDetail,
   parsePokemonDetail,
@@ -19,6 +21,9 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const generatedDir = path.join(projectRoot, "src/data/generated");
+const typeOverridesBySourceSlug = new Map([
+  ["paldeanwooper", ["poison", "ground"]],
+]);
 
 const fetchText = async (url) => {
   const response = await fetch(url, {
@@ -51,11 +56,17 @@ const buildPokemon = async (seed) => {
     locations: [...new Set((parsed.locationLabels.length > 0 ? parsed.locationLabels : seed.fallback.locations).map(slugify))],
     timeOfDay: [...new Set((parsed.timeLabels.length > 0 ? parsed.timeLabels : seed.fallback.timeOfDay ?? []).map(normalizeTimeId))],
     weather: [...new Set((parsed.weatherLabels.length > 0 ? parsed.weatherLabels : seed.fallback.weather ?? []).map(normalizeWeatherId))],
+    types: (() => {
+      const parsedTypeIds = [...new Set(parsed.typeLabels.map(slugify))];
+      if (parsedTypeIds.length > 0) return parsedTypeIds;
+      return typeOverridesBySourceSlug.get(seed.sourceSlug) ?? [];
+    })(),
     sourceSlug: seed.sourceSlug,
     sourceLabels: {
       idealHabitat: parsed.idealHabitatLabel ?? seed.fallback.habitats[0],
       favorites: parsed.favorites.map((favorite) => favorite.label),
       specialties: parsed.specialtyLabels,
+      types: parsed.typeLabels,
     },
     sourceNotes: "Generated from Serebii Pokemon detail pages with fallback context from local seed data.",
     favoriteSources: parsed.favorites,
@@ -71,14 +82,21 @@ const main = async () => {
   const favoritesIndexHtml = await fetchText(
     "https://www.serebii.net/pokemonpokopia/favorites.shtml",
   );
+  const itemsHtml = await fetchText("https://www.serebii.net/pokemonpokopia/items.shtml");
   const habitatsHtml = await fetchText(
     "https://www.serebii.net/pokemonpokopia/habitats.shtml",
   );
+  const allItems = parseItemsPage(itemsHtml);
+  const allItemsById = new Map(allItems.map((item) => [item.id, item]));
   const pokemonSeed = parseAvailablePokemonPage(availablePokemonHtml);
   const canonicalFavoriteSlugs = new Map(
     parseFavoritesIndexPage(favoritesIndexHtml).map((favorite) => [favorite.label.toLowerCase(), favorite.sourceSlug]),
   );
   const habitats = parseHabitatsPage(habitatsHtml);
+  for (const habitat of habitats) {
+    const detailHtml = await fetchText(habitat.sourceUrl);
+    habitat.requiredItems = parseHabitatRequirements(detailHtml);
+  }
 
   const pokemonWithSources = [];
   for (const seed of pokemonSeed) {
@@ -132,30 +150,37 @@ const main = async () => {
   }
 
   const itemRecords = [];
-  for (const [itemSlug, itemSeed] of itemSeedMap.entries()) {
-    const html = await fetchText(`https://www.serebii.net/pokemonpokopia/items/${itemSlug}.shtml`);
-    itemRecords.push(parseItemDetail(html, itemSlug, itemSeed.name));
+  for (const itemSeed of allItems) {
+    const html = await fetchText(`https://www.serebii.net/pokemonpokopia/items/${itemSeed.sourceSlug}.shtml`);
+    itemRecords.push(parseItemDetail(html, itemSeed.sourceSlug, itemSeed.name));
   }
+
+  const itemDetailById = new Map(itemRecords.map((item) => [item.id, item]));
 
   const categoryById = new Map(categories.map((category) => [category.id, category]));
   const itemById = new Map(
-    itemRecords.map((item) => [
-      item.id,
-      {
-        id: item.id,
-        sourceSlug: item.sourceSlug,
-        name: item.name,
-        imageUrl: `/assets/pokopia-items/${item.sourceSlug}.png`,
-        itemCategory: slugify(item.itemCategoryLabel),
-        itemCategoryLabel: item.itemCategoryLabel,
-        favoriteCategoryIds: [],
-        benefitingPokemonIds: [],
-        sourceLabels: {
-          category: item.itemCategoryLabel,
-          favoriteCategories: item.favoriteCategories.map((favorite) => favorite.label),
+    allItems.map((item) => {
+      const detail = itemDetailById.get(item.id);
+      return [
+        item.id,
+        {
+          ...item,
+          sourceSlug: item.sourceSlug,
+          imageUrl: item.imageUrl,
+          itemCategory: slugify(item.itemCategoryLabel || detail?.itemCategoryLabel || "unknown"),
+          itemCategoryLabel: item.itemCategoryLabel || detail?.itemCategoryLabel || "Unknown",
+          favoriteCategoryIds: [],
+          benefitingPokemonIds: [],
+          recipeMaterials: detail?.recipeMaterials ?? [],
+          recipeLocation: detail?.recipeLocation ?? null,
+          obtainabilityDetails: detail?.obtainabilityDetails ?? [],
+          sourceLabels: {
+            category: item.itemCategoryLabel || detail?.itemCategoryLabel || "Unknown",
+            favoriteCategories: detail?.favoriteCategories.map((favorite) => favorite.label) ?? [],
+          },
         },
-      },
-    ]),
+      ];
+    }),
   );
 
   categories.forEach((category) => {
@@ -224,6 +249,28 @@ const main = async () => {
         .map((category) => ({
           ...category,
           itemIds: [...new Set(category.itemIds)].sort(),
+        }))
+        .sort((left, right) => left.name.localeCompare(right.name)),
+    ),
+  );
+  await writeFile(
+    path.join(generatedDir, "items.ts"),
+    renderTsModule(
+      "generatedItems",
+      [...itemById.values()]
+        .map((item) => ({
+          id: item.id,
+          sourceSlug: item.sourceSlug,
+          name: item.name,
+          imageUrl: item.imageUrl,
+          itemCategory: item.itemCategory,
+          itemCategoryLabel: item.itemCategoryLabel,
+          sourceSectionAnchor: item.sourceSectionAnchor ?? item.itemCategory,
+          comfortCategoryIds: [...new Set(item.comfortCategoryIds ?? [])].sort(),
+          comfortCategoryLabels: [...new Set(item.comfortCategoryLabels ?? [])],
+          recipeMaterials: [...(item.recipeMaterials ?? [])],
+          recipeLocation: item.recipeLocation ?? null,
+          obtainabilityDetails: [...(item.obtainabilityDetails ?? [])],
         }))
         .sort((left, right) => left.name.localeCompare(right.name)),
     ),

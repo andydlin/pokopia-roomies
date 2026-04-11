@@ -1,10 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 import { favoriteCategoryById } from "../data/favoriteCategories";
+import { habitatById } from "../data/habitats";
 import { habitatTraitById } from "../data/habitatTraits";
 import { itemById } from "../data/items";
 import { loadSavedTeams } from "../lib/storage";
 import { scoreTeam } from "../lib/compatibility";
-import { getTeamMembers } from "../lib/teams/teamHelpers";
+import { resolveTeamMembers } from "../lib/teams/teamHelpers";
 import { Chip } from "../components/common/Chip";
 import { EmptyState } from "../components/common/EmptyState";
 import { ScoreBadge } from "../components/common/ScoreBadge";
@@ -18,7 +19,7 @@ export const TeamDetailPage = () => {
     return <EmptyState title="Team not found" body="This saved team may have been deleted from local storage." />;
   }
 
-  const members = getTeamMembers(team.pokemonIds);
+  const { members, missingPokemonIds } = resolveTeamMembers(team.pokemonIds);
   const breakdown = scoreTeam(members);
 
   return (
@@ -29,12 +30,17 @@ export const TeamDetailPage = () => {
           {members.map((member) => (
             <Chip key={member.id}>{member.name}</Chip>
           ))}
+          {missingPokemonIds.map((pokemonId) => (
+            <Chip key={pokemonId} tone="warning">
+              Missing: {pokemonId}
+            </Chip>
+          ))}
         </div>
       </SectionCard>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <SectionCard eyebrow="Overlap" title="Shared favorites and habitat">
-          <div className="space-y-4 text-sm text-ink/70">
+          <div className="type-body space-y-4 text-ink/70">
             <p>
               Shared favorites across all:{" "}
               {breakdown.sharedFavoriteCategoryIdsAll.length > 0
@@ -65,10 +71,10 @@ export const TeamDetailPage = () => {
         <SectionCard eyebrow="Conflicts" title="Habitat friction to watch">
           <div className="space-y-3">
             {breakdown.conflictingHabitatPairs.length === 0 ? (
-              <p className="text-sm text-ink/65">No direct opposite habitat traits in this team.</p>
+              <p className="type-body text-ink/65">No direct opposite habitat traits in this team.</p>
             ) : (
               breakdown.conflictingHabitatPairs.map((conflict) => (
-                <p key={`${conflict.pokemonAId}-${conflict.pokemonBId}-${conflict.traitAId}`} className="text-sm text-ink/70">
+                <p key={`${conflict.pokemonAId}-${conflict.pokemonBId}-${conflict.traitAId}`} className="type-body text-ink/70">
                   {conflict.pokemonAId} wants {habitatTraitById.get(conflict.traitAId)?.label} while {conflict.pokemonBId} wants {habitatTraitById.get(conflict.traitBId)?.label}.
                 </p>
               ))
@@ -78,7 +84,15 @@ export const TeamDetailPage = () => {
       </div>
 
       <SectionCard eyebrow="Recommendations" title="Best categories and items">
-        <div className="space-y-3 text-sm text-ink/70">
+        <div className="type-body space-y-3 text-ink/70">
+          {missingPokemonIds.length > 0 ? (
+            <p>Missing Pokemon still referenced by this saved team: {missingPokemonIds.join(", ")}</p>
+          ) : null}
+          {breakdown.selectedHabitatId ? (
+            <p>
+              Best planning habitat: {habitatById.get(breakdown.selectedHabitatId)?.name ?? breakdown.selectedHabitatId}
+            </p>
+          ) : null}
           <p>
             Categories:{" "}
             {breakdown.recommendedFavoriteCategoryIds
@@ -93,7 +107,7 @@ export const TeamDetailPage = () => {
 
       <Link
         to={`/compare?left=${team.id}`}
-        className="inline-flex rounded-full bg-moss px-4 py-2 text-sm font-semibold text-paper"
+        className="type-ui type-ui-strong inline-flex rounded-full bg-moss px-4 py-2 text-paper"
       >
         Compare this team
       </Link>

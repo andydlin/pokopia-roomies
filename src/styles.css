@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -10,11 +11,27 @@
   --color-berry: #cc6b5a;
   --color-sky: #8dbac6;
   --color-shadow: #21362c;
-  --font-sans: "Avenir Next", "Trebuchet MS", sans-serif;
-  --font-display: "Gill Sans", "Avenir Next Condensed", sans-serif;
+  --font-sans: "M PLUS Rounded 1c", "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-display: "M PLUS Rounded 1c", "Avenir Next", "Avenir Next Condensed", "Trebuchet MS", sans-serif;
 }
 
 :root {
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.08em;
+  --tracking-caps: 0.16em;
   color: var(--color-ink);
   background:
     radial-gradient(circle at top left, rgba(244, 184, 96, 0.34), transparent 22rem),
@@ -22,10 +39,16 @@
     linear-gradient(180deg, #f5efdf 0%, #f4ead4 44%, #efe2c5 100%);
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--leading-normal);
   color: var(--color-ink);
   background: transparent;
 }
@@ -36,6 +59,68 @@ a {
 
 #root {
   min-height: 100vh;
+}
+
+.type-display {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+}
+
+.type-h1 {
+  font-size: var(--text-3xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+}
+
+.type-h2 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+}
+
+.type-h3 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 600;
+}
+
+.type-body {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 400;
+}
+
+.type-ui {
+  font-size: var(--text-sm);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 500;
+}
+
+.type-ui-strong {
+  font-weight: 600;
+}
+
+.type-caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  font-weight: 500;
+}
+
+.type-overline {
+  font-size: var(--text-xs);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-caps);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .card-shell {
@@ -60,5 +145,15 @@ a {
 @media (max-width: 1024px) {
   .page-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .type-display {
+    font-size: var(--text-5xl);
+  }
+
+  .type-body {
+    font-size: var(--text-base);
   }
 }

@@ -33,6 +33,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "bulbasaur",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -46,6 +50,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -84,6 +92,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "ivysaur",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -97,6 +109,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -136,6 +152,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "venusaur",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -150,6 +170,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -188,6 +212,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "charmander",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -201,6 +228,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -239,6 +269,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "charmeleon",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -252,6 +285,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -290,6 +326,10 @@ export const generatedPokemon = [
     "weather": [
       "clear"
     ],
+    "types": [
+      "fire",
+      "flying"
+    ],
     "sourceSlug": "charizard",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -304,6 +344,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Fly"
+      ],
+      "types": [
+        "Fire",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -342,6 +386,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "squirtle",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -354,6 +401,9 @@ export const generatedPokemon = [
         "Sweet flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -393,6 +443,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "wartortle",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -405,6 +458,9 @@ export const generatedPokemon = [
         "Spicy flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -445,6 +501,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "blastoise",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -459,6 +518,9 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -497,6 +559,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "pidgey",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -511,6 +577,10 @@ export const generatedPokemon = [
       "specialties": [
         "Fly",
         "Search"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -549,6 +619,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "pidgeotto",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -563,6 +637,10 @@ export const generatedPokemon = [
       "specialties": [
         "Fly",
         "Search"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -601,6 +679,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "pidgeot",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -615,6 +697,10 @@ export const generatedPokemon = [
       "specialties": [
         "Fly",
         "Chop"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -652,6 +738,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "oddish",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -665,6 +755,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -703,6 +797,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "gloom",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -716,6 +814,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -755,6 +857,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "vileplume",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -769,6 +875,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -808,6 +918,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "bellossom",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -822,6 +935,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Hype"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -860,6 +976,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "grass"
+    ],
     "sourceSlug": "paras",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -873,6 +993,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Bug",
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -911,6 +1035,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "grass"
+    ],
     "sourceSlug": "parasect",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -924,6 +1052,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Bug",
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -961,6 +1093,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "sourceSlug": "venonat",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -974,6 +1110,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Bug",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1011,6 +1151,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "sourceSlug": "venomoth",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1024,6 +1168,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Bug",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1063,6 +1211,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "bellsprout",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1077,6 +1229,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1116,6 +1272,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "weepinbell",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1130,6 +1290,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1169,6 +1333,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "poison"
+    ],
     "sourceSlug": "victreebel",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1183,6 +1351,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Chop"
+      ],
+      "types": [
+        "Grass",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1222,6 +1394,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "psychic"
+    ],
     "sourceSlug": "slowpoke",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1236,6 +1412,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Yawn"
+      ],
+      "types": [
+        "Water",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1275,6 +1455,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "psychic"
+    ],
     "sourceSlug": "slowbro",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1289,6 +1473,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1328,6 +1516,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "psychic"
+    ],
     "sourceSlug": "slowking",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -1342,6 +1534,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Teleport"
+      ],
+      "types": [
+        "Water",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1380,6 +1576,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "steel"
+    ],
     "sourceSlug": "magnemite",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1393,6 +1593,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1431,6 +1635,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "steel"
+    ],
     "sourceSlug": "magneton",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1444,6 +1652,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1483,6 +1695,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "steel"
+    ],
     "sourceSlug": "magnezone",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1497,6 +1713,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Recycle"
+      ],
+      "types": [
+        "Electric",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1536,6 +1756,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "onix",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -1550,6 +1774,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Bulldoze"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1589,6 +1817,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "ground"
+    ],
     "sourceSlug": "steelix",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -1603,6 +1835,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Bulldoze"
+      ],
+      "types": [
+        "Steel",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1641,6 +1877,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "cubone",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -1654,6 +1893,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1692,6 +1934,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "marowak",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -1705,6 +1950,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1743,6 +1991,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "tyrogue",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1756,6 +2007,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1794,6 +2048,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "hitmonlee",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1807,6 +2064,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1845,6 +2105,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "hitmonchan",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1858,6 +2121,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1896,6 +2162,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "hitmontop",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -1909,6 +2178,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1943,6 +2215,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "koffing",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -1956,6 +2231,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -1990,6 +2268,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "weezing",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -2003,6 +2284,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2038,6 +2322,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "tangela",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2052,6 +2339,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2090,6 +2380,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "professortangrowth",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2103,6 +2396,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Appraise"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2137,6 +2433,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "tangrowth",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2151,6 +2450,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2189,6 +2491,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "sourceSlug": "scyther",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2202,6 +2508,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Bug",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2236,6 +2546,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "steel"
+    ],
     "sourceSlug": "scizor",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2249,6 +2563,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Bug",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2288,6 +2606,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "pinsir",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2302,6 +2623,9 @@ export const generatedPokemon = [
       "specialties": [
         "Chop",
         "Build"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2340,6 +2664,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "magikarp",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2353,6 +2680,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "???"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2387,6 +2717,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "flying"
+    ],
     "sourceSlug": "gyarados",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2400,6 +2734,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Water",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2418,12 +2756,18 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "ditto",
     "sourceLabels": {
       "idealHabitat": "Bright",
       "favorites": [],
       "specialties": [
         "Transform"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2462,6 +2806,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "hoothoot",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -2476,6 +2824,10 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Fly"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2514,6 +2866,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "noctowl",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -2528,6 +2884,10 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Fly"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2567,6 +2927,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "fighting"
+    ],
     "sourceSlug": "heracross",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2581,6 +2945,10 @@ export const generatedPokemon = [
       "specialties": [
         "Chop",
         "Build"
+      ],
+      "types": [
+        "Bug",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2619,6 +2987,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "volbeat",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -2632,6 +3003,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2670,6 +3044,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "illumise",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -2683,6 +3060,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2717,6 +3097,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "gulpin",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2730,6 +3113,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Storage"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2768,6 +3154,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "swalot",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -2781,6 +3170,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Storage"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2818,6 +3210,9 @@ export const generatedPokemon = [
     "weather": [
       "clear"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "cacnea",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -2831,6 +3226,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2869,6 +3267,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "dark"
+    ],
     "sourceSlug": "cacturne",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -2883,6 +3285,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass",
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2921,6 +3327,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "sourceSlug": "combee",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2934,6 +3344,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Bug",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -2973,6 +3387,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "flying"
+    ],
     "sourceSlug": "vespiquen",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -2987,6 +3405,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather Honey",
         "Search"
+      ],
+      "types": [
+        "Bug",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3025,6 +3447,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "shellos",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3037,6 +3462,9 @@ export const generatedPokemon = [
         "Sour flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -3076,6 +3504,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "shelloseastsea",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3088,6 +3519,9 @@ export const generatedPokemon = [
         "Dry flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -3128,6 +3562,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "ground"
+    ],
     "sourceSlug": "gastrodon",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3142,6 +3580,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3181,6 +3623,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "ground"
+    ],
     "sourceSlug": "gastrodoneastsea",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3195,6 +3641,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3233,6 +3683,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "flying"
+    ],
     "sourceSlug": "drifloon",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -3246,6 +3700,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Dream Island"
+      ],
+      "types": [
+        "Ghost",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3285,6 +3743,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "flying"
+    ],
     "sourceSlug": "drifblim",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -3299,6 +3761,10 @@ export const generatedPokemon = [
       "specialties": [
         "Fly",
         "Gather"
+      ],
+      "types": [
+        "Ghost",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3337,6 +3803,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "drilbur",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -3350,6 +3819,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3389,6 +3861,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground",
+      "steel"
+    ],
     "sourceSlug": "excadrill",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -3403,6 +3879,10 @@ export const generatedPokemon = [
       "specialties": [
         "Search",
         "Chop"
+      ],
+      "types": [
+        "Ground",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3441,6 +3921,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "timburr",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -3454,6 +3937,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3492,6 +3978,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "gurdurr",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -3505,6 +3994,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3544,6 +4036,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "conkeldurr",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -3558,6 +4053,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Crush"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3596,6 +4094,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "fire"
+    ],
     "sourceSlug": "litwick",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -3609,6 +4111,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Ghost",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3647,6 +4153,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "fire"
+    ],
     "sourceSlug": "lampent",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -3660,6 +4170,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Ghost",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3698,6 +4212,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "fire"
+    ],
     "sourceSlug": "chandelure",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -3711,6 +4229,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Ghost",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3749,6 +4271,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "axew",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -3762,6 +4287,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3800,6 +4328,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "fraxure",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -3813,6 +4344,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3852,6 +4386,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "haxorus",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -3866,6 +4403,9 @@ export const generatedPokemon = [
       "specialties": [
         "Chop",
         "Litter"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3903,6 +4443,9 @@ export const generatedPokemon = [
     "weather": [
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "goomy",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3916,6 +4459,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -3953,6 +4499,9 @@ export const generatedPokemon = [
     "weather": [
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "sliggoo",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -3966,6 +4515,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4004,6 +4556,9 @@ export const generatedPokemon = [
     "weather": [
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "goodra",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -4018,6 +4573,9 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4053,6 +4611,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying",
+      "water"
+    ],
     "sourceSlug": "cramorant",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -4066,6 +4628,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Fly",
+        "Water"
+      ],
+      "types": [
+        "Flying",
         "Water"
       ]
     },
@@ -4101,6 +4667,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "pichu",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -4114,6 +4683,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4152,6 +4724,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "peakychu",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -4165,6 +4740,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Illuminate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4199,6 +4777,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "pikachu",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -4212,6 +4793,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4251,6 +4835,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "raichu",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -4265,6 +4852,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Hype"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4302,6 +4892,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison",
+      "flying"
+    ],
     "sourceSlug": "zubat",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4315,6 +4909,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Poison",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4352,6 +4950,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison",
+      "flying"
+    ],
     "sourceSlug": "golbat",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4365,6 +4967,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Poison",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4403,6 +5009,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison",
+      "flying"
+    ],
     "sourceSlug": "crobat",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4417,6 +5027,10 @@ export const generatedPokemon = [
       "specialties": [
         "Search",
         "Chop"
+      ],
+      "types": [
+        "Poison",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4455,6 +5069,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "meowth",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -4468,6 +5085,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4507,6 +5127,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "persian",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -4521,6 +5144,9 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Search"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4559,6 +5185,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "psyduck",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -4572,6 +5201,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4610,6 +5242,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "golduck",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -4623,6 +5258,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4662,6 +5300,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "growlithe",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -4676,6 +5317,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Search"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4715,6 +5359,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "arcanine",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -4729,6 +5376,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Search"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4768,6 +5418,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "farfetch'd",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -4782,6 +5436,10 @@ export const generatedPokemon = [
       "specialties": [
         "Chop",
         "Build"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4820,6 +5478,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "grimer",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4833,6 +5494,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4871,6 +5535,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "muk",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4884,6 +5551,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4922,6 +5592,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "poison"
+    ],
     "sourceSlug": "gastly",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4936,6 +5610,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Ghost",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -4974,6 +5652,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "poison"
+    ],
     "sourceSlug": "haunter",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -4988,6 +5670,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Ghost",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5026,6 +5712,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "poison"
+    ],
     "sourceSlug": "gengar",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -5040,6 +5730,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Ghost",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5079,6 +5773,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "voltorb",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5093,6 +5790,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Explode"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5132,6 +5832,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "electrode",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5146,6 +5849,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Explode"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5185,6 +5891,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "psychic"
+    ],
     "sourceSlug": "exeggcute",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5199,6 +5909,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Teleport"
+      ],
+      "types": [
+        "Grass",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5238,6 +5952,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "psychic"
+    ],
     "sourceSlug": "exeggutor",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5252,6 +5970,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Teleport"
+      ],
+      "types": [
+        "Grass",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5290,6 +6012,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "happiny",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5303,6 +6028,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5341,6 +6069,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "chansey",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5354,6 +6085,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5393,6 +6127,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "blissey",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5407,6 +6144,9 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Litter"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5445,6 +6185,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "elekid",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5458,6 +6201,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5496,6 +6242,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "electabuzz",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5509,6 +6258,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5548,6 +6300,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "electivire",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5562,6 +6317,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Crush"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5600,6 +6358,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "ice"
+    ],
     "sourceSlug": "lapras",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -5613,6 +6375,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Water",
+        "Ice"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5647,6 +6413,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "munchlax",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -5660,6 +6429,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Bulldoze"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5698,6 +6470,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "mosslax",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5711,6 +6486,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Eat"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5746,6 +6524,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "snorlax",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -5760,6 +6541,9 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Bulldoze"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5798,6 +6582,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "sourceSlug": "spinarak",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -5811,6 +6599,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Bug",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5849,6 +6641,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "poison"
+    ],
     "sourceSlug": "ariados",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -5862,6 +6658,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Bug",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5901,6 +6701,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "mareep",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5915,6 +6718,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Litter"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -5954,6 +6760,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "flaaffy",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -5968,6 +6777,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Litter"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6007,6 +6819,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "ampharos",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -6021,6 +6836,9 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Trade"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6060,6 +6878,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "fairy"
+    ],
     "sourceSlug": "azurill",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6074,6 +6896,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Hype"
+      ],
+      "types": [
+        "Normal",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6113,6 +6939,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "fairy"
+    ],
     "sourceSlug": "marill",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6127,6 +6957,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Hype"
+      ],
+      "types": [
+        "Water",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6165,6 +6999,10 @@ export const generatedPokemon = [
     "weather": [
       "rain"
     ],
+    "types": [
+      "water",
+      "fairy"
+    ],
     "sourceSlug": "azumarill",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6179,6 +7017,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Build"
+      ],
+      "types": [
+        "Water",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6213,6 +7055,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison",
+      "ground"
+    ],
     "sourceSlug": "paldeanwooper",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6226,7 +7072,8 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
-      ]
+      ],
+      "types": []
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
   },
@@ -6265,6 +7112,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison",
+      "ground"
+    ],
     "sourceSlug": "clodsire",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6279,6 +7130,10 @@ export const generatedPokemon = [
       "specialties": [
         "Litter",
         "Bulldoze"
+      ],
+      "types": [
+        "Poison",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6317,6 +7172,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "smeargle",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -6330,6 +7188,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Paint"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6368,6 +7229,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "torchic",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -6381,6 +7245,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6420,6 +7287,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire",
+      "fighting"
+    ],
     "sourceSlug": "combusken",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -6434,6 +7305,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Build"
+      ],
+      "types": [
+        "Fire",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6473,6 +7348,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire",
+      "fighting"
+    ],
     "sourceSlug": "blaziken",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -6487,6 +7366,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Build"
+      ],
+      "types": [
+        "Fire",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6525,6 +7408,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "flying"
+    ],
     "sourceSlug": "wingull",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6539,6 +7426,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Fly"
+      ],
+      "types": [
+        "Water",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6577,6 +7468,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "flying"
+    ],
     "sourceSlug": "pelipper",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6591,6 +7486,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Fly"
+      ],
+      "types": [
+        "Water",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6630,6 +7529,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "makuhita",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -6644,6 +7546,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Bulldoze"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6683,6 +7588,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "hariyama",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -6697,6 +7605,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Bulldoze"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6735,6 +7646,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark"
+    ],
     "sourceSlug": "absol",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -6748,6 +7662,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6786,6 +7703,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "piplup",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6798,6 +7718,9 @@ export const generatedPokemon = [
         "Sweet flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -6838,6 +7761,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "prinplup",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6852,6 +7778,9 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6890,6 +7819,10 @@ export const generatedPokemon = [
     "weather": [
       "rain"
     ],
+    "types": [
+      "water",
+      "steel"
+    ],
     "sourceSlug": "empoleon",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -6904,6 +7837,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Trade"
+      ],
+      "types": [
+        "Water",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6942,6 +7879,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "audino",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -6955,6 +7895,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -6993,6 +7936,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "trubbish",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -7006,6 +7952,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7045,6 +7994,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "garbodor",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -7059,6 +8011,9 @@ export const generatedPokemon = [
       "specialties": [
         "Recycle",
         "Litter"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7097,6 +8052,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark"
+    ],
     "sourceSlug": "zorua",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7110,6 +8068,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7149,6 +8110,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark"
+    ],
     "sourceSlug": "zoroark",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7163,6 +8127,9 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Chop"
+      ],
+      "types": [
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7201,6 +8168,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "minccino",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7214,6 +8184,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7253,6 +8226,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "cinccino",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7267,6 +8243,9 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Recycle"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7305,6 +8284,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "grubbin",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7318,6 +8300,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7357,6 +8342,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "electric"
+    ],
     "sourceSlug": "charjabug",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7371,6 +8360,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Chop"
+      ],
+      "types": [
+        "Bug",
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7406,6 +8399,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "electric"
+    ],
     "sourceSlug": "vikavolt",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7420,6 +8417,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Chop"
+      ],
+      "types": [
+        "Bug",
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7458,6 +8459,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost",
+      "fairy"
+    ],
     "sourceSlug": "mimikyu",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7471,6 +8476,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Ghost",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7509,6 +8518,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "pawmi",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7522,6 +8534,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7561,6 +8576,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "fighting"
+    ],
     "sourceSlug": "pawmo",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7575,6 +8594,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Crush"
+      ],
+      "types": [
+        "Electric",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7614,6 +8637,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "fighting"
+    ],
     "sourceSlug": "pawmot",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -7628,6 +8655,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Crush"
+      ],
+      "types": [
+        "Electric",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7666,6 +8697,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "water"
+    ],
     "sourceSlug": "tatsugiricurlyform",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -7679,6 +8714,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Dragon",
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7717,6 +8756,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "water"
+    ],
     "sourceSlug": "tatsugiridroopyform",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -7730,6 +8773,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Dragon",
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7768,6 +8815,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "water"
+    ],
     "sourceSlug": "tatsugiristretchyform",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -7781,6 +8832,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Dragon",
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7819,6 +8874,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "ekans",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7832,6 +8890,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7870,6 +8931,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "poison"
+    ],
     "sourceSlug": "arbok",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7883,6 +8947,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7920,6 +8987,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "cleffa",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7933,6 +9003,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -7970,6 +9043,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "clefairy",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -7983,6 +9059,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8021,6 +9100,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "clefable",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8035,6 +9117,9 @@ export const generatedPokemon = [
       "specialties": [
         "Hype",
         "Trade"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8073,6 +9158,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "fairy"
+    ],
     "sourceSlug": "igglybuff",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -8086,6 +9175,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Normal",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8124,6 +9217,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "fairy"
+    ],
     "sourceSlug": "jigglypuff",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -8137,6 +9234,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Normal",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8176,6 +9277,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "fairy"
+    ],
     "sourceSlug": "wigglytuff",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -8190,6 +9295,10 @@ export const generatedPokemon = [
       "specialties": [
         "Hype",
         "Trade"
+      ],
+      "types": [
+        "Normal",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8228,6 +9337,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "diglett",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8241,6 +9353,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8280,6 +9395,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "dugtrio",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8294,6 +9412,9 @@ export const generatedPokemon = [
       "specialties": [
         "Hype",
         "Crush"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8329,6 +9450,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "machop",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -8343,6 +9467,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Gather"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8382,6 +9509,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "machoke",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -8396,6 +9526,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Gather"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8435,6 +9568,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "machamp",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -8449,6 +9585,9 @@ export const generatedPokemon = [
       "specialties": [
         "Build",
         "Gather"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8483,6 +9622,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "geodude",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8496,6 +9639,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8534,6 +9681,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "graveler",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8547,6 +9698,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8586,6 +9741,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "golem",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8600,6 +9759,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Trade"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8634,6 +9797,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "magby",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -8647,6 +9813,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8685,6 +9854,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "magmar",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -8698,6 +9870,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8737,6 +9912,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "magmortar",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -8751,6 +9929,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Crush"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8789,6 +9970,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock"
+    ],
     "sourceSlug": "bonsly",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -8802,6 +9986,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Bulldoze"
+      ],
+      "types": [
+        "Rock"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8840,6 +10027,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock"
+    ],
     "sourceSlug": "sudowoodo",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -8853,6 +10043,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Rock"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8891,6 +10084,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark",
+      "flying"
+    ],
     "sourceSlug": "murkrow",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8905,6 +10102,10 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Fly"
+      ],
+      "types": [
+        "Dark",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8943,6 +10144,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark",
+      "flying"
+    ],
     "sourceSlug": "honchkrow",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -8957,6 +10162,10 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Fly"
+      ],
+      "types": [
+        "Dark",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -8996,6 +10205,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "larvitar",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9010,6 +10223,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Bulldoze"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9049,6 +10266,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ground"
+    ],
     "sourceSlug": "pupitar",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9063,6 +10284,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Bulldoze"
+      ],
+      "types": [
+        "Rock",
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9102,6 +10327,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "dark"
+    ],
     "sourceSlug": "tyranitar",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9116,6 +10345,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Bulldoze"
+      ],
+      "types": [
+        "Rock",
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9154,6 +10387,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "grass"
+    ],
     "sourceSlug": "lotad",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -9167,6 +10404,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Water",
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9205,6 +10446,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "grass"
+    ],
     "sourceSlug": "lombre",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -9218,6 +10463,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Water",
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9257,6 +10506,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "grass"
+    ],
     "sourceSlug": "ludicolo",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -9271,6 +10524,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Hype"
+      ],
+      "types": [
+        "Water",
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9306,6 +10563,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "fairy"
+    ],
     "sourceSlug": "mawile",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -9320,6 +10581,10 @@ export const generatedPokemon = [
       "specialties": [
         "Trade",
         "Build"
+      ],
+      "types": [
+        "Steel",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9358,6 +10623,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "torkoal",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -9371,6 +10639,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9409,6 +10680,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "kricketot",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9422,6 +10696,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9460,6 +10737,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug"
+    ],
     "sourceSlug": "kricketune",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9473,6 +10753,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Bug"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9511,6 +10794,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "chatot",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -9525,6 +10812,10 @@ export const generatedPokemon = [
       "specialties": [
         "Hype",
         "Fly"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9563,6 +10854,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting"
+    ],
     "sourceSlug": "riolu",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9576,6 +10870,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9614,6 +10911,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fighting",
+      "steel"
+    ],
     "sourceSlug": "lucario",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9627,6 +10928,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fighting",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9665,6 +10970,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "normal"
+    ],
     "sourceSlug": "stereorotom",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -9678,6 +10987,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "DJ"
+      ],
+      "types": [
+        "Electric",
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9717,6 +11030,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "fire"
+    ],
     "sourceSlug": "larvesta",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -9731,6 +11048,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Litter"
+      ],
+      "types": [
+        "Bug",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9770,6 +11091,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "bug",
+      "fire"
+    ],
     "sourceSlug": "volcarona",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -9784,6 +11109,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Litter"
+      ],
+      "types": [
+        "Bug",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9818,6 +11147,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "flying"
+    ],
     "sourceSlug": "rowlet",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9831,6 +11164,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9870,6 +11207,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "flying"
+    ],
     "sourceSlug": "dartrix",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9884,6 +11225,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Chop"
+      ],
+      "types": [
+        "Grass",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9923,6 +11268,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "ghost"
+    ],
     "sourceSlug": "decidueye",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -9937,6 +11286,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Chop"
+      ],
+      "types": [
+        "Grass",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -9975,6 +11328,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "scorbunny",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -9988,6 +11344,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10026,6 +11385,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "raboot",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10039,6 +11401,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10078,6 +11443,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "cinderace",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10092,6 +11460,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Hype"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10127,6 +11498,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "skwovet",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10141,6 +11515,9 @@ export const generatedPokemon = [
       "specialties": [
         "Search",
         "Hype"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10179,6 +11556,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "greedent",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10192,6 +11572,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Party"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10231,6 +11614,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock"
+    ],
     "sourceSlug": "rolycoly",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10245,6 +11631,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Gather"
+      ],
+      "types": [
+        "Rock"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10284,6 +11673,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "fire"
+    ],
     "sourceSlug": "carkol",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10298,6 +11691,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Gather"
+      ],
+      "types": [
+        "Rock",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10337,6 +11734,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "fire"
+    ],
     "sourceSlug": "coalossal",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10351,6 +11752,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Gather"
+      ],
+      "types": [
+        "Rock",
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10385,6 +11790,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "poison"
+    ],
     "sourceSlug": "toxel",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -10398,6 +11807,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10437,6 +11850,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "poison"
+    ],
     "sourceSlug": "toxtricityampedform",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -10451,6 +11868,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Hype"
+      ],
+      "types": [
+        "Electric",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10490,6 +11911,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "poison"
+    ],
     "sourceSlug": "toxtricitylowkeyform",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -10504,6 +11929,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Hype"
+      ],
+      "types": [
+        "Electric",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10541,6 +11970,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "fidough",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10554,6 +11986,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10592,6 +12027,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "dachsbun",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10606,6 +12044,9 @@ export const generatedPokemon = [
       "specialties": [
         "Search",
         "Trade"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10644,6 +12085,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "charcadet",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10657,6 +12101,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10696,6 +12143,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire",
+      "psychic"
+    ],
     "sourceSlug": "armarouge",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10710,6 +12161,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Trade"
+      ],
+      "types": [
+        "Fire",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10749,6 +12204,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire",
+      "ghost"
+    ],
     "sourceSlug": "ceruledge",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -10763,6 +12222,10 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Trade"
+      ],
+      "types": [
+        "Fire",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10801,6 +12264,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "poison"
+    ],
     "sourceSlug": "glimmet",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -10814,6 +12281,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Rock",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10852,6 +12323,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "poison"
+    ],
     "sourceSlug": "glimmora",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -10865,6 +12340,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Rock",
+        "Poison"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10903,6 +12382,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "gimmighoul",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -10916,6 +12398,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Collect"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -10954,6 +12439,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "ghost"
+    ],
     "sourceSlug": "gholdengo",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -10967,6 +12456,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Collect"
+      ],
+      "types": [
+        "Steel",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11005,6 +12498,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "vulpix",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -11018,6 +12514,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11056,6 +12555,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "ninetales",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -11069,6 +12571,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11107,6 +12612,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "poliwag",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11119,6 +12627,9 @@ export const generatedPokemon = [
         "Sweet flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -11158,6 +12669,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "poliwhirl",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11170,6 +12684,9 @@ export const generatedPokemon = [
         "Bitter flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -11210,6 +12727,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "fighting"
+    ],
     "sourceSlug": "poliwrath",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11224,6 +12745,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Build"
+      ],
+      "types": [
+        "Water",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11263,6 +12788,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "politoed",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11277,6 +12805,9 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Hype"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11315,6 +12846,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "abra",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -11328,6 +12862,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11366,6 +12903,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "kadabra",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -11379,6 +12919,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11418,6 +12961,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "alakazam",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -11432,6 +12978,9 @@ export const generatedPokemon = [
       "specialties": [
         "Teleport",
         "Trade"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11470,6 +13019,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "sourceSlug": "mimejr.",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -11483,6 +13036,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Psychic",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11522,6 +13079,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "sourceSlug": "mr.mime",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -11536,6 +13097,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Build"
+      ],
+      "types": [
+        "Psychic",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11574,6 +13139,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "porygon",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -11587,6 +13155,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11625,6 +13196,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "porygon2",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -11638,6 +13212,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11676,6 +13253,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "porygon-z",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -11689,6 +13269,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Rarify"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11727,6 +13310,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "dratini",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11740,6 +13326,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11778,6 +13367,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon"
+    ],
     "sourceSlug": "dragonair",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11791,6 +13383,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Water"
+      ],
+      "types": [
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11830,6 +13425,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "flying"
+    ],
     "sourceSlug": "dragonite",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -11844,6 +13443,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Fly"
+      ],
+      "types": [
+        "Dragon",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11882,6 +13485,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "cyndaquil",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -11895,6 +13501,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11933,6 +13542,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "quilava",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -11946,6 +13558,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -11985,6 +13600,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "typhlosion",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -11999,6 +13617,9 @@ export const generatedPokemon = [
       "specialties": [
         "Burn",
         "Trade"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12036,6 +13657,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "misdreavus",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -12049,6 +13673,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12087,6 +13714,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "mismagius",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -12101,6 +13731,9 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12139,6 +13772,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "psychic"
+    ],
     "sourceSlug": "girafarig",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -12152,6 +13789,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Normal",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12191,6 +13832,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "psychic"
+    ],
     "sourceSlug": "farigiraf",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -12205,6 +13850,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Search"
+      ],
+      "types": [
+        "Normal",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12243,6 +13892,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "sourceSlug": "ralts",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12256,6 +13909,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12294,6 +13951,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "sourceSlug": "kirlia",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12307,6 +13968,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12346,6 +14011,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fairy"
+    ],
     "sourceSlug": "gardevoir",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12360,6 +14029,10 @@ export const generatedPokemon = [
       "specialties": [
         "Teleport",
         "Trade"
+      ],
+      "types": [
+        "Psychic",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12399,6 +14072,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic",
+      "fighting"
+    ],
     "sourceSlug": "gallade",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12413,6 +14090,10 @@ export const generatedPokemon = [
       "specialties": [
         "Teleport",
         "Build"
+      ],
+      "types": [
+        "Psychic",
+        "Fighting"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12451,6 +14132,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "plusle",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12464,6 +14148,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12502,6 +14189,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "minun",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12515,6 +14205,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12554,6 +14247,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground"
+    ],
     "sourceSlug": "trapinch",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -12568,6 +14264,9 @@ export const generatedPokemon = [
       "specialties": [
         "Bulldoze",
         "Litter"
+      ],
+      "types": [
+        "Ground"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12607,6 +14306,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground",
+      "dragon"
+    ],
     "sourceSlug": "vibrava",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -12621,6 +14324,10 @@ export const generatedPokemon = [
       "specialties": [
         "Bulldoze",
         "Fly"
+      ],
+      "types": [
+        "Ground",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12660,6 +14367,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ground",
+      "dragon"
+    ],
     "sourceSlug": "flygon",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -12674,6 +14385,10 @@ export const generatedPokemon = [
       "specialties": [
         "Bulldoze",
         "Fly"
+      ],
+      "types": [
+        "Ground",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12712,6 +14427,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal",
+      "flying"
+    ],
     "sourceSlug": "swablu",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12725,6 +14444,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Litter"
+      ],
+      "types": [
+        "Normal",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12764,6 +14487,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "flying"
+    ],
     "sourceSlug": "altaria",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -12778,6 +14505,10 @@ export const generatedPokemon = [
       "specialties": [
         "Litter",
         "Fly"
+      ],
+      "types": [
+        "Dragon",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12815,6 +14546,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "duskull",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -12828,6 +14562,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12865,6 +14602,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "dusclops",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -12878,6 +14618,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12916,6 +14659,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ghost"
+    ],
     "sourceSlug": "dusknoir",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -12930,6 +14676,9 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -12968,6 +14717,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "psychic"
+    ],
     "sourceSlug": "beldum",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -12981,6 +14734,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Steel",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13019,6 +14776,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "psychic"
+    ],
     "sourceSlug": "metang",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -13032,6 +14793,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Recycle"
+      ],
+      "types": [
+        "Steel",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13071,6 +14836,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "steel",
+      "psychic"
+    ],
     "sourceSlug": "metagross",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -13085,6 +14854,10 @@ export const generatedPokemon = [
       "specialties": [
         "Recycle",
         "Crush"
+      ],
+      "types": [
+        "Steel",
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13124,6 +14897,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "snivy",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13138,6 +14914,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13177,6 +14956,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "servine",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13191,6 +14973,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13230,6 +15015,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "serperior",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13244,6 +15032,9 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Litter"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13282,6 +15073,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "froakie",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13294,6 +15088,9 @@ export const generatedPokemon = [
         "Spicy flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -13333,6 +15130,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "frogadier",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13345,6 +15145,9 @@ export const generatedPokemon = [
         "Spicy flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -13385,6 +15188,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water",
+      "dark"
+    ],
     "sourceSlug": "greninja",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13399,6 +15206,10 @@ export const generatedPokemon = [
       "specialties": [
         "Water",
         "Chop"
+      ],
+      "types": [
+        "Water",
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13433,6 +15244,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "fairy"
+    ],
     "sourceSlug": "dedenne",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13446,6 +15261,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Electric",
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13484,6 +15303,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying",
+      "dragon"
+    ],
     "sourceSlug": "noibat",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -13497,6 +15320,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Flying",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13536,6 +15363,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying",
+      "dragon"
+    ],
     "sourceSlug": "noivern",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -13550,6 +15381,10 @@ export const generatedPokemon = [
       "specialties": [
         "Search",
         "Fly"
+      ],
+      "types": [
+        "Flying",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13588,6 +15423,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying"
+    ],
     "sourceSlug": "rookidee",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13601,6 +15439,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13639,6 +15480,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying"
+    ],
     "sourceSlug": "corvisquire",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13652,6 +15496,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Chop"
+      ],
+      "types": [
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13691,6 +15538,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "flying",
+      "steel"
+    ],
     "sourceSlug": "corviknight",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13705,6 +15556,10 @@ export const generatedPokemon = [
       "specialties": [
         "Chop",
         "Fly"
+      ],
+      "types": [
+        "Flying",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13744,6 +15599,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "ghost"
+    ],
     "sourceSlug": "dreepy",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13758,6 +15617,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Search"
+      ],
+      "types": [
+        "Dragon",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13797,6 +15660,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "ghost"
+    ],
     "sourceSlug": "drakloak",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13811,6 +15678,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Search"
+      ],
+      "types": [
+        "Dragon",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13850,6 +15721,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dragon",
+      "ghost"
+    ],
     "sourceSlug": "dragapult",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -13864,6 +15739,10 @@ export const generatedPokemon = [
       "specialties": [
         "Gather",
         "Trade"
+      ],
+      "types": [
+        "Dragon",
+        "Ghost"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13902,6 +15781,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "sprigatito",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13915,6 +15797,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -13953,6 +15838,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "floragato",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -13966,6 +15854,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14005,6 +15896,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass",
+      "dark"
+    ],
     "sourceSlug": "meowscarada",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14019,6 +15914,10 @@ export const generatedPokemon = [
       "specialties": [
         "Grow",
         "Hype"
+      ],
+      "types": [
+        "Grass",
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14057,6 +15956,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "flying"
+    ],
     "sourceSlug": "wattrel",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14070,6 +15973,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14109,6 +16016,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric",
+      "flying"
+    ],
     "sourceSlug": "kilowattrel",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14123,6 +16034,10 @@ export const generatedPokemon = [
       "specialties": [
         "Generate",
         "Fly"
+      ],
+      "types": [
+        "Electric",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14157,6 +16072,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy",
+      "steel"
+    ],
     "sourceSlug": "tinkatink",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14170,6 +16089,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fairy",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14208,6 +16131,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy",
+      "steel"
+    ],
     "sourceSlug": "tinkatuff",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14221,6 +16148,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Build"
+      ],
+      "types": [
+        "Fairy",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14259,6 +16190,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy",
+      "steel"
+    ],
     "sourceSlug": "tinkaton",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14272,6 +16207,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Engineer"
+      ],
+      "types": [
+        "Fairy",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14310,6 +16249,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "flying"
+    ],
     "sourceSlug": "aerodactyl",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14323,6 +16266,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Fly"
+      ],
+      "types": [
+        "Rock",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14361,6 +16308,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock"
+    ],
     "sourceSlug": "cranidos",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14374,6 +16324,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14413,6 +16366,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock"
+    ],
     "sourceSlug": "rampardos",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14427,6 +16383,9 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Litter"
+      ],
+      "types": [
+        "Rock"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14465,6 +16424,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "steel"
+    ],
     "sourceSlug": "shieldon",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14478,6 +16441,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14517,6 +16484,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "steel"
+    ],
     "sourceSlug": "bastiodon",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14531,6 +16502,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Litter"
+      ],
+      "types": [
+        "Rock",
+        "Steel"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14569,6 +16544,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "dragon"
+    ],
     "sourceSlug": "tyrunt",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14582,6 +16561,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14621,6 +16604,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "dragon"
+    ],
     "sourceSlug": "tyrantrum",
     "sourceLabels": {
       "idealHabitat": "Dry",
@@ -14635,6 +16622,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Litter"
+      ],
+      "types": [
+        "Rock",
+        "Dragon"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14673,6 +16664,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ice"
+    ],
     "sourceSlug": "amaura",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -14686,6 +16681,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Crush"
+      ],
+      "types": [
+        "Rock",
+        "Ice"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14725,6 +16724,10 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "rock",
+      "ice"
+    ],
     "sourceSlug": "aurorus",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -14739,6 +16742,10 @@ export const generatedPokemon = [
       "specialties": [
         "Crush",
         "Litter"
+      ],
+      "types": [
+        "Rock",
+        "Ice"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14777,6 +16784,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "normal"
+    ],
     "sourceSlug": "eevee",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -14790,6 +16800,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Normal"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14824,6 +16837,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "vaporeon",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -14836,6 +16852,9 @@ export const generatedPokemon = [
         "Sweet flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -14871,6 +16890,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "jolteon",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14884,6 +16906,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14918,6 +16943,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "flareon",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -14931,6 +16959,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -14965,6 +16996,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "espeon",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -14978,6 +17012,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Gather"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15012,6 +17049,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "dark"
+    ],
     "sourceSlug": "umbreon",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -15025,6 +17065,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Search"
+      ],
+      "types": [
+        "Dark"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15059,6 +17102,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "grass"
+    ],
     "sourceSlug": "leafeon",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -15072,6 +17118,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Grow"
+      ],
+      "types": [
+        "Grass"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15106,6 +17155,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "ice"
+    ],
     "sourceSlug": "glaceon",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -15119,6 +17171,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Trade"
+      ],
+      "types": [
+        "Ice"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15153,6 +17208,9 @@ export const generatedPokemon = [
       "clear",
       "rain"
     ],
+    "types": [
+      "fairy"
+    ],
     "sourceSlug": "sylveon",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15166,6 +17224,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Hype"
+      ],
+      "types": [
+        "Fairy"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15191,6 +17252,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "kyogre",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -15204,6 +17268,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "???"
+      ],
+      "types": [
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15229,6 +17296,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "electric"
+    ],
     "sourceSlug": "raikou",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -15242,6 +17312,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Generate"
+      ],
+      "types": [
+        "Electric"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15267,6 +17340,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "fire"
+    ],
     "sourceSlug": "entei",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15280,6 +17356,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15305,6 +17384,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "water"
+    ],
     "sourceSlug": "suicune",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -15317,6 +17399,9 @@ export const generatedPokemon = [
         "Sour flavors"
       ],
       "specialties": [
+        "Water"
+      ],
+      "types": [
         "Water"
       ]
     },
@@ -15343,6 +17428,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "fire",
+      "water"
+    ],
     "sourceSlug": "volcanion",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15356,6 +17445,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Burn"
+      ],
+      "types": [
+        "Fire",
+        "Water"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15381,6 +17474,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "ice",
+      "flying"
+    ],
     "sourceSlug": "articuno",
     "sourceLabels": {
       "idealHabitat": "Cool",
@@ -15394,6 +17491,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Fly"
+      ],
+      "types": [
+        "Ice",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15419,6 +17520,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "electric",
+      "flying"
+    ],
     "sourceSlug": "zapdos",
     "sourceLabels": {
       "idealHabitat": "Bright",
@@ -15432,6 +17537,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Fly"
+      ],
+      "types": [
+        "Electric",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15457,6 +17566,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "fire",
+      "flying"
+    ],
     "sourceSlug": "moltres",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15470,6 +17583,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Fly"
+      ],
+      "types": [
+        "Fire",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15495,6 +17612,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "psychic",
+      "flying"
+    ],
     "sourceSlug": "lugia",
     "sourceLabels": {
       "idealHabitat": "Humid",
@@ -15508,6 +17629,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "???"
+      ],
+      "types": [
+        "Psychic",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15533,6 +17658,10 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "fire",
+      "flying"
+    ],
     "sourceSlug": "ho-oh",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15546,6 +17675,10 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "???"
+      ],
+      "types": [
+        "Fire",
+        "Flying"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15571,6 +17704,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "mewtwo",
     "sourceLabels": {
       "idealHabitat": "Dark",
@@ -15584,6 +17720,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."
@@ -15609,6 +17748,9 @@ export const generatedPokemon = [
     "locations": [],
     "timeOfDay": [],
     "weather": [],
+    "types": [
+      "psychic"
+    ],
     "sourceSlug": "mew",
     "sourceLabels": {
       "idealHabitat": "Warm",
@@ -15622,6 +17764,9 @@ export const generatedPokemon = [
       ],
       "specialties": [
         "Teleport"
+      ],
+      "types": [
+        "Psychic"
       ]
     },
     "sourceNotes": "Generated from Serebii Pokemon detail pages with fallback context from local seed data."

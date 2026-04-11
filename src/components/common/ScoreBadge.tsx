@@ -8,7 +8,7 @@ const toneClass: Record<SummaryLabel, string> = {
 };
 
 export const ScoreBadge = ({ score, label }: { score: number; label: SummaryLabel }) => (
-  <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold ${toneClass[label]}`}>
+  <div className={`type-ui type-ui-strong inline-flex items-center gap-2 rounded-full px-3 py-1.5 ${toneClass[label]}`}>
     <span>{score}</span>
     <span className="capitalize">{label}</span>
   </div>

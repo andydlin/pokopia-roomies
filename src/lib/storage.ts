@@ -1,8 +1,9 @@
 export {
   deleteSavedTeam,
+  getLastTeamStorageIssues,
   loadDraftTeamIds,
   loadSavedTeams,
   persistDraftTeamIds,
   persistSavedTeams,
   upsertSavedTeam,
-} from "./teams/storage";
+} from "../features/teams/storage";

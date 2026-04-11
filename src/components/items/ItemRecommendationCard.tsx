@@ -6,7 +6,6 @@ import { Chip } from "../common/Chip";
 
 export const RecommendedCategoryCard = ({
   recommendation,
-  teamSize,
 }: {
   recommendation: RecommendedCategory;
   teamSize: number;
@@ -16,10 +15,8 @@ export const RecommendedCategoryCard = ({
     <div className="rounded-[1.6rem] border border-white/70 bg-white/70 p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-semibold text-ink">{category?.name ?? recommendation.categoryId}</h3>
-          <p className="text-sm text-ink/62">Coverage {recommendation.matchedPokemonIds.length}/{teamSize}</p>
+          <h3 className="type-h3 text-ink">{category?.name ?? recommendation.categoryId}</h3>
         </div>
-        <Chip tone="accent">{recommendation.itemCount} items</Chip>
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
         {recommendation.matchedPokemonIds.map((pokemonId) => (
@@ -32,7 +29,6 @@ export const RecommendedCategoryCard = ({
 
 export const ItemRecommendationCard = ({
   recommendation,
-  teamSize,
 }: {
   recommendation: ItemRecommendation;
   teamSize: number;
@@ -42,10 +38,9 @@ export const ItemRecommendationCard = ({
     <div className="rounded-[1.6rem] border border-white/70 bg-white/70 p-4">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-lg font-semibold text-ink">{item?.name ?? recommendation.itemId}</h3>
-          <p className="text-sm text-ink/62">Coverage {recommendation.matchedPokemonIds.length}/{teamSize}</p>
+          <h3 className="type-h3 text-ink">{item?.name ?? recommendation.itemId}</h3>
         </div>
-        <Chip tone={item?.craftable ? "accent" : "default"}>{item?.craftable ? "Craftable" : "Source only"}</Chip>
+        <Chip tone={item?.craftable ? "accent" : "default"}>{item?.craftable ? "Craftable" : "Source item"}</Chip>
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
         {recommendation.matchedFavoriteCategoryIds.map((categoryId) => (

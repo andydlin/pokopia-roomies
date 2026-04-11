@@ -86,13 +86,13 @@ export const DexPage = () => {
               </button>
             ))}
             {filters.query || activeFilters.length > 0 ? (
-              <button
-                type="button"
-                onClick={() => setFilters(explorerDefaultFilters)}
-                className="rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-xs font-semibold text-ink"
-              >
-                Clear all
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setFilters(explorerDefaultFilters)}
+                  className="type-ui type-ui-strong rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-ink"
+                >
+                  Clear all
+                </button>
             ) : null}
           </div>
         </SectionCard>
@@ -111,7 +111,7 @@ export const DexPage = () => {
         )}
 
         <SectionCard eyebrow="Why this sort helps" title="Compatibility potential is a broad planning signal">
-          <p className="text-sm leading-6 text-ink/68">
+          <p className="type-body text-ink/68">
             This heuristic adds points for more favorites, more specialties, common habitats, and favorite overlap with the wider dataset.
             For example, the current top match scores {getCompatibilityPotential(results[0]?.entry ?? pokemonExplorerEntries[0])} in this seed roster.
           </p>

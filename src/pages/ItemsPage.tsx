@@ -1,132 +1,331 @@
-import { useEffect, useMemo, useState } from "react";
-import { favoriteCategoryById } from "../data/favoriteCategories";
-import { itemById } from "../data/items";
-import { pokemonById } from "../data/pokemon";
-import { scoreTeam } from "../lib/compatibility";
-import { getRecommendedCategories, getRecommendedItems, getSharedFavoriteCategories, getSharedFavoriteCategoriesAny } from "../lib/favorites";
-import { loadDraftTeamIds, loadSavedTeams, persistDraftTeamIds, upsertSavedTeam } from "../lib/storage";
-import { getTeamMembers, MAX_TEAM_SIZE } from "../lib/teams/teamHelpers";
-import type { SavedTeam } from "../lib/types";
-import { SharedFavoritesCard } from "../components/items/SharedFavoritesCard";
-import { ItemRecommendationCard, RecommendedCategoryCard } from "../components/items/ItemRecommendationCard";
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { Chip } from "../components/common/Chip";
 import { SectionCard } from "../components/common/SectionCard";
-import { ScoreBadge } from "../components/common/ScoreBadge";
-import { TeamBuilder } from "../components/teams/TeamBuilder";
+import { favoriteCategoryById } from "../data/favoriteCategories";
+import { habitats } from "../data/habitats";
+import { comfortItemCategoryOptions, items } from "../data/items";
+
+const toLabel = (value: string) =>
+  value
+    .split("_")
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
 
 export const ItemsPage = () => {
-  const [draftIds, setDraftIds] = useState<string[]>([]);
-  const [savedTeams, setSavedTeams] = useState<SavedTeam[]>([]);
-  const [status, setStatus] = useState<string | null>(null);
+  const [query, setQuery] = useState("");
+  const [generalCategory, setGeneralCategory] = useState<string>("all");
+  const [comfortCategory, setComfortCategory] = useState<string>("all");
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
 
-  useEffect(() => {
-    setDraftIds(loadDraftTeamIds().slice(0, MAX_TEAM_SIZE));
-    setSavedTeams(loadSavedTeams());
-  }, []);
+  const generalCategoryOptions = useMemo(
+    () =>
+      [...new Set(items.map((item) => item.itemCategory).filter((value): value is string => Boolean(value)))].sort(
+        (left, right) => left.localeCompare(right),
+      ),
+    [],
+  );
 
-  const members = useMemo(() => getTeamMembers(draftIds), [draftIds]);
-  const breakdown = useMemo(() => scoreTeam(members), [members]);
-  const sharedAll = useMemo(() => getSharedFavoriteCategories(members), [members]);
-  const sharedAny = useMemo(() => getSharedFavoriteCategoriesAny(members), [members]);
-  const recommendedCategories = useMemo(() => getRecommendedCategories(members), [members]);
-  const recommendedItems = useMemo(() => getRecommendedItems(members), [members]);
+  const filteredItems = useMemo(
+    () =>
+      items
+        .filter((item) => {
+        if (query) {
+          const haystack = [item.name, item.slug, item.itemCategoryLabel ?? "", ...(item.comfortCategoryLabels ?? [])]
+            .join(" ")
+            .toLowerCase();
+          if (!haystack.includes(query.toLowerCase())) return false;
+        }
 
-  const setNextDraftIds = (nextIds: string[]) => {
-    setDraftIds(nextIds);
-    persistDraftTeamIds(nextIds);
-  };
-
-  const addPokemon = (pokemonId: string) => {
-    setStatus(null);
-    setNextDraftIds(
-      draftIds.includes(pokemonId) || draftIds.length >= MAX_TEAM_SIZE ? draftIds : [...draftIds, pokemonId],
+        if (generalCategory !== "all" && item.itemCategory !== generalCategory) return false;
+        if (comfortCategory !== "all" && !item.comfortCategoryIds.includes(comfortCategory)) return false;
+        return true;
+      })
+        .sort((left, right) => {
+          const leftCategory = left.itemCategoryLabel ?? "Unknown";
+          const rightCategory = right.itemCategoryLabel ?? "Unknown";
+          return leftCategory.localeCompare(rightCategory) || left.name.localeCompare(right.name);
+        }),
+    [query, generalCategory, comfortCategory],
+  );
+  const itemsByCategory = useMemo(() => {
+    const groups = new Map<string, typeof filteredItems>();
+    filteredItems.forEach((item) => {
+      const key = item.itemCategoryLabel ?? "Unknown";
+      const existing = groups.get(key) ?? [];
+      existing.push(item);
+      groups.set(key, existing);
+    });
+    return [...groups.entries()];
+  }, [filteredItems]);
+  const selectedItem = useMemo(
+    () => (selectedItemId ? items.find((item) => item.id === selectedItemId) ?? null : null),
+    [selectedItemId],
+  );
+  const habitatsForSelectedItem = useMemo(() => {
+    if (!selectedItem) return [];
+    return habitats.filter((habitat) =>
+      (habitat.requiredItems ?? []).some((requirement) => requirement.itemId === selectedItem.id),
     );
-  };
-
-  const removePokemon = (pokemonId: string) => {
-    setStatus(null);
-    setNextDraftIds(draftIds.filter((entry) => entry !== pokemonId));
-  };
-
-  const saveTeam = (name: string) => {
-    const timestamp = new Date().toISOString();
-    const team: SavedTeam = {
-      id: crypto.randomUUID(),
-      name,
-      pokemonIds: draftIds,
-      createdAt: timestamp,
-      updatedAt: timestamp,
-    };
-    const nextTeams = upsertSavedTeam(team, savedTeams);
-    setSavedTeams(nextTeams);
-    setStatus(`Saved ${name}.`);
-  };
+  }, [selectedItem]);
+  const recipesUsingSelectedItem = useMemo(() => {
+    if (!selectedItem) return [];
+    const normalizedSelectedName = selectedItem.name.trim().toLowerCase();
+    return items.filter((item) =>
+      item.materials.some((material) => material.itemName.trim().toLowerCase() === normalizedSelectedName),
+    );
+  }, [selectedItem]);
+  const itemByName = useMemo(
+    () =>
+      new Map(
+        items.map((item) => [item.name.trim().toLowerCase(), item]),
+      ),
+    [],
+  );
 
   return (
-    <div className="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+    <div className="space-y-6">
       <SectionCard
-        eyebrow="Item Optimizer"
-        title="Build a 1–5 Pokemon draft and rank what helps it most"
-        description="Shared favorites are the strongest signal, but the recommendations below also weigh item coverage and craftability."
+        eyebrow="Items"
+        title={`All items (${items.length})`}
+        description="Browse the full item database by general category and comfort-boost tags."
       >
-        <TeamBuilder selected={members} onAdd={addPokemon} onRemove={removePokemon} onSave={saveTeam} />
-        {status ? <p className="mt-4 text-sm text-ink/65">{status}</p> : null}
+        <div className="grid gap-3 md:grid-cols-3">
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search items"
+            className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
+          />
+          <select
+            value={generalCategory}
+            onChange={(event) => setGeneralCategory(event.target.value)}
+            className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
+          >
+            <option value="all">All general categories</option>
+            {generalCategoryOptions.map((category) => (
+              <option key={category} value={category}>
+                {toLabel(category)}
+              </option>
+            ))}
+          </select>
+          <select
+            value={comfortCategory}
+            onChange={(event) => setComfortCategory(event.target.value)}
+            className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
+          >
+            <option value="all">All comfort tags</option>
+            {comfortItemCategoryOptions.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </SectionCard>
 
-      <div className="space-y-6">
-        <SectionCard eyebrow="Team Summary" title="Compatibility snapshot">
-          {members.length < 2 ? (
-            <p className="text-sm text-ink/65">Pick at least two Pokemon to unlock the full team score and comparison breakdown.</p>
-          ) : (
-            <div className="space-y-4">
-              <ScoreBadge score={breakdown.totalScore} label={breakdown.summaryLabel} />
-              <div className="grid gap-3 md:grid-cols-2">
-                {breakdown.explanation.map((entry) => (
-                  <div key={entry} className="rounded-[1.4rem] border border-white/70 bg-white/70 p-4 text-sm text-ink/72">
-                    {entry}
-                  </div>
+      <SectionCard eyebrow="Results" title={`${filteredItems.length} items`}>
+        <div className="space-y-6">
+          {itemsByCategory.map(([categoryLabel, categoryItems]) => (
+            <section key={categoryLabel} className="space-y-3">
+              <h3 className="type-overline text-ink/65">{categoryLabel}</h3>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {categoryItems.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => setSelectedItemId(item.id)}
+                    className="rounded-[1.6rem] border border-white/70 bg-white/75 p-4 text-left transition hover:border-moss/35 hover:bg-white"
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="type-h3 text-ink">{item.name}</h3>
+                        <p className="type-caption mt-1 text-ink/65">{item.itemCategoryLabel ?? "Unknown"}</p>
+                      </div>
+                      {item.imageUrl ? (
+                        <img src={item.imageUrl} alt={item.name} className="h-16 w-16 rounded-xl bg-white object-contain p-1" />
+                      ) : null}
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {item.comfortCategoryLabels.map((tag) => (
+                        <Chip key={`${item.id}-${tag}`} tone="warning">
+                          {tag}
+                        </Chip>
+                      ))}
+                      {item.favoriteCategoryIds.slice(0, 3).map((categoryId) => (
+                        <Chip key={`${item.id}-${categoryId}`}>{favoriteCategoryById.get(categoryId)?.name ?? categoryId}</Chip>
+                      ))}
+                    </div>
+
+                    <p className="type-caption mt-3 text-ink/55">Tap for details</p>
+                  </button>
                 ))}
               </div>
-            </div>
-          )}
-        </SectionCard>
-
-        <div className="grid gap-4 md:grid-cols-2">
-          <SharedFavoritesCard
-            title="Shared by all"
-            helper="These categories overlap across everyone in the current draft."
-            categoryIds={sharedAll}
-          />
-          <SharedFavoritesCard
-            title="Shared by some"
-            helper="These still create useful item overlap for at least two teammates."
-            categoryIds={sharedAny}
-          />
+            </section>
+          ))}
         </div>
+      </SectionCard>
 
-        <SectionCard eyebrow="Recommended Categories" title="Best favorite categories for this draft">
-          <div className="grid gap-4 md:grid-cols-2">
-            {recommendedCategories.length === 0 ? (
-              <p className="text-sm text-ink/60">Add at least one Pokemon to see category recommendations.</p>
-            ) : (
-              recommendedCategories.map((recommendation) => (
-                <RecommendedCategoryCard key={recommendation.categoryId} recommendation={recommendation} teamSize={members.length} />
-              ))
-            )}
-          </div>
-        </SectionCard>
+      {selectedItem ? (
+        <div className="fixed inset-0 z-40 flex items-end justify-center bg-black/35 p-3 md:items-center" onClick={() => setSelectedItemId(null)}>
+          <section
+            className="max-h-[88vh] w-full max-w-[760px] overflow-auto rounded-[1.8rem] border border-white/70 bg-paper p-5 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="type-overline text-moss/60">Item Details</p>
+                <h3 className="type-h2 mt-1 text-ink">{selectedItem.name}</h3>
+                <p className="type-caption mt-1 text-ink/65">{selectedItem.itemCategoryLabel ?? "Unknown"}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedItemId(null)}
+                className="type-ui rounded-full border border-ink/10 bg-white/90 px-3 py-1 text-ink/80"
+              >
+                Close
+              </button>
+            </div>
 
-        <SectionCard eyebrow="Recommended Items" title="Concrete items with the best coverage">
-          <div className="grid gap-4 md:grid-cols-2">
-            {recommendedItems.length === 0 ? (
-              <p className="text-sm text-ink/60">Add at least one Pokemon to see item recommendations.</p>
-            ) : (
-              recommendedItems.map((recommendation) => (
-                <ItemRecommendationCard key={recommendation.itemId} recommendation={recommendation} teamSize={members.length} />
-              ))
-            )}
-          </div>
-        </SectionCard>
-      </div>
+            <div className="mt-4 grid gap-4 md:grid-cols-[160px_minmax(0,1fr)]">
+              <div className="rounded-2xl border border-ink/8 bg-white/80 p-3">
+                {selectedItem.imageUrl ? (
+                  <img
+                    src={selectedItem.imageUrl}
+                    alt={selectedItem.name}
+                    className="h-32 w-full rounded-xl bg-white object-contain p-2"
+                  />
+                ) : null}
+              </div>
+
+              <div className="space-y-4">
+                <div>
+                  <p className="type-ui type-ui-strong text-ink/75">Comfort tags</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {selectedItem.comfortCategoryLabels.length > 0 ? (
+                      selectedItem.comfortCategoryLabels.map((tag) => (
+                        <Chip key={`${selectedItem.id}-tag-${tag}`} tone="warning">
+                          {tag}
+                        </Chip>
+                      ))
+                    ) : (
+                      <p className="type-caption text-ink/55">No comfort tags listed.</p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <p className="type-ui type-ui-strong text-ink/75">Favorite categories</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {selectedItem.favoriteCategoryIds.length > 0 ? (
+                      selectedItem.favoriteCategoryIds.map((categoryId) => {
+                        const categoryName = favoriteCategoryById.get(categoryId)?.name ?? categoryId;
+                        return (
+                          <Link key={`${selectedItem.id}-fav-${categoryId}`} to={`/lookup?favoriteCategoryId=${encodeURIComponent(categoryId)}`}>
+                            <Chip>{categoryName}</Chip>
+                          </Link>
+                        );
+                      })
+                    ) : (
+                      <p className="type-caption text-ink/55">No favorite-category links listed.</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {selectedItem.materials.length > 0 ? (
+              <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
+                <p className="type-ui type-ui-strong text-ink/75">Materials required</p>
+                <ul className="mt-2 grid gap-2 sm:grid-cols-2">
+                  {selectedItem.materials.map((material) => {
+                    const materialItem = itemByName.get(material.itemName.trim().toLowerCase()) ?? null;
+                    return (
+                      <li key={`${selectedItem.id}-${material.itemName}`}>
+                        {materialItem ? (
+                          <button
+                            type="button"
+                            onClick={() => setSelectedItemId(materialItem.id)}
+                            className="type-caption flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-left text-ink/75 transition hover:border-moss/35"
+                          >
+                            {materialItem.imageUrl ? (
+                              <img
+                                src={materialItem.imageUrl}
+                                alt={material.itemName}
+                                className="h-6 w-6 rounded-md bg-white object-contain p-0.5"
+                              />
+                            ) : null}
+                            <span>
+                              {material.itemName} × {material.quantity}
+                            </span>
+                          </button>
+                        ) : (
+                          <span className="type-caption flex items-center gap-2 text-ink/75">
+                            {material.itemName} × {material.quantity}
+                          </span>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ) : null}
+
+            <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
+              <p className="type-ui type-ui-strong text-ink/75">Source notes</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {selectedItem.sources.length > 0 ? (
+                  selectedItem.sources.map((source) => <Chip key={`${selectedItem.id}-${source.type}-${source.label}`}>{source.label}</Chip>)
+                ) : (
+                  <p className="type-caption text-ink/55">No source notes listed.</p>
+                )}
+              </div>
+            </div>
+
+            {habitatsForSelectedItem.length > 0 ? (
+              <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
+                <p className="type-ui type-ui-strong text-ink/75">Used in habitats</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {habitatsForSelectedItem.map((habitat) => (
+                    <Link
+                      key={`${selectedItem.id}-habitat-${habitat.id}`}
+                      to={`/habitats?query=${encodeURIComponent(habitat.name)}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-3 py-1"
+                    >
+                      {habitat.imageUrl ? (
+                        <img src={habitat.imageUrl} alt={habitat.name} className="h-5 w-5 rounded-full object-cover" />
+                      ) : null}
+                      <span className="type-caption text-ink/80">{habitat.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {recipesUsingSelectedItem.length > 0 ? (
+              <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
+                <p className="type-ui type-ui-strong text-ink/75">Used in recipes</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {recipesUsingSelectedItem.map((item) => (
+                    <button
+                      key={`${selectedItem.id}-recipe-${item.id}`}
+                      type="button"
+                      onClick={() => setSelectedItemId(item.id)}
+                      className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white/80 px-3 py-1 text-left transition hover:border-moss/35"
+                    >
+                      {item.imageUrl ? (
+                        <img src={item.imageUrl} alt={item.name} className="h-5 w-5 rounded-full bg-white object-contain p-0.5" />
+                      ) : null}
+                      <span className="type-caption text-ink/80">{item.name}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </section>
+        </div>
+      ) : null}
     </div>
   );
 };

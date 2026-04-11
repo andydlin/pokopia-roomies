@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { pokemonById } from "../data/pokemon";
 import { findPokemonMatches } from "../lib/data/selectors";
 import type { LookupFilters as LookupFiltersState } from "../lib/types";
@@ -7,23 +8,23 @@ import { SectionCard } from "../components/common/SectionCard";
 import { LookupFilters } from "../components/lookup/LookupFilters";
 import { LookupResultsGrid } from "../components/lookup/LookupResultsGrid";
 
-const defaultFilters: LookupFiltersState = {
-  query: "",
-  favoriteCategoryId: "all",
-  itemId: "all",
-  habitatTraitId: "all",
-  specialtyId: "all",
-};
-
 export const LookupPage = () => {
-  const [filters, setFilters] = useState<LookupFiltersState>(defaultFilters);
+  const [searchParams] = useSearchParams();
+  const [filters, setFilters] = useState<LookupFiltersState>(() => ({
+    query: "",
+    favoriteCategoryId: (searchParams.get("favoriteCategoryId") as LookupFiltersState["favoriteCategoryId"]) ?? "all",
+    comfortCategoryId: "all",
+    itemId: "all",
+    habitatTraitId: "all",
+    specialtyId: "all",
+  }));
   const matches = useMemo(() => findPokemonMatches(filters), [filters]);
   const uniquePokemonCount = useMemo(
     () =>
       new Set(
         matches.map((match) => {
           const entry = pokemonById.get(match.pokemonId);
-          return entry?.dexNumber ?? match.pokemonId;
+          return entry?.speciesId ?? entry?.dexNumber ?? match.pokemonId;
         }),
       ).size,
     [matches],
@@ -37,7 +38,7 @@ export const LookupPage = () => {
         title="Start from a constraint instead of a Pokemon"
         description="Combine category, item, habitat trait, and specialty filters to find candidates that fit the plan you already have in mind."
       >
-        <LookupFilters filters={filters} onChange={setFilters} />
+          <LookupFilters filters={filters} onChange={setFilters} />
       </SectionCard>
 
       {matches.length === 0 ? (

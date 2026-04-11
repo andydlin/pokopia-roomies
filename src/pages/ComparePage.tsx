@@ -25,7 +25,7 @@ export const ComparePage = () => {
           <select
             value={leftId}
             onChange={(event) => setSearchParams({ left: event.target.value, right: rightId })}
-            className="rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-moss"
+            className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
           >
             {teams.map((team) => (
               <option key={team.id} value={team.id}>
@@ -36,7 +36,7 @@ export const ComparePage = () => {
           <select
             value={rightId}
             onChange={(event) => setSearchParams({ left: leftId, right: event.target.value })}
-            className="rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-moss"
+            className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
           >
             {teams.map((team) => (
               <option key={team.id} value={team.id}>

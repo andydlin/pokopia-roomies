@@ -68,8 +68,10 @@ export const PokemonDetailPage = () => {
                 </Chip>
               ))}
             </div>
-            <p className="text-sm text-ink/68">Specialty: {specialtyById.get(entry.specialtyId)?.name ?? entry.specialtyId}</p>
-            <p className="text-sm text-ink/68">
+            <p className="type-body text-ink/68">
+              Specialty: {entry.specialtyIds.map((specialtyId) => specialtyById.get(specialtyId)?.name ?? specialtyId).join(", ")}
+            </p>
+            <p className="type-body text-ink/68">
               Locations: {entry.locationIds.map((locationId) => locationById.get(locationId)?.name ?? locationId).join(", ")}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -81,7 +83,7 @@ export const PokemonDetailPage = () => {
             </div>
             {explorerEntry?.favoriteItemCategories?.length ? (
               <div className="space-y-2">
-                <p className="text-sm font-semibold text-ink/75">Favorite item categories</p>
+                <p className="type-ui type-ui-strong text-ink/75">Favorite item categories</p>
                 <div className="flex flex-wrap gap-2">
                   {explorerEntry.favoriteItemCategories.map((category) => (
                     <Chip key={category}>{category}</Chip>
@@ -89,13 +91,13 @@ export const PokemonDetailPage = () => {
                 </div>
               </div>
             ) : null}
-            {explorerEntry?.notes ? <p className="text-sm leading-6 text-ink/68">{explorerEntry.notes}</p> : null}
+            {explorerEntry?.notes ? <p className="type-body text-ink/68">{explorerEntry.notes}</p> : null}
           </div>
           {entry.imageUrl ? <img src={entry.imageUrl} alt={entry.name} className="h-32 w-32 object-contain" /> : null}
         </div>
       </SectionCard>
 
-      {status ? <p className="text-sm text-ink/65">{status}</p> : null}
+      {status ? <p className="type-body text-ink/65">{status}</p> : null}
 
       {relatedPokemon.length > 0 ? (
         <SectionCard eyebrow="Related Pokemon" title={`Other useful planning matches for ${entry.name}`}>
@@ -116,8 +118,8 @@ export const PokemonDetailPage = () => {
                 <div className="flex items-start justify-between gap-3">
                   <PokemonCard pokemon={candidate} />
                   <div className="min-w-28 rounded-[1.2rem] bg-moss/10 px-3 py-2 text-right">
-                    <p className="text-xs uppercase tracking-[0.18em] text-moss/70">Pair score</p>
-                    <p className="text-2xl font-semibold text-ink">{breakdown.score}</p>
+                    <p className="type-overline text-moss/70">Pair score</p>
+                    <p className="type-h2 text-ink">{breakdown.score}</p>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -143,7 +145,7 @@ export const PokemonDetailPage = () => {
                     persistDraftTeamIds(next);
                     setStatus(`Added ${entry.name} and ${candidate.name} to the draft team.`);
                   }}
-                  className="rounded-full bg-moss px-4 py-2 text-sm font-semibold text-paper"
+                  className="type-ui type-ui-strong rounded-full bg-moss px-4 py-2 text-paper"
                 >
                   Add to draft
                 </button>
@@ -153,8 +155,8 @@ export const PokemonDetailPage = () => {
         </div>
       </SectionCard>
 
-      <Link to="/items" className="inline-flex rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-sm font-semibold text-ink">
-        Open Item Optimizer with draft
+      <Link to="/builder" className="type-ui type-ui-strong inline-flex rounded-full border border-ink/10 bg-white/80 px-4 py-2 text-ink">
+        Open Roomies with draft
       </Link>
     </div>
   );

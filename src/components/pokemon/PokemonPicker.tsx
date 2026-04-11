@@ -1,74 +1,97 @@
 import { useMemo, useState } from "react";
+import { habitatTraitById } from "../../data/habitatTraits";
 import { pokemon } from "../../data/pokemon";
 import type { Pokemon } from "../../lib/types";
-import { Chip } from "../common/Chip";
+import { groupPokemonPickerCandidates, rankPokemonPickerCandidates } from "../../lib/teams/pickerRanking";
+import { BuilderCandidateCard } from "./BuilderCandidateCard";
 
 interface PokemonPickerProps {
   selected: Pokemon[];
   onAdd: (pokemonId: string) => void;
-  onRemove: (pokemonId: string) => void;
   maxSize: number;
 }
 
-export const PokemonPicker = ({ selected, onAdd, onRemove, maxSize }: PokemonPickerProps) => {
+export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) => {
   const [query, setQuery] = useState("");
-  const selectedIds = new Set(selected.map((entry) => entry.id));
-  const filteredPokemon = useMemo(
-    () => pokemon.filter((entry) => entry.name.toLowerCase().includes(query.toLowerCase())),
-    [query],
+  const selectedIds = useMemo(() => new Set(selected.map((entry) => entry.id)), [selected]);
+  const getIdealHabitatLabel = (entry: Pokemon) =>
+    entry.idealHabitatTraitIds.length === 0
+      ? "None listed"
+      : entry.idealHabitatTraitIds
+          .map((traitId) => habitatTraitById.get(traitId)?.label ?? traitId)
+          .join(", ");
+  const getPrimaryHabitatLabel = (entry: Pokemon) =>
+    entry.idealHabitatTraitIds.length === 0
+      ? "Mixed"
+      : (habitatTraitById.get(entry.idealHabitatTraitIds[0])?.label ?? entry.idealHabitatTraitIds[0]);
+  const rankedCandidates = useMemo(
+    () =>
+      rankPokemonPickerCandidates({
+        selected,
+        available: pokemon.filter((entry) => !selectedIds.has(entry.id)),
+        query,
+      }),
+    [query, selected, selectedIds],
   );
+  const groupedCandidates = useMemo(
+    () => groupPokemonPickerCandidates(rankedCandidates),
+    [rankedCandidates],
+  );
+  const shouldShowSections = selected.length > 0;
 
   return (
     <div className="space-y-4">
+      {/* Roomies.CandidatePicker.SearchInput */}
       <input
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search Pokemon"
-        className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-moss"
+        className="type-ui w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
       />
 
-      <div className="flex flex-wrap gap-2">
-        {selected.length === 0 ? (
-          <p className="text-sm text-ink/60">No Pokemon selected yet.</p>
-        ) : (
-          selected.map((entry) => (
-            <button
-              type="button"
-              key={entry.id}
-              onClick={() => onRemove(entry.id)}
-              className="rounded-full border border-moss/15 bg-moss/10 px-3 py-1.5 text-sm font-semibold text-ink"
-            >
-              {entry.dexNumber ? `#${String(entry.dexNumber).padStart(3, "0")} ${entry.name}` : entry.name} ×
-            </button>
-          ))
-        )}
-      </div>
-
-      <p className="text-sm text-ink/65">{selected.length}/{maxSize} selected</p>
-
-      <div className="grid gap-3 sm:grid-cols-2">
-        {filteredPokemon.map((entry) => (
-          <button
-            key={entry.id}
-            type="button"
-            disabled={selectedIds.has(entry.id) || selected.length >= maxSize}
-            onClick={() => onAdd(entry.id)}
-            className="flex items-center justify-between rounded-[1.4rem] border border-white/70 bg-white/75 px-4 py-3 text-left transition hover:border-moss disabled:cursor-not-allowed disabled:opacity-50"
-          >
-            <div>
-              <p className="font-semibold text-ink">
-                {entry.dexNumber ? `#${String(entry.dexNumber).padStart(3, "0")} ${entry.name}` : entry.name}
-              </p>
-              <div className="mt-1 flex flex-wrap gap-1">
-                {entry.favoriteCategoryIds.slice(0, 2).map((categoryId) => (
-                  <Chip key={categoryId}>{categoryId}</Chip>
-                ))}
-              </div>
+      {/* Roomies.CandidatePicker.CandidateCardGrid */}
+      {shouldShowSections
+        ? groupedCandidates.map((section) =>
+            section.items.length > 0 ? (
+              <section key={section.id} className="space-y-3">
+                <h3 className="type-overline px-1 text-ink/55">{section.title}</h3>
+                <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,370px))]">
+                  {section.items.map(({ entry, sharedFavoriteCategoryIds, sharedHabitatIds }) => {
+                    return (
+                      <BuilderCandidateCard
+                        key={entry.id}
+                        disabled={selected.length >= maxSize}
+                        onAdd={onAdd}
+                        entry={entry}
+                        primaryHabitatLabel={getPrimaryHabitatLabel(entry)}
+                        idealHabitatLabel={getIdealHabitatLabel(entry)}
+                        sharedFavoriteCategoryIds={sharedFavoriteCategoryIds}
+                        sharedHabitatIds={sharedHabitatIds}
+                        compactVisual
+                      />
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null,
+          )
+        : (
+            <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
+              {rankedCandidates.map(({ entry }) => {
+                return (
+                  <BuilderCandidateCard
+                    key={entry.id}
+                    disabled={selected.length >= maxSize}
+                    onAdd={onAdd}
+                    entry={entry}
+                    primaryHabitatLabel={getPrimaryHabitatLabel(entry)}
+                    idealHabitatLabel={getIdealHabitatLabel(entry)}
+                    compactVisual={false}
+                  />
+                );
+              })}
             </div>
-            {entry.imageUrl ? <img src={entry.imageUrl} alt="" className="h-12 w-12 object-contain" /> : null}
-          </button>
-        ))}
-      </div>
+          )}
     </div>
   );
 };

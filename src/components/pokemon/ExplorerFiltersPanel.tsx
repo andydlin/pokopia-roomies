@@ -26,7 +26,7 @@ const FilterGroup = ({
   onToggle: (value: string) => void;
 }) => (
   <div className="space-y-3">
-    <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-moss/70">{title}</h3>
+    <h3 className="type-overline text-moss/70">{title}</h3>
     <div className="flex flex-wrap gap-2">
       {options.map((option) => (
         <button key={option.value} type="button" onClick={() => onToggle(option.value)}>
@@ -54,12 +54,12 @@ export const ExplorerFiltersPanel = ({
         value={filters.query}
         onChange={(event) => onFiltersChange({ ...filters, query: event.target.value })}
         placeholder="Search name, number, habitat, specialty, favorites, tags"
-        className="w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-moss"
+        className="type-ui w-full rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
       />
       <select
         value={sort}
         onChange={(event) => onSortChange(event.target.value as ExplorerSortOption)}
-        className="rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 text-sm outline-none transition focus:border-moss"
+        className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
       >
         <option value="compatibility-potential-desc">Compatibility potential</option>
         <option value="number-asc">Pokedex number</option>

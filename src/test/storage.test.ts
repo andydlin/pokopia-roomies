@@ -3,13 +3,14 @@ import { deleteSavedTeam, loadDraftTeamIds, loadSavedTeams, persistDraftTeamIds,
 import { MAX_TEAM_SIZE, MIN_TEAM_SIZE, canSaveTeam } from "../lib/teams/teamHelpers";
 
 describe("team constraints", () => {
-  it("enforces saveable team size between 2 and 5", () => {
+  it("enforces saveable team size between 2 and 6", () => {
     expect(canSaveTeam([])).toBe(false);
     expect(canSaveTeam(["pikachu"])).toBe(false);
     expect(canSaveTeam(["pikachu", "eevee"])).toBe(true);
-    expect(canSaveTeam(["a", "b", "c", "d", "e", "f"])).toBe(false);
+    expect(canSaveTeam(["a", "b", "c", "d", "e", "f"])).toBe(true);
+    expect(canSaveTeam(["a", "b", "c", "d", "e", "f", "g"])).toBe(false);
     expect(MIN_TEAM_SIZE).toBe(2);
-    expect(MAX_TEAM_SIZE).toBe(5);
+    expect(MAX_TEAM_SIZE).toBe(6);
   });
 });
 
