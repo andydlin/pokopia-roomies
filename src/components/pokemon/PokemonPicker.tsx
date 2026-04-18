@@ -55,7 +55,7 @@ export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) 
             section.items.length > 0 ? (
               <section key={section.id} className="space-y-3">
                 <h3 className="type-overline px-1 text-ink/55">{section.title}</h3>
-                <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,370px))]">
+                <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
                   {section.items.map(({ entry, sharedFavoriteCategoryIds, sharedHabitatIds }) => {
                     return (
                       <BuilderCandidateCard
@@ -67,7 +67,6 @@ export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) 
                         idealHabitatLabel={getIdealHabitatLabel(entry)}
                         sharedFavoriteCategoryIds={sharedFavoriteCategoryIds}
                         sharedHabitatIds={sharedHabitatIds}
-                        compactVisual
                       />
                     );
                   })}
@@ -86,7 +85,6 @@ export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) 
                     entry={entry}
                     primaryHabitatLabel={getPrimaryHabitatLabel(entry)}
                     idealHabitatLabel={getIdealHabitatLabel(entry)}
-                    compactVisual={false}
                   />
                 );
               })}

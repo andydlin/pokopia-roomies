@@ -51,7 +51,7 @@ export const DexPage = () => {
         <SectionCard
           eyebrow="Advanced Explorer"
           title="Search, filter, and sort the full Pokemon catalog"
-          description="Use multi-select filters and the compatibility-potential heuristic to scan the roster faster than a static database page."
+          description="Use multi-select filters and a compatibility heuristic to scan the roster faster than a static database page."
         >
           <ExplorerFiltersPanel
             filters={filters}
@@ -100,7 +100,7 @@ export const DexPage = () => {
         {results.length === 0 ? (
           <EmptyState
             title="No Pokemon matched"
-            body="Try clearing one or two filters, or switch back to compatibility potential sorting to explore broader options."
+            body="Try clearing one or two filters, or switch back to compatibility sorting to explore broader options."
           />
         ) : (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -110,7 +110,7 @@ export const DexPage = () => {
           </div>
         )}
 
-        <SectionCard eyebrow="Why this sort helps" title="Compatibility potential is a broad planning signal">
+        <SectionCard eyebrow="Why this sort helps" title="Compatibility is a broad planning signal">
           <p className="type-body text-ink/68">
             This heuristic adds points for more favorites, more specialties, common habitats, and favorite overlap with the wider dataset.
             For example, the current top match scores {getCompatibilityPotential(results[0]?.entry ?? pokemonExplorerEntries[0])} in this seed roster.

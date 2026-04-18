@@ -1,7 +1,9 @@
-import { Link, NavLink, Navigate, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { ComparePage } from "../pages/ComparePage";
 import { DexPage } from "../pages/DexPage";
+import { HabitatDetailPage } from "../pages/HabitatDetailPage";
 import { HomePage } from "../pages/HomePage";
+import { ItemDetailPage } from "../pages/ItemDetailPage";
 import { BuildersPage } from "../pages/BuildersPage";
 import { HabitatsPage } from "../pages/HabitatsPage";
 import { ItemsPage } from "../pages/ItemsPage";
@@ -15,6 +17,43 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     "relative rounded-lg text-sm uppercase tracking-[0.04em] transition-colors",
     isActive ? "font-black !text-[#5894D6]" : "font-medium !text-[#3d565d] hover:!text-[#2f4851]",
   ].join(" ");
+interface RouteState {
+  backgroundLocation?: ReturnType<typeof useLocation>;
+  modal?: boolean;
+}
+
+const AppRoutes = () => {
+  const location = useLocation();
+  const state = location.state as RouteState | null;
+  const backgroundLocation = state?.modal && state.backgroundLocation ? state.backgroundLocation : undefined;
+
+  return (
+    <>
+      <Routes location={backgroundLocation ?? location}>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/builder" element={<BuildersPage />} />
+        <Route path="/roomies" element={<Navigate to="/builder" replace />} />
+        <Route path="/items" element={<ItemsPage />} />
+        <Route path="/items/:itemId" element={<ItemDetailPage />} />
+        <Route path="/habitats" element={<HabitatsPage />} />
+        <Route path="/habitats/:habitatId" element={<HabitatDetailPage />} />
+        <Route path="/lookup" element={<LookupPage />} />
+        <Route path="/pokemon/:slug" element={<PokemonDetailPage />} />
+        <Route path="/teams" element={<TeamsPage />} />
+        <Route path="/teams/:id" element={<TeamDetailPage />} />
+        <Route path="/compare" element={<ComparePage />} />
+        <Route path="/dex" element={<DexPage />} />
+      </Routes>
+
+      {backgroundLocation ? (
+        <Routes>
+          <Route path="/items/:itemId" element={<ItemDetailPage asModal />} />
+          <Route path="/habitats/:habitatId" element={<HabitatDetailPage asModal />} />
+        </Routes>
+      ) : null}
+    </>
+  );
+};
 
 export const App = () => (
   <div className="min-h-screen">
@@ -86,19 +125,7 @@ export const App = () => (
     </header>
 
     <main className="mx-auto w-full max-w-[2000px] px-4 pb-12 sm:px-6 lg:px-10">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/builder" element={<BuildersPage />} />
-        <Route path="/roomies" element={<Navigate to="/builder" replace />} />
-        <Route path="/items" element={<ItemsPage />} />
-        <Route path="/habitats" element={<HabitatsPage />} />
-        <Route path="/lookup" element={<LookupPage />} />
-        <Route path="/pokemon/:slug" element={<PokemonDetailPage />} />
-        <Route path="/teams" element={<TeamsPage />} />
-        <Route path="/teams/:id" element={<TeamDetailPage />} />
-        <Route path="/compare" element={<ComparePage />} />
-        <Route path="/dex" element={<DexPage />} />
-      </Routes>
+      <AppRoutes />
     </main>
   </div>
 );

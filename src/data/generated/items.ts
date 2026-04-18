@@ -11,7 +11,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 7",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)",
+      "Other: Palette Town"
+    ]
   },
   {
     "id": "abilityshield",
@@ -25,7 +29,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "acrylicposter",
@@ -45,9 +51,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "adorablehedge",
@@ -61,7 +65,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Moonlight dance statue kit (Build Kit), Relaxing park kit (Build Kit), Fountain plaza kit (Build Kit)"
+    ]
   },
   {
     "id": "adorablehedge(blue)",
@@ -75,7 +83,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "adorablehedge(orange)",
@@ -89,7 +101,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "adorablehedge(purple)",
@@ -103,7 +119,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "adorablehedge(red)",
@@ -117,7 +137,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "adorablehedgesapling",
@@ -131,7 +155,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "adorablehedgesapling(grow)",
@@ -145,7 +171,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "adorable-hedgeseeds",
@@ -173,7 +201,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "aetherparadise",
@@ -187,7 +217,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "afternoonteaset",
@@ -212,7 +244,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -238,7 +270,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -259,9 +292,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "aged-stonewall",
@@ -282,7 +313,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -303,9 +336,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "airconditioner",
@@ -330,7 +361,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -355,9 +386,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Bleak Beach (Item)",
-    "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "alpinegrass",
@@ -371,7 +400,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Inside Build Kit: Concert stage kit (Build Kit), Altar of Flame kit (Build Kit)"
+    ]
   },
   {
     "id": "altarofflamekit",
@@ -385,7 +417,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 8",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)",
+      "Other: Palette Town"
+    ]
   },
   {
     "id": "antiquebed",
@@ -420,7 +456,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 5"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -456,7 +492,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 5"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -497,7 +533,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 7"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -533,7 +570,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 6"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -574,7 +612,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 8"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -610,7 +651,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 8"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -651,7 +693,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 7"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -687,7 +730,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 6"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -719,7 +763,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 5"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -741,7 +786,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 7"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -763,7 +808,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 7"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -785,7 +830,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 7"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -804,7 +849,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "arcaninedoll",
@@ -822,7 +869,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "archbridge",
@@ -842,9 +892,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "archedbarrier",
@@ -865,7 +913,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -907,7 +955,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 3"
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
     ]
   },
   {
@@ -928,9 +977,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "arched-tilingfragments",
@@ -944,7 +991,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "areazero",
@@ -958,7 +1007,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "argyleprint",
@@ -978,9 +1029,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "argyleprint(wallpaper)",
@@ -1000,9 +1049,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "armorfossil",
@@ -1020,7 +1067,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "armorfragment",
@@ -1034,7 +1083,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)",
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "arrowsign",
@@ -1058,9 +1110,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "aspearberry",
@@ -1078,7 +1128,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: , Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "aspearseeds",
@@ -1106,7 +1160,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "aspeartreesapling",
@@ -1120,7 +1178,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "aspeartreesapling(grow)",
@@ -1134,7 +1194,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "aspeartreestump",
@@ -1148,7 +1210,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo of tree stump and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "asphaltroad",
@@ -1173,7 +1237,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 2"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -1213,9 +1277,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "auspiciousarmor",
@@ -1244,9 +1306,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first finding Armor Fragments",
-    "obtainabilityDetails": [
-      "Location: After first finding Armor Fragments"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "automaticdoors",
@@ -1271,9 +1331,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Sparkling Skylands",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Sparkling Skylands"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "avaluggtable",
@@ -1287,7 +1345,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "balloonposter",
@@ -1307,9 +1367,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "balloons",
@@ -1334,7 +1392,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -1365,7 +1425,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)"
     ]
   },
   {
@@ -1380,7 +1440,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "barrenpure-whitesoil",
@@ -1394,7 +1456,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "barrenseashellsoil",
@@ -1422,7 +1487,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)"
+    ]
   },
   {
     "id": "bathtimeset",
@@ -1446,9 +1513,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bathtub",
@@ -1473,7 +1538,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 3Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -1488,7 +1555,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "battle!(gymleader)1",
@@ -1502,7 +1571,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "battle!(gymleader)2",
@@ -1516,7 +1587,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "beachchair",
@@ -1546,7 +1619,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -1577,7 +1651,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -1592,7 +1667,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 10Shop - Unlocked at Cloud Island Lv. 10",
+      "Other: Reach Rank 10 in Bleak Beach"
+    ]
   },
   {
     "id": "beachsand",
@@ -1606,7 +1684,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
+    ]
   },
   {
     "id": "bean",
@@ -1624,7 +1706,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "beanseeds",
@@ -1638,7 +1722,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
+    ]
   },
   {
     "id": "beansprout",
@@ -1652,7 +1738,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "beansprout(grow)",
@@ -1666,7 +1754,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "beautifulflower",
@@ -1680,7 +1770,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)"
+    ]
   },
   {
     "id": "beautifulflower(pink)",
@@ -1694,7 +1786,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "beautifulflower(purple)",
@@ -1708,7 +1803,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "beautifulflower(white)",
@@ -1722,7 +1820,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "beautifulflower(yellow)",
@@ -1736,7 +1837,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "beautiful-flowerseeds",
@@ -1780,7 +1884,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Inside Build Kit: Fountain plaza kit (Build Kit)"
     ]
   },
   {
@@ -1795,7 +1899,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "berrybasket",
@@ -1839,9 +1945,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 4",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 4"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "berrybed",
@@ -1880,9 +1984,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "berrycase",
@@ -1900,7 +2002,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "berrychair",
@@ -1940,7 +2044,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 9"
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -1959,7 +2064,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "berryhanginglamp",
@@ -1999,7 +2107,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 10"
+      "Overworld: Bleak Beach (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -2020,9 +2129,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "berryprint(wallpaper)",
@@ -2042,9 +2149,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "berrytable",
@@ -2080,7 +2185,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -2121,7 +2226,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 9"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -2162,7 +2267,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -2193,7 +2298,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 9Shop - Unlocked at Cloud Island Lv. 9"
     ]
   },
   {
@@ -2212,7 +2317,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "bigroot",
@@ -2226,7 +2333,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "bigstoragebox",
@@ -2247,7 +2356,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 30 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 30 Pokemon"
+      "Shops: Shop - Unlocked at Palette Town Lv. 2Shop - Unlocked at Cloud Island Lv. 2"
     ]
   },
   {
@@ -2266,7 +2375,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "bitterhamburgersteak",
@@ -2284,7 +2395,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "blackbelt",
@@ -2298,7 +2411,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "blackcliffrock",
@@ -2312,7 +2427,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "blackglasses",
@@ -2326,7 +2444,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "blackpaint",
@@ -2340,7 +2460,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "blackrock",
@@ -2354,7 +2477,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "blacksludge",
@@ -2368,7 +2494,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "blackspottedcliffrock",
@@ -2382,7 +2510,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "blankcanvas",
@@ -2412,7 +2543,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -2427,7 +2558,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sprout"
+    ]
   },
   {
     "id": "bloomingbeanplant(grow)",
@@ -2441,7 +2574,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sprout"
+    ]
   },
   {
     "id": "bloomingpotatoplant",
@@ -2455,7 +2590,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sprout"
+    ]
   },
   {
     "id": "bloomingpotatoplant(grow)",
@@ -2469,7 +2607,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sprout"
+    ]
   },
   {
     "id": "bloomingtomatoplant",
@@ -2483,7 +2623,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sprout"
+    ]
   },
   {
     "id": "bloomingtomatoplant(grow)",
@@ -2497,7 +2639,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sprout"
+    ]
   },
   {
     "id": "bluemeteorlamp",
@@ -2515,7 +2659,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "bluepaint",
@@ -2529,7 +2675,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "blue-greenshoots",
@@ -2543,7 +2692,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "boatdoor",
@@ -2564,7 +2716,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -2591,7 +2743,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 4"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -2617,7 +2769,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 5Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -2636,7 +2788,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "book",
@@ -2660,9 +2815,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bookpile",
@@ -2676,7 +2829,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "bookcase",
@@ -2706,7 +2862,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -2739,7 +2897,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "boutique",
@@ -2753,7 +2913,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "boxsofa",
@@ -2783,7 +2945,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -2809,9 +2971,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "breadbowl",
@@ -2829,7 +2989,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "breadoven",
@@ -2860,7 +3022,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "From chef dente",
     "obtainabilityDetails": [
-      "Location: From chef dente"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -2875,7 +3037,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Give Pokemon with Burn some Squishy Clay"
+    ]
   },
   {
     "id": "brickborder(corner)",
@@ -2895,9 +3059,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 8",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 8"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "brickborder(line)",
@@ -2917,9 +3079,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 6",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 6"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "brickborder(single)",
@@ -2939,9 +3099,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 7",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 7"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "brickflooring",
@@ -2966,7 +3124,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
     ]
   },
   {
@@ -2987,9 +3145,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "brickhippedroof",
@@ -3010,7 +3166,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -3032,7 +3189,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Inside Build Kit: Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -3054,7 +3211,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Overworld: Rocky Ridges (Original)",
+      "Inside Build Kit: Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -3080,7 +3238,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 2"
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
     ]
   },
   {
@@ -3102,7 +3260,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 4"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Orange hut kit (Build Kit), Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -3123,9 +3283,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bridgeplanks",
@@ -3150,7 +3308,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -3165,7 +3325,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)"
+    ]
   },
   {
     "id": "brokenironsteps",
@@ -3179,7 +3341,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "brokenstreetlight",
@@ -3193,7 +3358,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "brokenwindowpane",
@@ -3207,7 +3376,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "broken-tilingwall",
@@ -3228,7 +3399,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -3249,9 +3420,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bronzewall",
@@ -3271,9 +3440,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bronzewall(wallpaper)",
@@ -3293,9 +3460,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bruisedberry",
@@ -3313,7 +3478,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Gift from Chef Dente"
+    ]
   },
   {
     "id": "bubbleprint",
@@ -3333,9 +3500,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bubbleprint(wallpaper)",
@@ -3355,9 +3520,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "bumpybeachsand",
@@ -3371,7 +3534,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
+    ]
   },
   {
     "id": "campfire",
@@ -3401,7 +3568,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Beginning",
     "obtainabilityDetails": [
-      "Location: Beginning"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)"
     ]
   },
   {
@@ -3436,9 +3603,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "canoe",
@@ -3462,9 +3627,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cardreader",
@@ -3489,7 +3652,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In hidden room found with Neo Dowsing Machine after completing Pokedex",
     "obtainabilityDetails": [
-      "Location: In hidden room found with Neo Dowsing Machine after completing Pokedex"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -3515,7 +3678,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -3534,7 +3697,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "cart",
@@ -3555,7 +3720,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 70 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 70 Pokemon"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 4Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -3576,9 +3743,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "carvedlight-brownrock",
@@ -3598,9 +3763,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "carvedredrock",
@@ -3621,7 +3784,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -3642,9 +3805,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "carvedyellowrock",
@@ -3665,7 +3826,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -3701,7 +3862,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -3720,7 +3882,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "cavemushrooms",
@@ -3738,7 +3904,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "cavemushrooms(outdoor)",
@@ -3752,7 +3921,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "caverock",
@@ -3766,7 +3937,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "cavesofmt.moon",
@@ -3780,7 +3954,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "cdplayer",
@@ -3815,7 +3991,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 3"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 3Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -3846,7 +4023,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 2"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -3881,9 +4059,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cellphone",
@@ -3912,9 +4088,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "chanseyplant",
@@ -3944,7 +4118,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Inside Build Kit: Relaxing park kit (Build Kit)"
     ]
   },
   {
@@ -3959,7 +4133,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "chargingstationkit",
@@ -3973,7 +4149,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "charizardrug",
@@ -3987,7 +4166,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "chestoberry",
@@ -4005,7 +4186,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: , Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "chestoseeds",
@@ -4033,7 +4218,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "chestotreesapling",
@@ -4047,7 +4236,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "chestotreesapling(grow)",
@@ -4061,7 +4252,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "chestotreestump",
@@ -4075,7 +4268,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo of tree stump and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "chicchair",
@@ -4105,7 +4300,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 95 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 95 Pokemon"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Small office kit (Build Kit)"
     ]
   },
   {
@@ -4136,7 +4333,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Small office kit (Build Kit)"
     ]
   },
   {
@@ -4167,7 +4365,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -4194,7 +4392,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -4213,7 +4411,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From a vending machine"
+    ]
   },
   {
     "id": "chocolatecookies",
@@ -4238,7 +4438,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -4253,7 +4453,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "citydenkit",
@@ -4267,7 +4470,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "cityhousekit",
@@ -4281,7 +4487,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 6",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "cityhutkit",
@@ -4295,7 +4504,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "clay",
@@ -4309,7 +4521,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "cleaningsupplies",
@@ -4334,7 +4549,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -4349,7 +4564,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "clearbell",
@@ -4379,7 +4596,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "After befriending Raikou, Entei & Suicune",
     "obtainabilityDetails": [
-      "Location: After befriending Raikou, Entei & Suicune"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 6"
     ]
   },
   {
@@ -4398,7 +4615,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Treasure), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "cliffrock",
@@ -4412,7 +4632,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "clothwall",
@@ -4433,7 +4656,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 7"
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -4454,9 +4677,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "coarserock",
@@ -4470,7 +4691,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "cobblestonewall",
@@ -4491,7 +4715,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -4512,9 +4738,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "commoncandy",
@@ -4532,7 +4756,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Gift from Chef Dente"
+    ]
   },
   {
     "id": "communitybox",
@@ -4552,9 +4778,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 4",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 4"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "computer",
@@ -4584,7 +4808,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -4599,7 +4825,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 8Shop - Unlocked at Cloud Island Lv. 8",
+      "Inside Build Kit: Concert stage kit (Build Kit)",
+      "Other: Reach Rank 8 in Rocky Ridges and put in shop"
+    ]
   },
   {
     "id": "concrete",
@@ -4613,7 +4843,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Mix Limesetone in a Cement mixer with a Pokemon with crush"
+    ]
   },
   {
     "id": "concreteborder(corner)",
@@ -4633,9 +4865,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop as bundle (Sparkling Skylands Lv. 6)",
-    "obtainabilityDetails": [
-      "Location: Shop as bundle (Sparkling Skylands Lv. 6)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "concreteborder(line)",
@@ -4655,9 +4885,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop as bundle (Sparkling Skylands Lv. 6)",
-    "obtainabilityDetails": [
-      "Location: Shop as bundle (Sparkling Skylands Lv. 6)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "concreteborder(single)",
@@ -4677,9 +4905,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop as bundle (Sparkling Skylands Lv. 6)",
-    "obtainabilityDetails": [
-      "Location: Shop as bundle (Sparkling Skylands Lv. 6)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "concretemixer",
@@ -4700,7 +4926,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Talk to Conkeldurr",
     "obtainabilityDetails": [
-      "Location: Talk to Conkeldurr"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -4725,9 +4952,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Obtain concrete",
-    "obtainabilityDetails": [
-      "Location: Obtain concrete"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "concreteslab",
@@ -4751,9 +4976,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 4",
-    "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 4"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "concretesteps",
@@ -4778,7 +5001,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 2"
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -4800,7 +5023,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Sparkling Skylands (Natural)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -4821,9 +5045,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "confectionerywall(lower)",
@@ -4837,9 +5059,7 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "confectionerywall(middle)",
@@ -4859,9 +5079,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "confectionerywall(upper)",
@@ -4881,9 +5099,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "constructionsupplies",
@@ -4908,7 +5124,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 210 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 210 Pokemon"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -4923,7 +5139,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "controlunit",
@@ -4958,7 +5176,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -4979,9 +5198,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Rocky Ridges (Item)",
-    "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cookingstove",
@@ -5006,7 +5223,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -5041,9 +5260,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first finding Strange Strings",
-    "obtainabilityDetails": [
-      "Location: After first finding Strange Strings"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "coolelectricguitar",
@@ -5077,9 +5294,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first finding Strange Strings",
-    "obtainabilityDetails": [
-      "Location: After first finding Strange Strings"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cooledmoltenrock",
@@ -5093,7 +5308,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "copperdeposit(beach)",
@@ -5107,7 +5325,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)"
+    ]
   },
   {
     "id": "copperdeposit(ridge)",
@@ -5121,7 +5341,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "copperdeposit(skyland)",
@@ -5135,7 +5358,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "copperdeposit(wasteland)",
@@ -5149,7 +5374,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "copperingot",
@@ -5163,7 +5391,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Smelt Copper ore in the furnace"
+    ]
   },
   {
     "id": "copperore",
@@ -5177,7 +5407,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "corkboard",
@@ -5207,7 +5440,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -5233,7 +5467,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 4"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -5248,7 +5482,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Dream Island"
+    ]
   },
   {
     "id": "cottonspores(outdoor)",
@@ -5262,7 +5498,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "counter",
@@ -5283,7 +5521,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 3"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -5310,7 +5549,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 8"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
     ]
   },
   {
@@ -5336,7 +5576,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -5357,9 +5597,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "crossinggate",
@@ -5385,7 +5623,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -5404,7 +5643,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "crushed-berrysalad",
@@ -5422,7 +5663,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "crystalball",
@@ -5451,9 +5694,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Complete Poliwrath's request",
-    "obtainabilityDetails": [
-      "Location: Complete Poliwrath's request"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "crystalcluster",
@@ -5467,7 +5708,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Palette Town (Natural)",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)"
+    ]
   },
   {
     "id": "crystalfragment",
@@ -5481,7 +5725,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "crystalwall",
@@ -5502,7 +5748,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -5523,9 +5771,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cubelight",
@@ -5551,7 +5797,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 8"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Small office kit (Build Kit), Concert stage kit (Build Kit), Abandoned Power Plant kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -5572,9 +5820,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "curryandrice",
@@ -5592,7 +5838,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Complete a party"
+    ]
   },
   {
     "id": "curryprint",
@@ -5612,9 +5860,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "curryprint(wallpaper)",
@@ -5634,9 +5880,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "curvedeave",
@@ -5657,7 +5901,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -5684,7 +5928,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 9"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -5715,7 +5959,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -5751,7 +5995,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 9"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -5787,7 +6031,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -5802,7 +6046,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "cuteflower(blue)",
@@ -5816,7 +6063,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "cuteflower(pink)",
@@ -5830,7 +6080,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "cuteflower(white)",
@@ -5844,7 +6097,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "cuteflower(yellow)",
@@ -5858,7 +6114,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "cutelamp",
@@ -5897,9 +6156,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "cutesofa",
@@ -5929,7 +6186,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -5956,7 +6213,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -5992,7 +6249,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "From chef dente",
     "obtainabilityDetails": [
-      "Location: From chef dente"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -6007,7 +6265,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "cyberflooring",
@@ -6037,7 +6298,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -6058,9 +6321,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "damagedarchedtiling",
@@ -6074,7 +6335,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damagedasphaltroad",
@@ -6088,7 +6351,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damagedmosaictiling",
@@ -6102,7 +6368,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damagedsquaretiling",
@@ -6116,7 +6385,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damagedstoneflooring",
@@ -6130,7 +6403,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damagedwoodenflooring",
@@ -6144,7 +6421,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "damphedge",
@@ -6158,7 +6438,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
+    ]
   },
   {
     "id": "damphedge(blue)",
@@ -6172,7 +6456,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "damphedge(pink)",
@@ -6186,7 +6474,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "damphedge(red)",
@@ -6200,7 +6492,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "damphedge(white)",
@@ -6214,7 +6510,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "damphedgesapling",
@@ -6228,7 +6528,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "damphedgesapling(grow)",
@@ -6242,7 +6544,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "damprock",
@@ -6256,7 +6560,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "damp-hedgeseeds",
@@ -6290,9 +6596,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "dandyflowerseeds",
@@ -6306,7 +6610,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "dandyflowers",
@@ -6320,7 +6626,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Grow from seeds"
+    ]
   },
   {
     "id": "darkmarbleflooring",
@@ -6345,7 +6653,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 4"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
     ]
   },
   {
@@ -6366,9 +6675,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "deckchair",
@@ -6393,7 +6700,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -6423,9 +6730,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "decorativeplantshelf",
@@ -6454,9 +6759,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "decorativestorageshelf",
@@ -6486,7 +6789,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -6501,7 +6804,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1",
+      "Other: Any shop"
+    ]
   },
   {
     "id": "densevines",
@@ -6515,7 +6821,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Charge up powered up Leafage against a wall"
+    ]
   },
   {
     "id": "desklight",
@@ -6550,7 +6858,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -6569,7 +6877,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "despotfossil(head)",
@@ -6587,7 +6897,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "despotfossil(legs)",
@@ -6605,7 +6917,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "despotfossil(tail)",
@@ -6623,7 +6937,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "destinyknot",
@@ -6637,7 +6953,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "diagonalwoodenflooring",
@@ -6662,7 +6980,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 6"
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
     ]
   },
   {
@@ -6683,9 +7002,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "diningcabinet",
@@ -6719,9 +7036,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 250 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 250 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "diploma",
@@ -6739,7 +7054,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From developer office in Sparkling Skylands after completing Pokedex"
+    ]
   },
   {
     "id": "dittodoll",
@@ -6757,7 +7074,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 8"
+    ]
   },
   {
     "id": "dittoflag",
@@ -6787,9 +7107,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "During quest to make a picnic",
-    "obtainabilityDetails": [
-      "Location: During quest to make a picnic"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "dittorug",
@@ -6810,7 +7128,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 7"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -6832,7 +7150,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Orange hut kit (Build Kit), Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -6863,7 +7183,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -6885,7 +7205,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 2"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -6900,7 +7220,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "dragonitedoll",
@@ -6918,7 +7240,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Treasure)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 6Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "dressupwithprops",
@@ -6932,7 +7257,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "driftveilcity",
@@ -6946,7 +7273,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "driftwood",
@@ -6960,7 +7289,12 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drinkposter",
@@ -6980,9 +7314,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "dryadorablehedge",
@@ -6996,7 +7328,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryalpinegrass",
@@ -7024,7 +7359,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drybeanplant",
@@ -7038,7 +7375,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryblue-greenshoots",
@@ -7052,7 +7392,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drychestotree",
@@ -7066,7 +7409,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drydamphedge",
@@ -7080,7 +7425,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryfieldgrass",
@@ -7094,7 +7442,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Palette Town (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drygreenshoots",
@@ -7108,7 +7459,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryhealthyhedge",
@@ -7122,7 +7476,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryleppatree",
@@ -7136,7 +7493,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drylumtree",
@@ -7150,7 +7511,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drypechatree",
@@ -7164,7 +7527,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drypinktallgrass",
@@ -7178,7 +7543,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "drypointytree",
@@ -7192,7 +7559,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drypotatoplant",
@@ -7206,7 +7576,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryrawsttree",
@@ -7220,7 +7593,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryredtallgrass",
@@ -7234,7 +7609,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "dryseashoregrass",
@@ -7248,7 +7625,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "drysky-highgrass",
@@ -7276,7 +7655,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drytallgrass",
@@ -7290,7 +7672,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "drytomatoplant",
@@ -7304,7 +7689,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "dryverdantshoots",
@@ -7318,7 +7705,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "dryvine",
@@ -7332,7 +7722,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "drywheat",
@@ -7346,7 +7740,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "drywildflowers",
@@ -7360,7 +7756,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "dryyellowtallgrass",
@@ -7374,7 +7773,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "dryyellow-greenshoots",
@@ -7388,7 +7789,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "duckweed",
@@ -7402,7 +7806,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Inside Build Kit: Fountain plaza kit (Build Kit)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "earthbadge",
@@ -7430,7 +7837,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "eeriecandle",
@@ -7448,7 +7857,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "eeveedoll",
@@ -7466,7 +7878,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 2Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "electrifyingsoup",
@@ -7484,7 +7899,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "elegantflower",
@@ -7498,7 +7915,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)"
+    ]
   },
   {
     "id": "elegantflower(orange)",
@@ -7512,7 +7931,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "elegantflower(pink)",
@@ -7526,7 +7948,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "elegantflower(red)",
@@ -7540,7 +7965,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "elegantflower(yellow)",
@@ -7554,7 +7982,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "elegant-flowerseeds",
@@ -7599,7 +8030,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "During Poliwrath quest line",
     "obtainabilityDetails": [
-      "Location: During Poliwrath quest line"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -7630,7 +8061,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 220 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 220 Pokemon"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -7657,7 +8088,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -7688,7 +8120,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
     ]
   },
   {
@@ -7719,7 +8152,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -7741,7 +8174,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)"
     ]
   },
   {
@@ -7763,7 +8198,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)"
     ]
   },
   {
@@ -7785,7 +8222,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)"
     ]
   },
   {
@@ -7800,7 +8239,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "fan",
@@ -7825,7 +8266,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 170 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 170 Pokemon"
+      "Shops: Shop - Unlocked at Palette Town Lv. 4Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -7855,9 +8296,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fancypen",
@@ -7882,7 +8321,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -7897,7 +8336,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Use Magnet Rise"
+    ]
   },
   {
     "id": "farmsoil(ridge)",
@@ -7911,7 +8352,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Use Magnet Rise"
+    ]
   },
   {
     "id": "farmsoil(skyland)",
@@ -7925,7 +8368,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Use Magnet Rise"
+    ]
   },
   {
     "id": "farmsoil(wastelands)",
@@ -7939,7 +8384,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Use Magnet Rise"
+    ]
   },
   {
     "id": "feltmat",
@@ -7968,9 +8415,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "feltmat(wallpaper)",
@@ -7990,9 +8435,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fern",
@@ -8006,7 +8449,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "fieldgrass",
@@ -8020,7 +8467,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Inside Build Kit: Relaxing park kit (Build Kit), Fountain plaza kit (Build Kit)"
+    ]
   },
   {
     "id": "fierymagbystatue",
@@ -8038,7 +8488,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "firehydrant",
@@ -8063,7 +8516,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -8093,9 +8547,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firework(blue)",
@@ -8130,9 +8582,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firework(green)",
@@ -8167,9 +8617,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firework(red)",
@@ -8204,9 +8652,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firework(white)",
@@ -8241,9 +8687,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firework(yellow)",
@@ -8278,9 +8722,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "firstaidkit",
@@ -8305,7 +8747,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 3Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -8331,7 +8775,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)"
     ]
   },
   {
@@ -8352,9 +8797,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fishingrod",
@@ -8372,7 +8815,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 3Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "flameorb",
@@ -8386,7 +8832,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "flatbrickroof",
@@ -8407,7 +8855,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Inside Build Kit: Orange cottage kit (Build Kit), Log cabin kit (Build Kit), Small office kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -8429,7 +8878,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -8450,9 +8901,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "flattiledroof",
@@ -8473,7 +8922,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -8492,7 +8943,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)"
+    ]
   },
   {
     "id": "flavorfulsoup",
@@ -8510,7 +8963,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "floorswitch",
@@ -8535,9 +8990,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 6",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 6"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "flowerbackpack",
@@ -8551,7 +9004,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "flowercushion",
@@ -8565,7 +9020,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "flowergarland",
@@ -8583,7 +9040,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "flowerprint",
@@ -8603,9 +9062,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "flowerprint(wallpaper)",
@@ -8625,9 +9082,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "flowertable",
@@ -8641,7 +9096,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "floweringduckweed",
@@ -8655,7 +9112,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "flowerytablesetting",
@@ -8673,7 +9132,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "fluff",
@@ -8687,7 +9148,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 4"
+    ]
   },
   {
     "id": "fluffybread",
@@ -8705,7 +9168,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "fluffyflooring",
@@ -8729,9 +9194,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fluffyflooring(wallpaper)",
@@ -8751,9 +9214,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fluorescentlight",
@@ -8783,7 +9244,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -8814,7 +9276,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -8844,9 +9307,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "foodposter",
@@ -8866,9 +9327,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "fortreecity",
@@ -8882,7 +9341,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "foundation",
@@ -8908,7 +9369,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Orange hut kit (Build Kit), Orange cottage kit (Build Kit), Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -8923,7 +9386,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 8Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)",
+      "Other: Reach Rank 8 in Sparkling Skylands and put in shop"
+    ]
   },
   {
     "id": "frame",
@@ -8947,9 +9414,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Appraise a lost relic",
-    "obtainabilityDetails": [
-      "Location: Appraise a lost relic"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "freezingchamberskit",
@@ -8963,7 +9428,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 6",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)",
+      "Other: Palette Town"
+    ]
   },
   {
     "id": "freshcarrot",
@@ -8981,7 +9450,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "freshwater",
@@ -8999,7 +9470,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: From a vending machine"
+    ]
   },
   {
     "id": "friedpotatoes",
@@ -9024,7 +9498,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -9046,7 +9520,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -9061,7 +9535,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "funkydiffuser",
@@ -9079,7 +9555,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "furnacekit",
@@ -9093,7 +9571,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "gameboysystem",
@@ -9118,7 +9599,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 5"
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 5"
     ]
   },
   {
@@ -9133,7 +9614,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "gamingbed",
@@ -9168,7 +9651,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop",
     "obtainabilityDetails": [
-      "Location: Shop"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9199,7 +9682,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 9"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9235,7 +9718,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9271,7 +9754,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 9"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9302,7 +9786,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9328,7 +9812,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -9354,7 +9839,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -9380,7 +9868,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 7"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2Shop - Unlocked at Cloud Island Lv. 2",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9406,7 +9896,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 7"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9437,7 +9928,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 8"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9468,7 +9959,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 6"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -9487,7 +9978,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "gardentable",
@@ -9508,7 +10001,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 8"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -9529,9 +10023,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ginghamprint(wallpaper)",
@@ -9551,9 +10043,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "glass",
@@ -9567,7 +10057,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Smelt Sand or Volcanic ash in the furnace"
+    ]
   },
   {
     "id": "glasswindow",
@@ -9593,7 +10085,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 5"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit), Orange hut kit (Build Kit), Orange cottage kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -9615,7 +10109,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Obtain twine",
     "obtainabilityDetails": [
-      "Location: Obtain twine"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -9630,7 +10125,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: In caves"
+    ]
   },
   {
     "id": "glowingmushrooms(outdoor)",
@@ -9644,7 +10143,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "glowingstone",
@@ -9658,7 +10159,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "goldbottlecap",
@@ -9672,7 +10176,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "golddeposit",
@@ -9686,7 +10192,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "goldingot",
@@ -9700,7 +10208,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Smelt Gold ore in the furnace"
+    ]
   },
   {
     "id": "goldore",
@@ -9714,7 +10224,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Palette Town (Natural), Palette Town (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "goldteeth",
@@ -9732,7 +10245,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "goldwall",
@@ -9747,7 +10262,8 @@ export const generatedItems = [
     "recipeMaterials": [],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
     ]
   },
   {
@@ -9768,9 +10284,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "goldenposter",
@@ -9790,9 +10304,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "grassflooring",
@@ -9822,7 +10334,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 50 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 50 Pokemon"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -9843,9 +10355,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "gratefencing",
@@ -9866,7 +10376,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -9892,7 +10402,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 4"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -9907,7 +10417,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)"
+    ]
   },
   {
     "id": "gravestone",
@@ -9932,7 +10444,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original)"
     ]
   },
   {
@@ -9958,7 +10470,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -9973,7 +10485,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Inside ripples of water"
+    ]
   },
   {
     "id": "grayhutkit",
@@ -9987,7 +10502,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 5Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Gray hut kit (Build Kit)",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "greenmeteorlamp",
@@ -10005,7 +10524,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "greenpaint",
@@ -10019,7 +10540,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "greenshoots",
@@ -10033,7 +10557,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "growthposter",
@@ -10053,9 +10580,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "grubbybook",
@@ -10073,7 +10598,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbycellphone",
@@ -10091,7 +10618,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbyletter",
@@ -10109,7 +10638,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbynewspaper",
@@ -10127,7 +10658,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbynotepad",
@@ -10145,7 +10678,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbypapers",
@@ -10163,7 +10698,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "grubbyrags",
@@ -10177,7 +10714,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "grubbytablet",
@@ -10195,7 +10735,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "guest-roombed",
@@ -10225,7 +10767,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -10247,7 +10789,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural)"
     ]
   },
   {
@@ -10266,7 +10808,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "handcar",
@@ -10287,7 +10831,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -10314,7 +10859,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -10340,7 +10885,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -10366,7 +10911,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 270 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 270 Pokemon"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -10393,7 +10938,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop",
     "obtainabilityDetails": [
-      "Location: Shop"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)"
     ]
   },
   {
@@ -10429,7 +10975,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 3"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -10444,7 +10990,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "hardwoodflooring",
@@ -10469,7 +11017,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -10491,7 +11039,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling ripples in water",
     "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -10513,7 +11061,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 5"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -10528,7 +11078,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "haypile",
@@ -10549,7 +11101,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 3"
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
     ]
   },
   {
@@ -10570,9 +11123,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "headbuttfossil(body)",
@@ -10590,7 +11141,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "headbuttfossil(head)",
@@ -10608,7 +11161,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "headbuttfossil(tail)",
@@ -10626,7 +11181,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "healthyhedge",
@@ -10640,7 +11197,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "healthyhedge(orange)",
@@ -10654,7 +11214,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "healthyhedge(pink)",
@@ -10668,7 +11232,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "healthyhedge(purple)",
@@ -10682,7 +11250,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "healthyhedge(red)",
@@ -10696,7 +11268,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "healthyhedgesapling",
@@ -10710,7 +11286,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "healthyhedgesapling(grow)",
@@ -10724,7 +11302,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "healthysoup",
@@ -10742,7 +11322,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "healthy-hedgeseeds",
@@ -10770,7 +11352,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "heatrock",
@@ -10784,7 +11368,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "hexagonalflooring",
@@ -10809,7 +11395,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop",
     "obtainabilityDetails": [
-      "Location: Shop"
+      "Overworld: Withered Wastelands (Natural)"
     ]
   },
   {
@@ -10830,9 +11416,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "honey",
@@ -10846,7 +11430,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural)",
+      "Other: In flower patches"
+    ]
   },
   {
     "id": "hoppipwaterbottle",
@@ -10864,7 +11451,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "horizontal-stripeprint",
@@ -10884,9 +11473,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "horizontal-stripeprint(wallpaper)",
@@ -10906,9 +11493,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "horseafountain",
@@ -10926,7 +11511,13 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 3",
+      "Inside Build Kit: Fountain plaza kit (Build Kit)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "hot-springspout",
@@ -10946,9 +11537,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 90 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 90 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "houndstoothprint",
@@ -10968,9 +11557,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "houndstoothprint(wallpaper)",
@@ -10990,9 +11577,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "housepartition",
@@ -11012,9 +11597,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 4",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 4"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "humidifier",
@@ -11044,7 +11627,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 260 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 260 Pokemon"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11059,7 +11643,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural)",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)"
+    ]
   },
   {
     "id": "icecreamposter",
@@ -11079,9 +11667,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "icicle",
@@ -11095,7 +11681,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "icyrock",
@@ -11109,7 +11697,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "indigometeorlamp",
@@ -11127,7 +11717,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "industrialbed",
@@ -11162,7 +11754,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Inside Build Kit: Gray hut kit (Build Kit)"
     ]
   },
   {
@@ -11193,7 +11785,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 7"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)"
     ]
   },
   {
@@ -11224,7 +11817,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 6"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -11251,7 +11845,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 7"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit)"
     ]
   },
   {
@@ -11277,7 +11872,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 9Shop - Unlocked at Cloud Island Lv. 9"
     ]
   },
   {
@@ -11296,7 +11891,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Complete mission during event"
+    ]
   },
   {
     "id": "informationboard",
@@ -11325,9 +11922,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironball",
@@ -11341,7 +11936,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "ironbeam",
@@ -11362,7 +11959,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -11393,7 +11993,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 3"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)"
     ]
   },
   {
@@ -11423,9 +12023,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironchair",
@@ -11450,7 +12048,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Overworld: Withered Wastelands (Original)"
     ]
   },
   {
@@ -11472,7 +12070,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -11487,7 +12088,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "irondoor",
@@ -11508,7 +12111,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 5"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)"
     ]
   },
   {
@@ -11529,9 +12132,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "irongate",
@@ -11551,9 +12152,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironingot",
@@ -11567,7 +12166,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Smelt Iron ore in the furnace"
+    ]
   },
   {
     "id": "ironladder",
@@ -11588,7 +12189,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 5"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -11603,7 +12206,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural), Palette Town (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "ironpillar",
@@ -11623,9 +12229,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironpipe(downwardcurve)",
@@ -11646,7 +12250,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11668,7 +12274,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -11689,9 +12295,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironpipe(horizontalcurve)",
@@ -11711,9 +12315,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironpipe(horizontalt)",
@@ -11734,7 +12336,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11756,7 +12358,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11778,7 +12382,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11800,7 +12405,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -11822,7 +12427,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11844,7 +12450,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11866,7 +12473,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11892,7 +12501,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11914,7 +12524,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -11935,9 +12546,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironrack",
@@ -11963,7 +12572,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -11989,7 +12599,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -12014,9 +12624,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironsteps",
@@ -12041,7 +12649,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 5"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Inside Build Kit: Concert stage kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -12063,7 +12673,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original)",
+      "Inside Build Kit: Small office kit (Build Kit)"
     ]
   },
   {
@@ -12089,7 +12700,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 4"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -12110,9 +12723,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironwall",
@@ -12132,9 +12743,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 7",
-    "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 7"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "ironwall(wallpaper)",
@@ -12154,9 +12763,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "iron-plateflooring",
@@ -12181,7 +12788,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Inside Build Kit: Concert stage kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -12202,9 +12811,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "iron-scaffoldplank",
@@ -12240,7 +12847,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "jubilifevillage",
@@ -12254,7 +12863,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "juicetrio",
@@ -12272,7 +12883,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "jumbledcords",
@@ -12302,7 +12915,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -12321,7 +12936,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Beat 50 jumps in the Jump Rope Contest"
+    ]
   },
   {
     "id": "kitchentable",
@@ -12342,7 +12959,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -12373,7 +12991,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 190 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 190 Pokemon"
+      "Overworld: Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 3Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -12399,9 +13018,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "laggingtail",
@@ -12415,7 +13032,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "lantern",
@@ -12445,7 +13064,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 6"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -12476,7 +13097,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -12491,7 +13112,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "largelostrelic",
@@ -12505,7 +13130,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "largemirror",
@@ -12540,7 +13167,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -12566,9 +13194,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "largepalmtree",
@@ -12582,7 +13208,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
+    ]
   },
   {
     "id": "largeroundrug",
@@ -12607,9 +13237,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "largesquarerug",
@@ -12634,9 +13262,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "largeventilationfan",
@@ -12666,7 +13292,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -12688,7 +13316,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit), Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -12710,7 +13340,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 6"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 6"
     ]
   },
   {
@@ -12725,7 +13355,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
+    ]
   },
   {
     "id": "leaf",
@@ -12739,7 +13373,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Other: Destroy tall grass"
+    ]
   },
   {
     "id": "leafcottagekit",
@@ -12753,7 +13390,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 4Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "leafdenkit",
@@ -12767,7 +13407,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 2",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "leafhousekit",
@@ -12781,7 +13424,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "leafhutkit",
@@ -12795,7 +13441,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "leafprint",
@@ -12815,9 +13464,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "leafprint(wallpaper)",
@@ -12837,9 +13484,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "leafyplant",
@@ -12871,7 +13516,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "leppaberry",
@@ -12889,7 +13536,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "leppabread",
@@ -12907,7 +13557,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "leppasalad",
@@ -12925,7 +13577,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "leppaseeds",
@@ -12953,7 +13607,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Relaxing park kit (Build Kit)"
+    ]
   },
   {
     "id": "leppatreesapling",
@@ -12967,7 +13625,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "leppatreesapling(grow)",
@@ -12981,7 +13641,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "leppatreestump",
@@ -12995,7 +13657,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "letter",
@@ -13019,9 +13683,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "levee",
@@ -13042,7 +13704,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 8"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
     ]
   },
   {
@@ -13063,9 +13726,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "lifeorb",
@@ -13079,7 +13740,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "liftplatform",
@@ -13110,7 +13773,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "From Tinkaton during the storyline",
     "obtainabilityDetails": [
-      "Location: From Tinkaton during the storyline"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -13136,9 +13799,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 8",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 8"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "lightantiquewall(middle)",
@@ -13163,9 +13824,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 8",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 8"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "lightantiquewall(upper)",
@@ -13191,7 +13850,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Palette Town Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Palette Town Lv. 8"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -13206,7 +13865,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "lightclay",
@@ -13220,7 +13882,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "lightmarbleflooring",
@@ -13245,7 +13909,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -13266,9 +13930,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "lightwoodenwall",
@@ -13289,7 +13951,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 4"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -13310,9 +13972,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "limestone",
@@ -13326,7 +13986,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "lined-stoneflooring",
@@ -13351,7 +14014,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
     ]
   },
   {
@@ -13372,9 +14036,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "loadeddice",
@@ -13388,7 +14050,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "logbed",
@@ -13423,7 +14087,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2Shop - Unlocked at Cloud Island Lv. 2"
     ]
   },
   {
@@ -13438,7 +14102,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Log cabin kit (Build Kit)"
+    ]
   },
   {
     "id": "logchair",
@@ -13462,9 +14129,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Beginning",
-    "obtainabilityDetails": [
-      "Location: Beginning"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "logtable",
@@ -13484,9 +14149,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Beginning",
-    "obtainabilityDetails": [
-      "Location: Beginning"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "luckyegg",
@@ -13500,7 +14163,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "lumberry",
@@ -13518,7 +14183,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: , Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "lumseeds",
@@ -13546,7 +14215,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "lumtreesapling",
@@ -13560,7 +14233,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "lumtreesapling(grow)",
@@ -13574,7 +14249,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "lumtreestump",
@@ -13588,7 +14265,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo of tree stump and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "lumber",
@@ -13602,7 +14281,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "lunchbox",
@@ -13620,7 +14302,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "luxurybed",
@@ -13655,7 +14339,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 10"
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -13691,7 +14376,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 9"
+      "Inside Build Kit: Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -13727,7 +14412,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv.",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv."
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -13758,7 +14444,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 9"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -13794,7 +14482,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 8"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -13821,7 +14511,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 8"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -13852,7 +14544,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 3Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -13878,9 +14571,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "mailbox",
@@ -13905,7 +14596,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 2Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -13935,9 +14626,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first finding Armor Fragments",
-    "obtainabilityDetails": [
-      "Location: After first finding Armor Fragments"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "marble",
@@ -13962,7 +14651,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -13983,9 +14674,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "markedroad(horizontal)",
@@ -14010,7 +14699,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -14035,9 +14724,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "marshybadge",
@@ -14071,9 +14758,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "menuboard",
@@ -14103,7 +14788,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 130 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 130 Pokemon"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -14124,9 +14810,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "metalcoat",
@@ -14140,7 +14824,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "metaldebris",
@@ -14154,7 +14840,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "metaldrum",
@@ -14179,7 +14867,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -14201,7 +14891,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 2"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -14216,7 +14906,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "metalpowder",
@@ -14230,7 +14924,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "metallicsmeltingfurnace",
@@ -14261,7 +14957,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 4"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -14292,7 +14988,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -14318,7 +15014,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -14349,7 +15045,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -14371,7 +15067,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 5Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -14396,9 +15092,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 6",
-    "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 6"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "miniplainbed",
@@ -14428,7 +15122,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Inside Build Kit: Orange hut kit (Build Kit)"
     ]
   },
   {
@@ -14443,7 +15137,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "mirrorball",
@@ -14473,7 +15169,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -14499,7 +15196,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -14518,7 +15215,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "moderncarpeting",
@@ -14543,7 +15243,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -14564,9 +15264,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "moderndoor",
@@ -14592,7 +15290,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 5"
+      "Overworld: Rocky Ridges (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -14618,7 +15317,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -14639,9 +15340,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "modernwall(wallpaper)",
@@ -14661,9 +15360,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "moltenrock",
@@ -14677,7 +15374,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "moomoomilkcoffee",
@@ -14695,7 +15396,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From a vending machine"
+    ]
   },
   {
     "id": "moonlightdancestatuekit",
@@ -14709,7 +15412,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Moonlight dance statue kit (Build Kit)",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "moonlightposter",
@@ -14729,9 +15436,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "mosaictiling",
@@ -14756,7 +15461,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 2"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -14777,9 +15482,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "moss",
@@ -14793,7 +15496,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "mossyboulder",
@@ -14807,7 +15513,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "mossysoil",
@@ -14821,7 +15530,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "mossystone",
@@ -14835,7 +15547,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "mountainflowers",
@@ -14849,7 +15564,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "mountainflowers(pink)",
@@ -14863,7 +15581,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "mountainflowers(purple)",
@@ -14877,7 +15599,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "mountainflowers(red)",
@@ -14891,7 +15617,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "mountainflowers(white)",
@@ -14905,7 +15635,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "mountainposter",
@@ -14925,9 +15659,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "mountain-flowerseeds",
@@ -14941,7 +15673,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
+    ]
   },
   {
     "id": "mt.coronet",
@@ -14955,7 +15689,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mud",
@@ -14969,7 +15705,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "muddypure-whitesoil",
@@ -14983,7 +15723,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "muddysand",
@@ -14997,7 +15740,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "muddyseashellsoil",
@@ -15011,7 +15758,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "muddytiling",
@@ -15025,7 +15775,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "mug",
@@ -15050,7 +15803,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 35 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 35 Pokemon"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2Shop - Unlocked at Cloud Island Lv. 2",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -15069,7 +15825,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "mushroomhamburgersteak",
@@ -15087,7 +15845,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "mushroomlamp",
@@ -15117,7 +15877,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Obtain a Glowing mushroom",
     "obtainabilityDetails": [
-      "Location: Obtain a Glowing mushroom"
+      "Inside Build Kit: Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -15136,7 +15896,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "mushroomstreetlight",
@@ -15166,7 +15928,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 4Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -15197,7 +15960,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15228,7 +15991,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15259,7 +16022,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15290,7 +16053,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15321,7 +16084,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15352,7 +16116,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15383,7 +16147,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15414,7 +16179,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -15429,7 +16194,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2"
+    ]
   },
   {
     "id": "mysteriousmuralkit",
@@ -15443,7 +16210,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Use Demolition kit on Mysterious Mural"
+    ]
   },
   {
     "id": "mysteriouspedestal",
@@ -15457,7 +16226,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "mysteriousslate",
@@ -15471,7 +16244,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatea",
@@ -15485,7 +16260,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateb",
@@ -15499,7 +16276,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatec",
@@ -15513,7 +16292,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslated",
@@ -15527,7 +16308,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatee",
@@ -15541,7 +16324,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatef",
@@ -15555,7 +16340,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateg",
@@ -15569,7 +16356,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateh",
@@ -15583,7 +16372,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatei",
@@ -15597,7 +16388,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatej",
@@ -15611,7 +16404,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatek",
@@ -15625,7 +16420,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatel",
@@ -15639,7 +16436,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatem",
@@ -15653,7 +16452,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslaten",
@@ -15667,7 +16468,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateo",
@@ -15681,7 +16484,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatep",
@@ -15695,7 +16500,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateq",
@@ -15709,7 +16516,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslater",
@@ -15723,7 +16532,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslates",
@@ -15737,7 +16548,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatet",
@@ -15751,7 +16564,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslateu",
@@ -15765,7 +16580,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatev",
@@ -15779,7 +16596,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatew",
@@ -15793,7 +16612,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatex",
@@ -15807,7 +16628,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatey",
@@ -15821,7 +16644,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousslatez",
@@ -15835,7 +16660,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousstatue",
@@ -15853,7 +16680,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "mysteriousstone",
@@ -15867,7 +16697,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "mysticwater",
@@ -15881,7 +16714,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "naptimebed",
@@ -15899,7 +16734,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "neodowsingmachine",
@@ -15925,7 +16763,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 300 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 300 Pokemon"
+      "Other: Craft"
     ]
   },
   {
@@ -15956,7 +16794,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -15977,9 +16817,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "never-meltice",
@@ -15993,7 +16831,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "newspaper",
@@ -16018,7 +16858,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 4Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -16039,9 +16879,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "nonburnablegarbage",
@@ -16055,7 +16893,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "nonburnablegarbage(outdoor)",
@@ -16069,7 +16910,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y in Magnet Rise to pick up"
+    ]
   },
   {
     "id": "notepad",
@@ -16093,9 +16936,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "nugget",
@@ -16109,7 +16950,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "oak'slab",
@@ -16123,7 +16966,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "oblongrug",
@@ -16148,9 +16993,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "oceanposter",
@@ -16170,9 +17013,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "oceanrock",
@@ -16186,7 +17027,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "offeringdish",
@@ -16200,7 +17044,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "officecabinet",
@@ -16225,7 +17071,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling Skylands (Item)",
     "obtainabilityDetails": [
-      "Location: Sparkling Skylands (Item)"
+      "Overworld: Withered Wastelands (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 3",
+      "Inside Build Kit: Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -16256,7 +17105,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling Skylands (Item)",
     "obtainabilityDetails": [
-      "Location: Sparkling Skylands (Item)"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 2Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -16278,7 +17130,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling Skylands (Item)",
     "obtainabilityDetails": [
-      "Location: Sparkling Skylands (Item)"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -16304,7 +17158,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 4Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -16335,7 +17192,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Small office kit (Build Kit)"
     ]
   },
   {
@@ -16362,7 +17222,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling Skylands (Item)",
     "obtainabilityDetails": [
-      "Location: Sparkling Skylands (Item)"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -16383,9 +17244,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "openbook",
@@ -16409,9 +17268,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "orangecottagekit",
@@ -16425,7 +17282,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Inside Build Kit: Orange cottage kit (Build Kit)",
+      "Other: Inside ripples of water"
+    ]
   },
   {
     "id": "orangehutkit",
@@ -16439,7 +17299,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 5",
+      "Inside Build Kit: Orange hut kit (Build Kit)",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "orangemeteorlamp",
@@ -16457,7 +17321,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "ordinarysand",
@@ -16471,7 +17337,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Sparkling Skylands (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "ordinarysoil",
@@ -16485,7 +17353,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "paintballoon(aquamarine)",
@@ -16510,9 +17381,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(beige)",
@@ -16537,9 +17406,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(black)",
@@ -16559,9 +17426,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(blue)",
@@ -16581,9 +17446,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(brown)",
@@ -16608,9 +17471,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(cyan)",
@@ -16630,9 +17491,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(gray)",
@@ -16657,9 +17516,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(green)",
@@ -16679,9 +17536,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(lime)",
@@ -16706,9 +17561,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(navy)",
@@ -16733,9 +17586,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(orange)",
@@ -16760,9 +17611,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(pink)",
@@ -16782,9 +17631,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(plum)",
@@ -16809,9 +17656,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(purple)",
@@ -16836,9 +17681,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(red)",
@@ -16858,9 +17701,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(rose)",
@@ -16885,9 +17726,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(white)",
@@ -16907,9 +17746,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintballoon(yellow)",
@@ -16929,9 +17766,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "After first getting paint",
-    "obtainabilityDetails": [
-      "Location: After first getting paint"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "paintedwall",
@@ -16952,7 +17787,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 7"
+      "Overworld: Rocky Ridges (Natural)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit), Small office kit (Build Kit)"
     ]
   },
   {
@@ -16973,9 +17809,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "painting(landscape)",
@@ -16993,7 +17827,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Original)",
+      "Other: Leave a blank canvas near Smeaguru"
+    ]
   },
   {
     "id": "painting(portrait)",
@@ -17011,7 +17848,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Leave a blank canvas near Smeaguru"
+    ]
   },
   {
     "id": "painting(stilllife)",
@@ -17029,7 +17868,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Leave a blank canvas near Smeaguru"
+    ]
   },
   {
     "id": "pallettown",
@@ -17043,7 +17884,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "palmseeds",
@@ -17071,7 +17914,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "palmtreesapling(grow)",
@@ -17085,7 +17930,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "palmtreestump",
@@ -17099,7 +17946,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "paper",
@@ -17113,7 +17962,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Recycle Wastepaper with Pokemon with Recycle"
+    ]
   },
   {
     "id": "paperpartycups",
@@ -17138,7 +17989,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 4Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -17164,7 +18015,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -17189,9 +18040,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 3",
-    "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 3"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "partycookingpot",
@@ -17205,7 +18054,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: In shop after completing Rocky Ridges"
+    ]
   },
   {
     "id": "partyplatter",
@@ -17225,9 +18077,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "From Chef Dente during the story",
-    "obtainabilityDetails": [
-      "Location: From Chef Dente during the story"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "partypopper",
@@ -17253,7 +18103,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 5"
+      "Other: Reach a joint Environment Level of 20"
     ]
   },
   {
@@ -17274,9 +18124,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "patternedaged-stonewall",
@@ -17297,7 +18145,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
     ]
   },
   {
@@ -17318,9 +18168,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pechaberry",
@@ -17338,7 +18186,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: , Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "pechaseeds",
@@ -17366,7 +18218,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "pechatreesapling",
@@ -17380,7 +18236,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "pechatreesapling(grow)",
@@ -17394,7 +18252,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "pechatreestump",
@@ -17408,7 +18268,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo of tree stump and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "pencilholder",
@@ -17437,9 +18299,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 150 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 150 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "perch",
@@ -17468,9 +18328,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Rocky Ridges (Item)",
-    "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pewtercitytheme",
@@ -17484,7 +18342,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In Pewter Museum in Rocky Ridges, In glowing terrain"
+    ]
   },
   {
     "id": "photocutoutboard",
@@ -17502,7 +18362,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 9Shop - Unlocked at Cloud Island Lv. 9",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "photoframe",
@@ -17531,9 +18394,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "picnicbasket",
@@ -17558,9 +18419,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Obtain a Vine rope",
-    "obtainabilityDetails": [
-      "Location: Obtain a Vine rope"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "picnicblanket",
@@ -17574,7 +18433,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ]
   },
   {
     "id": "pikachudoll",
@@ -17592,7 +18453,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 3Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "pikachufountainkit",
@@ -17606,7 +18470,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 4Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "pikachusofa",
@@ -17624,7 +18491,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 9Shop - Unlocked at Cloud Island Lv. 9",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "pinkcottagekit",
@@ -17638,7 +18508,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Inside Build Kit: Pink cottage kit (Build Kit)",
+      "Other: Inside ripples of water"
+    ]
   },
   {
     "id": "pinkhutkit",
@@ -17652,7 +18525,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Pink hut kit (Build Kit)",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "pinkpaint",
@@ -17666,7 +18543,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "pinktallgrass",
@@ -17715,7 +18595,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Obtain Wastepaper",
     "obtainabilityDetails": [
-      "Location: Obtain Wastepaper"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -17737,7 +18617,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Bleak Beach Lv. 5"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Natural), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Natural), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Natural), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Orange hut kit (Build Kit), Orange cottage kit (Build Kit), Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -17756,7 +18638,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "pizza",
@@ -17781,7 +18666,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -17812,7 +18697,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)"
     ]
   },
   {
@@ -17843,7 +18728,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -17874,7 +18761,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit), Orange cottage kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -17905,7 +18793,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 4Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -17936,7 +18826,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 4"
+      "Inside Build Kit: Orange cottage kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -17967,7 +18857,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 3"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -17998,7 +18890,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 4Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -18029,7 +18921,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Orange hut kit (Build Kit)"
     ]
   },
   {
@@ -18056,7 +18949,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit), Orange hut kit (Build Kit)"
     ]
   },
   {
@@ -18083,7 +18977,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -18105,7 +19001,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 5"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit), Orange hut kit (Build Kit), Orange cottage kit (Build Kit), Gray hut kit (Build Kit), Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -18127,7 +19025,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling ripples in water",
     "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -18149,7 +19047,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 2"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -18164,7 +19062,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "pointytreesapling",
@@ -18178,7 +19079,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "pointytreesapling(grow)",
@@ -18192,7 +19095,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "pointytreestump",
@@ -18206,7 +19111,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "pointy-treeseeds",
@@ -18234,7 +19141,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "pokeballbed",
@@ -18259,7 +19168,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 10"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18290,7 +19200,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18312,7 +19222,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 7"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Palette Town (Original)"
     ]
   },
   {
@@ -18327,7 +19237,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: Complete Tinkmaster's Request in Sparkling Skylands"
+    ]
   },
   {
     "id": "pokeballlamp",
@@ -18357,7 +19270,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -18388,7 +19302,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18414,9 +19328,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 7",
-    "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 7"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokeballprint",
@@ -18436,9 +19348,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Palette Town Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokeballprint(wallpaper)",
@@ -18458,9 +19368,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokeballsofa",
@@ -18495,7 +19403,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 9"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18522,7 +19430,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 10",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 10"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18548,9 +19456,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokeballwall(wallpaper)",
@@ -18570,9 +19476,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokemartkit",
@@ -18586,7 +19490,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 3Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Complete Tinkmaster's Request in Sparkling Skylands"
+    ]
   },
   {
     "id": "pokemetal",
@@ -18600,7 +19507,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 6Shop - Unlocked at Bleak Beach Lv. 6Shop - Unlocked at Rocky Ridges Lv. 6Shop - Unlocked at Sparkling Skylands Lv. 6Shop - Unlocked at Palette Town Lv. 6Shop - Unlocked at Cloud Island Lv. 6",
+      "Other: Smelt Pokemetal in the furnace"
+    ]
   },
   {
     "id": "pokemetaldeposit",
@@ -18614,7 +19525,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "pokemetalfragment",
@@ -18628,7 +19542,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "pokemoncenter",
@@ -18642,7 +19558,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "pokemoncentercounter",
@@ -18662,9 +19580,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokemoncenterrebuildkit",
@@ -18698,9 +19614,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Sparkling Skylands Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Sparkling Skylands Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokemoncenterwall(middle)",
@@ -18720,9 +19634,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Sparkling Skylands Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Sparkling Skylands Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokemoncenterwall(trim)",
@@ -18743,7 +19655,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Sparkling Skylands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Sparkling Skylands Lv. 9"
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
     ]
   },
   {
@@ -18764,9 +19676,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Sparkling Skylands Lv. 9",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Sparkling Skylands Lv. 9"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pokemongym",
@@ -18780,7 +19690,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "polka-dotprint",
@@ -18800,9 +19712,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "polka-dotprint(wallpaper)",
@@ -18822,9 +19732,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "polygonalshelf",
@@ -18842,7 +19750,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "popartbed",
@@ -18872,7 +19782,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 6"
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18903,7 +19813,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 6"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18934,7 +19845,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 8"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Abandoned Power Plant kit (Build Kit)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18965,7 +19879,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 7"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 3Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -18987,7 +19903,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 7"
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Trade with Gimmighoul/Gholdengo"
     ]
   },
   {
@@ -19009,7 +19926,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -19031,7 +19948,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -19053,7 +19970,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -19072,7 +19989,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "potatohamburgersteak",
@@ -19090,7 +20009,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "potatoseeds",
@@ -19104,7 +20025,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
+    ]
   },
   {
     "id": "potatosprout",
@@ -19118,7 +20041,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "potatosprout(grow)",
@@ -19132,7 +20058,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "printer",
@@ -19157,7 +20085,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "In hidden room found with Neo Dowsing Machine after completing Pokedex",
     "obtainabilityDetails": [
-      "Location: In hidden room found with Neo Dowsing Machine after completing Pokedex"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -19176,7 +20105,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original)",
+      "Other: In Withered Wastelands cave"
+    ]
   },
   {
     "id": "protrudingwall",
@@ -19197,7 +20129,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 4"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -19222,9 +20156,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "puffy-treepillar",
@@ -19253,9 +20185,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 40 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 40 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "puffy-treepillar(wallpaper)",
@@ -19275,9 +20205,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "pulley",
@@ -19298,7 +20226,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -19339,7 +20267,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -19365,7 +20293,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 9Shop - Unlocked at Cloud Island Lv. 9"
     ]
   },
   {
@@ -19380,7 +20308,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "pushcart",
@@ -19406,7 +20337,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -19421,7 +20352,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "raichusign",
@@ -19439,7 +20372,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Original)",
+      "Other: Appraise from a Relic, Lost Relics (L)"
+    ]
   },
   {
     "id": "railwaytrack",
@@ -19465,7 +20401,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -19480,7 +20417,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From Ho-Oh"
+    ]
   },
   {
     "id": "rainbowishbadge",
@@ -19508,7 +20447,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "rarecandy",
@@ -19526,7 +20467,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Gift from Chef Dente"
+    ]
   },
   {
     "id": "rarepokemetal",
@@ -19540,7 +20483,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 7Shop - Unlocked at Bleak Beach Lv. 7Shop - Unlocked at Rocky Ridges Lv. 7Shop - Unlocked at Sparkling Skylands Lv. 7Shop - Unlocked at Palette Town Lv. 7",
+      "Other: Smelt Rare Pokemetal in the furnace"
+    ]
   },
   {
     "id": "rarepokemetalfragment",
@@ -19554,7 +20500,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "ratanrug",
@@ -19579,9 +20527,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "rawstberry",
@@ -19599,7 +20545,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: , Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "rawstseeds",
@@ -19627,7 +20577,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, Each game has one secondary berry chosen at random"
+    ]
   },
   {
     "id": "rawsttreesapling",
@@ -19641,7 +20595,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "rawsttreesapling(grow)",
@@ -19655,7 +20611,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "rawsttreestump",
@@ -19669,7 +20627,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo of tree stump and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "recycledbread",
@@ -19687,7 +20647,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "recyclingbin",
@@ -19712,7 +20674,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -19727,7 +20689,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "redmeteorlamp",
@@ -19745,7 +20710,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "redpaint",
@@ -19759,7 +20726,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "redrock",
@@ -19773,7 +20743,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
+    ]
   },
   {
     "id": "redspottedcliffrock",
@@ -19787,7 +20760,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "redtallgrass",
@@ -19801,7 +20777,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
+    ]
   },
   {
     "id": "reddish-browncaverock",
@@ -19815,7 +20794,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)"
+    ]
   },
   {
     "id": "refrigerator",
@@ -19840,7 +20821,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 5"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 5"
     ]
   },
   {
@@ -19855,7 +20836,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 8Shop - Unlocked at Cloud Island Lv. 8",
+      "Inside Build Kit: Relaxing park kit (Build Kit)",
+      "Other: Reach Rank 8 in Withered Wastelands and put in shop"
+    ]
   },
   {
     "id": "relocationkit(prepare)",
@@ -19869,7 +20854,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1",
+      "Other: Any shop"
+    ]
   },
   {
     "id": "repel",
@@ -19887,7 +20875,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "resortbed",
@@ -19921,9 +20911,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 8",
-    "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 8"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "resortchair",
@@ -19958,7 +20946,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 7"
+      "Inside Build Kit: Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -19994,7 +20982,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 6"
+      "Inside Build Kit: Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -20030,7 +21018,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Inside Build Kit: Orange hut kit (Build Kit), Yellow hut kit (Build Kit)"
     ]
   },
   {
@@ -20066,7 +21054,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 7"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -20102,7 +21091,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 6"
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -20134,7 +21123,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 8",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 8"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Orange cottage kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -20160,7 +21150,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -20175,7 +21165,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 10Shop - Unlocked at Cloud Island Lv. 10",
+      "Other: Reach Rank 10 in Rocky Ridges"
+    ]
   },
   {
     "id": "ringtarget",
@@ -20189,7 +21182,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "ripebeanplant",
@@ -20203,7 +21198,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "ripebeanplant(grow)",
@@ -20217,7 +21215,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Blooming"
+    ]
   },
   {
     "id": "ripepotatoplant",
@@ -20231,7 +21231,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "ripepotatoplant(grow)",
@@ -20245,7 +21248,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Blooming"
+    ]
   },
   {
     "id": "ripetomatoplant",
@@ -20259,7 +21264,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "ripetomatoplant(grow)",
@@ -20273,7 +21280,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Blooming"
+    ]
   },
   {
     "id": "ripewheat",
@@ -20287,7 +21296,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Blooming"
+    ]
   },
   {
     "id": "roadtobill",
@@ -20301,7 +21313,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "roadtoceruleancity",
@@ -20315,7 +21329,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "roadtoviridiancity",
@@ -20329,7 +21345,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "robustflower",
@@ -20343,7 +21361,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "robustflower(blue)",
@@ -20357,7 +21378,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "robustflower(orange)",
@@ -20371,7 +21395,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "robustflower(purple)",
@@ -20385,7 +21412,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "robustflower(white)",
@@ -20399,7 +21429,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "robust-flowerseeds",
@@ -20427,7 +21460,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "roofsupport",
@@ -20448,7 +21483,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)"
     ]
   },
   {
@@ -20463,7 +21498,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "rope",
@@ -20484,7 +21521,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 85 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 85 Pokemon"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -20499,7 +21536,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "roseradetea",
@@ -20517,7 +21556,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From a vending machine"
+    ]
   },
   {
     "id": "roughwall",
@@ -20538,7 +21579,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 7",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 7"
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -20559,9 +21602,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "roundpillar(lower)",
@@ -20581,9 +21622,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "roundpillar(middle)",
@@ -20603,9 +21642,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "roundpillar(upper)",
@@ -20625,9 +21662,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "route10(unova)",
@@ -20641,7 +21676,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "route209(day)",
@@ -20655,7 +21692,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "rowletclock",
@@ -20673,7 +21712,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "rustediron-plateflooring",
@@ -20687,7 +21728,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "rustedwall",
@@ -20722,7 +21767,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Inside Build Kit: Orange hut kit (Build Kit), Orange cottage kit (Build Kit)"
     ]
   },
   {
@@ -20741,7 +21786,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "sandcottagekit",
@@ -20755,7 +21802,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 4Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "sanddenkit",
@@ -20769,7 +21819,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "sandhousekit",
@@ -20783,7 +21836,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "sandhutkit",
@@ -20797,7 +21853,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 3Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "sandbags",
@@ -20827,7 +21886,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -20857,9 +21918,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Bleak Beach (Item)",
-    "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "sandstone",
@@ -20873,7 +21932,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)"
+    ]
   },
   {
     "id": "sandwiches",
@@ -20898,7 +21959,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -20925,7 +21986,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 5"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 5"
     ]
   },
   {
@@ -20956,7 +22017,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 230 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 230 Pokemon"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -20988,7 +22049,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Sparkling Skylands (Item)",
     "obtainabilityDetails": [
-      "Location: Sparkling Skylands (Item)"
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
     ]
   },
   {
@@ -21009,9 +22071,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "seaglassfragments",
@@ -21025,7 +22085,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)",
+      "Other: On beaches"
+    ]
   },
   {
     "id": "seaglassfragments(outdoor)",
@@ -21039,7 +22102,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "seashell",
@@ -21053,7 +22118,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: On beaches"
+    ]
   },
   {
     "id": "seashell(outdoor)",
@@ -21067,7 +22136,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "seashellsoil",
@@ -21081,7 +22152,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "seashoreflowers",
@@ -21095,7 +22169,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "seashoreflowers(blue)",
@@ -21109,7 +22186,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "seashoreflowers(orange)",
@@ -21123,7 +22204,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "seashoreflowers(white)",
@@ -21137,7 +22222,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "seashoreflowers(yellow)",
@@ -21151,7 +22240,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "seashoregrass",
@@ -21165,7 +22258,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "seashore-flowerseeds",
@@ -21179,7 +22275,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
+    ]
   },
   {
     "id": "seaweed",
@@ -21197,7 +22295,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Palette Town (Natural)"
+    ]
   },
   {
     "id": "seaweed(outdoor)",
@@ -21211,7 +22311,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "seaweedsalad",
@@ -21229,7 +22331,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "seaweedsoup",
@@ -21247,7 +22351,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "securitycamera",
@@ -21261,7 +22367,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "seedotlamp",
@@ -21279,7 +22387,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "sewer-holecover",
@@ -21300,7 +22410,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21315,7 +22425,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "shavedice",
@@ -21340,7 +22452,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -21371,7 +22483,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21390,7 +22502,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "shieldfossil(head)",
@@ -21408,7 +22522,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "shieldfossil(tail)",
@@ -21426,7 +22542,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "ship'swheel",
@@ -21455,9 +22573,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Inside the chimney of the S.S. Anne in Bleak Beach",
-    "obtainabilityDetails": [
-      "Location: Inside the chimney of the S.S. Anne in Bleak Beach"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "shopflooring",
@@ -21481,9 +22597,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 8",
-    "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 8"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "shoptiling(wallpaper)",
@@ -21503,9 +22617,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "shower",
@@ -21530,7 +22642,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -21549,7 +22662,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "shutter",
@@ -21570,7 +22685,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In hidden room found with Neo Dowsing Machine after completing Pokedex",
     "obtainabilityDetails": [
-      "Location: In hidden room found with Neo Dowsing Machine after completing Pokedex"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21597,7 +22712,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 140 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 140 Pokemon"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -21619,7 +22734,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural)",
+      "Inside Build Kit: Log cabin kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -21645,7 +22761,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 25 Pokemon in the Pokedex",
     "obtainabilityDetails": [
-      "Location: Register 25 Pokemon in the Pokedex"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Inside Build Kit: Moonlight dance statue kit (Build Kit), Orange hut kit (Build Kit)"
     ]
   },
   {
@@ -21670,9 +22787,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "silkscarf",
@@ -21686,7 +22801,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "silphco.",
@@ -21700,7 +22817,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "silverbottlecap",
@@ -21714,7 +22833,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "silverfeather",
@@ -21728,7 +22849,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From Lugia"
+    ]
   },
   {
     "id": "silverpowder",
@@ -21742,7 +22865,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "simplebread",
@@ -21760,7 +22885,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "simplecurtain(left)",
@@ -21781,7 +22908,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21803,7 +22930,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21834,7 +22961,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21861,7 +22988,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 5"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -21887,7 +23014,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 9"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -21908,9 +23035,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "simplehamburgersteak",
@@ -21928,7 +23053,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "simplepillarquarter",
@@ -21948,9 +23075,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop",
-    "obtainabilityDetails": [
-      "Location: Shop"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "simplesalad",
@@ -21968,7 +23093,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "simplesoup",
@@ -21986,7 +23113,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "simplesquaretiling",
@@ -22011,7 +23140,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -22032,9 +23162,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "sink",
@@ -22064,7 +23192,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -22083,7 +23211,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "sky-highgrass",
@@ -22097,7 +23227,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "skylandcliffrock",
@@ -22111,7 +23244,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "skylandflowers",
@@ -22125,7 +23261,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
+    ]
   },
   {
     "id": "skylandflowers(blue)",
@@ -22139,7 +23279,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "skylandflowers(orange)",
@@ -22153,7 +23297,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "skylandflowers(pink)",
@@ -22167,7 +23315,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "skylandflowers(yellow)",
@@ -22181,7 +23333,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "skylandpokemoncenterkit",
@@ -22195,7 +23351,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 10Shop - Unlocked at Cloud Island Lv. 10",
+      "Other: Reach Rank 10 in Sparkling Skylands"
+    ]
   },
   {
     "id": "skylandsand",
@@ -22209,7 +23368,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "skylandsandstone",
@@ -22223,7 +23385,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "skylandspottedcliffrock",
@@ -22237,7 +23401,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "skyland-flowerseeds",
@@ -22251,7 +23418,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
+    ]
   },
   {
     "id": "skylight",
@@ -22277,7 +23446,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -22308,7 +23479,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 2Shop - Unlocked at Cloud Island Lv. 2"
     ]
   },
   {
@@ -22334,7 +23505,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 2Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -22356,7 +23528,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit)"
     ]
   },
   {
@@ -22377,9 +23551,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "slopedtiledroof",
@@ -22400,7 +23572,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -22415,7 +23588,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "smallaspeartree",
@@ -22429,7 +23604,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smallaspeartree(grow)",
@@ -22443,7 +23620,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallchestotree",
@@ -22457,7 +23636,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smallchestotree(grow)",
@@ -22471,7 +23652,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallgarbagecan",
@@ -22496,7 +23679,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -22511,7 +23694,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smallleppatree(grow)",
@@ -22525,7 +23710,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smalllog",
@@ -22539,7 +23726,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Destroy trees"
+    ]
   },
   {
     "id": "smalllostrelic",
@@ -22553,7 +23744,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "smalllumtree",
@@ -22567,7 +23760,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smalllumtree(grow)",
@@ -22581,7 +23776,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallnarrowrug",
@@ -22606,9 +23803,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "smallofficekit",
@@ -22622,7 +23817,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 8Shop - Unlocked at Cloud Island Lv. 8",
+      "Inside Build Kit: Small office kit (Build Kit)"
+    ]
   },
   {
     "id": "smallpalmtree",
@@ -22636,7 +23834,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "smallpalmtree(grow)",
@@ -22650,7 +23850,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallpechatree",
@@ -22664,7 +23866,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smallpechatree(grow)",
@@ -22678,7 +23882,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallpointytree",
@@ -22692,7 +23898,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "smallpointytree(grow)",
@@ -22706,7 +23914,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallrawsttree",
@@ -22720,7 +23930,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sapling"
+    ]
   },
   {
     "id": "smallrawsttree(grow)",
@@ -22734,7 +23946,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sapling"
+    ]
   },
   {
     "id": "smallroundrug",
@@ -22759,9 +23973,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "smallsquarerug",
@@ -22787,7 +23999,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -22818,7 +24030,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 5"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -22849,7 +24062,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Obtain squishy clay",
     "obtainabilityDetails": [
-      "Location: Obtain squishy clay"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -22864,7 +24077,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Sprout"
+    ]
   },
   {
     "id": "smallwheatplant(grow)",
@@ -22878,7 +24094,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Sprout"
+    ]
   },
   {
     "id": "smeltingfurnace",
@@ -22904,7 +24122,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Create Iron ingot for first time",
     "obtainabilityDetails": [
-      "Location: Create Iron ingot for first time"
+      "Overworld: Rocky Ridges (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -22919,7 +24138,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "snowbellecity",
@@ -22933,7 +24154,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "sodafloat",
@@ -22958,7 +24181,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "In Daily Specials in shop after finishing Palette Town Challenge",
     "obtainabilityDetails": [
-      "Location: In Daily Specials in shop after finishing Palette Town Challenge"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -22977,7 +24200,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: From a vending machine"
+    ]
   },
   {
     "id": "softcarpeting",
@@ -23002,7 +24227,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 6"
+      "Overworld: Bleak Beach (Natural)"
     ]
   },
   {
@@ -23028,9 +24253,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "softsand",
@@ -23044,7 +24267,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "softseat",
@@ -23073,9 +24298,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "sootopoliscity",
@@ -23089,7 +24312,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "soul-likebadge",
@@ -23117,7 +24342,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "spaceship",
@@ -23135,7 +24362,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "spacesuit",
@@ -23153,7 +24383,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "speaker",
@@ -23183,7 +24416,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -23209,7 +24444,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -23230,9 +24465,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "spelltag",
@@ -23246,7 +24479,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "spotlight",
@@ -23276,7 +24511,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -23291,7 +24527,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "sprinkler",
@@ -23316,7 +24555,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -23331,7 +24570,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Inside Build Kit: Relaxing park kit (Build Kit), Fountain plaza kit (Build Kit)"
+    ]
   },
   {
     "id": "squaretiling",
@@ -23356,7 +24598,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
     ]
   },
   {
@@ -23377,9 +24620,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "square-plantseeds",
@@ -23407,7 +24648,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "stained-glasswindow(lower)",
@@ -23438,7 +24682,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -23470,7 +24714,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -23502,7 +24747,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -23517,7 +24763,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)"
+    ]
   },
   {
     "id": "stalagmites",
@@ -23531,7 +24779,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "standingmic",
@@ -23561,7 +24813,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 2Shop - Unlocked at Cloud Island Lv. 3",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -23583,7 +24837,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "After first picking up stardust",
     "obtainabilityDetails": [
-      "Location: After first picking up stardust"
+      "Other: Crafting"
     ]
   },
   {
@@ -23604,9 +24858,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "starprint(wallpaper)",
@@ -23626,9 +24878,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stardust",
@@ -23642,7 +24892,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "starry-skywall",
@@ -23668,7 +24920,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 9",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 9"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -23689,9 +24941,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stepstool",
@@ -23716,7 +24966,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -23742,7 +24992,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 2"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -23757,7 +25007,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "stickyweb",
@@ -23771,7 +25023,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "stone",
@@ -23785,7 +25041,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Other: Destroy boulders"
+    ]
   },
   {
     "id": "stone(outdoor)",
@@ -23799,7 +25058,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "stonebench",
@@ -23824,7 +25085,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -23846,7 +25108,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Inside Build Kit: Small office kit (Build Kit)"
     ]
   },
   {
@@ -23867,9 +25131,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stonecottagekit",
@@ -23883,7 +25145,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 4Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "stonedebris",
@@ -23897,7 +25162,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "stonedenkit",
@@ -23911,7 +25180,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 3Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "stonefencing",
@@ -23932,7 +25204,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop Sparkling Skylands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop Sparkling Skylands Lv. 4"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -23968,7 +25240,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 120 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 120 Pokemon"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 5Shop - Unlocked at Cloud Island Lv. 6"
     ]
   },
   {
@@ -23994,7 +25267,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Small office kit (Build Kit), Altar of Flame kit (Build Kit), Abandoned Power Plant kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24015,9 +25290,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stonefragments",
@@ -24031,7 +25304,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "stonehippedroof",
@@ -24051,9 +25328,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stonehousekit",
@@ -24067,7 +25342,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "stonehutkit",
@@ -24081,7 +25359,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 2Shop - Unlocked at Cloud Island Lv. 4",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "stonepillar(lower)",
@@ -24102,7 +25383,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24124,7 +25407,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit), Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24146,7 +25431,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit), Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Small office kit (Build Kit), Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24168,7 +25455,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Inside Build Kit: Gray hut kit (Build Kit)"
     ]
   },
   {
@@ -24189,9 +25476,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stonesteps",
@@ -24216,7 +25501,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Rocky Ridges (Item)",
     "obtainabilityDetails": [
-      "Location: Rocky Ridges (Item)"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original), Palette Town (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit), Orange hut kit (Build Kit), Orange cottage kit (Build Kit), Gray hut kit (Build Kit), Gray cottage kit (Build Kit), Small office kit (Build Kit), Fountain plaza kit (Build Kit), Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24238,7 +25525,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -24264,7 +25551,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 20 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 20 Pokemon"
+      "Overworld: Rocky Ridges (Natural)"
     ]
   },
   {
@@ -24285,9 +25572,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "storagebox",
@@ -24308,7 +25593,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 6 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 6 Pokemon"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -24323,7 +25608,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)",
+      "Other: Trade with Gimmighoul/Gholdengo"
+    ]
   },
   {
     "id": "strawbed",
@@ -24348,7 +25636,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Complete Bulbasaur's request",
     "obtainabilityDetails": [
-      "Location: Complete Bulbasaur's request"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Clefairy Doll Dream Island (Original)",
+      "Inside Build Kit: Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -24373,9 +25663,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Withered Wasteland (Item)",
-    "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "strawtable",
@@ -24400,9 +25688,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "strengthrock",
@@ -24416,7 +25702,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "stringlights",
@@ -24446,7 +25735,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Stylish Cafe kit (Build Kit), Concert stage kit (Build Kit)"
     ]
   },
   {
@@ -24461,7 +25751,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Concert stage kit (Build Kit)"
+    ]
   },
   {
     "id": "stripedwall",
@@ -24482,7 +25776,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 110 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 110 Pokemon"
+      "Overworld: Sparkling Skylands (Natural)",
+      "Inside Build Kit: Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24503,9 +25798,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "studydesk",
@@ -24525,9 +25818,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "sturdystick",
@@ -24541,7 +25832,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Other: Around trees"
+    ]
   },
   {
     "id": "sturdystick(outdoor)",
@@ -24555,7 +25849,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "stylishbrickwall(lower)",
@@ -24576,7 +25872,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -24598,7 +25894,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
     ]
   },
   {
@@ -24620,7 +25917,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)"
     ]
   },
   {
@@ -24641,9 +25938,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishbronzewall(wallpaper)",
@@ -24663,9 +25958,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishcafekit",
@@ -24679,7 +25972,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 8Shop - Unlocked at Cloud Island Lv. 8",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)",
+      "Other: Reach Rank 8 in Bleak Beach and put in shop"
+    ]
   },
   {
     "id": "stylishcookingpot",
@@ -24710,7 +26007,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -24737,7 +26035,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Small office kit (Build Kit)"
     ]
   },
   {
@@ -24769,7 +26069,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -24791,7 +26091,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit), Freezing Chambers kit (Build Kit)"
     ]
   },
   {
@@ -24812,9 +26113,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishhedge",
@@ -24828,7 +26127,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "stylishhedge(blue)",
@@ -24842,7 +26144,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "stylishhedge(orange)",
@@ -24856,7 +26162,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "stylishhedge(purple)",
@@ -24870,7 +26180,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "stylishhedge(white)",
@@ -24884,7 +26198,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "stylishhedgesapling",
@@ -24898,7 +26216,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "stylishhedgesapling(grow)",
@@ -24912,7 +26232,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "stylishironwall",
@@ -24932,9 +26254,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishironwall(wallpaper)",
@@ -24954,9 +26274,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishpokeballprint",
@@ -24976,9 +26294,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 10",
-    "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 10"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishpokeballprint(wallpaper)",
@@ -24998,9 +26314,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishsteps",
@@ -25030,7 +26344,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town lLv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town lLv. 4"
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -25056,7 +26371,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Rocky Ridges Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Rocky Ridges Lv. 6"
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Gray cottage kit (Build Kit), Altar of Flame kit (Build Kit)"
     ]
   },
   {
@@ -25077,9 +26394,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishstool",
@@ -25109,7 +26424,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 100 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 100 Pokemon"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -25135,7 +26450,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 60 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 60 Pokemon"
+      "Overworld: Sparkling Skylands (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -25156,9 +26472,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishwall(lower)",
@@ -25183,9 +26497,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishwall(middle)",
@@ -25210,9 +26522,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "stylishwall(upper)",
@@ -25238,7 +26548,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -25271,7 +26582,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 7"
+    ]
   },
   {
     "id": "sunnyposter",
@@ -25291,9 +26605,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "supertraining!",
@@ -25307,7 +26619,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "surfacelight",
@@ -25332,7 +26646,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
     ]
   },
   {
@@ -25354,7 +26669,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -25375,9 +26691,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "swirlprint(wallpaper)",
@@ -25397,9 +26711,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tablesetting",
@@ -25428,9 +26740,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tablet",
@@ -25460,7 +26770,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 5Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -25486,7 +26796,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -25501,7 +26811,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "tallpottedplant",
@@ -25519,7 +26832,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)"
+    ]
   },
   {
     "id": "tartanprint",
@@ -25539,9 +26855,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tartanprint(wallpaper)",
@@ -25561,9 +26875,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tatamimat",
@@ -25592,9 +26904,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "teaset",
@@ -25624,7 +26934,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -25643,7 +26953,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original)",
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "technologyposter",
@@ -25663,9 +26976,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "television",
@@ -25695,7 +27006,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)",
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -25716,9 +27029,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tentroofvalley",
@@ -25738,9 +27049,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "terrainextender",
@@ -25754,7 +27063,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "theacademy",
@@ -25768,7 +27079,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "thes.s.anne",
@@ -25782,7 +27095,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Aboard the S.S. Anne in Bleak Beach, In glowing terrain"
+    ]
   },
   {
     "id": "throatspray",
@@ -25796,7 +27111,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "thunderishbadge",
@@ -25840,7 +27157,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "After befriending Articuno, Zapdos & Moltres",
     "obtainabilityDetails": [
-      "Location: After befriending Articuno, Zapdos & Moltres"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 6"
     ]
   },
   {
@@ -25862,7 +27179,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -25883,9 +27202,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tiledroofvalley",
@@ -25905,9 +27222,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle) - Withered Wastelands Lv. 5",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle) - Withered Wastelands Lv. 5"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tinkagear",
@@ -25921,7 +27236,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Give Iron ingot to Tinkaton"
+    ]
   },
   {
     "id": "tiretoy",
@@ -25946,7 +27263,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -25972,7 +27290,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Dream Islands: Pikachu Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
     ]
   },
   {
@@ -25987,7 +27306,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "toilet",
@@ -26017,7 +27338,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -26036,7 +27358,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural)"
+    ]
   },
   {
     "id": "tomatohamburgersteak",
@@ -26054,7 +27378,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "tomatoseeds",
@@ -26068,7 +27394,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
+    ]
   },
   {
     "id": "tomatosprout",
@@ -26082,7 +27410,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "tomatosprout(grow)",
@@ -26096,7 +27427,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "torch",
@@ -26126,7 +27459,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -26157,7 +27491,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -26176,7 +27511,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Palette Town (Original)",
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "townstreetlight",
@@ -26201,7 +27539,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Palette Town Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Palette Town Lv. 3"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)"
     ]
   },
   {
@@ -26222,9 +27560,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "toyblocks",
@@ -26249,7 +27585,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "From Zorua in Bleak Beach",
     "obtainabilityDetails": [
-      "Location: From Zorua in Bleak Beach"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -26271,7 +27608,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)"
     ]
   },
   {
@@ -26296,9 +27634,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "triangle-designflooring(wallpaper)",
@@ -26318,9 +27654,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "tundrafossil(body)",
@@ -26338,7 +27672,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "tundrafossil(head)",
@@ -26356,7 +27692,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "tundrafossil(tail)",
@@ -26374,7 +27712,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "twine",
@@ -26388,7 +27728,12 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Shops: Shop - Unlocked at Rocky Ridges Lv. 2Shop - Unlocked at Cloud Island Lv. 3",
+      "Other: Destroy fabric on the ground"
+    ]
   },
   {
     "id": "twistedpottedplant",
@@ -26406,7 +27751,11 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 2"
+    ]
   },
   {
     "id": "twistedspoon",
@@ -26420,7 +27769,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "ultraruin",
@@ -26434,7 +27785,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "undergroundhatch",
@@ -26454,9 +27807,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 5",
-    "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 5"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "unioncave",
@@ -26470,7 +27821,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "uprightlog",
@@ -26491,7 +27844,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Natural)",
+      "Inside Build Kit: Log cabin kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -26518,7 +27872,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2"
     ]
   },
   {
@@ -26554,7 +27910,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 6"
     ]
   },
   {
@@ -26569,7 +27927,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "vermilioncitytheme",
@@ -26583,7 +27944,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "vertical-stripeprint",
@@ -26603,9 +27966,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "vertical-stripeprint(wallpaper)",
@@ -26625,9 +27986,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "vibranthamburgersteak",
@@ -26645,7 +28004,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Cook with ingredients"
+    ]
   },
   {
     "id": "vine",
@@ -26659,7 +28020,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "vineprint",
@@ -26679,9 +28044,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "vineprint(wallpaper)",
@@ -26701,9 +28064,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "vinerope",
@@ -26717,7 +28078,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Destroy vines"
+    ]
   },
   {
     "id": "vinewalldecoration",
@@ -26746,9 +28111,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 45 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 45 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "violetmeteorlamp",
@@ -26766,7 +28129,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "volcanicash",
@@ -26780,7 +28145,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "volcanicrock",
@@ -26794,7 +28162,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)"
+    ]
   },
   {
     "id": "volcanoeybadge",
@@ -26833,7 +28203,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Location: Bleak Beach (Item)"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -26863,9 +28234,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "walllight",
@@ -26890,7 +28259,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -26916,7 +28285,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 6",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 6"
+      "Overworld: Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 6Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -26947,7 +28317,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -26977,9 +28348,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wallstoragebox",
@@ -27003,9 +28372,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wallswitch",
@@ -27030,9 +28397,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 6",
-    "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 6"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "walltorch",
@@ -27067,7 +28432,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 160 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 160 Pokemon"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original), Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Altar of Flame kit (Build Kit)"
     ]
   },
   {
@@ -27097,9 +28464,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wall-mountedtable",
@@ -27125,7 +28490,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Regsiter 240 Pokemon",
     "obtainabilityDetails": [
-      "Location: Regsiter 240 Pokemon"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -27152,7 +28517,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Inside Build Kit: Abandoned Power Plant kit (Build Kit)"
     ]
   },
   {
@@ -27173,9 +28539,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "washingmachine",
@@ -27200,7 +28564,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Bleak Beach Lv. 5",
     "obtainabilityDetails": [
-      "Location: Shop - Bleak Beach Lv. 5"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 5"
     ]
   },
   {
@@ -27215,7 +28579,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 10Shop - Unlocked at Cloud Island Lv. 10",
+      "Other: Reach Rank 10 in Withered Wastelands"
+    ]
   },
   {
     "id": "wastepaper",
@@ -27229,7 +28596,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "wastepaper(outdoor)",
@@ -27243,7 +28613,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise"
+    ]
   },
   {
     "id": "waterbasin",
@@ -27273,7 +28645,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Dream Islands: Clefairy Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -27303,9 +28676,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 290 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 290 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "watercolorposter",
@@ -27325,9 +28696,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "waterproofseat",
@@ -27352,7 +28721,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -27367,7 +28736,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "weaknesspolicy",
@@ -27381,7 +28753,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "weathervane",
@@ -27405,9 +28779,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 180 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 180 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wheat",
@@ -27425,7 +28797,10 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "wheatseeds",
@@ -27439,7 +28814,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 4"
+    ]
   },
   {
     "id": "wheatsprout",
@@ -27453,7 +28830,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y, One day from Seed"
+    ]
   },
   {
     "id": "wheatsprout(grow)",
@@ -27467,7 +28846,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Magnet Rise and hold Y, One use of Growth from Seed"
+    ]
   },
   {
     "id": "wheelbarrow",
@@ -27502,7 +28883,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 200 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 200 Pokemon"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -27517,7 +28898,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "whiterock",
@@ -27531,7 +28915,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Palette Town (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "whiteboard",
@@ -27561,7 +28948,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -27576,7 +28964,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "wigglymirror",
@@ -27594,7 +28984,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic"
+    ]
   },
   {
     "id": "wildarea(north)",
@@ -27608,7 +29000,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "wildflowerseeds",
@@ -27622,7 +29016,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
+    ]
   },
   {
     "id": "wildflowers",
@@ -27636,7 +29032,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Relaxing park kit (Build Kit)"
+    ]
   },
   {
     "id": "wildflowers(blue)",
@@ -27650,7 +29050,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "wildflowers(orange)",
@@ -27664,7 +29068,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "wildflowers(purple)",
@@ -27678,7 +29086,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "wildflowers(red)",
@@ -27692,7 +29104,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Natural), Palette Town (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Other: Each player one of four different colours as standard, Daily Shop - Others"
+    ]
   },
   {
     "id": "windmillkit",
@@ -27706,7 +29122,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "windmillposter",
@@ -27726,9 +29145,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "windowpane",
@@ -27754,7 +29171,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Sparkling Skylands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Sparkling Skylands Lv. 4"
+      "Overworld: Sparkling Skylands (Original)",
+      "Dream Islands: Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Gray hut kit (Build Kit), Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Small office kit (Build Kit)"
     ]
   },
   {
@@ -27773,7 +29192,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "wingfossil(head)",
@@ -27791,7 +29212,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "wingfossil(leftwing)",
@@ -27809,7 +29232,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "wingfossil(rightwing)",
@@ -27827,7 +29252,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "wingfossil(tail)",
@@ -27845,7 +29272,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Withered Wastelands (Treasure), Bleak Beach (Treasure), Rocky Ridges (Treasure), Sparkling Skylands (Treasure), Palette Town (Treasure)"
+    ]
   },
   {
     "id": "winterprint",
@@ -27865,9 +29294,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "winterprint(wallpaper)",
@@ -27887,9 +29314,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wire",
@@ -27910,7 +29335,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)"
     ]
   },
   {
@@ -27932,7 +29357,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "From Porygon Request in Sparkling Skylands",
     "obtainabilityDetails": [
-      "Location: From Porygon Request in Sparkling Skylands"
+      "Other: Complete Porygon's request"
     ]
   },
   {
@@ -27954,7 +29379,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "From Porygon Request in Sparkling Skylands",
     "obtainabilityDetails": [
-      "Location: From Porygon Request in Sparkling Skylands"
+      "Other: Complete Porygon's request"
     ]
   },
   {
@@ -27973,7 +29398,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "woodfragments",
@@ -27987,7 +29414,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Palette Town (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "woodenbed",
@@ -28017,7 +29448,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Shops: Shop - Unlocked at Withered Wastelands Lv. 3Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -28043,7 +29474,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Inside Build Kit: Relaxing park kit (Build Kit)"
     ]
   },
   {
@@ -28074,7 +29507,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 55 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 55 Pokemon"
+      "Shops: Shop - Unlocked at Bleak Beach Lv. 2Shop - Unlocked at Cloud Island Lv. 3"
     ]
   },
   {
@@ -28095,9 +29528,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "woodenborder(line)",
@@ -28117,9 +29548,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "woodenborder(single)",
@@ -28139,9 +29568,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "woodencrate",
@@ -28166,7 +29593,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original), Rocky Ridges (Original)",
+      "Inside Build Kit: Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -28188,7 +29616,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)"
     ]
   },
   {
@@ -28210,7 +29638,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 3"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -28236,7 +29665,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink cottage kit (Build Kit), Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -28258,7 +29689,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Shops: Shop - Unlocked at Cloud Island Lv. 5"
     ]
   },
   {
@@ -28280,7 +29711,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 3",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 3"
+      "Overworld: Bleak Beach (Original)",
+      "Dream Islands: Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Relaxing park kit (Build Kit)"
     ]
   },
   {
@@ -28302,7 +29735,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original)",
+      "Dream Islands: Arcanine Doll Dream Island (Original)",
+      "Inside Build Kit: Gray cottage kit (Build Kit), Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -28324,7 +29759,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 4",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 4"
+      "Overworld: Withered Wastelands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -28346,7 +29782,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 75 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 75 Pokemon"
+      "Overworld: Sparkling Skylands (Original)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit)"
     ]
   },
   {
@@ -28372,7 +29809,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Withered Wasteland (Item)",
     "obtainabilityDetails": [
-      "Location: Withered Wasteland (Item)"
+      "Overworld: Bleak Beach (Original), Sparkling Skylands (Original)"
     ]
   },
   {
@@ -28394,7 +29831,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit), Stylish Cafe kit (Build Kit)"
     ]
   },
   {
@@ -28416,7 +29855,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -28438,7 +29879,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Pink cottage kit (Build Kit)"
     ]
   },
   {
@@ -28460,7 +29903,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -28482,7 +29926,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Register 80 Pokemon",
     "obtainabilityDetails": [
-      "Location: Register 80 Pokemon"
+      "Overworld: Sparkling Skylands (Original)"
     ]
   },
   {
@@ -28518,7 +29962,7 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)"
     ]
   },
   {
@@ -28544,7 +29988,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Talk to Slowpoke",
     "obtainabilityDetails": [
-      "Location: Talk to Slowpoke"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Inside Build Kit: Log cabin kit (Build Kit), Relaxing park kit (Build Kit)"
     ]
   },
   {
@@ -28570,7 +30016,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Bleak Beach (Original)",
+      "Inside Build Kit: Pink hut kit (Build Kit), Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -28592,7 +30039,10 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original)",
+      "Dream Islands: Eevee Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 2",
+      "Inside Build Kit: Pink hut kit (Build Kit), Log cabin kit (Build Kit)"
     ]
   },
   {
@@ -28613,9 +30063,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "woodenwall(wallpaper)",
@@ -28635,9 +30083,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "workbench",
@@ -28658,7 +30104,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop - Withered Wastelands Lv. 2",
     "obtainabilityDetails": [
-      "Location: Shop - Withered Wastelands Lv. 2"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original), Palette Town (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)",
+      "Shops: Shop - Unlocked at Cloud Island Lv. 1"
     ]
   },
   {
@@ -28673,7 +30121,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural), Arcanine Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "wornwoodencrate",
@@ -28698,7 +30150,8 @@ export const generatedItems = [
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
+      "Overworld: Withered Wastelands (Original), Bleak Beach (Original), Rocky Ridges (Original), Sparkling Skylands (Original)",
+      "Dream Islands: Pikachu Doll Dream Island (Original), Eevee Doll Dream Island (Original), Clefairy Doll Dream Island (Original), Arcanine Doll Dream Island (Original), Dragonite Doll Dream Island (Original)"
     ]
   },
   {
@@ -28724,7 +30177,9 @@ export const generatedItems = [
     ],
     "recipeLocation": "Shop (as bundle)",
     "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)",
+      "Inside Build Kit: Yellow cottage kit (Build Kit), Small office kit (Build Kit)"
     ]
   },
   {
@@ -28745,9 +30200,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Shop (as bundle)",
-    "obtainabilityDetails": [
-      "Location: Shop (as bundle)"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wreath",
@@ -28781,9 +30234,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Register 65 Pokemon",
-    "obtainabilityDetails": [
-      "Location: Register 65 Pokemon"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "wyndon",
@@ -28797,7 +30248,9 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: In glowing terrain"
+    ]
   },
   {
     "id": "yellowcottagekit",
@@ -28811,7 +30264,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Inside Build Kit: Yellow cottage kit (Build Kit)",
+      "Other: Inside ripples of water"
+    ]
   },
   {
     "id": "yellowhutkit",
@@ -28825,7 +30281,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Sparkling Skylands Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Inside Build Kit: Yellow hut kit (Build Kit)",
+      "Other: PC Shop"
+    ]
   },
   {
     "id": "yellowmeteorlamp",
@@ -28843,7 +30303,9 @@ export const generatedItems = [
     ],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   },
   {
     "id": "yellowpaint",
@@ -28857,7 +30319,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Shops: Shop - Unlocked at Palette Town Lv. 5Shop - Unlocked at Cloud Island Lv. 5",
+      "Other: Crush berries"
+    ]
   },
   {
     "id": "yellowrock",
@@ -28871,7 +30336,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Rocky Ridges (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "yellowtallgrass",
@@ -28885,7 +30353,10 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)"
+    ]
   },
   {
     "id": "yellow-greenshoots",
@@ -28899,7 +30370,11 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Overworld: Bleak Beach (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Pikachu Doll Dream Island (Natural)",
+      "Other: Take photo and 3D print, or Magnet Rise and hold Y"
+    ]
   },
   {
     "id": "zig-zagprint",
@@ -28919,9 +30394,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Daily Shop Special Sparkling Water",
-    "obtainabilityDetails": [
-      "Location: Daily Shop Special Sparkling Water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "zig-zagprint(wallpaper)",
@@ -28941,9 +30414,7 @@ export const generatedItems = [
       }
     ],
     "recipeLocation": "Sparkling ripples in water",
-    "obtainabilityDetails": [
-      "Location: Sparkling ripples in water"
-    ]
+    "obtainabilityDetails": []
   },
   {
     "id": "zoomlens",
@@ -28957,6 +30428,8 @@ export const generatedItems = [
     "comfortCategoryLabels": [],
     "recipeMaterials": [],
     "recipeLocation": null,
-    "obtainabilityDetails": []
+    "obtainabilityDetails": [
+      "Other: Appraise from a Relic, In glowing terrain"
+    ]
   }
 ] as const;

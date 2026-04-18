@@ -53,6 +53,7 @@ export interface Item {
   habitatTraitIds: ID[];
   craftable: boolean;
   materials: CraftMaterial[];
+  obtainabilityDetails?: string[];
   sources: ItemSource[];
   availabilityConfidence?: "low" | "medium" | "high";
   sourceLabels?: {

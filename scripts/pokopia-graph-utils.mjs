@@ -298,16 +298,16 @@ export const parseItemDetail = (html, itemSlug, fallbackName) => {
     /<h2>Recipe<\/h2>[\s\S]*?<tr><td class="fooblack">Location<\/td><td class="fooinfo">([\s\S]*?)<\/td><\/tr>/i,
   );
   const recipeLocation = recipeLocationMatch ? strip(recipeLocationMatch[1]) : null;
-  const locationsSectionMatch = html.match(/<h2>Locations<\/h2>[\s\S]*?<table[^>]*>([\s\S]*?)<\/table>/i);
-  const obtainabilityDetails = locationsSectionMatch
+  const locationsBlockMatch = html.match(/<h2>Locations<\/h2>[\s\S]*?<\/table>/i);
+  const obtainabilityDetails = locationsBlockMatch
     ? [
-        ...locationsSectionMatch[1].matchAll(
+        ...locationsBlockMatch[0].matchAll(
           /<tr><td class="fooblack">([^<]+)<\/td><td class="fooinfo">([\s\S]*?)<\/td><\/tr>/gi,
         ),
       ]
         .map((match) => {
           const label = strip(match[1]);
-          const detail = strip(match[2]);
+          const detail = strip(match[2].replace(/<br\s*\/?>/gi, ", ")).replace(/,\s*$/, "");
           if (!label && !detail) return null;
           if (!label) return detail;
           if (!detail) return label;

@@ -41,14 +41,7 @@ export const SelectedPokemonPanel = ({ selected, onRemove, maxSize }: SelectedPo
       <div className="pointer-events-none absolute right-[-14px] top-[76px] h-[34px] w-[182px] rounded-[50%] bg-[#fff8ef]" />
 
       <div className="relative">
-        <h3 className="type-h1 text-white">Pokemon Group</h3>
-
-        <div className="relative mt-12">
-          <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 border-t border-dashed border-[#d8cfc1]" />
-          <div className="mx-auto w-fit rounded-full border border-dashed border-[#d8cfc1] bg-[#fff8ef] px-4 py-1.5">
-            <p className="type-ui type-ui-strong text-[#999]">Pokemon ({selected.length}/{maxSize})</p>
-          </div>
-        </div>
+        <h3 className="type-h1 text-white">Your Group</h3>
 
         <div className="mt-5 space-y-3">
           {selected.map((entry) => {
@@ -67,7 +60,7 @@ export const SelectedPokemonPanel = ({ selected, onRemove, maxSize }: SelectedPo
                   {entry.imageUrl ? <img src={entry.imageUrl} alt="" className="h-9 w-9 object-contain" /> : null}
                 </div>
                 <div className="min-w-0">
-                  <p className="type-h3 text-[#1a1a1a]">{entry.fullDisplayName}</p>
+                  <p className="text-[#1a1a1a]">{entry.fullDisplayName}</p>
                   <p className="type-caption text-[rgba(26,26,26,0.5)]">
                     {getIdealHabitatLabel(entry).split(",")[0]} · {sharedFavoriteCount} shared favorites
                   </p>
@@ -81,7 +74,7 @@ export const SelectedPokemonPanel = ({ selected, onRemove, maxSize }: SelectedPo
               key={`placeholder-${index + 1}`}
               className="flex h-[60px] items-center justify-center rounded-lg border border-dashed border-[#d5c5b1] text-center"
             >
-              <p className="type-h3 text-[#d5c5b1]">Choose a Pokemon</p>
+              <p className="text-[#d5c5b1]">Choose a Pokemon</p>
             </div>
           ))}
         </div>

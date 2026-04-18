@@ -143,6 +143,7 @@ export const mapGeneratedItemsToDomain = (): Item[] =>
         itemName: material.itemName,
         quantity: material.quantity,
       })),
+      obtainabilityDetails: [...(baseItem.obtainabilityDetails ?? [])],
       sources: [
         ...(itemCategoryLabel ? [{ type: "unknown" as const, label: itemCategoryLabel }] : []),
         ...(baseItem.recipeLocation ? [{ type: "craft" as const, label: baseItem.recipeLocation }] : []),

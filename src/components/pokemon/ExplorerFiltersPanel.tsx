@@ -61,7 +61,7 @@ export const ExplorerFiltersPanel = ({
         onChange={(event) => onSortChange(event.target.value as ExplorerSortOption)}
         className="type-ui rounded-2xl border border-ink/10 bg-white/80 px-4 py-3 outline-none transition focus:border-moss"
       >
-        <option value="compatibility-potential-desc">Compatibility potential</option>
+        <option value="compatibility-potential-desc">Compatibility</option>
         <option value="number-asc">Pokedex number</option>
         <option value="name-asc">Name A-Z</option>
         <option value="name-desc">Name Z-A</option>
