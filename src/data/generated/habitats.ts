@@ -152,6 +152,32 @@ export const generatedHabitats = [
     ]
   },
   {
+    "id": "treasure_hunting_set",
+    "number": 4,
+    "name": "Treasure-hunting set",
+    "slug": "treasure-huntingset",
+    "imageUrl": "/assets/pokopia-habitats/e4.png",
+    "sourceUrl": "https://www.serebii.net/pokemonpokopia/habitatdex/treasure-huntingset.shtml",
+    "description": "A map and compass are essential treasure-hunting tools. Time to set off in search of jewels",
+    "requiredItems": [
+      {
+        "itemId": "adventure_kit",
+        "itemName": "Adventure kit",
+        "quantity": 1
+      },
+      {
+        "itemId": "map_and_compass",
+        "itemName": "Map and compass",
+        "quantity": 1
+      },
+      {
+        "itemId": "treasure",
+        "itemName": "Treasure",
+        "quantity": 1
+      }
+    ]
+  },
+  {
     "id": "seaside_tall_grass",
     "number": 5,
     "name": "Seaside Tall Grass",
@@ -1031,12 +1057,12 @@ export const generatedHabitats = [
     ]
   },
   {
-    "id": "crazy_log_handicrafts",
+    "id": "cozy_log_handicrafts",
     "number": 44,
-    "name": "Crazy log handicrafts",
-    "slug": "crazyloghandicrafts",
+    "name": "Cozy log handicrafts",
+    "slug": "cozyloghandicrafts",
     "imageUrl": "/assets/pokopia-habitats/44.png",
-    "sourceUrl": "https://www.serebii.net/pokemonpokopia/habitatdex/crazyloghandicrafts.shtml",
+    "sourceUrl": "https://www.serebii.net/pokemonpokopia/habitatdex/cozyloghandicrafts.shtml",
     "description": "This space is packed with wooden furniture. It feels almost like you're in a mountain cabin",
     "requiredItems": [
       {
@@ -4264,7 +4290,7 @@ export const generatedHabitats = [
       {
         "itemId": "table_any",
         "itemName": "Table (any)",
-        "quantity": 1
+        "quantity": 2
       },
       {
         "itemId": "cash_register",

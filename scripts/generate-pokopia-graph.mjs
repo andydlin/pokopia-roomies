@@ -35,6 +35,49 @@ const fetchText = async (url) => {
   return response.text();
 };
 
+const FAVORITE_FLAVOR_CATEGORY_PATTERN = /_flavor$/;
+
+const validateGeneratedItemFavoriteMappings = (items, favoriteItems) => {
+  if (favoriteItems.length === 0) {
+    throw new Error("Generated favoriteItems payload is empty.");
+  }
+
+  const favoriteItemById = new Map(favoriteItems.map((item) => [item.id, item]));
+  const categoryById = new Map();
+  items.forEach((item) => {
+    item.favoriteCategoryIds.forEach((categoryId) => {
+      if (!categoryById.has(categoryId)) categoryById.set(categoryId, []);
+      categoryById.get(categoryId).push(item.id);
+    });
+  });
+
+  if (!categoryById.has("group_activities")) {
+    throw new Error("No generated item maps to group_activities.");
+  }
+  if (!categoryById.has("cute_stuff")) {
+    throw new Error("No generated item maps to cute_stuff.");
+  }
+  if (![...categoryById.keys()].some((categoryId) => FAVORITE_FLAVOR_CATEGORY_PATTERN.test(categoryId))) {
+    throw new Error("No generated item maps to a flavor favorite category.");
+  }
+
+  if (!items.some((item) => item.favoriteCategoryIds.length === 0)) {
+    throw new Error("Expected at least one item with empty favoriteCategoryIds.");
+  }
+
+  items.forEach((item) => {
+    const favoriteItem = favoriteItemById.get(item.id);
+    if (!favoriteItem) {
+      throw new Error(`Missing favorite item record for ${item.id}.`);
+    }
+    const left = [...new Set(item.favoriteCategoryIds)].sort();
+    const right = [...new Set(favoriteItem.favoriteCategoryIds)].sort();
+    if (left.length !== right.length || left.some((categoryId, index) => categoryId !== right[index])) {
+      throw new Error(`favoriteCategoryIds mismatch between items/favoriteItems for ${item.id}.`);
+    }
+  });
+};
+
 const buildPokemon = async (seed) => {
   const url = `https://www.serebii.net/pokemonpokopia/pokedex/${seed.sourceSlug}.shtml`;
   const html = await fetchText(url);
@@ -253,39 +296,53 @@ const main = async () => {
         .sort((left, right) => left.name.localeCompare(right.name)),
     ),
   );
+  const generatedItems = [...itemById.values()]
+    .map((item) => ({
+      id: item.id,
+      sourceSlug: item.sourceSlug,
+      name: item.name,
+      imageUrl: item.imageUrl,
+      itemCategory: item.itemCategory,
+      itemCategoryLabel: item.itemCategoryLabel,
+      sourceSectionAnchor: item.sourceSectionAnchor ?? item.itemCategory,
+      comfortCategoryIds: [...new Set(item.comfortCategoryIds ?? [])].sort(),
+      comfortCategoryLabels: [...new Set(item.comfortCategoryLabels ?? [])],
+      favoriteCategoryIds: [...new Set(item.favoriteCategoryIds ?? [])].sort(),
+      benefitingPokemonIds: [...new Set(item.benefitingPokemonIds ?? [])].sort(),
+      recipeMaterials: [...(item.recipeMaterials ?? [])],
+      recipeLocation: item.recipeLocation ?? null,
+      obtainabilityDetails: [...(item.obtainabilityDetails ?? [])],
+      sourceLabels: {
+        category: item.sourceLabels?.category ?? item.itemCategoryLabel ?? "Unknown",
+        favoriteCategories: [...new Set(item.sourceLabels?.favoriteCategories ?? [])],
+      },
+    }))
+    .sort((left, right) => left.name.localeCompare(right.name));
+  const generatedFavoriteItems = [...itemById.values()]
+    .map((item) => ({
+      ...item,
+      comfortCategoryIds: [...new Set(item.comfortCategoryIds ?? [])].sort(),
+      comfortCategoryLabels: [...new Set(item.comfortCategoryLabels ?? [])],
+      favoriteCategoryIds: [...new Set(item.favoriteCategoryIds ?? [])].sort(),
+      benefitingPokemonIds: [...new Set(item.benefitingPokemonIds ?? [])].sort(),
+      recipeMaterials: [...(item.recipeMaterials ?? [])],
+      obtainabilityDetails: [...(item.obtainabilityDetails ?? [])],
+      sourceLabels: {
+        category: item.sourceLabels?.category ?? item.itemCategoryLabel ?? "Unknown",
+        favoriteCategories: [...new Set(item.sourceLabels?.favoriteCategories ?? [])],
+      },
+    }))
+    .sort((left, right) => left.name.localeCompare(right.name));
+
+  validateGeneratedItemFavoriteMappings(generatedItems, generatedFavoriteItems);
+
   await writeFile(
     path.join(generatedDir, "items.ts"),
-    renderTsModule(
-      "generatedItems",
-      [...itemById.values()]
-        .map((item) => ({
-          id: item.id,
-          sourceSlug: item.sourceSlug,
-          name: item.name,
-          imageUrl: item.imageUrl,
-          itemCategory: item.itemCategory,
-          itemCategoryLabel: item.itemCategoryLabel,
-          sourceSectionAnchor: item.sourceSectionAnchor ?? item.itemCategory,
-          comfortCategoryIds: [...new Set(item.comfortCategoryIds ?? [])].sort(),
-          comfortCategoryLabels: [...new Set(item.comfortCategoryLabels ?? [])],
-          recipeMaterials: [...(item.recipeMaterials ?? [])],
-          recipeLocation: item.recipeLocation ?? null,
-          obtainabilityDetails: [...(item.obtainabilityDetails ?? [])],
-        }))
-        .sort((left, right) => left.name.localeCompare(right.name)),
-    ),
+    renderTsModule("generatedItems", generatedItems),
   );
   await writeFile(
     path.join(generatedDir, "favoriteItems.ts"),
-    renderTsModule(
-      "generatedFavoriteItems",
-      [...itemById.values()]
-        .map((item) => ({
-          ...item,
-          favoriteCategoryIds: [...new Set(item.favoriteCategoryIds)].sort(),
-        }))
-        .sort((left, right) => left.name.localeCompare(right.name)),
-    ),
+    renderTsModule("generatedFavoriteItems", generatedFavoriteItems),
   );
   await writeFile(
     path.join(generatedDir, "habitats.ts"),

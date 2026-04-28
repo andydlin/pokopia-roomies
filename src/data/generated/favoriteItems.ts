@@ -316,6 +316,142 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "adventurekit",
+    "sourceSlug": "adventurekit",
+    "name": "Adventure kit",
+    "imageUrl": "/assets/pokopia-items/adventurekit.png",
+    "itemCategory": "misc",
+    "itemCategoryLabel": "Misc.",
+    "sourceSectionAnchor": "misc.",
+    "comfortCategoryIds": [
+      "toy"
+    ],
+    "comfortCategoryLabels": [
+      "Toy"
+    ],
+    "favoriteCategoryIds": [
+      "containers",
+      "fabric",
+      "soft_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "absol",
+      "altaria",
+      "amaura",
+      "audino",
+      "blaziken",
+      "blissey",
+      "bulbasaur",
+      "chansey",
+      "chatot",
+      "cinccino",
+      "combusken",
+      "corviknight",
+      "corvisquire",
+      "cyndaquil",
+      "dusclops",
+      "dusknoir",
+      "duskull",
+      "eevee",
+      "farfetch'd",
+      "farigiraf",
+      "fidough",
+      "froakie",
+      "gallade",
+      "garbodor",
+      "gastly",
+      "gastrodon",
+      "gastrodoneastsea",
+      "girafarig",
+      "gloom",
+      "greedent",
+      "grimer",
+      "grubbin",
+      "gulpin",
+      "happiny",
+      "hariyama",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "hoothoot",
+      "igglybuff",
+      "ivysaur",
+      "jigglypuff",
+      "kadabra",
+      "koffing",
+      "lampent",
+      "leafeon",
+      "lombre",
+      "lotad",
+      "ludicolo",
+      "makuhita",
+      "mareep",
+      "meowth",
+      "mimikyu",
+      "minccino",
+      "minun",
+      "mosslax",
+      "munchlax",
+      "murkrow",
+      "ninetales",
+      "noctowl",
+      "oddish",
+      "persian",
+      "pichu",
+      "pidgeot",
+      "pidgeotto",
+      "pidgey",
+      "piplup",
+      "plusle",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "prinplup",
+      "quilava",
+      "raboot",
+      "riolu",
+      "rookidee",
+      "rowlet",
+      "scorbunny",
+      "serperior",
+      "shellos",
+      "shelloseastsea",
+      "skwovet",
+      "sliggoo",
+      "slowpoke",
+      "smeargle",
+      "snorlax",
+      "sprigatito",
+      "swablu",
+      "swalot",
+      "sylveon",
+      "tatsugiristretchyform",
+      "torchic",
+      "typhlosion",
+      "tyrogue",
+      "venusaur",
+      "vileplume",
+      "volcanion",
+      "vulpix",
+      "weezing",
+      "wigglytuff"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Misc.",
+      "favoriteCategories": [
+        "Containers",
+        "Fabric",
+        "Soft stuff"
+      ]
+    }
+  },
+  {
     "id": "aetherparadise",
     "sourceSlug": "aetherparadise",
     "name": "Aether Paradise",
@@ -366,7 +502,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -3228,7 +3364,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -5154,7 +5290,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -5214,7 +5350,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -5274,7 +5410,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -6301,7 +6437,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -10889,7 +11025,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -12061,6 +12197,159 @@ export const generatedFavoriteItems = [
         "Lots of fire",
         "Stone stuff"
       ]
+    }
+  },
+  {
+    "id": "campingchair",
+    "sourceSlug": "campingchair",
+    "name": "Camping chair",
+    "imageUrl": "/assets/pokopia-items/campingchair.png",
+    "itemCategory": "furniture",
+    "itemCategoryLabel": "Furniture",
+    "sourceSectionAnchor": "furniture",
+    "comfortCategoryIds": [
+      "relaxation"
+    ],
+    "comfortCategoryLabels": [
+      "Relaxation"
+    ],
+    "favoriteCategoryIds": [
+      "fabric",
+      "metal_stuff",
+      "soft_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "absol",
+      "alakazam",
+      "altaria",
+      "audino",
+      "bastiodon",
+      "beldum",
+      "blissey",
+      "bulbasaur",
+      "carkol",
+      "chansey",
+      "chatot",
+      "cinccino",
+      "coalossal",
+      "corviknight",
+      "cyndaquil",
+      "dusclops",
+      "duskull",
+      "eevee",
+      "empoleon",
+      "excadrill",
+      "farfetch'd",
+      "farigiraf",
+      "fidough",
+      "flareon",
+      "gallade",
+      "gholdengo",
+      "gimmighoul",
+      "girafarig",
+      "gloom",
+      "greedent",
+      "gurdurr",
+      "happiny",
+      "hariyama",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "hoothoot",
+      "igglybuff",
+      "ivysaur",
+      "jigglypuff",
+      "kadabra",
+      "koffing",
+      "leafeon",
+      "lucario",
+      "magnemite",
+      "magneton",
+      "magnezone",
+      "makuhita",
+      "mareep",
+      "mawile",
+      "metagross",
+      "metang",
+      "mimikyu",
+      "minccino",
+      "minun",
+      "mosslax",
+      "munchlax",
+      "murkrow",
+      "ninetales",
+      "noctowl",
+      "oddish",
+      "pichu",
+      "pidgeot",
+      "pidgeotto",
+      "pidgey",
+      "plusle",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "quilava",
+      "rampardos",
+      "riolu",
+      "rolycoly",
+      "scizor",
+      "scorbunny",
+      "shieldon",
+      "skwovet",
+      "sliggoo",
+      "slowpoke",
+      "smeargle",
+      "snorlax",
+      "steelix",
+      "swablu",
+      "sylveon",
+      "tinkatink",
+      "tinkaton",
+      "tinkatuff",
+      "torkoal",
+      "typhlosion",
+      "tyrogue",
+      "venusaur",
+      "vileplume",
+      "vulpix",
+      "weezing",
+      "wigglytuff"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Furniture",
+      "favoriteCategories": [
+        "Fabric",
+        "Metal stuff",
+        "Soft stuff"
+      ]
+    }
+  },
+  {
+    "id": "campingcookingpot",
+    "sourceSlug": "campingcookingpot",
+    "name": "Camping cooking pot",
+    "imageUrl": "/assets/pokopia-items/campingcookingpot.png",
+    "itemCategory": "utilities",
+    "itemCategoryLabel": "Utilities",
+    "sourceSectionAnchor": "utilities",
+    "comfortCategoryIds": [],
+    "comfortCategoryLabels": [],
+    "favoriteCategoryIds": [],
+    "benefitingPokemonIds": [],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Utilities",
+      "favoriteCategories": []
     }
   },
   {
@@ -13413,7 +13702,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -17385,7 +17674,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -19156,7 +19445,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural)"
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural)"
     ],
     "sourceLabels": {
       "category": "Materials",
@@ -22798,6 +23087,135 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "digitalcamera",
+    "sourceSlug": "digitalcamera",
+    "name": "Digital camera",
+    "imageUrl": "/assets/pokopia-items/digitalcamera.png",
+    "itemCategory": "misc",
+    "itemCategoryLabel": "Misc.",
+    "sourceSectionAnchor": "misc.",
+    "comfortCategoryIds": [
+      "toy"
+    ],
+    "comfortCategoryLabels": [
+      "Toy"
+    ],
+    "favoriteCategoryIds": [
+      "complicated_stuff",
+      "metal_stuff",
+      "strange_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "absol",
+      "alakazam",
+      "armarouge",
+      "bastiodon",
+      "beldum",
+      "carkol",
+      "ceruledge",
+      "chandelure",
+      "charcadet",
+      "coalossal",
+      "corviknight",
+      "cyndaquil",
+      "dragapult",
+      "drakloak",
+      "dreepy",
+      "drifblim",
+      "drifloon",
+      "drilbur",
+      "dusclops",
+      "dusknoir",
+      "duskull",
+      "empoleon",
+      "espeon",
+      "excadrill",
+      "exeggcute",
+      "exeggutor",
+      "farigiraf",
+      "flareon",
+      "gallade",
+      "garbodor",
+      "gardevoir",
+      "gastly",
+      "gengar",
+      "gholdengo",
+      "gimmighoul",
+      "girafarig",
+      "glimmet",
+      "glimmora",
+      "golbat",
+      "golduck",
+      "greedent",
+      "gurdurr",
+      "haunter",
+      "kadabra",
+      "kirlia",
+      "koffing",
+      "lampent",
+      "litwick",
+      "lucario",
+      "lugia",
+      "magnemite",
+      "magneton",
+      "magnezone",
+      "mawile",
+      "metagross",
+      "metang",
+      "mew",
+      "mewtwo",
+      "mimejr.",
+      "misdreavus",
+      "mismagius",
+      "mosslax",
+      "mr.mime",
+      "parasect",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "professortangrowth",
+      "psyduck",
+      "quilava",
+      "ralts",
+      "rampardos",
+      "rolycoly",
+      "scizor",
+      "shieldon",
+      "slowbro",
+      "slowking",
+      "slowpoke",
+      "smeargle",
+      "steelix",
+      "tinkatink",
+      "tinkaton",
+      "tinkatuff",
+      "torkoal",
+      "trapinch",
+      "trubbish",
+      "typhlosion",
+      "venonat",
+      "vespiquen",
+      "wattrel",
+      "weezing",
+      "zoroark",
+      "zubat"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Misc.",
+      "favoriteCategories": [
+        "Complicated stuff",
+        "Metal stuff",
+        "Strange stuff"
+      ]
+    }
+  },
+  {
     "id": "diningcabinet",
     "sourceSlug": "diningcabinet",
     "name": "Dining cabinet",
@@ -23722,7 +24140,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -23782,7 +24200,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -24588,7 +25006,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -26318,6 +26736,7 @@ export const generatedFavoriteItems = [
       "complicated_stuff",
       "luxury",
       "metal_stuff",
+      "sharp_stuff",
       "slender_objects"
     ],
     "benefitingPokemonIds": [
@@ -26332,6 +26751,7 @@ export const generatedFavoriteItems = [
       "beldum",
       "blastoise",
       "blaziken",
+      "cacnea",
       "cacturne",
       "carkol",
       "ceruledge",
@@ -26349,8 +26769,10 @@ export const generatedFavoriteItems = [
       "diglett",
       "dragonair",
       "dratini",
+      "drilbur",
       "dugtrio",
       "ekans",
+      "electabuzz",
       "empoleon",
       "entei",
       "espeon",
@@ -26358,6 +26780,7 @@ export const generatedFavoriteItems = [
       "farfetch'd",
       "farigiraf",
       "flareon",
+      "floragato",
       "fraxure",
       "garbodor",
       "gardevoir",
@@ -26374,10 +26797,12 @@ export const generatedFavoriteItems = [
       "gurdurr",
       "gyarados",
       "haxorus",
+      "jolteon",
       "kadabra",
       "kilowattrel",
       "koffing",
       "kyogre",
+      "larvesta",
       "larvitar",
       "lucario",
       "magnemite",
@@ -26398,6 +26823,7 @@ export const generatedFavoriteItems = [
       "onix",
       "persian",
       "pidgeot",
+      "pinsir",
       "professortangrowth",
       "psyduck",
       "pupitar",
@@ -26407,6 +26833,8 @@ export const generatedFavoriteItems = [
       "rolycoly",
       "rookidee",
       "scizor",
+      "scorbunny",
+      "scyther",
       "serperior",
       "shieldon",
       "sliggoo",
@@ -26454,6 +26882,7 @@ export const generatedFavoriteItems = [
         "Complicated stuff",
         "Luxury",
         "Metal stuff",
+        "Sharp stuff",
         "Slender objects"
       ]
     }
@@ -29994,7 +30423,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -30563,7 +30992,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -30955,7 +31384,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -35981,7 +36410,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -41016,7 +41445,7 @@ export const generatedFavoriteItems = [
     "obtainabilityDetails": [
       "Overworld: Withered Wastelands (Natural), Bleak Beach (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
       "Dream Islands: Dragonite Doll Dream Island (Natural)",
-      "Inside Build Kit: Yellow cottage kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
+      "Inside Build Kit: Yellow hut kit (Build Kit), Yellow cottage kit (Build Kit), Small office kit (Build Kit), Abandoned Power Plant kit (Build Kit)"
     ],
     "sourceLabels": {
       "category": "Blocks",
@@ -41481,6 +41910,199 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "jewelwalldecoration",
+    "sourceSlug": "jewelwalldecoration",
+    "name": "Jewel wall decoration",
+    "imageUrl": "/assets/pokopia-items/jewelwalldecoration.png",
+    "itemCategory": "misc",
+    "itemCategoryLabel": "Misc.",
+    "sourceSectionAnchor": "misc.",
+    "comfortCategoryIds": [
+      "decoration"
+    ],
+    "comfortCategoryLabels": [
+      "Decoration"
+    ],
+    "favoriteCategoryIds": [
+      "colorful_stuff",
+      "luxury",
+      "stone_stuff",
+      "watching_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "aerodactyl",
+      "alakazam",
+      "altaria",
+      "amaura",
+      "arbok",
+      "arcanine",
+      "ariados",
+      "armarouge",
+      "articuno",
+      "aurorus",
+      "axew",
+      "bastiodon",
+      "beldum",
+      "blastoise",
+      "blaziken",
+      "bonsly",
+      "cacturne",
+      "carkol",
+      "ceruledge",
+      "chandelure",
+      "charcadet",
+      "charizard",
+      "charjabug",
+      "cinderace",
+      "cleffa",
+      "coalossal",
+      "combusken",
+      "conkeldurr",
+      "cranidos",
+      "crobat",
+      "dachsbun",
+      "dedenne",
+      "drilbur",
+      "eevee",
+      "ekans",
+      "entei",
+      "espeon",
+      "excadrill",
+      "exeggcute",
+      "exeggutor",
+      "farigiraf",
+      "fidough",
+      "floragato",
+      "flygon",
+      "fraxure",
+      "froakie",
+      "frogadier",
+      "gardevoir",
+      "geodude",
+      "girafarig",
+      "glimmet",
+      "glimmora",
+      "golem",
+      "goodra",
+      "goomy",
+      "graveler",
+      "greedent",
+      "growlithe",
+      "grubbin",
+      "gulpin",
+      "haxorus",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "hoothoot",
+      "ivysaur",
+      "kadabra",
+      "kirlia",
+      "kricketot",
+      "kricketune",
+      "kyogre",
+      "lapras",
+      "larvitar",
+      "machamp",
+      "machoke",
+      "machop",
+      "magby",
+      "magmar",
+      "magmortar",
+      "magnezone",
+      "marowak",
+      "mawile",
+      "meowscarada",
+      "meowth",
+      "metagross",
+      "metang",
+      "mew",
+      "mewtwo",
+      "mimejr.",
+      "misdreavus",
+      "moltres",
+      "mosslax",
+      "mr.mime",
+      "muk",
+      "murkrow",
+      "ninetales",
+      "noctowl",
+      "noibat",
+      "noivern",
+      "onix",
+      "paldeanwooper",
+      "paras",
+      "parasect",
+      "pelipper",
+      "persian",
+      "pidgeot",
+      "pidgeotto",
+      "pidgey",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "pupitar",
+      "raboot",
+      "raikou",
+      "ralts",
+      "rampardos",
+      "riolu",
+      "rolycoly",
+      "scorbunny",
+      "shellos",
+      "shelloseastsea",
+      "shieldon",
+      "skwovet",
+      "sliggoo",
+      "smeargle",
+      "spinarak",
+      "sprigatito",
+      "steelix",
+      "sudowoodo",
+      "suicune",
+      "swablu",
+      "swalot",
+      "tangrowth",
+      "torchic",
+      "torkoal",
+      "trapinch",
+      "tyranitar",
+      "tyrantrum",
+      "tyrogue",
+      "tyrunt",
+      "umbreon",
+      "vaporeon",
+      "venomoth",
+      "venonat",
+      "venusaur",
+      "vibrava",
+      "victreebel",
+      "vileplume",
+      "volcanion",
+      "voltorb",
+      "weepinbell",
+      "wingull",
+      "zapdos",
+      "zoroark",
+      "zorua"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Misc.",
+      "favoriteCategories": [
+        "Colorful stuff",
+        "Luxury",
+        "Stone stuff",
+        "Watching stuff"
+      ]
+    }
+  },
+  {
     "id": "jubilifevillage",
     "sourceSlug": "jubilifevillage",
     "name": "Jubilife Village",
@@ -41531,7 +42153,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -47158,6 +47780,123 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "mapandcompass",
+    "sourceSlug": "mapandcompass",
+    "name": "Map and compass",
+    "imageUrl": "/assets/pokopia-items/mapandcompass.png",
+    "itemCategory": "misc",
+    "itemCategoryLabel": "Misc.",
+    "sourceSectionAnchor": "misc.",
+    "comfortCategoryIds": [
+      "toy"
+    ],
+    "comfortCategoryLabels": [
+      "Toy"
+    ],
+    "favoriteCategoryIds": [
+      "group_activities",
+      "letters_and_words"
+    ],
+    "benefitingPokemonIds": [
+      "absol",
+      "alakazam",
+      "amaura",
+      "blissey",
+      "bulbasaur",
+      "chansey",
+      "charmander",
+      "cinderace",
+      "clefable",
+      "clefairy",
+      "combee",
+      "conkeldurr",
+      "cranidos",
+      "cubone",
+      "dachsbun",
+      "decidueye",
+      "dedenne",
+      "diglett",
+      "dragapult",
+      "drakloak",
+      "dreepy",
+      "dugtrio",
+      "dusknoir",
+      "eevee",
+      "empoleon",
+      "exeggcute",
+      "fidough",
+      "gastly",
+      "gengar",
+      "glaceon",
+      "greedent",
+      "growlithe",
+      "gurdurr",
+      "haunter",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "honchkrow",
+      "illumise",
+      "machamp",
+      "machoke",
+      "machop",
+      "magikarp",
+      "magnemite",
+      "magneton",
+      "mawile",
+      "meowth",
+      "mewtwo",
+      "mimikyu",
+      "minun",
+      "mismagius",
+      "munchlax",
+      "murkrow",
+      "noctowl",
+      "paldeanwooper",
+      "pawmi",
+      "pawmo",
+      "pawmot",
+      "peakychu",
+      "persian",
+      "pikachu",
+      "plusle",
+      "politoed",
+      "poliwrath",
+      "professortangrowth",
+      "raboot",
+      "raichu",
+      "scorbunny",
+      "slowbro",
+      "slowking",
+      "squirtle",
+      "stereorotom",
+      "tatsugiricurlyform",
+      "tatsugiridroopyform",
+      "tatsugiristretchyform",
+      "tinkatuff",
+      "tyrogue",
+      "umbreon",
+      "venonat",
+      "volbeat",
+      "volcarona",
+      "wigglytuff",
+      "zoroark",
+      "zorua"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Misc.",
+      "favoriteCategories": [
+        "Group Activities",
+        "Letters and words"
+      ]
+    }
+  },
+  {
     "id": "marble",
     "sourceSlug": "marble",
     "name": "Marble",
@@ -50803,7 +51542,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -54784,7 +55523,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -55624,6 +56363,151 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "oillantern",
+    "sourceSlug": "oillantern",
+    "name": "Oil lantern",
+    "imageUrl": "/assets/pokopia-items/oillantern.png",
+    "itemCategory": "utilities",
+    "itemCategoryLabel": "Utilities",
+    "sourceSectionAnchor": "utilities",
+    "comfortCategoryIds": [
+      "decoration"
+    ],
+    "comfortCategoryLabels": [
+      "Decoration"
+    ],
+    "favoriteCategoryIds": [
+      "containers",
+      "lots_of_fire",
+      "metal_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "alakazam",
+      "amaura",
+      "arcanine",
+      "armarouge",
+      "axew",
+      "bastiodon",
+      "beldum",
+      "blaziken",
+      "carkol",
+      "ceruledge",
+      "chandelure",
+      "charcadet",
+      "charizard",
+      "charmander",
+      "charmeleon",
+      "cinderace",
+      "coalossal",
+      "combusken",
+      "corviknight",
+      "corvisquire",
+      "cyndaquil",
+      "dachsbun",
+      "dragapult",
+      "dragonair",
+      "dragonite",
+      "drakloak",
+      "dratini",
+      "dreepy",
+      "dusclops",
+      "dusknoir",
+      "electabuzz",
+      "electivire",
+      "empoleon",
+      "entei",
+      "excadrill",
+      "fidough",
+      "flareon",
+      "flygon",
+      "fraxure",
+      "froakie",
+      "garbodor",
+      "gastly",
+      "gastrodon",
+      "gastrodoneastsea",
+      "gholdengo",
+      "gimmighoul",
+      "greedent",
+      "grimer",
+      "growlithe",
+      "grubbin",
+      "gulpin",
+      "gurdurr",
+      "happiny",
+      "haxorus",
+      "ho-oh",
+      "kadabra",
+      "lampent",
+      "larvesta",
+      "litwick",
+      "lombre",
+      "lotad",
+      "lucario",
+      "ludicolo",
+      "magby",
+      "magmar",
+      "magmortar",
+      "magnemite",
+      "magneton",
+      "magnezone",
+      "mawile",
+      "meowth",
+      "metagross",
+      "metang",
+      "moltres",
+      "ninetales",
+      "noctowl",
+      "noibat",
+      "noivern",
+      "persian",
+      "piplup",
+      "prinplup",
+      "quilava",
+      "raboot",
+      "rampardos",
+      "rolycoly",
+      "rookidee",
+      "rowlet",
+      "scizor",
+      "scorbunny",
+      "serperior",
+      "shellos",
+      "shelloseastsea",
+      "shieldon",
+      "sprigatito",
+      "steelix",
+      "swalot",
+      "tatsugiristretchyform",
+      "tinkatink",
+      "tinkaton",
+      "tinkatuff",
+      "torchic",
+      "torkoal",
+      "typhlosion",
+      "tyrantrum",
+      "tyrunt",
+      "vibrava",
+      "volcanion",
+      "volcarona",
+      "vulpix"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Utilities",
+      "favoriteCategories": [
+        "Containers",
+        "Lots of fire",
+        "Metal stuff"
+      ]
+    }
+  },
+  {
     "id": "oilpaintingposter",
     "sourceSlug": "oilpaintingposter",
     "name": "Oil painting poster",
@@ -56003,7 +56887,8 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Overworld: Withered Wastelands (Natural), Sparkling Skylands (Natural), Palette Town (Natural)"
+      "Overworld: Withered Wastelands (Natural), Sparkling Skylands (Natural), Palette Town (Natural)",
+      "Dream Islands: Dragonite Doll Dream Island (Natural)"
     ],
     "sourceLabels": {
       "category": "Blocks",
@@ -58143,7 +59028,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -59274,7 +60159,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In Pewter Museum in Rocky Ridges, In glowing terrain"
+      "Other: In Pewter Museum in Rocky Ridges, In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -63732,7 +64617,7 @@ export const generatedFavoriteItems = [
     "recipeLocation": null,
     "obtainabilityDetails": [
       "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
-      "Dream Islands: Eevee Doll Dream Island (Natural)"
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
     ],
     "sourceLabels": {
       "category": "Blocks",
@@ -63791,7 +64676,8 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)"
+      "Overworld: Withered Wastelands (Natural), Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
     ],
     "sourceLabels": {
       "category": "Materials",
@@ -63851,7 +64737,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -64063,7 +64949,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -66570,7 +67456,8 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)"
+      "Overworld: Rocky Ridges (Natural), Sparkling Skylands (Natural)",
+      "Dream Islands: Eevee Doll Dream Island (Natural), Clefairy Doll Dream Island (Natural), Dragonite Doll Dream Island (Natural)"
     ],
     "sourceLabels": {
       "category": "Materials",
@@ -67051,6 +67938,50 @@ export const generatedFavoriteItems = [
     ],
     "sourceLabels": {
       "category": "Blocks",
+      "favoriteCategories": []
+    }
+  },
+  {
+    "id": "redcrystalcluster",
+    "sourceSlug": "redcrystalcluster",
+    "name": "Red crystal cluster",
+    "imageUrl": "/assets/pokopia-items/redcrystalcluster.png",
+    "itemCategory": "nature",
+    "itemCategoryLabel": "Nature",
+    "sourceSectionAnchor": "nature",
+    "comfortCategoryIds": [],
+    "comfortCategoryLabels": [],
+    "favoriteCategoryIds": [],
+    "benefitingPokemonIds": [],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Hold Y during Magnet Rise in Dream Island"
+    ],
+    "sourceLabels": {
+      "category": "Nature",
+      "favoriteCategories": []
+    }
+  },
+  {
+    "id": "redcrystalfragment",
+    "sourceSlug": "redcrystalfragment",
+    "name": "Red crystal fragment",
+    "imageUrl": "/assets/pokopia-items/redcrystalfragment.png",
+    "itemCategory": "materials",
+    "itemCategoryLabel": "Materials",
+    "sourceSectionAnchor": "materials",
+    "comfortCategoryIds": [],
+    "comfortCategoryLabels": [],
+    "favoriteCategoryIds": [],
+    "benefitingPokemonIds": [],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Dream Island"
+    ],
+    "sourceLabels": {
+      "category": "Materials",
       "favoriteCategories": []
     }
   },
@@ -68329,7 +69260,7 @@ export const generatedFavoriteItems = [
     ],
     "recipeLocation": "Bleak Beach (Item)",
     "obtainabilityDetails": [
-      "Inside Build Kit: Orange hut kit (Build Kit), Yellow hut kit (Build Kit)"
+      "Inside Build Kit: Orange hut kit (Build Kit)"
     ],
     "sourceLabels": {
       "category": "Utilities",
@@ -69168,7 +70099,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -69228,7 +70159,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -69288,7 +70219,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -69653,7 +70584,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -69862,7 +70793,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -70147,7 +71078,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -70207,7 +71138,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -74230,7 +75161,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -74848,7 +75779,7 @@ export const generatedFavoriteItems = [
         "quantity": 1
       }
     ],
-    "recipeLocation": "Shop",
+    "recipeLocation": "Register 290 Pokemon",
     "obtainabilityDetails": [],
     "sourceLabels": {
       "category": "Buildings",
@@ -75813,6 +76744,106 @@ export const generatedFavoriteItems = [
     "sourceLabels": {
       "category": "Buildings",
       "favoriteCategories": []
+    }
+  },
+  {
+    "id": "sleepingbag",
+    "sourceSlug": "sleepingbag",
+    "name": "Sleeping bag",
+    "imageUrl": "/assets/pokopia-items/sleepingbag.png",
+    "itemCategory": "furniture",
+    "itemCategoryLabel": "Furniture",
+    "sourceSectionAnchor": "furniture",
+    "comfortCategoryIds": [
+      "relaxation"
+    ],
+    "comfortCategoryLabels": [
+      "Relaxation"
+    ],
+    "favoriteCategoryIds": [
+      "fabric",
+      "soft_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "absol",
+      "altaria",
+      "audino",
+      "blissey",
+      "bulbasaur",
+      "chansey",
+      "chatot",
+      "cinccino",
+      "cyndaquil",
+      "dusclops",
+      "duskull",
+      "eevee",
+      "farfetch'd",
+      "farigiraf",
+      "fidough",
+      "gallade",
+      "girafarig",
+      "gloom",
+      "greedent",
+      "happiny",
+      "hariyama",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "hoothoot",
+      "igglybuff",
+      "ivysaur",
+      "jigglypuff",
+      "koffing",
+      "leafeon",
+      "makuhita",
+      "mareep",
+      "mimikyu",
+      "minccino",
+      "minun",
+      "mosslax",
+      "munchlax",
+      "murkrow",
+      "ninetales",
+      "noctowl",
+      "oddish",
+      "pichu",
+      "pidgeot",
+      "pidgeotto",
+      "pidgey",
+      "plusle",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "quilava",
+      "riolu",
+      "scorbunny",
+      "skwovet",
+      "sliggoo",
+      "slowpoke",
+      "smeargle",
+      "snorlax",
+      "swablu",
+      "sylveon",
+      "typhlosion",
+      "tyrogue",
+      "venusaur",
+      "vileplume",
+      "vulpix",
+      "weezing",
+      "wigglytuff"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Furniture",
+      "favoriteCategories": [
+        "Fabric",
+        "Soft stuff"
+      ]
     }
   },
   {
@@ -77665,7 +78696,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -78204,7 +79235,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -78284,7 +79315,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -84583,7 +85614,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -84805,11 +85836,17 @@ export const generatedFavoriteItems = [
       "fabric",
       "gatherings",
       "group_activities",
-      "looks_like_food"
+      "looks_like_food",
+      "lots_of_water"
     ],
     "benefitingPokemonIds": [
       "amaura",
+      "articuno",
       "audino",
+      "azumarill",
+      "azurill",
+      "bellsprout",
+      "blastoise",
       "blissey",
       "bulbasaur",
       "chansey",
@@ -84819,6 +85856,7 @@ export const generatedFavoriteItems = [
       "cinderace",
       "clefable",
       "clefairy",
+      "clodsire",
       "combee",
       "conkeldurr",
       "cramorant",
@@ -84829,23 +85867,35 @@ export const generatedFavoriteItems = [
       "dedenne",
       "diglett",
       "dragapult",
+      "dragonair",
       "drakloak",
+      "dratini",
       "dreepy",
       "dugtrio",
       "dusknoir",
       "duskull",
       "eevee",
+      "empoleon",
       "exeggcute",
       "exeggutor",
+      "froakie",
+      "frogadier",
       "gallade",
       "garbodor",
       "gastly",
+      "gastrodon",
+      "gastrodoneastsea",
       "gengar",
       "glaceon",
+      "golduck",
+      "goodra",
+      "goomy",
       "greedent",
+      "greninja",
       "grimer",
       "gulpin",
       "gurdurr",
+      "gyarados",
       "happiny",
       "hariyama",
       "haunter",
@@ -84857,8 +85907,14 @@ export const generatedFavoriteItems = [
       "illumise",
       "kilowattrel",
       "koffing",
+      "kyogre",
+      "lapras",
       "larvitar",
       "leafeon",
+      "lombre",
+      "lotad",
+      "ludicolo",
+      "lugia",
       "machamp",
       "machoke",
       "machop",
@@ -84868,6 +85924,7 @@ export const generatedFavoriteItems = [
       "magnezone",
       "makuhita",
       "mareep",
+      "marill",
       "mawile",
       "meowth",
       "mimikyu",
@@ -84880,32 +85937,47 @@ export const generatedFavoriteItems = [
       "murkrow",
       "noibat",
       "noivern",
+      "oddish",
       "paldeanwooper",
       "paras",
       "pawmi",
       "pawmo",
       "pawmot",
+      "pelipper",
       "persian",
       "pichu",
       "pidgeotto",
       "pikachu",
+      "piplup",
       "plusle",
       "politoed",
+      "poliwag",
+      "poliwhirl",
       "poliwrath",
       "porygon-z",
+      "prinplup",
       "professortangrowth",
+      "psyduck",
       "quilava",
       "raboot",
       "raichu",
       "riolu",
       "scorbunny",
+      "serperior",
+      "servine",
+      "shellos",
+      "shelloseastsea",
       "skwovet",
+      "sliggoo",
       "slowbro",
       "slowking",
+      "slowpoke",
       "smeargle",
+      "snivy",
       "snorlax",
       "squirtle",
       "stereorotom",
+      "suicune",
       "swalot",
       "sylveon",
       "tangela",
@@ -84918,11 +85990,15 @@ export const generatedFavoriteItems = [
       "trubbish",
       "typhlosion",
       "tyrogue",
+      "vaporeon",
       "vespiquen",
       "volbeat",
+      "volcanion",
+      "wartortle",
       "wattrel",
       "weezing",
       "wigglytuff",
+      "wingull",
       "zoroark",
       "zorua"
     ],
@@ -84946,7 +86022,8 @@ export const generatedFavoriteItems = [
         "Fabric",
         "Gatherings",
         "Group Activities",
-        "Looks like food"
+        "Looks like food",
+        "Lots of water"
       ]
     }
   },
@@ -86209,6 +87286,28 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "tentkit",
+    "sourceSlug": "tentkit",
+    "name": "Tent kit",
+    "imageUrl": "/assets/pokopia-items/tentkit.png",
+    "itemCategory": "kits",
+    "itemCategoryLabel": "Kits",
+    "sourceSectionAnchor": "kits",
+    "comfortCategoryIds": [],
+    "comfortCategoryLabels": [],
+    "favoriteCategoryIds": [],
+    "benefitingPokemonIds": [],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Kits",
+      "favoriteCategories": []
+    }
+  },
+  {
     "id": "tentroofvalley",
     "sourceSlug": "tentroofvalley",
     "name": "Tent roof valley",
@@ -86307,7 +87406,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -86367,7 +87466,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: Aboard the S.S. Anne in Bleak Beach, In glowing terrain"
+      "Other: Aboard the S.S. Anne in Bleak Beach, In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -87048,7 +88147,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -88266,6 +89365,221 @@ export const generatedFavoriteItems = [
     }
   },
   {
+    "id": "treasure",
+    "sourceSlug": "treasure",
+    "name": "Treasure",
+    "imageUrl": "/assets/pokopia-items/treasure.png",
+    "itemCategory": "misc",
+    "itemCategoryLabel": "Misc.",
+    "sourceSectionAnchor": "misc.",
+    "comfortCategoryIds": [
+      "toy"
+    ],
+    "comfortCategoryLabels": [
+      "Toy"
+    ],
+    "favoriteCategoryIds": [
+      "colorful_stuff",
+      "group_activities",
+      "luxury",
+      "metal_stuff",
+      "stone_stuff"
+    ],
+    "benefitingPokemonIds": [
+      "abra",
+      "aerodactyl",
+      "alakazam",
+      "amaura",
+      "arcanine",
+      "ariados",
+      "armarouge",
+      "articuno",
+      "aurorus",
+      "axew",
+      "bastiodon",
+      "beldum",
+      "blastoise",
+      "blaziken",
+      "blissey",
+      "bonsly",
+      "bulbasaur",
+      "cacturne",
+      "carkol",
+      "ceruledge",
+      "chansey",
+      "charcadet",
+      "charizard",
+      "charmander",
+      "cinderace",
+      "clefable",
+      "clefairy",
+      "cleffa",
+      "coalossal",
+      "combee",
+      "combusken",
+      "conkeldurr",
+      "corviknight",
+      "cranidos",
+      "cubone",
+      "cyndaquil",
+      "dachsbun",
+      "dedenne",
+      "diglett",
+      "dragapult",
+      "drakloak",
+      "dreepy",
+      "dugtrio",
+      "dusknoir",
+      "eevee",
+      "empoleon",
+      "entei",
+      "excadrill",
+      "exeggcute",
+      "flareon",
+      "floragato",
+      "flygon",
+      "fraxure",
+      "gardevoir",
+      "gastly",
+      "gengar",
+      "geodude",
+      "gholdengo",
+      "gimmighoul",
+      "glaceon",
+      "glimmet",
+      "glimmora",
+      "golem",
+      "goodra",
+      "goomy",
+      "graveler",
+      "greedent",
+      "growlithe",
+      "gulpin",
+      "gurdurr",
+      "haunter",
+      "haxorus",
+      "hitmonchan",
+      "hitmonlee",
+      "hitmontop",
+      "illumise",
+      "ivysaur",
+      "kadabra",
+      "kricketot",
+      "kricketune",
+      "kyogre",
+      "larvitar",
+      "lucario",
+      "machamp",
+      "machoke",
+      "machop",
+      "magby",
+      "magikarp",
+      "magmar",
+      "magmortar",
+      "magnemite",
+      "magneton",
+      "magnezone",
+      "marowak",
+      "mawile",
+      "meowscarada",
+      "meowth",
+      "metagross",
+      "metang",
+      "mew",
+      "mewtwo",
+      "mimejr.",
+      "mimikyu",
+      "minun",
+      "misdreavus",
+      "mismagius",
+      "moltres",
+      "muk",
+      "munchlax",
+      "murkrow",
+      "ninetales",
+      "noibat",
+      "onix",
+      "paldeanwooper",
+      "pawmi",
+      "pawmo",
+      "pawmot",
+      "persian",
+      "pidgeot",
+      "pikachu",
+      "plusle",
+      "politoed",
+      "poliwrath",
+      "porygon",
+      "porygon-z",
+      "porygon2",
+      "professortangrowth",
+      "pupitar",
+      "quilava",
+      "raboot",
+      "raichu",
+      "raikou",
+      "rampardos",
+      "rolycoly",
+      "scizor",
+      "scorbunny",
+      "shellos",
+      "shelloseastsea",
+      "shieldon",
+      "sliggoo",
+      "slowbro",
+      "slowking",
+      "smeargle",
+      "spinarak",
+      "sprigatito",
+      "squirtle",
+      "steelix",
+      "stereorotom",
+      "sudowoodo",
+      "swalot",
+      "tatsugiricurlyform",
+      "tatsugiridroopyform",
+      "tatsugiristretchyform",
+      "tinkatink",
+      "tinkaton",
+      "tinkatuff",
+      "torchic",
+      "torkoal",
+      "typhlosion",
+      "tyranitar",
+      "tyrantrum",
+      "tyrogue",
+      "tyrunt",
+      "umbreon",
+      "venusaur",
+      "vibrava",
+      "victreebel",
+      "vileplume",
+      "volbeat",
+      "volcanion",
+      "voltorb",
+      "weepinbell",
+      "wigglytuff",
+      "zapdos",
+      "zoroark",
+      "zorua"
+    ],
+    "recipeMaterials": [],
+    "recipeLocation": null,
+    "obtainabilityDetails": [
+      "Other: Pokemon Center Exchange"
+    ],
+    "sourceLabels": {
+      "category": "Misc.",
+      "favoriteCategories": [
+        "Colorful stuff",
+        "Group Activities",
+        "Luxury",
+        "Metal stuff",
+        "Stone stuff"
+      ]
+    }
+  },
+  {
     "id": "triangle-designflooring",
     "sourceSlug": "triangle-designflooring",
     "name": "Triangle-design flooring",
@@ -89222,7 +90536,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -89308,7 +90622,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -89686,7 +91000,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -92337,7 +93651,7 @@ export const generatedFavoriteItems = [
         "quantity": 1
       }
     ],
-    "recipeLocation": "Register 290 Pokemon",
+    "recipeLocation": "Register 280 Pokemon",
     "obtainabilityDetails": [],
     "sourceLabels": {
       "category": "Buildings",
@@ -93536,7 +94850,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",
@@ -96451,8 +97765,14 @@ export const generatedFavoriteItems = [
     "comfortCategoryLabels": [],
     "favoriteCategoryIds": [],
     "benefitingPokemonIds": [],
-    "recipeMaterials": [],
-    "recipeLocation": null,
+    "recipeMaterials": [
+      {
+        "itemId": "lumber",
+        "itemName": "Lumber",
+        "quantity": 2
+      }
+    ],
+    "recipeLocation": "Daily Shop Special Sparkling Water",
     "obtainabilityDetails": [],
     "sourceLabels": {
       "category": "Buildings",
@@ -97067,7 +98387,7 @@ export const generatedFavoriteItems = [
     "recipeMaterials": [],
     "recipeLocation": null,
     "obtainabilityDetails": [
-      "Other: In glowing terrain"
+      "Other: In glowing terrain, Dream Islands"
     ],
     "sourceLabels": {
       "category": "Other",

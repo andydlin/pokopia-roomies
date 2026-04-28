@@ -12946,11 +12946,7 @@ export const generatedPokemon = [
       "trade"
     ],
     "locations": [
-      "withered_wastelands",
-      "bleak_beach",
-      "rocky_ridges",
       "sparkling_skylands",
-      "palette_town",
       "cloud_island"
     ],
     "timeOfDay": [
