@@ -68,6 +68,51 @@ React Router v7. The builder tabs (`/builder/pokemon`, `/builder/items/comfort`,
 
 Tailwind v4 (CSS-first config). All design tokens are CSS custom properties defined in `src/styles.css` under the `--pk-*` namespace (colors, spacing, radius, shadows, typography). Use these tokens and the shared component primitives — avoid one-off inline values. Score tiers use semantic token sets: `--pk-best-*`, `--pk-some-*`, `--pk-none-*`, `--pk-destructive-*`.
 
+## Product Direction
+
+### UX Mental Model
+
+Design around what a Pokopia player is actually thinking:
+- "Which Pokémon do I want in this build?"
+- "What does each Pokémon like?"
+- "Which items help satisfy those favorites?"
+- "Which items support more than one Pokémon?"
+- "Which Pokémon is under-supported right now?"
+- "What materials do I need to gather?"
+
+### Information Hierarchy
+
+Prefer this ordering when surfacing relationships:
+1. **Pokémon support / satisfaction** — primary framing
+2. **Favorites covered per Pokémon** — secondary
+3. **Items that cover each favorite** — drill-down
+4. **Pokémon covered by each item** — drill-down
+
+Avoid leading with abstract "favorite coverage" scores or category matrices as the primary UI. Users need context (a selected Pokémon) for favorite categories to be meaningful.
+
+### Terminology
+
+- **Group favorites** — favorites shared by multiple selected Pokémon
+- **Individual favorites** — favorites relevant to one Pokémon but not the whole group
+
+### Item Browsing
+
+- Filter items by which selected Pokémon they help (surface under-supported Pokémon).
+- Item cards should show which Pokémon each item satisfies; hover for which favorites are fulfilled per Pokémon.
+- Item images and visual vibe matter — build planning is not purely optimization.
+
+### Left Panel
+
+Summarize selected Pokémon and their support status. Avoid generic category coverage grids.
+
+### Undo / History
+
+Users iterate and swap items. An undo button or history pattern is a planned feature.
+
+### Multiple Houses
+
+Users may plan across multiple islands/houses. Keep active build clearly separated from saved builds. Material tracking uses increment controls. Whether multiple simultaneous active builds are allowed is still an open decision.
+
 ## Working Rules (from AGENTS.md)
 
 When making a UI style/behavior change:
