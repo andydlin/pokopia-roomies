@@ -1,6 +1,6 @@
-import { type KeyboardEvent, type MouseEvent as ReactMouseEvent, type ReactNode, type RefObject, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { type KeyboardEvent, type ReactNode, type RefObject, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Check, ChevronDown, ChevronUp, Cube01, Grid01, SearchRefraction } from "@untitledui/icons";
+import { Check, ChevronDown, ChevronUp, Cube01, Grid01 } from "@untitledui/icons";
 import { favoriteCategories } from "../../../data/favoriteCategories";
 import { habitatTraits } from "../../../domain/data";
 import {
@@ -29,6 +29,11 @@ import {
   tabPathByTab,
 } from "../../../lib/routing/builderSearchParams";
 import { Chip } from "../../../components/common/Chip";
+import { BuilderSearchField, FavoritesToggle, SortSegmentedControl } from "../../../components/home-builder/BuilderControls";
+import { ResultCardShell, ResultCardTitle } from "../../../components/home-builder/ResultCardShell";
+import { OverlapTooltip } from "../../../components/home-builder/BuilderTooltip";
+import { SidebarPokemonCard } from "../../../components/home-builder/SidebarPokemonCard";
+import { BuilderResultsListSkeleton, BuilderResultsSkeleton, BuilderSidebarSkeleton } from "../../../components/home-builder/BuilderSkeletons";
 import { useHomeBuilder } from "../state/HomeBuilderContext";
 
 const toCategoryLabel = (categoryId: string) =>
@@ -57,6 +62,9 @@ type PokemonSectionId = string;
 type BuilderPhase = "pokemon" | "comfort_items" | "extra_items" | "review_materials";
 type CompleteBuildSectionId = "summary" | "items" | "materials" | "coverage";
 const TAB_TRANSITION_MS = 200;
+const INITIAL_SKELETON_MIN_MS = 300;
+const RESULTS_REFRESH_SKELETON_MIN_MS = 180;
+const HOME_BUILDER_SESSION_STORAGE_KEY = "pokopia.home-builder.session.v1";
 const SHOW_FAVORITES_STORAGE_KEY = "pokopia:builder:show-favorites";
 const SHOW_FAVORITES_BY_TAB_STORAGE_KEY = "pokopia:builder:show-favorites-by-tab";
 const SORT_MODE_BY_TAB_STORAGE_KEY = "pokopia:builder:sort-mode-by-tab";
@@ -119,7 +127,7 @@ const CollapsibleResultsSection = ({
               ? "pk-chip-some"
               : title === "No Overlap"
                 ? "pk-chip-none"
-                : "pk-chip-category"
+                : "pk-chip-primary"
         }`}
       >
         {count}
@@ -133,169 +141,6 @@ const CollapsibleResultsSection = ({
     ) : null}
   </section>
 );
-
-const ResultCardShell = ({
-  onClick,
-  onKeyDown,
-  className,
-  children,
-}: {
-  onClick: (event: ReactMouseEvent<HTMLElement>) => void;
-  onKeyDown: (event: KeyboardEvent<HTMLElement>) => void;
-  className: string;
-  children: ReactNode;
-}) => (
-  <article role="button" tabIndex={0} onClick={onClick} onKeyDown={onKeyDown} className={className}>
-    {children}
-  </article>
-);
-
-const FavoritesToggle = ({
-  checked,
-  onToggle,
-  label = "Show Favorites",
-}: {
-  checked: boolean;
-  onToggle: () => void;
-  label?: string;
-}) => (
-  <button
-    type="button"
-    role="switch"
-    aria-checked={checked}
-    aria-label="Toggle favorites"
-    onClick={onToggle}
-    className="group inline-flex items-center justify-between gap-3 rounded-[9px] border border-[#DBEAFE] bg-[#FFFFFF] px-3 py-1.5 text-left"
-  >
-    <span className="flex min-w-[86px] flex-col leading-none">
-      <span className="text-sm font-medium text-[#1E3A5F]">{label}</span>
-      <span className="mt-1 text-xs font-normal text-[#64748B]">{checked ? "Enabled" : "Disabled"}</span>
-    </span>
-    <span
-      className={`relative inline-flex h-6 w-[42px] rounded-[999px] transition-[background] duration-200 ease-out ${
-        checked ? "bg-[#2563EB] group-focus-visible:shadow-[0_0_0_3px_rgba(37,99,235,0.12)]" : "bg-[#E2E8F0]"
-      }`}
-    >
-      <span
-        className={`absolute top-[3px] h-[18px] w-[18px] rounded-full bg-[#FFFFFF] shadow-[0_1px_4px_rgba(0,0,0,0.18)] transition-[left] duration-200 [transition-timing-function:cubic-bezier(0.34,1.56,0.64,1)] ${
-          checked ? "left-[21px]" : "left-[3px]"
-        }`}
-      />
-    </span>
-  </button>
-);
-
-const CompactImageTooltip = ({
-  items,
-  keyPrefix,
-}: {
-  items: Array<{ id: string; name: string; imageUrl?: string | null }>;
-  keyPrefix: string;
-}) => {
-  if (items.length === 0) return null;
-  return (
-    <span className="pointer-events-none absolute bottom-[calc(100%+10px)] left-1/2 z-[100] inline-flex w-max max-w-[220px] -translate-x-1/2 translate-y-1 rounded-[12px] border border-[#DBEAFE] bg-[#FFFFFF] p-2 opacity-0 shadow-[0_8px_24px_rgba(59,130,246,0.14),0_2px_8px_rgba(0,0,0,0.06)] transition-[opacity,transform] duration-150 ease-out group-hover/overlap:translate-y-0 group-hover/overlap:opacity-100 group-hover/pktooltip:translate-y-0 group-hover/pktooltip:opacity-100">
-      <span className="absolute -bottom-[7px] left-1/2 h-0 w-0 -translate-x-1/2 border-l-[7px] border-r-[7px] border-t-[7px] border-l-transparent border-r-transparent border-t-[#DBEAFE]" />
-      <span className="absolute -bottom-[5.5px] left-1/2 h-0 w-0 -translate-x-1/2 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-[#FFFFFF]" />
-      <span className="flex max-w-[204px] flex-wrap items-center justify-center gap-1.5">
-        {items.slice(0, 8).map((item) => (
-          <span key={`${keyPrefix}-${item.id}`} className="inline-flex h-7 w-7 items-center justify-center rounded-[8px] bg-[var(--pk-image-well)]">
-            {item.imageUrl ? <img src={item.imageUrl} alt={item.name} className="h-5 w-5 object-contain" /> : null}
-          </span>
-        ))}
-      </span>
-    </span>
-  );
-};
-
-const OverlapTooltip = ({
-  items,
-  tooltipKeyPrefix,
-}: {
-  items: Array<{ id: string; name: string; imageUrl?: string | null }>;
-  tooltipKeyPrefix: string;
-}) => <CompactImageTooltip items={items} keyPrefix={tooltipKeyPrefix} />;
-
-const BuilderSearchField = ({
-  value,
-  placeholder,
-  onChange,
-}: {
-  value: string;
-  placeholder: string;
-  onChange: (next: string) => void;
-}) => {
-  const hasValue = value.trim().length > 0;
-  return (
-    <label className="group/search flex w-full max-w-[480px] min-w-[220px] items-center gap-2 rounded-[9px] border-[1.5px] border-[#DBEAFE] bg-[#FFFFFF] px-[13px] py-2 shadow-[0_1px_3px_rgba(59,130,246,0.08)] transition-[border-color,box-shadow] duration-150 ease-out focus-within:border-[#2563EB] focus-within:shadow-[0_0_0_3px_rgba(37,99,235,0.10),0_1px_3px_rgba(59,130,246,0.08)]">
-      <span className="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center">
-        <SearchRefraction
-          strokeWidth={1.8}
-          className={`h-[14px] w-[14px] ${hasValue ? "text-[#3B82F6]" : "text-[#93C5FD]"} group-focus-within/search:text-[#3B82F6]`}
-        />
-      </span>
-      <input
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        placeholder={placeholder}
-        className="h-[14px] w-full bg-transparent text-sm font-normal text-[#1E3A5F] placeholder:text-sm placeholder:font-normal placeholder:text-[#93C5FD] focus:outline-none"
-      />
-      {hasValue ? (
-        <button
-          type="button"
-          onClick={() => onChange("")}
-          aria-label="Clear search"
-          className="inline-flex h-4 w-4 items-center justify-center"
-        >
-          <svg viewBox="0 0 12 12" fill="none" className="h-3 w-3">
-            <circle cx="6" cy="6" r="6" fill="#DBEAFE" />
-            <path d="M3.8 3.8L8.2 8.2M8.2 3.8L3.8 8.2" stroke="#64748B" strokeWidth="1.25" strokeLinecap="round" />
-          </svg>
-        </button>
-      ) : null}
-    </label>
-  );
-};
-
-const SortSegmentedControl = ({
-  activeValue,
-  onSuggested,
-  onAlphabetical,
-}: {
-  activeValue: "suggested" | "az" | "az_category";
-  onSuggested: () => void;
-  onAlphabetical: () => void;
-}) => (
-  <div className="inline-flex items-center gap-[2px] rounded-[9px] border border-[#DBEAFE] bg-[#F2F9FF] p-[3px]">
-    <button
-      type="button"
-      onClick={onSuggested}
-      style={{ fontFamily: "'Space Grotesk', var(--pk-font-body)" }}
-      className={`inline-flex items-center gap-1 rounded-[7px] border px-[13px] py-[5px] text-xs transition-[background,border-color,color,box-shadow] duration-150 ease-out ${
-        activeValue === "suggested"
-          ? "border-[#2563EB] bg-[#FFFFFF] font-semibold text-[#1E3A5F] shadow-[0_1px_3px_rgba(59,130,246,0.08)]"
-          : "border-transparent bg-transparent font-normal text-[#64748B]"
-      }`}
-    >
-      <span className="text-xs opacity-70">✦</span>
-      Suggested
-    </button>
-    <button
-      type="button"
-      onClick={onAlphabetical}
-      style={{ fontFamily: "'Space Grotesk', var(--pk-font-body)" }}
-      className={`inline-flex items-center gap-1 rounded-[7px] border px-[13px] py-[5px] text-xs transition-[background,border-color,color,box-shadow] duration-150 ease-out ${
-        activeValue === "az" || activeValue === "az_category"
-          ? "border-[#2563EB] bg-[#FFFFFF] font-semibold text-[#1E3A5F] shadow-[0_1px_3px_rgba(59,130,246,0.08)]"
-          : "border-transparent bg-transparent font-normal text-[#64748B]"
-      }`}
-    >
-      <span className="text-xs opacity-70">A→Z</span>
-      Alphabetical
-    </button>
-  </div>
-);
-
 
 // Component: Custom multi-select dropdown with "All" behavior
 const CustomMultiSelect = ({
@@ -806,7 +651,7 @@ export const HomeBuilderPage = () => {
     extra_items: null,
   });
   const [activeTabIndicator, setActiveTabIndicator] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
-  const [visualActiveTab, setVisualActiveTab] = useState<BrowseTab>(state.browse.activeTab === "pokemon" ? "pokemon" : "items");
+  const [, setVisualActiveTab] = useState<BrowseTab>(state.browse.activeTab === "pokemon" ? "pokemon" : "items");
   const [contentActiveTab, setContentActiveTab] = useState<BrowseTab>(state.browse.activeTab);
   const [activePhase, setActivePhase] = useState<BuilderPhase>(() => {
     if (state.browse.activeTab === "pokemon") return "pokemon";
@@ -814,6 +659,15 @@ export const HomeBuilderPage = () => {
     return itemPhaseFromPathname(location.pathname) === "other" ? "extra_items" : "comfort_items";
   });
   const [isTabTransitionLoading, setIsTabTransitionLoading] = useState(false);
+  const [showInitialSkeleton, setShowInitialSkeleton] = useState(() => {
+    if (typeof window === "undefined") return true;
+    try {
+      return !window.localStorage.getItem(HOME_BUILDER_SESSION_STORAGE_KEY);
+    } catch {
+      return true;
+    }
+  });
+  const [isResultsRefreshing, setIsResultsRefreshing] = useState(false);
   const pendingTabRef = useRef<BrowseTab | null>(null);
   const tabTransitionTimerRef = useRef<number | null>(null);
   const pendingPhaseRef = useRef<BuilderPhase | null>(null);
@@ -823,6 +677,8 @@ export const HomeBuilderPage = () => {
   const itemEnterTimersRef = useRef<Partial<Record<string, number>>>({});
   const itemFilterSectionStateRef = useRef<{ expanded: string[]; collapsed: string[] } | null>(null);
   const lastAppliedComfortFilterKeyRef = useRef<string>("");
+  const refreshSkeletonTimerRef = useRef<number | null>(null);
+  const lastResultsRefreshKeyRef = useRef<string | null>(null);
   const builderBodyRef = useRef<HTMLDivElement | null>(null);
   const resultsPaneRef = useRef<HTMLDivElement | null>(null);
   const completeBuildSummaryRef = useRef<HTMLElement | null>(null);
@@ -831,6 +687,18 @@ export const HomeBuilderPage = () => {
   const completeBuildCoverageRef = useRef<HTMLElement | null>(null);
   const [activeCompleteBuildSection, setActiveCompleteBuildSection] = useState<CompleteBuildSectionId>("summary");
   const [desktopBodyHeight, setDesktopBodyHeight] = useState<number | null>(null);
+
+  const startResultsRefresh = () => {
+    if (showInitialSkeleton) return;
+    setIsResultsRefreshing(true);
+    if (refreshSkeletonTimerRef.current) {
+      window.clearTimeout(refreshSkeletonTimerRef.current);
+    }
+    refreshSkeletonTimerRef.current = window.setTimeout(() => {
+      setIsResultsRefreshing(false);
+      refreshSkeletonTimerRef.current = null;
+    }, RESULTS_REFRESH_SKELETON_MIN_MS);
+  };
 
   const scrollToCompleteBuildSection = (sectionId: CompleteBuildSectionId) => {
     const sectionRefById: Record<CompleteBuildSectionId, RefObject<HTMLElement | null>> = {
@@ -874,6 +742,55 @@ export const HomeBuilderPage = () => {
       // Ignore storage errors (private mode/quota) and keep in-memory state.
     }
   }, [itemSortMode, pokemonSortMode]);
+
+  useEffect(() => {
+    if (!showInitialSkeleton) return;
+    const timeout = window.setTimeout(() => setShowInitialSkeleton(false), INITIAL_SKELETON_MIN_MS);
+    return () => window.clearTimeout(timeout);
+  }, [showInitialSkeleton]);
+
+  const resultsRefreshKey = useMemo(
+    () =>
+      JSON.stringify({
+        tab: contentActiveTab,
+        phase: activePhase,
+        itemSortMode,
+        pokemonSortMode,
+        itemsSearch: state.browse.items.searchQuery,
+        pokemonSearch: state.browse.pokemon.searchQuery,
+        favoritesSearch: state.browse.favorites.searchQuery,
+        favoritesCategory: state.browse.favorites.favoriteCategoryId ?? null,
+        activeComfortFavoriteFilters: [...activeComfortFavoriteFilters].sort(),
+        activePokemonFavoriteFilters: [...activePokemonFavoriteFilters].sort(),
+        activePokemonHabitatFilters: [...activePokemonHabitatFilters].sort(),
+        activeItemPokemonFilterId,
+      }),
+    [
+      activeComfortFavoriteFilters,
+      activeItemPokemonFilterId,
+      activePhase,
+      activePokemonFavoriteFilters,
+      activePokemonHabitatFilters,
+      contentActiveTab,
+      itemSortMode,
+      pokemonSortMode,
+      state.browse.favorites.favoriteCategoryId,
+      state.browse.favorites.searchQuery,
+      state.browse.items.searchQuery,
+      state.browse.pokemon.searchQuery,
+    ],
+  );
+
+  useEffect(() => {
+    if (showInitialSkeleton) return;
+    if (lastResultsRefreshKeyRef.current === null) {
+      lastResultsRefreshKeyRef.current = resultsRefreshKey;
+      return;
+    }
+    if (lastResultsRefreshKeyRef.current === resultsRefreshKey) return;
+    lastResultsRefreshKeyRef.current = resultsRefreshKey;
+    startResultsRefresh();
+  }, [resultsRefreshKey, showInitialSkeleton]);
 
   const showFavoritesForContentTab =
     contentActiveTab === "pokemon"
@@ -919,6 +836,10 @@ export const HomeBuilderPage = () => {
       (Object.values(itemEnterTimersRef.current) as Array<number | undefined>).forEach((timerId) => {
         if (timerId) window.clearTimeout(timerId);
       });
+      if (refreshSkeletonTimerRef.current) {
+        window.clearTimeout(refreshSkeletonTimerRef.current);
+        refreshSkeletonTimerRef.current = null;
+      }
     },
     [],
   );
@@ -1963,79 +1884,13 @@ export const HomeBuilderPage = () => {
       return [...previousTrail, detailItemId];
     });
   }, [state.browse.items.detailItemId]);
-  const renderResultsSkeleton = () => {
-    if (contentActiveTab === "pokemon" || visualActiveTab === "pokemon") {
-      return (
-        <div className="space-y-4" data-testid="builder-results-skeleton">
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="h-12 w-full max-w-[480px] animate-pulse rounded-[12px] bg-[#d4e5ec]" />
-            <div className="h-12 w-[168px] animate-pulse rounded-[12px] bg-[#d4e5ec]" />
-          </div>
-          {[0, 1].map((sectionIndex) => (
-            <section key={`pokemon-skeleton-${sectionIndex}`} className="space-y-3">
-              <div className="h-8 w-64 animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-              <div className="h-5 w-[85%] animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-              <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-                {[0, 1, 2, 3, 4, 5].map((cardIndex) => (
-                  <div key={`pokemon-skeleton-card-${sectionIndex}-${cardIndex}`} className="h-[172px] animate-pulse rounded-[var(--pk-radius-md)] bg-[#d4e5ec]" />
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      );
-    }
 
-    return (
-      <div className="space-y-4" data-testid="builder-results-skeleton">
-        <div className="flex flex-wrap items-center gap-2">
-          <div className="h-12 w-full max-w-[480px] animate-pulse rounded-[12px] bg-[#d4e5ec]" />
-          <div className="h-12 w-[168px] animate-pulse rounded-[12px] bg-[#d4e5ec]" />
-        </div>
-        <div className="h-8 w-56 animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-        <div className="h-5 w-[80%] animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
-          {[0, 1, 2, 3, 4, 5].map((cardIndex) => (
-            <div key={`list-skeleton-card-${cardIndex}`} className="h-[172px] animate-pulse rounded-[var(--pk-radius-md)] bg-[#d4e5ec]" />
-          ))}
-        </div>
-      </div>
-    );
-  };
-
-  const renderSidebarSkeleton = () => (
-    <div className="space-y-5" data-testid="builder-sidebar-skeleton">
-      <section className="space-y-2">
-        <div className="h-7 w-40 animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-        <div className="space-y-2">
-          {[0, 1, 2].map((row) => (
-            <div key={`sidebar-skeleton-row-${row}`} className="h-[72px] animate-pulse rounded-[16px] bg-[#d4e5ec]" />
-          ))}
-        </div>
-      </section>
-      <section className="space-y-2">
-        <div className="h-7 w-44 animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-        <div className="flex flex-wrap gap-2">
-          {[0, 1, 2, 3].map((chip) => (
-            <div key={`sidebar-skeleton-chip-a-${chip}`} className="h-7 w-24 animate-pulse rounded-[100px] bg-[#d4e5ec]" />
-          ))}
-        </div>
-      </section>
-      <section className="space-y-2">
-        <div className="h-7 w-36 animate-pulse rounded-[8px] bg-[#d4e5ec]" />
-        <div className="flex flex-wrap gap-2">
-          {[0, 1, 2, 3].map((chip) => (
-            <div key={`sidebar-skeleton-chip-b-${chip}`} className="h-7 w-28 animate-pulse rounded-[100px] bg-[#d4e5ec]" />
-          ))}
-        </div>
-      </section>
-    </div>
-  );
+  const shouldShowResultsSkeleton = showInitialSkeleton || isResultsRefreshing;
 
   return (
     <div className="relative pb-24 lg:pb-0">
-      <div className="space-y-6">
-        <section className="sticky top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] pt-3">
+      <div className="space-y-0">
+        <section className="sticky top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pt-3">
           <div className="w-full px-5 sm:px-8 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -2290,42 +2145,40 @@ export const HomeBuilderPage = () => {
         {/* Section: Browse workspace */}
         <section className="space-y-6 lg:flex lg:h-full lg:min-h-0 lg:flex-col">
           {/* Section: Controls */}
-          <div className="space-y-2">
-            <div className="flex flex-wrap items-center gap-2">
-              {activePhase === "review_materials" ? (
-                <>
-                  <BuilderSearchField
-                    value={state.browse.favorites.searchQuery}
-                    onChange={(query) => dispatch({ type: "browse/favorites/set-search", query })}
-                    placeholder="Search favorites items"
-                  />
-                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[#c2dbe6] px-3 py-1.5 text-sm font-medium text-[#6c889b]">
-                    <select
-                      value={state.browse.favorites.favoriteCategoryId ?? ""}
-                      onChange={(event) =>
-                        dispatch({ type: "browse/favorites/set-favorite-category", categoryId: event.target.value || null })
-                      }
-                      className="appearance-none bg-transparent pr-5 focus:outline-none"
-                    >
-                      <option value="">All favorites</option>
-                      {favoriteCategoryOptions.map((category) => (
-                        <option key={category.id} value={category.id}>
-                          {toCategoryLabel(category.id)}
-                        </option>
-                      ))}
-                    </select>
-                    <ChevronDown className="h-5 w-5 text-[#6c889b]" />
-                  </label>
-                </>
-              ) : null}
+          {activePhase === "review_materials" ? (
+            <div className="space-y-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <BuilderSearchField
+                  value={state.browse.favorites.searchQuery}
+                  onChange={(query) => dispatch({ type: "browse/favorites/set-search", query })}
+                  placeholder="Search favorites items"
+                />
+                <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[#c2dbe6] px-3 py-1.5 text-sm font-medium text-[#6c889b]">
+                  <select
+                    value={state.browse.favorites.favoriteCategoryId ?? ""}
+                    onChange={(event) =>
+                      dispatch({ type: "browse/favorites/set-favorite-category", categoryId: event.target.value || null })
+                    }
+                    className="appearance-none bg-transparent pr-5 focus:outline-none"
+                  >
+                    <option value="">All favorites</option>
+                    {favoriteCategoryOptions.map((category) => (
+                      <option key={category.id} value={category.id}>
+                        {toCategoryLabel(category.id)}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="h-5 w-5 text-[#6c889b]" />
+                </label>
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <div className="grid gap-4 lg:flex-1 lg:min-h-0 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
             {/* Section: Context sidebar */}
-            <aside className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] px-3 pb-12 lg:block lg:h-full lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto">
-          {isTabTransitionLoading ? (
-            renderSidebarSkeleton()
+            <aside className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] px-3 pb-12 pt-6 lg:block lg:h-full lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto">
+          {showInitialSkeleton || isTabTransitionLoading ? (
+            <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
             <div className="space-y-5">
               <section className="space-y-2">
@@ -2338,73 +2191,52 @@ export const HomeBuilderPage = () => {
                         selectedPokemonFavoriteSets.allSelectedFavoriteIds;
                       const sharedCount = pokemon.favoriteCategoryIds.filter((categoryId) => (sharedFavoriteCounts.find(([id]) => id === categoryId)?.[1] ?? 0) > 1).length;
                       const hasFavorites = pokemon.favoriteCategoryIds.length > 0;
+                      const chips = (() => {
+                        if (!showSidebarDetails || !hasFavorites) return [];
+                        const originalOrder = new Map(
+                          pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]),
+                        );
+                        return [...pokemon.favoriteCategoryIds]
+                          .sort((left, right) => {
+                            const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
+                            const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
+                            if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
+                            const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
+                            const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
+                            if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
+                            return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
+                          })
+                          .map((categoryId) => {
+                            const tone: "primary" | "default" = overlapFavoriteIds.has(categoryId) ? "primary" : "default";
+                            return {
+                              id: categoryId,
+                              label: toCategoryLabel(categoryId),
+                              isSelected: activePokemonFavoriteFilters.includes(categoryId),
+                              tone,
+                              onToggle: () =>
+                                setActivePokemonFavoriteFilters((previous) =>
+                                  previous.includes(categoryId)
+                                    ? previous.filter((id) => id !== categoryId)
+                                    : [...previous, categoryId],
+                                ),
+                            };
+                          });
+                      })();
                       return (
-                        <article className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2 transition-colors duration-150 hover:border-[#2563EB]" key={`context-${pokemon.id}`}>
-                          <div className="flex w-full items-center gap-3 text-left">
-                            <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
-                              {pokemon.imageUrl ? <img src={pokemon.imageUrl} alt={pokemon.name} className="h-8 w-8 object-contain" /> : null}
-                            </div>
-                            <div className="min-w-0 flex-1">
-                              <p className="truncate text-base font-medium text-[#485864]">{pokemon.name}</p>
-                              <p className="truncate text-xs text-[#6c889b]">
-                                {selectedPokemon.length >= 2
-                                  ? sharedCount > 0
-                                    ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
-                                    : `${getPreferredHabitatLabel(pokemon.idealHabitatId)}`
-                                  : `${getPreferredHabitatLabel(pokemon.idealHabitatId)}`}
-                              </p>
-                            </div>
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
-                            className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] opacity-0 transition-opacity hover:text-[#485864] group-hover:opacity-100 focus-visible:opacity-100"
-                            aria-label={`Remove ${pokemon.name}`}
-                          >
-                            <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
-                          </button>
-                          {showSidebarDetails && hasFavorites ? (
-                            <div className="mt-2 flex flex-wrap gap-1.5">
-                              {(() => {
-                                const originalOrder = new Map(
-                                  pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]),
-                                );
-                                return [...pokemon.favoriteCategoryIds]
-                                .sort((left, right) => {
-                                  const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
-                                  const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
-                                  if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
-                                  const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
-                                  const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
-                                  if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
-                                  return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
-                                })
-                                .map((categoryId) => {
-                                return (
-                                  <button
-                                    key={`context-${pokemon.id}-${categoryId}`}
-                                    type="button"
-                                    onClick={() =>
-                                      setActivePokemonFavoriteFilters((previous) =>
-                                        previous.includes(categoryId)
-                                          ? previous.filter((id) => id !== categoryId)
-                                          : [...previous, categoryId],
-                                      )
-                                    }
-                                    className={`pk-chip pk-chip-standard transition-colors ${
-                                      activePokemonFavoriteFilters.includes(categoryId)
-                                        ? "pk-chip-category-active"
-                                        : "pk-chip-category"
-                                    }`}
-                                  >
-                                    {toCategoryLabel(categoryId)}
-                                  </button>
-                                );
-                              });
-                              })()}
-                            </div>
-                          ) : null}
-                        </article>
+                        <SidebarPokemonCard
+                          key={`context-${pokemon.id}`}
+                          name={pokemon.name}
+                          subtitle={
+                            selectedPokemon.length >= 2
+                              ? sharedCount > 0
+                                ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
+                                : `${getPreferredHabitatLabel(pokemon.idealHabitatId)}`
+                              : `${getPreferredHabitatLabel(pokemon.idealHabitatId)}`
+                          }
+                          imageUrl={pokemon.imageUrl}
+                          onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
+                          chips={chips}
+                        />
                       );
                     })}
                   </div>
@@ -2432,8 +2264,8 @@ export const HomeBuilderPage = () => {
                           }
                           className={`pk-chip pk-chip-standard transition-colors ${
                             activePokemonHabitatFilters.includes(habitatId)
-                              ? "pk-chip-filter-active"
-                              : "pk-chip-filter"
+                              ? "pk-chip-primary"
+                              : "pk-chip-default"
                           }`}
                         >
                           {getPreferredHabitatLabel(habitatId)} ({count})
@@ -2475,8 +2307,8 @@ export const HomeBuilderPage = () => {
                           }
                           className={`pk-chip pk-chip-standard transition-colors ${
                             activePokemonFavoriteFilters.includes(categoryId)
-                              ? "pk-chip-filter-active"
-                              : "pk-chip-filter"
+                              ? "pk-chip-primary"
+                              : "pk-chip-default"
                           }`}
                         >
                           {toCategoryLabel(categoryId)} ({count})
@@ -2503,8 +2335,8 @@ export const HomeBuilderPage = () => {
                               }
                               className={`pk-chip pk-chip-standard transition-colors ${
                                 activePokemonFavoriteFilters.includes(categoryId)
-                                  ? "pk-chip-filter-active"
-                                  : "pk-chip-filter"
+                                  ? "pk-chip-primary"
+                                  : "pk-chip-default"
                               }`}
                             >
                               {toCategoryLabel(categoryId)} ({count})
@@ -2581,6 +2413,15 @@ export const HomeBuilderPage = () => {
 
                 const renderSelectedPokemonCoverageSection = () => {
                   if (selectedPokemonCoverageSummaries.length === 0) return null;
+                  const toggleComfortFavoriteFilter = (categoryId: string) => {
+                    if (activePhase !== "comfort_items") return;
+                    setActiveComfortFavoriteFilters((previous) =>
+                      previous.includes(categoryId)
+                        ? previous.filter((id) => id !== categoryId)
+                        : [...previous, categoryId],
+                    );
+                  };
+
                   return (
                     <section className="space-y-2">
                       <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Selected Pokemon</p>
@@ -2598,7 +2439,7 @@ export const HomeBuilderPage = () => {
                               </div>
                               <div className="min-w-0 flex-1">
                                 <p className="truncate text-base font-medium text-[#485864]">{summary.pokemon.name}</p>
-                                <p className="text-xs text-[#6c889b]">Fits {summary.matchingItemCount} items</p>
+                                <p className="text-xs text-[#6c889b]">{summary.matchingItemCount} supporting items</p>
                               </div>
                             </div>
                             <div className="mt-2 space-y-1.5">
@@ -2609,12 +2450,20 @@ export const HomeBuilderPage = () => {
                                 {summary.coveredFavoriteCategoryIds.length > 0 ? (
                                   <div className="mt-1 flex flex-wrap gap-1">
                                     {summary.coveredFavoriteCategoryIds.map((categoryId) => (
-                                      <span
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleComfortFavoriteFilter(categoryId)}
+                                        aria-pressed={activeComfortFavoriteFilters.includes(categoryId)}
+                                        disabled={activePhase !== "comfort_items"}
                                         key={`context-items-covered-${summary.pokemon.id}-${categoryId}`}
-                                        className="pk-chip pk-chip-compact pk-chip-best"
+                                        className={`pk-chip pk-chip-compact transition-colors ${
+                                          activeComfortFavoriteFilters.includes(categoryId)
+                                            ? "pk-chip-primary"
+                                            : "pk-chip-best"
+                                        } ${activePhase !== "comfort_items" ? "cursor-default opacity-75" : ""}`}
                                       >
                                         {toCategoryLabel(categoryId)}
-                                      </span>
+                                      </button>
                                     ))}
                                   </div>
                                 ) : (
@@ -2628,12 +2477,20 @@ export const HomeBuilderPage = () => {
                                 {summary.uncoveredFavoriteCategoryIds.length > 0 ? (
                                   <div className="mt-1 flex flex-wrap gap-1">
                                     {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
-                                      <span
+                                      <button
+                                        type="button"
+                                        onClick={() => toggleComfortFavoriteFilter(categoryId)}
+                                        aria-pressed={activeComfortFavoriteFilters.includes(categoryId)}
+                                        disabled={activePhase !== "comfort_items"}
                                         key={`context-items-uncovered-${summary.pokemon.id}-${categoryId}`}
-                                        className="pk-chip pk-chip-compact pk-chip-none"
+                                        className={`pk-chip pk-chip-compact transition-colors ${
+                                          activeComfortFavoriteFilters.includes(categoryId)
+                                            ? "pk-chip-primary"
+                                            : "pk-chip-none"
+                                        } ${activePhase !== "comfort_items" ? "cursor-default opacity-75" : ""}`}
                                       >
                                         {toCategoryLabel(categoryId)}
-                                      </span>
+                                      </button>
                                     ))}
                                   </div>
                                 ) : (
@@ -2652,6 +2509,7 @@ export const HomeBuilderPage = () => {
                   <>
                     {buildItemEntries.length > 0 ? (
                       <div className="space-y-4">
+                        {renderSelectedPokemonCoverageSection()}
                         {(() => {
                     const sections =
                       activePhase === "comfort_items"
@@ -2718,17 +2576,16 @@ export const HomeBuilderPage = () => {
                             )}
                           </section>
                         ))}
-                        {renderSelectedPokemonCoverageSection()}
                       </>
                     );
                         })()}
                       </div>
                     ) : (
                       <div className="space-y-3">
+                        {renderSelectedPokemonCoverageSection()}
                         <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
                           No items added yet.
                         </div>
-                        {renderSelectedPokemonCoverageSection()}
                       </div>
                     )}
                   </>
@@ -2743,10 +2600,10 @@ export const HomeBuilderPage = () => {
             </aside>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="app-scrollbar order-2 bg-transparent p-0 pb-12 pr-4 lg:h-full lg:min-h-0 lg:overflow-y-auto" aria-busy={isTabTransitionLoading} data-testid="builder-results-pane">
-            {isTabTransitionLoading ? renderResultsSkeleton() : null}
+            <div ref={resultsPaneRef} className="app-scrollbar order-2 bg-transparent p-0 pb-12 pr-4 pt-6 lg:h-full lg:min-h-0 lg:overflow-y-auto" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
-            {!isTabTransitionLoading && contentActiveTab === "items" ? (
+            {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
                 <div className="sticky top-0 z-20 flex flex-wrap items-center gap-2 bg-[var(--pk-canvas)] pb-4">
                   <BuilderSearchField
@@ -2761,8 +2618,14 @@ export const HomeBuilderPage = () => {
                   />
                   <SortSegmentedControl
                     activeValue={itemSortMode}
-                    onSuggested={() => setItemSortMode("suggested")}
-                    onAlphabetical={() => setItemSortMode("az_category")}
+                    onSuggested={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setItemSortMode("suggested"), 0);
+                    }}
+                    onAlphabetical={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setItemSortMode("az_category"), 0);
+                    }}
                   />
                   {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
                     <CustomSingleSelect
@@ -2778,7 +2641,7 @@ export const HomeBuilderPage = () => {
                         <button
                           type="button"
                           onClick={() => setActiveItemPokemonFilterId(null)}
-                          className="pk-chip pk-chip-standard pk-chip-filter-active items-center gap-1"
+                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
                         >
                           Showing items for {activeItemPokemonFilter.name}
                           <span aria-hidden>×</span>
@@ -2791,7 +2654,7 @@ export const HomeBuilderPage = () => {
                           onClick={() =>
                             setActiveComfortFavoriteFilters((previous) => previous.filter((id) => id !== categoryId))
                           }
-                          className="pk-chip pk-chip-standard pk-chip-filter-active items-center gap-1"
+                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
                         >
                           {toCategoryLabel(categoryId)}
                           <span aria-hidden>×</span>
@@ -2810,6 +2673,11 @@ export const HomeBuilderPage = () => {
                     </div>
                   ) : null}
                 </div>
+                {isResultsRefreshing ? (
+                  <div className="mt-4">
+                    <BuilderResultsListSkeleton />
+                  </div>
+                ) : (
                 <div className="mt-4 space-y-8">
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
                     <section className="rounded-[16px] border border-[#C8DAE2] bg-[#E8F1F4] p-6">
@@ -3004,7 +2872,7 @@ export const HomeBuilderPage = () => {
                                     {entry.item.image ? <img src={entry.item.image} alt={entry.item.name} className="h-12 w-12 object-contain" /> : null}
                                   </div>
                                   <div className="min-w-0 flex-1">
-                                    <p className="truncate text-xs font-semibold text-[var(--pk-text-primary)]">{entry.item.name}</p>
+                                    <ResultCardTitle>{entry.item.name}</ResultCardTitle>
                                     <p className="text-xs text-[var(--pk-text-desc)]">
                                     {(entry.item.generalCategoryLabel || "Other")}
                                     {selectedPokemon.length > 0 && showComfortContext && itemMetadataText
@@ -3013,7 +2881,19 @@ export const HomeBuilderPage = () => {
                                   </p>
                                   {usePokemonSatisfactionUi && showFavoritesByTab.items && matchedPokemon.length > 0 ? (
                                     <>
-                                      <div className="mt-2 flex flex-wrap gap-1.5">
+                                      <div className="mt-2 flex flex-wrap gap-1">
+                                        {visibleFavoriteCategoryIds.map((categoryId) => (
+                                          <span
+                                            key={`${entry.item.id}-favorite-chip-${categoryId}`}
+                                            className={`pk-chip pk-chip-compact ${
+                                              selectedPokemonAllFavoriteCategoryIdSet.has(categoryId) ? "pk-chip-primary" : "pk-chip-none"
+                                            }`}
+                                          >
+                                            {toCategoryLabel(categoryId)}
+                                          </span>
+                                        ))}
+                                      </div>
+                                      <div className="mt-1.5 flex flex-wrap gap-1.5">
                                         {matchedPokemon.map((pokemon) => (
                                           <span
                                             key={`${entry.item.id}-matched-pokemon-${pokemon.id}`}
@@ -3028,18 +2908,6 @@ export const HomeBuilderPage = () => {
                                           </span>
                                         ))}
                                       </div>
-                                      <div className="mt-1.5 flex flex-wrap gap-1">
-                                        {visibleFavoriteCategoryIds.map((categoryId) => (
-                                          <span
-                                            key={`${entry.item.id}-favorite-chip-${categoryId}`}
-                                            className={`pk-chip pk-chip-compact ${
-                                              selectedPokemonAllFavoriteCategoryIdSet.has(categoryId) ? "pk-chip-best" : "pk-chip-none"
-                                            }`}
-                                          >
-                                            {toCategoryLabel(categoryId)}
-                                          </span>
-                                        ))}
-                                      </div>
                                     </>
                                   ) : null}
                                   {!usePokemonSatisfactionUi && showFavoritesByTab.items && selectedPokemon.length > 0 && showComfortContext && (itemPrimaryPillCount + itemSecondaryPillCount > 0) ? (
@@ -3051,7 +2919,7 @@ export const HomeBuilderPage = () => {
                                             <span
                                               className={`pk-chip pk-chip-compact ${
                                                 selectedPokemonAllFavoriteCategoryIdSet.has(categoryId)
-                                                  ? "pk-chip-best"
+                                                  ? "pk-chip-primary"
                                                   : "pk-chip-none"
                                               }`}
                                             >
@@ -3071,7 +2939,7 @@ export const HomeBuilderPage = () => {
                                               const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
                                               return (
                                               <span key={`${entry.item.id}-${categoryId}-individual`} className="group/overlap relative inline-flex">
-                                                <span className="pk-chip pk-chip-compact pk-chip-some">
+                                                <span className="pk-chip pk-chip-compact pk-chip-primary">
                                                   {toCategoryLabel(categoryId)}
                                                 </span>
                                                 {overlapPokemon.length > 0 ? (
@@ -3120,6 +2988,7 @@ export const HomeBuilderPage = () => {
                       );
                     })}
                 </div>
+                )}
                 {totalVisibleItems === 0 ? (
                   <div className="mt-4 rounded-2xl border border-dashed border-ink/20 bg-white p-4">
                     <p className="type-ui type-ui-strong text-ink">
@@ -3138,7 +3007,7 @@ export const HomeBuilderPage = () => {
             ) : null}
 
             {/* Subsection: Pokemon browser */}
-            {!isTabTransitionLoading && contentActiveTab === "pokemon" ? (
+            {!showInitialSkeleton && contentActiveTab === "pokemon" ? (
               <>
                 <div className="sticky top-0 z-20 flex flex-wrap items-center gap-2 bg-[var(--pk-canvas)] pb-4">
                   <BuilderSearchField
@@ -3153,8 +3022,14 @@ export const HomeBuilderPage = () => {
                   />
                   <SortSegmentedControl
                     activeValue={pokemonSortMode}
-                    onSuggested={() => setPokemonSortMode("suggested")}
-                    onAlphabetical={() => setPokemonSortMode("az")}
+                    onSuggested={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setPokemonSortMode("suggested"), 0);
+                    }}
+                    onAlphabetical={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setPokemonSortMode("az"), 0);
+                    }}
                   />
                   {(activePokemonFavoriteFilters.length > 0 || activePokemonHabitatFilters.length > 0) ? (
                     <div className="flex w-full flex-wrap items-center gap-2">
@@ -3165,7 +3040,7 @@ export const HomeBuilderPage = () => {
                           onClick={() =>
                             setActivePokemonFavoriteFilters((previous) => previous.filter((id) => id !== categoryId))
                           }
-                          className="pk-chip pk-chip-standard pk-chip-filter-active items-center gap-1"
+                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
                         >
                           {toCategoryLabel(categoryId)}
                           <span aria-hidden>×</span>
@@ -3178,7 +3053,7 @@ export const HomeBuilderPage = () => {
                           onClick={() =>
                             setActivePokemonHabitatFilters((previous) => previous.filter((id) => id !== habitatId))
                           }
-                          className="pk-chip pk-chip-standard pk-chip-filter-active items-center gap-1"
+                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
                         >
                           {getPreferredHabitatLabel(habitatId)}
                           <span aria-hidden>×</span>
@@ -3197,6 +3072,11 @@ export const HomeBuilderPage = () => {
                     </div>
                   ) : null}
                 </div>
+                {isResultsRefreshing ? (
+                  <div className="mt-4">
+                    <BuilderResultsListSkeleton />
+                  </div>
+                ) : (
                 <div className="mt-4 space-y-8">
                   {visiblePokemonSections.map((section) => {
                     if (section.entries.length === 0) return null;
@@ -3380,9 +3260,7 @@ export const HomeBuilderPage = () => {
                                 )}
                               </div>
                               <div className="min-w-0 flex-1">
-                                <p className="truncate text-xs font-semibold text-[var(--pk-text-primary)]">
-                                  {entry.pokemon.name}
-                                </p>
+                                <ResultCardTitle>{entry.pokemon.name}</ResultCardTitle>
                                 <p className="text-xs text-[var(--pk-text-desc)]">
                                   {getPreferredHabitatLabel(entry.pokemon.idealHabitatId)}
                                   {selectedPokemon.length > 0 ? ` · ${overlapMetadataText}` : ""}
@@ -3396,8 +3274,8 @@ export const HomeBuilderPage = () => {
                                       <span
                                         className={`pk-chip pk-chip-compact ${
                                           overlapFavoriteIds.has(categoryId)
-                                            ? "pk-chip-category-active"
-                                            : "pk-chip-category"
+                                            ? "pk-chip-primary"
+                                            : "pk-chip-none"
                                         }`}
                                       >
                                         {toCategoryLabel(categoryId)}
@@ -3416,7 +3294,7 @@ export const HomeBuilderPage = () => {
                                         const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
                                         return (
                                         <span key={`${entry.pokemon.id}-${categoryId}-extra`} className="group/overlap relative inline-flex">
-                                          <span className="pk-chip pk-chip-compact pk-chip-category">
+                                          <span className="pk-chip pk-chip-compact pk-chip-primary">
                                             {toCategoryLabel(categoryId)}
                                           </span>
                                           {overlapPokemon.length > 0 ? (
@@ -3455,11 +3333,12 @@ export const HomeBuilderPage = () => {
                     );
                   })}
                 </div>
+                )}
               </>
             ) : null}
 
             {/* Subsection: Favorites browser */}
-            {!isTabTransitionLoading && contentActiveTab === "favorites" ? (
+            {!showInitialSkeleton && contentActiveTab === "favorites" ? (
               <>
                 <p className="mb-2 text-3xl font-medium tracking-[-0.04em] text-[#6c889b]">Complete Build</p>
                 <p className="text-sm italic text-[#8e9aa3]">

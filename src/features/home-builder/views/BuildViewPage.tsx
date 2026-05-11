@@ -114,7 +114,7 @@ export const BuildViewPage = () => {
             <p className="text-[14px] font-semibold text-[#485864]">Group Overlap Favorites</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {groupOverlapFavorites.length > 0 ? groupOverlapFavorites.map(([categoryId, count]) => (
-                <span key={`view-overlap-${categoryId}`} className="pk-chip pk-chip-standard pk-chip-category">
+                <span key={`view-overlap-${categoryId}`} className="pk-chip pk-chip-standard pk-chip-primary">
                   {toFavoriteLabel(categoryId)} ({count})
                 </span>
               )) : <p className="text-[12px] italic text-[#6c889b]">No shared favorites yet.</p>}
@@ -124,7 +124,7 @@ export const BuildViewPage = () => {
             <p className="text-[14px] font-semibold text-[#485864]">Shared Habitats</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
               {sharedHabitatCounts.length > 0 ? sharedHabitatCounts.map(([habitatId, count]) => (
-                <span key={`view-habitat-${habitatId}`} className="pk-chip pk-chip-standard pk-chip-category">
+                <span key={`view-habitat-${habitatId}`} className="pk-chip pk-chip-standard pk-chip-primary">
                   {toHabitatLabel(habitatId, entities.habitatsById)} ({count})
                 </span>
               )) : <p className="text-[12px] italic text-[#6c889b]">No shared habitats yet.</p>}

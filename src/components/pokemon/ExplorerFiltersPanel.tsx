@@ -29,8 +29,8 @@ const FilterGroup = ({
     <h3 className="type-overline text-moss/70">{title}</h3>
     <div className="flex flex-wrap gap-2">
       {options.map((option) => (
-        <button key={option.value} type="button" onClick={() => onToggle(option.value)}>
-          <Chip tone={selected.includes(option.value) ? "filter-active" : "filter"} className="transition-colors">
+        <button key={option.value} type="button" onClick={() => onToggle(option.value)} className="pk-chip-actionable">
+          <Chip tone={selected.includes(option.value) ? "primary" : "default"} className="transition-colors">
             {option.label} ({option.count})
           </Chip>
         </button>

@@ -234,6 +234,27 @@ a {
   background: var(--pk-brand-light);
 }
 
+@keyframes pk-shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.pk-skeleton {
+  background: linear-gradient(
+    90deg,
+    #dbeafe 0%,
+    #eff6ff 40%,
+    #dbeafe 80%
+  );
+  background-size: 800px 100%;
+  animation: pk-shimmer 1.4s ease-in-out infinite;
+  border-radius: 6px;
+}
+
 .pk-chip {
   display: inline-flex;
   align-items: center;
@@ -272,35 +293,17 @@ a {
   color: var(--pk-none-text);
 }
 
-.pk-chip-category {
+.pk-chip-primary {
   background: var(--pk-brand-light);
   border-color: var(--pk-brand-border);
   color: var(--pk-brand-dark);
 }
 
-.pk-chip-category-active {
-  background: #dbeafe;
-  border-color: #93c5fd;
-  color: #2563eb;
-}
-
-.pk-chip-filter {
+.pk-chip-default {
   background: var(--pk-none-bg);
   border-color: var(--pk-none-border);
   color: var(--pk-none-text);
 }
-
-.pk-chip-filter-active {
-  background: var(--pk-brand-light);
-  border-color: var(--pk-brand);
-  color: var(--pk-brand);
-}
-
-.pk-chip-filter:hover {
-  background: var(--pk-brand-light);
-  color: var(--pk-brand-dark);
-}
-
 .pk-chip-type {
   border-radius: var(--pk-radius-pill);
   font-family: var(--pk-font-body);
@@ -321,6 +324,123 @@ a {
   font-weight: 500;
   line-height: 1;
   padding: 5px 12px;
+}
+
+button.pk-chip,
+button.pk-chip-count,
+.pk-chip-actionable {
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+button.pk-chip:not(:disabled):hover,
+button.pk-chip-count:not(:disabled):hover {
+  box-shadow: none;
+}
+
+button.pk-chip:not(:disabled):active,
+button.pk-chip-count:not(:disabled):active {
+  box-shadow: none;
+}
+
+button.pk-chip:focus-visible,
+button.pk-chip-count:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.pk-chip-actionable {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: var(--pk-radius-pill);
+}
+
+.pk-chip-actionable > .pk-chip {
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip {
+  box-shadow: none;
+}
+
+.pk-chip-actionable:active:not(:disabled) > .pk-chip {
+  box-shadow: none;
+}
+
+button.pk-chip.pk-chip-default:hover:not(:disabled),
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip.pk-chip-default {
+  background: var(--pk-brand-light);
+  border-color: var(--pk-brand-border);
+  color: var(--pk-brand-dark);
+}
+
+button.pk-chip.pk-chip-default:active:not(:disabled),
+.pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-default {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+button.pk-chip.pk-chip-primary:hover:not(:disabled),
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip.pk-chip-primary {
+  background: #dbeafe;
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+
+button.pk-chip.pk-chip-primary:active:not(:disabled),
+.pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-primary {
+  background: #bfdbfe;
+  border-color: #1d4ed8;
+  color: #1e40af;
+}
+
+button.pk-chip.pk-chip-best:hover:not(:disabled),
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip.pk-chip-best {
+  background: #bbf7d0;
+  border-color: #34d399;
+  color: #065f46;
+}
+
+button.pk-chip.pk-chip-best:active:not(:disabled),
+.pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-best {
+  background: #86efac;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+button.pk-chip.pk-chip-none:hover:not(:disabled),
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip.pk-chip-none {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+button.pk-chip.pk-chip-none:active:not(:disabled),
+.pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-none {
+  background: #cbd5e1;
+  border-color: #94a3b8;
+  color: #334155;
+}
+
+.pk-chip-actionable:focus-visible {
+  outline: none;
+}
+
+.pk-chip-actionable:focus-visible > .pk-chip {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.pk-result-card-title {
+  font-size: 16px;
 }
 
 :where(button, [role="button"]) {

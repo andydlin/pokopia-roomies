@@ -69,12 +69,13 @@ export const DexPage = () => {
         <SectionCard eyebrow="Results" title={`${results.length} Pokemon matched`}>
           <div className="flex flex-wrap items-center gap-2">
             {filters.query ? (
-              <Chip tone="filter-active">Search: {filters.query}</Chip>
+              <Chip tone="primary">Search: {filters.query}</Chip>
             ) : null}
             {activeFilters.map((filter) => (
               <button
                 key={`${filter.type}-${filter.value}`}
                 type="button"
+                className="pk-chip-actionable"
                 onClick={() =>
                   setFilters((current) => ({
                     ...current,
@@ -82,7 +83,7 @@ export const DexPage = () => {
                   }))
                 }
               >
-                <Chip tone="filter-active">{filter.value} ×</Chip>
+                <Chip tone="primary">{filter.value} ×</Chip>
               </button>
             ))}
             {filters.query || activeFilters.length > 0 ? (
