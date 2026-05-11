@@ -1,43 +1,51 @@
-import { describe, expect, it, beforeEach } from "vitest";
-import { deleteSavedTeam, loadDraftTeamIds, loadSavedTeams, persistDraftTeamIds, upsertSavedTeam } from "../lib/storage";
-import { MAX_TEAM_SIZE, MIN_TEAM_SIZE, canSaveTeam } from "../lib/teams/teamHelpers";
+import { beforeEach, describe, expect, it } from "vitest";
+import { makeEmptyCurrentHome } from "../domain/home-builder/logic";
+import { localSessionAdapter } from "../lib/storage/localSessionAdapter";
+import { createInitialHomeBuilderState, homeBuilderReducer } from "../features/home-builder/state/homeBuilderReducer";
 
-describe("team constraints", () => {
-  it("enforces saveable team size between 2 and 6", () => {
-    expect(canSaveTeam([])).toBe(false);
-    expect(canSaveTeam(["pikachu"])).toBe(false);
-    expect(canSaveTeam(["pikachu", "eevee"])).toBe(true);
-    expect(canSaveTeam(["a", "b", "c", "d", "e", "f"])).toBe(true);
-    expect(canSaveTeam(["a", "b", "c", "d", "e", "f", "g"])).toBe(false);
-    expect(MIN_TEAM_SIZE).toBe(2);
-    expect(MAX_TEAM_SIZE).toBe(6);
-  });
-});
-
-describe("storage", () => {
+describe("local session persistence", () => {
   beforeEach(() => {
     window.localStorage.clear();
   });
 
-  it("persists and reloads saved teams", () => {
-    const saved = upsertSavedTeam(
-      {
-        id: "team-1",
-        name: "Sun crew",
-        pokemonIds: ["pikachu", "meowth"],
-        createdAt: "2026-01-01T00:00:00.000Z",
-        updatedAt: "2026-01-01T00:00:00.000Z",
+  it("saves and loads versioned session payloads", () => {
+    localSessionAdapter.save({
+      version: 1,
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu"],
       },
-      [],
-    );
+      savedHomes: [],
+      exportedAt: 123,
+    });
 
-    expect(saved).toHaveLength(1);
-    expect(loadSavedTeams()[0].name).toBe("Sun crew");
-    expect(deleteSavedTeam("team-1", loadSavedTeams())).toHaveLength(0);
+    const loaded = localSessionAdapter.load();
+    expect(loaded?.version).toBe(1);
+    expect(loaded?.currentHome?.pokemonIds).toEqual(["pikachu"]);
   });
+});
 
-  it("persists draft team ids", () => {
-    persistDraftTeamIds(["pikachu", "eevee"]);
-    expect(loadDraftTeamIds()).toEqual(["pikachu", "eevee"]);
+describe("saved home reducer actions", () => {
+  it("supports save, duplicate, rename, and delete", () => {
+    let state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        name: "Starter Home",
+        pokemonIds: ["pikachu"],
+      },
+    });
+
+    state = homeBuilderReducer(state, { type: "saved/save-current" });
+    const savedId = state.currentHome.id;
+    expect(savedId).toBeTruthy();
+
+    state = homeBuilderReducer(state, { type: "saved/duplicate", homeId: savedId! });
+    expect(state.savedHomes.allIds.length).toBe(2);
+
+    state = homeBuilderReducer(state, { type: "saved/rename", homeId: savedId!, name: "Renamed Home" });
+    expect(state.savedHomes.byId[savedId!].name).toBe("Renamed Home");
+
+    state = homeBuilderReducer(state, { type: "saved/delete", homeId: savedId! });
+    expect(state.savedHomes.byId[savedId!]).toBeUndefined();
   });
 });

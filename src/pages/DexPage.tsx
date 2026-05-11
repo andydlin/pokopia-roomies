@@ -69,7 +69,7 @@ export const DexPage = () => {
         <SectionCard eyebrow="Results" title={`${results.length} Pokemon matched`}>
           <div className="flex flex-wrap items-center gap-2">
             {filters.query ? (
-              <Chip tone="accent">Search: {filters.query}</Chip>
+              <Chip tone="filter-active">Search: {filters.query}</Chip>
             ) : null}
             {activeFilters.map((filter) => (
               <button
@@ -82,7 +82,7 @@ export const DexPage = () => {
                   }))
                 }
               >
-                <Chip>{filter.value} ×</Chip>
+                <Chip tone="filter-active">{filter.value} ×</Chip>
               </button>
             ))}
             {filters.query || activeFilters.length > 0 ? (

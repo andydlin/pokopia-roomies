@@ -1,131 +1,95 @@
-import { Link, NavLink, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { ComparePage } from "../pages/ComparePage";
-import { DexPage } from "../pages/DexPage";
-import { HabitatDetailPage } from "../pages/HabitatDetailPage";
-import { HomePage } from "../pages/HomePage";
-import { ItemDetailPage } from "../pages/ItemDetailPage";
-import { BuildersPage } from "../pages/BuildersPage";
-import { HabitatsPage } from "../pages/HabitatsPage";
-import { ItemsPage } from "../pages/ItemsPage";
-import { LookupPage } from "../pages/LookupPage";
-import { PokemonDetailPage } from "../pages/PokemonDetailPage";
-import { TeamDetailPage } from "../pages/TeamDetailPage";
-import { TeamsPage } from "../pages/TeamsPage";
+import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { HomeBuilderProvider } from "../features/home-builder/state/HomeBuilderContext";
+import { HomeBuilderPage } from "../features/home-builder/views/HomeBuilderPage";
+import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
+import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
+import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
+import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 
-const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+const navLinkClass = (isActive: boolean) =>
   [
-    "relative rounded-lg text-sm uppercase tracking-[0.04em] transition-colors",
-    isActive ? "font-black !text-[#5894D6]" : "font-medium !text-[#3d565d] hover:!text-[#2f4851]",
+    "inline-flex h-8 items-center rounded-[7px] border px-3 text-[14px] tracking-[0.01em] transition-colors",
+    isActive
+      ? "border-[var(--pk-brand-border)] bg-[var(--pk-brand-light)] font-semibold text-[var(--pk-brand)]"
+      : "border-transparent bg-transparent font-normal text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)]",
   ].join(" ");
-interface RouteState {
-  backgroundLocation?: ReturnType<typeof useLocation>;
-  modal?: boolean;
-}
 
-const AppRoutes = () => {
-  const location = useLocation();
-  const state = location.state as RouteState | null;
-  const backgroundLocation = state?.modal && state.backgroundLocation ? state.backgroundLocation : undefined;
+const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Navigate to="/builder" replace />} />
+    <Route path="/builder">
+      <Route index element={<Navigate to="/builder/pokemon" replace />} />
+      <Route path="pokemon" element={<HomeBuilderPage />} />
+      <Route path="items" element={<Navigate to="/builder/items/comfort" replace />} />
+      <Route path="items/comfort" element={<HomeBuilderPage />} />
+      <Route path="items/other" element={<HomeBuilderPage />} />
+      <Route path="favorites" element={<HomeBuilderPage />} />
+      <Route path="habitats" element={<Navigate to="/builder/favorites" replace />} />
+    </Route>
+    <Route path="/homes/view" element={<BuildViewPage />} />
+    <Route path="/homes" element={<SavedHomesPage />} />
 
-  return (
-    <>
-      <Routes location={backgroundLocation ?? location}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/builder" element={<BuildersPage />} />
-        <Route path="/roomies" element={<Navigate to="/builder" replace />} />
-        <Route path="/items" element={<ItemsPage />} />
-        <Route path="/items/:itemId" element={<ItemDetailPage />} />
-        <Route path="/habitats" element={<HabitatsPage />} />
-        <Route path="/habitats/:habitatId" element={<HabitatDetailPage />} />
-        <Route path="/lookup" element={<LookupPage />} />
-        <Route path="/pokemon/:slug" element={<PokemonDetailPage />} />
-        <Route path="/teams" element={<TeamsPage />} />
-        <Route path="/teams/:id" element={<TeamDetailPage />} />
-        <Route path="/compare" element={<ComparePage />} />
-        <Route path="/dex" element={<DexPage />} />
-      </Routes>
+    <Route path="/pokedex" element={<PokedexLayout />}>
+      <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
+      <Route path="pokemon" element={<PokedexPokemonPage />} />
+      <Route path="items" element={<PokedexItemsPage />} />
+      <Route path="habitats" element={<PokedexHabitatsPage />} />
+    </Route>
 
-      {backgroundLocation ? (
-        <Routes>
-          <Route path="/items/:itemId" element={<ItemDetailPage asModal />} />
-          <Route path="/habitats/:habitatId" element={<HabitatDetailPage asModal />} />
-        </Routes>
-      ) : null}
-    </>
-  );
-};
+    <Route path="*" element={<Navigate to="/builder" replace />} />
+  </Routes>
+);
 
 export const App = () => (
-  <div className="min-h-screen">
-    <header className="w-full mb-10">
-      <div className="mx-auto flex w-full max-w-[2000px] items-start justify-between px-4 sm:px-6 lg:px-10">
-        <div className="overflow-visible rounded-b-[16px] bg-white px-[6px] pb-[6px] shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
-          <div className="overflow-visible rounded-b-[12px] border-[2px] border-t-0 border-dashed border-black/10 bg-white px-4 pb-1 pt-2">
-            <Link to="/" aria-label="Go to home">
-              <img src="/assets/logo.png" alt="PokopiaDex logo" className="h-10 w-[155px] object-contain" />
-            </Link>
-          </div>
-        </div>
-
-        <nav className="overflow-visible rounded-b-[16px] bg-white px-[6px] pb-[6px] shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
-          <div className="flex items-start gap-8 overflow-visible rounded-b-[12px] border-[2px] border-t-0 border-dashed border-black/10 bg-white px-8 py-4">
-            <NavLink to="/dex" className={navLinkClass}>
-              {({ isActive }) => (
-                <span className="relative inline-block">
-                  {isActive ? (
-                    <span className="pointer-events-none absolute left-1/2 -top-3.5 h-2 w-4 -translate-x-1/2 rounded-b-full bg-[#5894D6]" />
-                  ) : null}
-                  pokedex
-                </span>
-              )}
-            </NavLink>
-            <NavLink to="/items" className={navLinkClass}>
-              {({ isActive }) => (
-                <span className="relative inline-block">
-                  {isActive ? (
-                    <span className="pointer-events-none absolute left-1/2 -top-3.5 h-2 w-4 -translate-x-1/2 rounded-b-full bg-[#5894D6]" />
-                  ) : null}
-                  items
-                </span>
-              )}
-            </NavLink>
-            <NavLink to="/habitats" className={navLinkClass}>
-              {({ isActive }) => (
-                <span className="relative inline-block">
-                  {isActive ? (
-                    <span className="pointer-events-none absolute left-1/2 -top-3.5 h-2 w-4 -translate-x-1/2 rounded-b-full bg-[#5894D6]" />
-                  ) : null}
-                  habitats
-                </span>
-              )}
-            </NavLink>
-            <NavLink to="/builder" className={navLinkClass}>
-              {({ isActive }) => (
-                <span className="relative inline-block">
-                  {isActive ? (
-                    <span className="pointer-events-none absolute left-1/2 -top-3.5 h-2 w-4 -translate-x-1/2 rounded-b-full bg-[#5894D6]" />
-                  ) : null}
-                  builder
-                </span>
-              )}
-            </NavLink>
-            <NavLink to="/teams" className={navLinkClass}>
-              {({ isActive }) => (
-                <span className="relative inline-block">
-                  {isActive ? (
-                    <span className="pointer-events-none absolute left-1/2 -top-3.5 h-2 w-4 -translate-x-1/2 rounded-b-full bg-[#5894D6]" />
-                  ) : null}
-                  saved
-                </span>
-              )}
-            </NavLink>
-          </div>
-        </nav>
-      </div>
-    </header>
-
-    <main className="mx-auto w-full max-w-[2000px] px-4 pb-12 sm:px-6 lg:px-10">
-      <AppRoutes />
-    </main>
-  </div>
+  <HomeBuilderProvider>
+    <AppShell />
+  </HomeBuilderProvider>
 );
+
+const AppShell = () => {
+  const location = useLocation();
+  const isBuilderActive = location.pathname.startsWith("/builder");
+  const isBuilderRoute = location.pathname.startsWith("/builder");
+  const isHomesActive = location.pathname.startsWith("/homes");
+  const isPokedexActive = location.pathname.startsWith("/pokedex");
+
+  return (
+    <div className="min-h-screen bg-[var(--pk-canvas)]">
+      <header className="sticky top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
+        <div className="flex h-[52px] w-full items-center justify-between px-5 sm:px-8 lg:px-10">
+          <Link
+            to="/builder"
+            aria-label="Go to Home Builder"
+            className="text-[20px] font-extrabold tracking-[-0.02em] leading-none"
+            style={{ fontFamily: "\"M PLUS Rounded 1c\", sans-serif" }}
+          >
+            <span className="text-[#003691]">Pokopia</span>
+            <span className="text-[#1277FE]">Lab</span>
+          </Link>
+
+          <nav className="flex items-center gap-1.5">
+            <Link to="/builder/pokemon" className={navLinkClass(isBuilderActive)}>
+              Home Builder
+            </Link>
+            <Link to="/homes" className={navLinkClass(isHomesActive)}>
+              Saved Homes
+            </Link>
+            <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
+              Pokedex
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <main
+        className={
+          isBuilderRoute
+            ? "w-full pb-0 pt-0"
+            : "mx-auto w-full max-w-[2000px] px-5 pb-12 pt-0 sm:px-8 lg:px-10"
+        }
+      >
+        <AppRoutes />
+      </main>
+    </div>
+  );
+};

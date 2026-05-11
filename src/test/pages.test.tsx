@@ -1,217 +1,259 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { MemoryRouter, Route, Routes, useLocation } from "react-router-dom";
-import { describe, expect, it, beforeEach } from "vitest";
+import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { MemoryRouter, useLocation } from "react-router-dom";
+import { beforeEach, describe, expect, it } from "vitest";
 import { App } from "../app/App";
-import { BuildersPage } from "../pages/BuildersPage";
-import { HabitatDetailPage } from "../pages/HabitatDetailPage";
-import { HabitatsPage } from "../pages/HabitatsPage";
-import { ItemDetailPage } from "../pages/ItemDetailPage";
-import { ItemsPage } from "../pages/ItemsPage";
-import { LookupPage } from "../pages/LookupPage";
-import { PokemonDetailPage } from "../pages/PokemonDetailPage";
-import { ComparePage } from "../pages/ComparePage";
-import { persistSavedTeams } from "../lib/storage";
-import { habitats } from "../data/habitats";
-import { items } from "../data/items";
 
 const LocationDisplay = () => {
   const location = useLocation();
   return <p data-testid="location-display">{`${location.pathname}${location.search}`}</p>;
 };
 
-describe("feature pages", () => {
+describe("home builder routing and navigation", () => {
   beforeEach(() => {
     cleanup();
     window.localStorage.clear();
   });
 
-  it("shows live Roomies results after selecting Pokemon", async () => {
-    const user = userEvent.setup();
+  it("redirects root to /builder and keeps builder always accessible", async () => {
     render(
-      <MemoryRouter initialEntries={["/builder"]}>
-        <BuildersPage />
-      </MemoryRouter>,
-    );
-
-    await user.click(screen.getByRole("button", { name: /Pikachu/i }));
-    await user.click(screen.getByRole("button", { name: /Meowth/i }));
-
-    expect(screen.getByText(/Build your group/i)).toBeInTheDocument();
-    expect(screen.getByText(/^Your Group$/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Ideal habitat:/i).length).toBeGreaterThan(0);
-    expect(screen.queryByText(/Leaning toward/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Shared by everyone/i)).not.toBeInTheDocument();
-    expect(screen.queryByText(/Try these favorites and items/i)).not.toBeInTheDocument();
-  });
-
-  it("renders combined reverse lookup results", () => {
-    render(
-      <MemoryRouter initialEntries={["/lookup"]}>
-        <LookupPage />
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/Reverse Lookup/i)).toBeInTheDocument();
-    expect(screen.getByText(/Start from a constraint/i)).toBeInTheDocument();
-  });
-
-  it("shows ranked teammate suggestions on a pokemon detail page", () => {
-    render(
-      <MemoryRouter initialEntries={["/pokemon/pikachu"]}>
-        <Routes>
-          <Route path="/pokemon/:slug" element={<PokemonDetailPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/Best teammate candidates for Pikachu/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Pair score/i).length).toBeGreaterThan(0);
-  });
-
-  it("renders compare view when two teams are saved", () => {
-    persistSavedTeams([
-      {
-        id: "team-1",
-        name: "Sunny squad",
-        pokemonIds: ["pikachu", "meowth"],
-        createdAt: "2026-01-01T00:00:00.000Z",
-        updatedAt: "2026-01-01T00:00:00.000Z",
-      },
-      {
-        id: "team-2",
-        name: "Cozy growers",
-        pokemonIds: ["bulbasaur", "snorlax"],
-        createdAt: "2026-01-02T00:00:00.000Z",
-        updatedAt: "2026-01-02T00:00:00.000Z",
-      },
-    ]);
-
-    render(
-      <MemoryRouter initialEntries={["/compare?left=team-1&right=team-2"]}>
-        <ComparePage />
-      </MemoryRouter>,
-    );
-
-    expect(screen.getAllByText("Sunny squad").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("Cozy growers").length).toBeGreaterThan(0);
-  });
-
-  it("initializes /items filters from URL params", () => {
-    render(
-      <MemoryRouter initialEntries={["/items?q=ore&generalCategory=materials&comfortCategory=all"]}>
-        <ItemsPage />
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/^All items \(/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/Search items/i)).toHaveValue("ore");
-    expect(screen.getByDisplayValue(/materials/i)).toBeInTheDocument();
-    expect(screen.getAllByDisplayValue(/all comfort tags/i).length).toBeGreaterThan(0);
-  });
-
-  it("initializes /habitats search from URL params", () => {
-    render(
-      <MemoryRouter initialEntries={["/habitats?q=tree"]}>
-        <HabitatsPage />
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/^All habitats \(/i)).toBeInTheDocument();
-    expect(screen.getByPlaceholderText(/Search habitats/i)).toHaveValue("tree");
-  });
-
-  it("renders item detail standalone on direct route visit", () => {
-    const itemId = items[0]?.id;
-    expect(itemId).toBeDefined();
-
-    render(
-      <MemoryRouter initialEntries={[`/items/${itemId}`]}>
-        <Routes>
-          <Route path="/items/:itemId" element={<ItemDetailPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/Back to items/i)).toBeInTheDocument();
-    expect(screen.getByText(/Item Details/i)).toBeInTheDocument();
-  });
-
-  it("renders habitat detail standalone on direct route visit", () => {
-    const habitatId = habitats[0]?.id;
-    expect(habitatId).toBeDefined();
-
-    render(
-      <MemoryRouter initialEntries={[`/habitats/${habitatId}`]}>
-        <Routes>
-          <Route path="/habitats/:habitatId" element={<HabitatDetailPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
-
-    expect(screen.getByText(/Back to habitats/i)).toBeInTheDocument();
-    expect(screen.getByText(/Habitat Details/i)).toBeInTheDocument();
-  });
-
-  it("preserves exact list URL state when opening and closing item modal from /items", async () => {
-    const user = userEvent.setup();
-
-    render(
-      <MemoryRouter initialEntries={["/items?q=ore&generalCategory=materials&comfortCategory=all"]}>
+      <MemoryRouter initialEntries={["/"]}>
         <App />
         <LocationDisplay />
       </MemoryRouter>,
     );
 
-    const oreLink = screen.getByRole("link", { name: /copper ore/i });
-    await user.click(oreLink);
+    await waitFor(() => {
+      expect(screen.getAllByTestId("location-display")[0]).toHaveTextContent("/builder/pokemon");
+    });
 
-    expect(screen.getByText(/Item Details/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /close/i })).toBeInTheDocument();
-
-    await user.click(screen.getByRole("button", { name: /close/i }));
-
-    expect(screen.getByTestId("location-display")).toHaveTextContent(
-      "/items?q=ore&generalCategory=materials&comfortCategory=all",
-    );
-    expect(screen.getByPlaceholderText(/Search items/i)).toHaveValue("ore");
+    expect(screen.getAllByText(/home builder/i).length).toBeGreaterThan(0);
   });
 
-  it("item detail links used-in-habitats to canonical habitat detail routes", () => {
-    const itemUsedInHabitat = items.find((item) =>
-      habitats.some((habitat) => (habitat.requiredItems ?? []).some((requirement) => requirement.itemId === item.id)),
-    );
-    expect(itemUsedInHabitat).toBeDefined();
-
+  it("preserves URL-backed search state for item browsing", async () => {
     render(
-      <MemoryRouter initialEntries={[`/items/${itemUsedInHabitat!.id}`]}>
-        <Routes>
-          <Route path="/items/:itemId" element={<ItemDetailPage />} />
-        </Routes>
+      <MemoryRouter initialEntries={["/builder/items?q=ore&mode=all"]}>
+        <App />
       </MemoryRouter>,
     );
 
-    const habitatLinks = screen
-      .getAllByRole("link")
-      .filter((link) => (link.getAttribute("href") ?? "").includes("/habitats/"));
-    expect(habitatLinks.length).toBeGreaterThan(0);
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search items/i)).toHaveValue("ore");
+    });
   });
 
-  it("habitat detail links required items to canonical item detail routes", () => {
-    const habitatWithItem = habitats.find((habitat) => (habitat.requiredItems ?? []).length > 0);
-    expect(habitatWithItem).toBeDefined();
-
+  it("keeps tab selection from the current builder route", async () => {
     render(
-      <MemoryRouter initialEntries={[`/habitats/${habitatWithItem!.id}`]}>
-        <Routes>
-          <Route path="/habitats/:habitatId" element={<HabitatDetailPage />} />
-        </Routes>
+      <MemoryRouter initialEntries={["/builder/items"]}>
+        <App />
+        <LocationDisplay />
       </MemoryRouter>,
     );
 
-    const itemLinks = screen
-      .getAllByRole("link")
-      .filter((link) => (link.getAttribute("href") ?? "").includes("/items/"));
-    expect(itemLinks.length).toBeGreaterThan(0);
+    await waitFor(() => {
+      expect(screen.getAllByTestId("location-display")[0]).toHaveTextContent("/builder/items");
+    });
+    expect(screen.getByPlaceholderText(/search items/i)).toBeInTheDocument();
   });
+
+  it("switches browse tabs without bouncing back to another tab", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/pokemon"]}>
+        <App />
+        <LocationDisplay />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    fireEvent.click(screen.getByRole("button", { name: "Items" }));
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId("location-display")[0]).toHaveTextContent("/builder/items");
+    });
+    expect(screen.getByPlaceholderText(/search items/i)).toBeInTheDocument();
+  });
+
+  it("shows transition skeleton on tab switch and resolves to the final rapid-clicked tab", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/pokemon"]}>
+        <App />
+        <LocationDisplay />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    const pane = screen.getByTestId("builder-results-pane");
+    expect(pane).toHaveAttribute("aria-busy", "false");
+
+    fireEvent.click(screen.getByRole("button", { name: "Items" }));
+    fireEvent.click(screen.getByRole("button", { name: /Review Materials/i }));
+
+    expect(screen.getByTestId("builder-results-skeleton")).toBeInTheDocument();
+    expect(pane).toHaveAttribute("aria-busy", "true");
+    expect(screen.getAllByTestId("location-display")[0]).toHaveTextContent("/builder/pokemon");
+
+    await waitFor(() => {
+      expect(screen.getAllByTestId("location-display")[0]).toHaveTextContent("/builder/favorites");
+    });
+    expect(screen.queryByTestId("builder-results-skeleton")).not.toBeInTheDocument();
+    expect(pane).toHaveAttribute("aria-busy", "false");
+    expect(screen.getByPlaceholderText(/search favorites items/i)).toBeInTheDocument();
+  });
+
+  it("opens item details overlay from item card click and syncs URL detail param", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/items"]}>
+        <App />
+        <LocationDisplay />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search items/i)).toBeInTheDocument();
+    });
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    fireEvent.click(firstCard as HTMLElement);
+
+    await waitFor(() => {
+      expect(screen.getByText(/item details/i)).toBeInTheDocument();
+    });
+    expect(screen.getAllByTestId("location-display")[0].textContent).toMatch(/\/builder\/items\?.*detail=/);
+  }, 10000);
+
+  it("keeps Add independent from details on item cards", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/items"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search items/i)).toBeInTheDocument();
+    });
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+
+    const addButton = within(firstCard as HTMLElement).getByRole("button", { name: "Add" });
+    fireEvent.click(addButton);
+
+    expect(screen.queryByText(/item details/i)).not.toBeInTheDocument();
+  });
+
+  it("adds pokemon from pokemon card click", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/pokemon"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    expect(screen.getByText(/pokemon\s*\(0\)/i)).toBeInTheDocument();
+    fireEvent.click(firstCard as HTMLElement);
+    await waitFor(() => {
+      expect(screen.getByText(/pokemon\s*\(1\)/i)).toBeInTheDocument();
+    });
+  });
+
+  it("adds pokemon immediately when tapping a pokemon card", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/pokemon"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    expect(screen.getByText(/pokemon\s*\(0\)/i)).toBeInTheDocument();
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    fireEvent.click(firstCard as HTMLElement);
+    await waitFor(() => {
+      expect(screen.getByText(/pokemon\s*\(1\)/i)).toBeInTheDocument();
+    });
+  });
+
+  it("shows preferred habitat on pokemon cards and selected pokemon entries", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/pokemon"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    expect(screen.getAllByText(/bright/i).length).toBeGreaterThan(0);
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    fireEvent.click(firstCard as HTMLElement);
+
+    await waitFor(() => {
+      expect(screen.getByText(/pokemon\s*\(1\)/i)).toBeInTheDocument();
+    });
+    expect(screen.getAllByText(/preferred habitat:/i).length).toBeGreaterThan(0);
+  });
+
+  it("opens item details overlay from favorites tab card click", async () => {
+    render(
+      <MemoryRouter initialEntries={["/builder/favorites"]}>
+        <App />
+        <LocationDisplay />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search favorites items/i)).toBeInTheDocument();
+    });
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    fireEvent.click(firstCard as HTMLElement);
+
+    await waitFor(() => {
+      expect(screen.getByText(/item details/i)).toBeInTheDocument();
+    });
+
+    expect(screen.getAllByTestId("location-display")[0].textContent).toMatch(/\/builder\/favorites\?.*detail=/);
+  });
+
+  it("opens pokedex pokemon details from card click without inline add button", async () => {
+    render(
+      <MemoryRouter initialEntries={["/pokedex/pokemon"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    await waitFor(() => {
+      expect(screen.getByPlaceholderText(/search pokemon/i)).toBeInTheDocument();
+    });
+
+    const firstCard = document.querySelector("article[role='button']");
+    expect(firstCard).toBeTruthy();
+    expect(within(firstCard as HTMLElement).queryByRole("button", { name: /add to home/i })).not.toBeInTheDocument();
+
+    fireEvent.click(firstCard as HTMLElement);
+
+    await waitFor(() => {
+      expect(screen.getByText(/pokemon details/i)).toBeInTheDocument();
+    });
+  });
+
 });

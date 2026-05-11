@@ -1,94 +1,179 @@
 import { describe, expect, it } from "vitest";
-import { habitatById } from "../data/habitats";
-import { pokemonById } from "../data/pokemon";
-import { getHabitatConflicts } from "../lib/compatibility";
-import { getBestHabitatsForTeam, getHabitatCoverageBreakdown, getRecommendedItemsForHabitat } from "../lib/data/selectors";
-import { scorePair } from "../lib/scoring/scorePair";
-import { scoreTeam } from "../lib/scoring/scoreTeam";
+import { entityStore } from "../domain/home-builder/entities";
+import {
+  makeEmptyCurrentHome,
+  selectHomeCategoryCoverage,
+  selectHomeCategoryStrengths,
+  selectRankedPokemonForCurrentHome,
+  selectSuggestionsForCurrentHome,
+} from "../domain/home-builder/logic";
+import type { EntityStore, HomeBuilderHabitat, HomeBuilderItem, HomeBuilderPokemon } from "../domain/home-builder/models";
 
-const getPokemon = (...ids: string[]) => ids.map((id) => pokemonById.get(id)!);
+const buildHome = () => ({
+  ...makeEmptyCurrentHome(),
+  pokemonIds: ["pikachu", "meowth", "eevee"],
+  itemIds: [],
+  habitatId: "cave",
+});
 
-describe("pair scoring", () => {
-  it("rewards shared favorites and habitats", () => {
-    const [pikachu, meowth] = getPokemon("pikachu", "meowth");
-    const breakdown = scorePair(pikachu, meowth);
-    expect(breakdown.sharedFavoriteCategoryIds).toEqual(["glass_stuff", "group_activities"]);
-    expect(breakdown.matchingHabitatTraitIds).toEqual([]);
-    expect(breakdown.score).toBe(16);
+describe("home category strength + coverage", () => {
+  it("derives share types from selected pokemon", () => {
+    const strengths = Object.values(selectHomeCategoryStrengths(buildHome(), entityStore));
+    expect(strengths.length).toBeGreaterThan(0);
+    expect(strengths.some((entry) => ["all", "most", "some", "single"].includes(entry.shareType))).toBe(true);
   });
 
-  it("surfaces direct habitat conflicts", () => {
-    const [pikachu, noctowl] = getPokemon("pikachu", "noctowl");
-    const breakdown = scorePair(pikachu, noctowl);
-    expect(breakdown.conflictingHabitatPairs).toEqual(
-      expect.arrayContaining([{ traitAId: "bright", traitBId: "dark" }]),
-    );
-    expect(breakdown.score).toBeLessThan(5);
+  it("marks categories as missing when no comfort items are selected", () => {
+    const coverage = Object.values(selectHomeCategoryCoverage(buildHome(), entityStore));
+    expect(coverage.length).toBeGreaterThan(0);
+    expect(coverage.some((entry) => entry.state === "missing")).toBe(true);
   });
 });
 
-describe("team scoring", () => {
-  it("returns full-team overlap and habitat-aware recommendations", () => {
-    const group = getPokemon("eevee", "meowth", "slowpoke");
-    const breakdown = scoreTeam(group);
-    expect(breakdown.sharedFavoriteCategoryIdsAny).toContain("soft_stuff");
-    expect(breakdown.selectedHabitatId).not.toBeNull();
-    expect(breakdown.habitatCoverage?.stronglySupportedPokemonIds.length ?? 0).toBeGreaterThan(0);
-    expect(breakdown.recommendedFavoriteCategoryIds.length).toBeGreaterThan(0);
-    expect(breakdown.recommendedItemIds.length).toBeGreaterThan(0);
-    expect(breakdown.explanation.length).toBeGreaterThan(0);
-  });
-
-  it("scales cleanly for a 5-Pokemon team", () => {
-    const group = getPokemon("pikachu", "eevee", "oddish", "meowth", "vulpix");
-    const breakdown = scoreTeam(group);
-    expect(breakdown.teamPokemonIds).toHaveLength(5);
-    expect(breakdown.pairBreakdowns).toHaveLength(10);
-    expect(["excellent", "good", "mixed", "poor"]).toContain(breakdown.summaryLabel);
+describe("suggestion priority behavior", () => {
+  it("raises habitat conflict and missing category suggestions without blocking choices", () => {
+    const suggestions = selectSuggestionsForCurrentHome(buildHome(), entityStore);
+    expect(suggestions.length).toBeGreaterThan(0);
+    expect(suggestions.some((entry) => entry.kind === "habitat_conflict")).toBe(true);
+    expect(suggestions.some((entry) => entry.kind === "missing_category")).toBe(true);
   });
 });
 
-describe("habitat conflicts", () => {
-  it("collects team-level habitat conflicts", () => {
-    const conflicts = getHabitatConflicts(getPokemon("pikachu", "noctowl", "slowpoke"));
-    expect(conflicts.length).toBeGreaterThan(0);
-    expect(conflicts.some((conflict) => conflict.traitAId === "bright" && conflict.traitBId === "dark")).toBe(true);
-  });
+const pokemon = (overrides: Partial<HomeBuilderPokemon> & Pick<HomeBuilderPokemon, "id" | "name">): HomeBuilderPokemon => {
+  const { id, name, ...rest } = overrides;
+  return {
+    id,
+    slug: id,
+    name,
+    typeIds: [],
+    favoriteCategoryIds: [],
+    idealHabitatId: null,
+    habitatIds: [],
+    specialtyIds: [],
+    imageUrl: null,
+    ...rest,
+  };
+};
+
+const habitat = (id: string, name: string): HomeBuilderHabitat => ({
+  id,
+  slug: id,
+  name,
+  relatedComfortCategoryIds: [],
+  image: null,
+  requiredItems: [],
 });
 
-describe("habitat-aware scoring", () => {
-  it("finds useful habitats for a team", () => {
-    const group = getPokemon("pikachu", "meowth");
-    const best = getBestHabitatsForTeam(group);
-    expect(best.length).toBeGreaterThan(0);
-    expect(habitatById.get(best[0].habitatId)).toBeTruthy();
-    expect(best[0].habitatFitItemIds.length).toBeGreaterThan(0);
+const testEntities: EntityStore = {
+  pokemonById: {
+    selectedA: pokemon({ id: "selectedA", name: "Selected A", idealHabitatId: "bright", favoriteCategoryIds: ["cozy", "breezy", "luxury"] }),
+    selectedB: pokemon({ id: "selectedB", name: "Selected B", idealHabitatId: "bright", favoriteCategoryIds: ["cozy", "breezy", "wooden"] }),
+    selectedC: pokemon({ id: "selectedC", name: "Selected C", idealHabitatId: "cave", favoriteCategoryIds: ["cozy", "spicy"] }),
+    candidateStrong: pokemon({
+      id: "candidateStrong",
+      name: "Candidate Strong",
+      idealHabitatId: "cave",
+      favoriteCategoryIds: ["cozy", "breezy", "luxury"],
+    }),
+    candidateOneOffHabitat: pokemon({
+      id: "candidateOneOffHabitat",
+      name: "Candidate One-Off Habitat",
+      idealHabitatId: "bright",
+      favoriteCategoryIds: ["luxury"],
+    }),
+    candidateReinforce: pokemon({
+      id: "candidateReinforce",
+      name: "Candidate Reinforce",
+      idealHabitatId: "humid",
+      favoriteCategoryIds: ["cozy", "breezy"],
+    }),
+    candidateWeakHabitat: pokemon({ id: "candidateWeakHabitat", name: "Candidate Weak Habitat", idealHabitatId: "bright", favoriteCategoryIds: [] }),
+    candidateUnknown: pokemon({ id: "candidateUnknown", name: "Candidate Unknown", idealHabitatId: null }),
+  },
+  itemsById: {} as Record<string, HomeBuilderItem>,
+  habitatsById: {
+    bright: habitat("bright", "Bright Habitat"),
+    cave: habitat("cave", "Cave Habitat"),
+  },
+  allPokemonIds: [
+    "selectedA",
+    "selectedB",
+    "selectedC",
+    "candidateStrong",
+    "candidateOneOffHabitat",
+    "candidateReinforce",
+    "candidateWeakHabitat",
+    "candidateUnknown",
+  ],
+  allItemIds: [],
+  allHabitatIds: ["bright", "cave"],
+};
+
+describe("pokemon group-fit ranking", () => {
+  it("ranks candidates matching multiple selected pokemon above one-off overlaps", () => {
+    const home = {
+      ...makeEmptyCurrentHome(),
+      pokemonIds: ["selectedA", "selectedB"],
+    };
+
+    const ranked = selectRankedPokemonForCurrentHome(home, testEntities);
+    const strongIndex = ranked.findIndex((entry) => entry.pokemon.id === "candidateStrong");
+    const oneOffIndex = ranked.findIndex((entry) => entry.pokemon.id === "candidateOneOffHabitat");
+
+    expect(strongIndex).toBeGreaterThanOrEqual(0);
+    expect(oneOffIndex).toBeGreaterThanOrEqual(0);
+    expect(strongIndex).toBeLessThan(oneOffIndex);
+    expect(ranked[strongIndex].section).toBe("strong");
   });
 
-  it("reports habitat item coverage and recommended items", () => {
-    const group = getPokemon("pikachu", "meowth");
-    const habitatId = getBestHabitatsForTeam(group)[0].habitatId;
-    const coverage = getHabitatCoverageBreakdown(group, habitatId);
-    const recommendations = getRecommendedItemsForHabitat(group, habitatId);
+  it("ranks reinforcement-heavy overlaps as strong fits", () => {
+    const home = {
+      ...makeEmptyCurrentHome(),
+      pokemonIds: ["selectedA", "selectedB", "selectedC"],
+    };
 
-    expect(coverage.stronglySupportedPokemonIds.length).toBeGreaterThan(0);
-    expect(recommendations.length).toBeGreaterThan(0);
-    expect(recommendations[0].habitatId).toBe(habitatId);
+    const ranked = selectRankedPokemonForCurrentHome(home, testEntities);
+    const reinforce = ranked.find((entry) => entry.pokemon.id === "candidateReinforce");
+    const oneOff = ranked.find((entry) => entry.pokemon.id === "candidateOneOffHabitat");
+
+    expect(reinforce?.matchedCategoryIds).toEqual(expect.arrayContaining(["cozy", "breezy"]));
+    expect((reinforce?.score ?? 0)).toBeGreaterThan(oneOff?.score ?? 0);
+    expect(reinforce?.section).toBe("strong");
   });
 
-  it("changes support and total score for the same team across habitats", () => {
-    const group = getPokemon("pikachu", "meowth", "slowpoke");
-    const rankedHabitats = getBestHabitatsForTeam(group);
+  it("does not let habitat overpower stronger favorite overlap", () => {
+    const home = {
+      ...makeEmptyCurrentHome(),
+      pokemonIds: ["selectedA", "selectedB"],
+    };
 
-    expect(rankedHabitats.length).toBeGreaterThan(1);
+    const ranked = selectRankedPokemonForCurrentHome(home, testEntities);
+    const strong = ranked.find((entry) => entry.pokemon.id === "candidateStrong");
+    const weakHabitat = ranked.find((entry) => entry.pokemon.id === "candidateWeakHabitat");
 
-    const strongerHabitat = rankedHabitats[0].habitatId;
-    const weakerHabitat = rankedHabitats[rankedHabitats.length - 1].habitatId;
-    const strongerBreakdown = scoreTeam(group, { habitatId: strongerHabitat });
-    const weakerBreakdown = scoreTeam(group, { habitatId: weakerHabitat });
+    expect(strong?.matchedCategoryIds.length).toBeGreaterThan(weakHabitat?.matchedCategoryIds.length ?? 0);
+    expect((strong?.score ?? 0)).toBeGreaterThan(weakHabitat?.score ?? 0);
+  });
 
-    expect(strongerBreakdown.habitatSupportBonus).toBeGreaterThan(weakerBreakdown.habitatSupportBonus);
-    expect(strongerBreakdown.totalScore).toBeGreaterThan(weakerBreakdown.totalScore);
-    expect(strongerBreakdown.recommendedItemIds).not.toEqual(weakerBreakdown.recommendedItemIds);
+  it("assigns candidates into strong/good/some/none sections", () => {
+    const home = {
+      ...makeEmptyCurrentHome(),
+      pokemonIds: ["selectedA", "selectedB", "selectedC"],
+    };
+    const ranked = selectRankedPokemonForCurrentHome(home, testEntities);
+    const byId = new Map(ranked.map((entry) => [entry.pokemon.id, entry]));
+
+    expect(byId.get("candidateStrong")?.section).toBe("strong");
+    expect(byId.get("candidateReinforce")?.section).toBe("strong");
+    expect(byId.get("candidateOneOffHabitat")?.section).toBe("some");
+    expect(byId.get("candidateWeakHabitat")?.section).toBe("none");
+  });
+
+  it("keeps default browse behavior when no pokemon are selected", () => {
+    const home = makeEmptyCurrentHome();
+    const ranked = selectRankedPokemonForCurrentHome(home, testEntities);
+
+    expect(ranked.length).toBeGreaterThan(0);
+    expect(ranked.some((entry) => entry.score === 0)).toBe(true);
   });
 });

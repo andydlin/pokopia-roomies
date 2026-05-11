@@ -1,113 +1,269 @@
 import { describe, expect, it } from "vitest";
-import { habitatById } from "../data/habitats";
-import { pokemonById } from "../data/pokemon";
+import { entityStore } from "../domain/home-builder/entities";
+import { makeEmptyCurrentHome } from "../domain/home-builder/logic";
 import {
-  findPokemonMatches,
-  getBestHabitatsForTeam,
-  getHabitatFitItems,
-  getHabitatCoverageBreakdown,
-  getRecommendedItemsForHabitat,
-  getItemsForFavoriteCategory,
-  getRecommendedCategories,
-  getRecommendedItems,
-  getSharedFavoriteCategories,
-  getSharedFavoriteCategoriesAny,
-} from "../lib/data/selectors";
+  selectBuildMaterialsSummary,
+  selectComfortItems,
+  selectFavoriteItemSections,
+  selectHabitatBrowserSections,
+  selectFilteredRankedItems,
+  selectItemComfortCategoryOptions,
+  selectItemFavoriteCategoryOptions,
+  selectItemMainCategoryOptions,
+  selectNonComfortItemsExcludingMaterials,
+  selectItemBrowserSections,
+  selectPokemonTypeOptions,
+  selectPokemonBrowserSections,
+} from "../domain/home-builder/selectors";
+import { createInitialHomeBuilderState } from "../features/home-builder/state/homeBuilderReducer";
 
-const getPokemon = (...ids: string[]) => ids.map((id) => pokemonById.get(id)!);
-
-describe("favorite overlap selectors", () => {
-  it("stores elemental types for pokemon", () => {
-    const pikachu = pokemonById.get("pikachu");
-    const bulbasaur = pokemonById.get("bulbasaur");
-    expect(pikachu?.typeIds).toEqual(["electric"]);
-    expect(bulbasaur?.typeIds).toEqual(expect.arrayContaining(["grass", "poison"]));
-  });
-
-  it("returns categories shared across all members", () => {
-    expect(getSharedFavoriteCategories(getPokemon("charmander", "vulpix"))).toEqual(
-      expect.arrayContaining(["lots_of_fire"]),
-    );
-  });
-
-  it("returns categories shared by any pair in the team", () => {
-    expect(getSharedFavoriteCategoriesAny(getPokemon("pikachu", "eevee", "oddish"))).toEqual(
-      expect.arrayContaining(["group_activities"]),
-    );
-  });
-});
-
-describe("item recommendation selectors", () => {
-  it("resolves category-to-items", () => {
-    const items = getItemsForFavoriteCategory("lots_of_fire");
-    expect(items.map((item) => item.id)).toEqual(expect.arrayContaining(["bonfire", "campfire"]));
-  });
-
-  it("ranks recommended categories and items by coverage", () => {
-    const group = getPokemon("eevee", "meowth", "slowpoke");
-    expect(getRecommendedCategories(group)[0].categoryId).toBe("soft_stuff");
-    expect(getRecommendedItems(group)[0].matchedPokemonIds.length).toBeGreaterThanOrEqual(2);
-  });
-});
-
-describe("reverse lookup", () => {
-  it("combines category and specialty filters", () => {
-    const results = findPokemonMatches({
-      query: "",
-      favoriteCategoryId: "luxury",
-      comfortCategoryId: "all",
-      itemId: "all",
-      habitatTraitId: "all",
-      specialtyId: "trade",
+describe("browser selectors", () => {
+  it("returns contextual item sections while keeping neutral items visible", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu", "eevee"],
+      },
     });
 
-    expect(results.map((entry) => entry.pokemonId)).toEqual(expect.arrayContaining(["meowth", "persian"]));
+    const sections = selectItemBrowserSections(state.currentHome, state.browse, entityStore);
+
+    expect(sections.best.length + sections.supporting.length + sections.neutral.length).toBeGreaterThan(0);
+    expect(sections.neutral.length).toBeGreaterThan(0);
   });
 
-  it("supports comfort tag filtering", () => {
-    const results = findPokemonMatches({
-      query: "",
-      favoriteCategoryId: "all",
-      comfortCategoryId: "food",
-      itemId: "all",
-      habitatTraitId: "all",
-      specialtyId: "all",
+  it("keeps pokemon and habitat section selectors active with partial homes", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        itemIds: ["bonfire"],
+      },
     });
-    expect(results.length).toBeGreaterThan(0);
-  });
-});
 
-describe("habitat-aware selectors", () => {
-  it("stores required items for habitats", () => {
-    const habitat = habitatById.get("tree_shaded_tall_grass");
-    expect(habitat).toBeTruthy();
-    expect(habitat?.requiredItems).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ itemId: "tall_grass", quantity: 4 }),
-        expect.objectContaining({ itemId: "tree", quantity: 1 }),
-      ]),
-    );
+    const pokemonSections = selectPokemonBrowserSections(state.currentHome, state.browse, entityStore);
+    const habitatSections = selectHabitatBrowserSections(state.currentHome, state.browse, entityStore);
+
+    expect(pokemonSections.best.length + pokemonSections.supporting.length + pokemonSections.neutral.length).toBeGreaterThan(0);
+    expect(habitatSections.best.length + habitatSections.supporting.length + habitatSections.neutral.length).toBeGreaterThan(0);
   });
 
-  it("returns habitat-fit items for a habitat", () => {
-    const habitatId = "campsite";
-    expect(habitatById.get(habitatId)).toBeTruthy();
-    expect(getHabitatFitItems(habitatId).length).toBeGreaterThan(0);
+  it("falls back to ranked items when strict item guidance filters produce zero rows", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu", "eevee"],
+      },
+    });
+
+    state.browse.items.intent = "missing_categories";
+
+    const sections = selectItemBrowserSections(state.currentHome, state.browse, entityStore);
+    const total = sections.best.length + sections.supporting.length + sections.neutral.length;
+
+    expect(total).toBeGreaterThan(0);
   });
 
-  it("derives habitat-aware coverage for a team", () => {
-    const group = getPokemon("pikachu", "meowth");
-    const habitatId = getBestHabitatsForTeam(group)[0].habitatId;
-    const coverage = getHabitatCoverageBreakdown(group, habitatId);
-    expect(coverage.habitatFitItemIds.length).toBeGreaterThan(0);
-    expect(coverage.pokemonCoverage.length).toBe(group.length);
-    expect(coverage.averagePokemonCoverageRatio).toBeGreaterThan(0);
+  it("applies comfort-tag filtering to item sections", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu", "eevee"],
+      },
+    });
+
+    const firstTaggedItem = entityStore.allItemIds
+      .map((itemId) => entityStore.itemsById[itemId])
+      .find((item) => item.comfortCategoryIds.length > 0);
+
+    expect(firstTaggedItem).toBeTruthy();
+
+    const categoryId = firstTaggedItem!.comfortCategoryIds[0];
+    state.browse.items.comfortCategoryId = categoryId;
+    state.browse.items.intent = null;
+
+    const sections = selectItemBrowserSections(state.currentHome, state.browse, entityStore);
+    const visibleItems = [...sections.best, ...sections.supporting, ...sections.neutral];
+
+    expect(visibleItems.length).toBeGreaterThan(0);
+    visibleItems.forEach((entry) => {
+      expect(entry.item.comfortCategoryIds).toContain(categoryId);
+    });
   });
 
-  it("filters recommended items by habitat fit", () => {
-    const group = getPokemon("pikachu", "meowth");
-    const habitatId = getBestHabitatsForTeam(group)[0].habitatId;
-    const recommendations = getRecommendedItemsForHabitat(group, habitatId);
-    expect(recommendations.every((entry) => entry.habitatId === habitatId)).toBe(true);
+  it("builds comfort-tag options from item comfort tags", () => {
+    const options = selectItemComfortCategoryOptions(entityStore);
+    expect(options.length).toBeGreaterThan(0);
+
+    options.forEach((option) => {
+      const hasMatchingItem = entityStore.allItemIds.some((itemId) =>
+        entityStore.itemsById[itemId].comfortCategoryIds.includes(option.id),
+      );
+      expect(hasMatchingItem).toBe(true);
+    });
+  });
+
+  it("applies item favorite-category filtering to item sections", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+      },
+    });
+
+    const favoriteOptions = selectItemFavoriteCategoryOptions(entityStore);
+    expect(favoriteOptions.length).toBeGreaterThan(0);
+
+    const favoriteCategoryId = favoriteOptions[0].id;
+    state.browse.items.favoriteCategoryId = favoriteCategoryId;
+
+    const sections = selectItemBrowserSections(state.currentHome, state.browse, entityStore);
+    const visibleItems = [...sections.best, ...sections.supporting, ...sections.neutral];
+
+    expect(visibleItems.length).toBeGreaterThan(0);
+    visibleItems.forEach((entry) => {
+      expect(entry.item.favoriteCategoryIds).toContain(favoriteCategoryId);
+    });
+  });
+
+  it("groups favorites tab results by favorite section and applies favorites-category filter", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+      },
+    });
+
+    const allSections = selectFavoriteItemSections(state.currentHome, state.browse, entityStore);
+    expect(allSections.length).toBeGreaterThan(0);
+    allSections.forEach((section) => {
+      expect(section.items.length).toBeGreaterThan(0);
+      section.items.forEach((entry) => {
+        expect(entry.item.favoriteCategoryIds).toContain(section.favoriteCategoryId);
+      });
+    });
+
+    const selectedFavoriteId = allSections[0].favoriteCategoryId;
+    state.browse.favorites.favoriteCategoryId = selectedFavoriteId;
+    const filteredSections = selectFavoriteItemSections(state.currentHome, state.browse, entityStore);
+
+    expect(filteredSections.length).toBe(1);
+    expect(filteredSections[0].favoriteCategoryId).toBe(selectedFavoriteId);
+    filteredSections[0].items.forEach((entry) => {
+      expect(entry.item.favoriteCategoryIds).toContain(selectedFavoriteId);
+    });
+  });
+
+  it("applies item main-category filtering to item sections", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+      },
+    });
+
+    const categoryOptions = selectItemMainCategoryOptions(entityStore);
+    expect(categoryOptions.length).toBeGreaterThan(0);
+
+    const categoryLabel = categoryOptions[0];
+    state.browse.items.generalCategoryId = categoryLabel;
+
+    const sections = selectItemBrowserSections(state.currentHome, state.browse, entityStore);
+    const visibleItems = [...sections.best, ...sections.supporting, ...sections.neutral];
+
+    expect(visibleItems.length).toBeGreaterThan(0);
+    visibleItems.forEach((entry) => {
+      expect(entry.item.generalCategoryLabel).toBe(categoryLabel);
+    });
+  });
+
+  it("applies item intent filtering in both contextual mode and browse all", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu", "eevee"],
+      },
+    });
+
+    state.browse.items.intent = null;
+    state.browse.items.browseMode = "all";
+    const allNoIntent = selectFilteredRankedItems(state.currentHome, state.browse, entityStore);
+
+    state.browse.items.intent = "best_fit";
+    state.browse.items.browseMode = "contextual";
+    const contextual = selectFilteredRankedItems(state.currentHome, state.browse, entityStore);
+
+    state.browse.items.browseMode = "all";
+    const browseAll = selectFilteredRankedItems(state.currentHome, state.browse, entityStore);
+
+    expect(contextual.length).toBeGreaterThan(0);
+    expect(browseAll.length).toBeGreaterThan(0);
+    expect(browseAll.length).toBeLessThanOrEqual(allNoIntent.length);
+    expect(browseAll.length).toBeGreaterThan(0);
+  });
+
+  it("applies pokemon type filtering and exposes type options", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        itemIds: ["bonfire"],
+      },
+    });
+
+    const typeOptions = selectPokemonTypeOptions(entityStore);
+    expect(typeOptions.length).toBeGreaterThan(0);
+
+    const selectedType = typeOptions[0];
+    state.browse.pokemon.typeId = selectedType;
+
+    const pokemonSections = selectPokemonBrowserSections(state.currentHome, state.browse, entityStore);
+    const visiblePokemon = [...pokemonSections.best, ...pokemonSections.supporting, ...pokemonSections.neutral];
+
+    expect(visiblePokemon.length).toBeGreaterThan(0);
+    visiblePokemon.forEach((entry) => {
+      expect(entry.pokemon.typeIds).toContain(selectedType);
+    });
+  });
+
+  it("returns only comfort items for comfort-phase selector", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        pokemonIds: ["pikachu", "eevee"],
+      },
+    });
+
+    const entries = selectComfortItems(state.currentHome, state.browse, entityStore);
+    expect(entries.length).toBeGreaterThan(0);
+    entries.forEach((entry) => {
+      expect(entry.item.comfortCategoryIds.length).toBeGreaterThan(0);
+    });
+  });
+
+  it("returns only non-comfort non-materials items for extra-items selector", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+      },
+    });
+
+    const entries = selectNonComfortItemsExcludingMaterials(state.currentHome, state.browse, entityStore);
+    expect(entries.length).toBeGreaterThan(0);
+    entries.forEach((entry) => {
+      expect(entry.item.comfortCategoryIds.length).toBe(0);
+      expect(entry.item.favoriteCategoryIds.length).toBe(0);
+      expect(entry.item.generalCategoryLabel).not.toBe("Materials");
+      expect(entry.item.generalCategoryLabel).not.toBe("Key Items");
+    });
+  });
+
+  it("build materials summary is based on selected build items", () => {
+    const state = createInitialHomeBuilderState({
+      currentHome: {
+        ...makeEmptyCurrentHome(),
+        itemIds: ["bonfire"],
+        itemQuantities: { bonfire: 2 },
+      },
+    });
+
+    const summary = selectBuildMaterialsSummary(state.currentHome, entityStore);
+    expect(summary.progress.totalMaterials).toBeGreaterThanOrEqual(0);
+    expect(summary.entries).toBeDefined();
   });
 });

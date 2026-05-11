@@ -17,7 +17,7 @@ export const ExplorerPokemonCard = ({ result }: { result: ExplorerResult }) => {
             {entry.number ? `#${String(entry.number).padStart(3, "0")} ${entry.name}` : entry.name}
           </Link>
           <p className="type-body mt-1 text-ink/62">Ideal habitat: {entry.idealHabitat}</p>
-          <span className={`type-caption type-ui-strong mt-2 inline-flex rounded-full border px-2.5 py-1 ${typeTheme.badgeClass}`}>
+          <span className={`pk-chip-type mt-2 inline-flex border px-2.5 py-1 ${typeTheme.badgeClass}`}>
             {typeTheme.typeLabel}
           </span>
         </div>

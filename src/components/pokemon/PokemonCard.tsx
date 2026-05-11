@@ -30,7 +30,7 @@ export const PokemonCard = ({ pokemon, actionLabel, onAction, disabled, reasons 
                 #{String(pokemon.dexNumber).padStart(3, "0")}
               </span>
             ) : null}
-            <span className={`type-caption type-ui-strong inline-flex rounded-full border px-2.5 py-1 ${typeTheme.badgeClass}`}>
+            <span className={`pk-chip-type inline-flex border px-2.5 py-1 ${typeTheme.badgeClass}`}>
               {typeTheme.typeLabel}
             </span>
           </div>

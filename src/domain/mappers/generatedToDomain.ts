@@ -21,6 +21,7 @@ const titleCase = (value: string) =>
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+const isFlavorCategoryId = (categoryId: string) => categoryId.endsWith("_flavor");
 
 const pokemonCountsByDex = new Map<number, number>();
 generatedPokemon.forEach((entry) => {
@@ -48,6 +49,7 @@ export const mapGeneratedFavoriteCategoriesToDomain = (): FavoriteCategory[] => 
 
   generatedPokemon.forEach((entry) => {
     entry.favorites.forEach((categoryId, index) => {
+      if (isFlavorCategoryId(categoryId)) return;
       const label = entry.sourceLabels?.favorites?.[index];
       if (label && !categoryNameById.has(categoryId)) {
         categoryNameById.set(categoryId, label);
@@ -63,6 +65,7 @@ export const mapGeneratedFavoriteCategoriesToDomain = (): FavoriteCategory[] => 
 
   generatedFavoriteItems.forEach((item) => {
     item.favoriteCategoryIds.forEach((categoryId, index) => {
+      if (isFlavorCategoryId(categoryId)) return;
       const label = item.sourceLabels?.favoriteCategories?.[index];
       if (label && !categoryNameById.has(categoryId)) {
         categoryNameById.set(categoryId, label);
@@ -77,6 +80,7 @@ export const mapGeneratedFavoriteCategoriesToDomain = (): FavoriteCategory[] => 
   });
 
   return [...categoryNameById.keys()]
+    .filter((categoryId) => !isFlavorCategoryId(categoryId))
     .sort((left, right) => left.localeCompare(right))
     .map((categoryId) => ({
       id: categoryId,
@@ -116,7 +120,9 @@ export const mapGeneratedItemsToDomain = (): Item[] =>
       const favoriteItem = favoriteItemById.get(baseItem.id);
     const itemCategoryLabel = favoriteItem?.itemCategoryLabel ?? baseItem.itemCategoryLabel ?? "Unknown";
     const itemCategory = favoriteItem?.itemCategory ?? baseItem.itemCategory ?? "unknown";
-    const favoriteCategoryIds = [...(favoriteItem?.favoriteCategoryIds ?? [])];
+    const favoriteCategoryIds = [...(favoriteItem?.favoriteCategoryIds ?? [])].filter(
+      (categoryId) => !isFlavorCategoryId(categoryId),
+    );
     const benefitingPokemonIds = [...(favoriteItem?.benefitingPokemonIds ?? [])];
     const favoriteSourceLabels = [...(favoriteItem?.sourceLabels?.favoriteCategories ?? [])];
 
@@ -200,6 +206,14 @@ export const mapGeneratedPokemonToDomain = (): Pokemon[] =>
       typeof entry.dexNumber === "number" && hasForms ? `species-${String(entry.dexNumber).padStart(3, "0")}` : entry.id;
     const formId = hasForms ? entry.id : null;
 
+    const favoriteCategoryEntries = entry.favorites
+      .map((categoryId, index) => ({ categoryId, label: entry.sourceLabels?.favorites?.[index] ?? null }))
+      .filter((entryFavorite) => !isFlavorCategoryId(entryFavorite.categoryId));
+    const favoriteCategoryIds = favoriteCategoryEntries.map((entryFavorite) => entryFavorite.categoryId);
+    const favoriteSourceLabels = favoriteCategoryEntries
+      .map((entryFavorite) => entryFavorite.label)
+      .filter((label) => label !== null);
+
     return {
       id: entry.id,
       slug: sourceSlug,
@@ -211,7 +225,7 @@ export const mapGeneratedPokemonToDomain = (): Pokemon[] =>
       formId,
       typeIds: [...(entry.types ?? [])],
       specialtyIds: [...entry.specialties],
-      favoriteCategoryIds: [...entry.favorites],
+      favoriteCategoryIds,
       idealHabitatTraitIds: entry.idealHabitat ? [entry.idealHabitat] : [],
       habitatIds: [...entry.habitats],
       locationIds: [...entry.locations],
@@ -222,7 +236,7 @@ export const mapGeneratedPokemonToDomain = (): Pokemon[] =>
         sourceSlug,
         sourceLabels: {
           idealHabitat: entry.sourceLabels?.idealHabitat ?? null,
-          favorites: [...(entry.sourceLabels?.favorites ?? [])],
+          favorites: favoriteSourceLabels,
           specialties: [...(entry.sourceLabels?.specialties ?? [])],
           types: [...(entry.sourceLabels?.types ?? [])],
           habitats: [],
