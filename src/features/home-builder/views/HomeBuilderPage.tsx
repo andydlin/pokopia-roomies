@@ -34,6 +34,7 @@ import { ResultCardShell, ResultCardTitle } from "../../../components/home-build
 import { OverlapTooltip } from "../../../components/home-builder/BuilderTooltip";
 import { SidebarPokemonCard } from "../../../components/home-builder/SidebarPokemonCard";
 import { BuilderResultsListSkeleton, BuilderResultsSkeleton, BuilderSidebarSkeleton } from "../../../components/home-builder/BuilderSkeletons";
+import { ActiveFilterChips, type ActiveFilterChip, ResultsBrowserBar, ResultsContent, ResultCardImageWell, ResultCardOverflowWrapper, SeeAllToggle } from "../../../components/home-builder/BuilderBrowserComponents";
 import { useHomeBuilder } from "../state/HomeBuilderContext";
 
 const toCategoryLabel = (categoryId: string) =>
@@ -2176,7 +2177,7 @@ export const HomeBuilderPage = () => {
 
           <div className="grid gap-4 lg:flex-1 lg:min-h-0 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
             {/* Section: Context sidebar */}
-            <aside className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] px-3 pb-12 pt-6 lg:block lg:h-full lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto">
+            <aside className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:block lg:h-full lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto">
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
@@ -2600,12 +2601,12 @@ export const HomeBuilderPage = () => {
             </aside>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="app-scrollbar order-2 bg-transparent p-0 pb-12 pr-4 pt-6 lg:h-full lg:min-h-0 lg:overflow-y-auto" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            <div ref={resultsPaneRef} className="app-scrollbar order-2 bg-transparent p-0 pb-12 pr-4 lg:h-full lg:min-h-0 lg:overflow-y-auto" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
             {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
-                <div className="sticky top-0 z-20 flex flex-wrap items-center gap-2 bg-[var(--pk-canvas)] pb-4">
+                <ResultsBrowserBar>
                   <BuilderSearchField
                     value={state.browse.items.searchQuery}
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
@@ -2635,50 +2636,26 @@ export const HomeBuilderPage = () => {
                       onChange={(nextId) => setActiveItemPokemonFilterId(nextId === "all" ? null : nextId)}
                     />
                   ) : null}
-                  {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || activeItemPokemonFilter !== null) ? (
-                    <div className="flex w-full flex-wrap items-center gap-2">
-                      {activeItemPokemonFilter ? (
-                        <button
-                          type="button"
-                          onClick={() => setActiveItemPokemonFilterId(null)}
-                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
-                        >
-                          Showing items for {activeItemPokemonFilter.name}
-                          <span aria-hidden>×</span>
-                        </button>
-                      ) : null}
-                      {activeComfortFavoriteFilters.map((categoryId) => (
-                        <button
-                          key={`active-comfort-filter-${categoryId}`}
-                          type="button"
-                          onClick={() =>
-                            setActiveComfortFavoriteFilters((previous) => previous.filter((id) => id !== categoryId))
-                          }
-                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
-                        >
-                          {toCategoryLabel(categoryId)}
-                          <span aria-hidden>×</span>
-                        </button>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setActiveComfortFavoriteFilters([]);
-                          setActiveItemPokemonFilterId(null);
-                        }}
-                        className="pk-chip pk-chip-standard pk-chip-none transition-colors hover:brightness-[0.98]"
-                      >
-                        Clear all
-                      </button>
-                    </div>
+                  {activePhase === "comfort_items" ? (
+                    <ActiveFilterChips
+                      chips={[
+                        ...(activeItemPokemonFilter
+                          ? [{ key: "pokemon-filter", label: `Showing items for ${activeItemPokemonFilter.name}`, onRemove: () => setActiveItemPokemonFilterId(null) }]
+                          : []),
+                        ...activeComfortFavoriteFilters.map((categoryId) => ({
+                          key: `active-comfort-filter-${categoryId}`,
+                          label: toCategoryLabel(categoryId),
+                          onRemove: () => setActiveComfortFavoriteFilters((previous) => previous.filter((id) => id !== categoryId)),
+                        })),
+                      ]}
+                      onClearAll={() => {
+                        setActiveComfortFavoriteFilters([]);
+                        setActiveItemPokemonFilterId(null);
+                      }}
+                    />
                   ) : null}
-                </div>
-                {isResultsRefreshing ? (
-                  <div className="mt-4">
-                    <BuilderResultsListSkeleton />
-                  </div>
-                ) : (
-                <div className="mt-4 space-y-8">
+                </ResultsBrowserBar>
+                <ResultsContent isRefreshing={isResultsRefreshing}>
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
                     <section className="rounded-[16px] border border-[#C8DAE2] bg-[#E8F1F4] p-6">
                       <p className="text-lg font-extrabold text-[#485864]">
@@ -2851,16 +2828,10 @@ export const HomeBuilderPage = () => {
                                   ? itemPrimaryPillCount + itemSecondaryPillCount > 0
                                   : entry.item.favoriteCategoryIds.length > 0));
                           return (
-                            <div
+                            <ResultCardOverflowWrapper
                               key={entry.item.id}
-                              className={`${shouldFadeOverflowEntry && !overflowIsVisible ? "overflow-hidden" : "overflow-visible"} transition-[max-height,opacity,transform] duration-500 ease-out ${
-                                shouldFadeOverflowEntry
-                                  ? overflowIsVisible
-                                    ? "max-h-[220px] opacity-100 translate-y-0"
-                                    : "max-h-0 opacity-0 -translate-y-1"
-                                  : "max-h-[220px] opacity-100 translate-y-0"
-                              }`}
-                              style={shouldFadeOverflowEntry ? { transitionDelay: "0ms" } : undefined}
+                              isOverflow={shouldFadeOverflowEntry}
+                              isVisible={overflowIsVisible}
                             >
                               <ResultCardShell
                                 onClick={() => dispatch({ type: "home/add-item", itemId: entry.item.id })}
@@ -2868,9 +2839,7 @@ export const HomeBuilderPage = () => {
                                 className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-[10px] shadow-[var(--pk-shadow-sm)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-[var(--pk-brand-border)] hover:shadow-[var(--pk-shadow-md)]"
                               >
                               <div className={`flex gap-3 ${itemHasVisibleFavoritePills ? "items-start" : "items-center"}`}>
-                                  <div className="inline-flex shrink-0 items-center justify-center rounded-[var(--pk-radius-lg)] bg-[var(--pk-image-well)] p-2">
-                                    {entry.item.image ? <img src={entry.item.image} alt={entry.item.name} className="h-12 w-12 object-contain" /> : null}
-                                  </div>
+                                  <ResultCardImageWell src={entry.item.image} alt={entry.item.name} />
                                   <div className="min-w-0 flex-1">
                                     <ResultCardTitle>{entry.item.name}</ResultCardTitle>
                                     <p className="text-xs text-[var(--pk-text-desc)]">
@@ -2967,28 +2936,21 @@ export const HomeBuilderPage = () => {
                                   </div>
                                 </div>
                               </ResultCardShell>
-                            </div>
+                            </ResultCardOverflowWrapper>
                           );
                         })}
                           </div>
-                        {section.items.length > MAX_ITEM_CARDS_PER_SECTION &&
-                        !isNullStateResults &&
-                        !isFilteredSection ? (
-                          <div className="mt-3">
-                            <button
-                              type="button"
-                                onClick={() => toggleItemSectionExpansion(section.id)}
-                                className="pk-chip-count h-9 transition-colors hover:brightness-[0.98]"
-                              >
-                                {isSectionExpanded && !isSectionCollapsing ? "Show less" : `See all (${hiddenCount} more)`}
-                              </button>
-                            </div>
-                          ) : null}
+                        <SeeAllToggle
+                          show={section.items.length > MAX_ITEM_CARDS_PER_SECTION && !isNullStateResults && !isFilteredSection}
+                          isExpanded={isSectionExpanded}
+                          isCollapsing={isSectionCollapsing}
+                          hiddenCount={hiddenCount}
+                          onToggle={() => toggleItemSectionExpansion(section.id)}
+                        />
                         </CollapsibleResultsSection>
                       );
                     })}
-                </div>
-                )}
+                </ResultsContent>
                 {totalVisibleItems === 0 ? (
                   <div className="mt-4 rounded-2xl border border-dashed border-ink/20 bg-white p-4">
                     <p className="type-ui type-ui-strong text-ink">
@@ -3009,7 +2971,7 @@ export const HomeBuilderPage = () => {
             {/* Subsection: Pokemon browser */}
             {!showInitialSkeleton && contentActiveTab === "pokemon" ? (
               <>
-                <div className="sticky top-0 z-20 flex flex-wrap items-center gap-2 bg-[var(--pk-canvas)] pb-4">
+                <ResultsBrowserBar>
                   <BuilderSearchField
                     value={state.browse.pokemon.searchQuery}
                     onChange={(query) => dispatch({ type: "browse/pokemon/set-search", query })}
@@ -3031,53 +2993,26 @@ export const HomeBuilderPage = () => {
                       window.setTimeout(() => setPokemonSortMode("az"), 0);
                     }}
                   />
-                  {(activePokemonFavoriteFilters.length > 0 || activePokemonHabitatFilters.length > 0) ? (
-                    <div className="flex w-full flex-wrap items-center gap-2">
-                      {activePokemonFavoriteFilters.map((categoryId) => (
-                        <button
-                          key={`active-pokemon-filter-${categoryId}`}
-                          type="button"
-                          onClick={() =>
-                            setActivePokemonFavoriteFilters((previous) => previous.filter((id) => id !== categoryId))
-                          }
-                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
-                        >
-                          {toCategoryLabel(categoryId)}
-                          <span aria-hidden>×</span>
-                        </button>
-                      ))}
-                      {activePokemonHabitatFilters.map((habitatId) => (
-                        <button
-                          key={`active-pokemon-habitat-filter-${habitatId}`}
-                          type="button"
-                          onClick={() =>
-                            setActivePokemonHabitatFilters((previous) => previous.filter((id) => id !== habitatId))
-                          }
-                          className="pk-chip pk-chip-standard pk-chip-primary items-center gap-1"
-                        >
-                          {getPreferredHabitatLabel(habitatId)}
-                          <span aria-hidden>×</span>
-                        </button>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setActivePokemonFavoriteFilters([]);
-                          setActivePokemonHabitatFilters([]);
-                        }}
-                        className="pk-chip pk-chip-standard pk-chip-none transition-colors hover:brightness-[0.98]"
-                      >
-                        Clear all
-                      </button>
-                    </div>
-                  ) : null}
-                </div>
-                {isResultsRefreshing ? (
-                  <div className="mt-4">
-                    <BuilderResultsListSkeleton />
-                  </div>
-                ) : (
-                <div className="mt-4 space-y-8">
+                  <ActiveFilterChips
+                    chips={[
+                      ...activePokemonFavoriteFilters.map((categoryId) => ({
+                        key: `active-pokemon-filter-${categoryId}`,
+                        label: toCategoryLabel(categoryId),
+                        onRemove: () => setActivePokemonFavoriteFilters((previous) => previous.filter((id) => id !== categoryId)),
+                      })),
+                      ...activePokemonHabitatFilters.map((habitatId) => ({
+                        key: `active-pokemon-habitat-filter-${habitatId}`,
+                        label: getPreferredHabitatLabel(habitatId),
+                        onRemove: () => setActivePokemonHabitatFilters((previous) => previous.filter((id) => id !== habitatId)),
+                      })),
+                    ]}
+                    onClearAll={() => {
+                      setActivePokemonFavoriteFilters([]);
+                      setActivePokemonHabitatFilters([]);
+                    }}
+                  />
+                </ResultsBrowserBar>
+                <ResultsContent isRefreshing={isResultsRefreshing}>
                   {visiblePokemonSections.map((section) => {
                     if (section.entries.length === 0) return null;
                     const isNullStateResults = selectedPokemon.length === 0;
@@ -3231,16 +3166,10 @@ export const HomeBuilderPage = () => {
                     const overflowIsVisible = showAllEntries && !isSectionCollapsing && !isSectionEntering;
 
                     return (
-                        <div
+                        <ResultCardOverflowWrapper
                           key={entry.pokemon.id}
-                          className={`${shouldFadeOverflowEntry && !overflowIsVisible ? "overflow-hidden" : "overflow-visible"} transition-[max-height,opacity,transform] duration-500 ease-out ${
-                            shouldFadeOverflowEntry
-                              ? overflowIsVisible
-                                ? "max-h-[220px] opacity-100 translate-y-0"
-                                : "max-h-0 opacity-0 -translate-y-1"
-                              : "max-h-[220px] opacity-100 translate-y-0"
-                          }`}
-                          style={shouldFadeOverflowEntry ? { transitionDelay: "0ms" } : undefined}
+                          isOverflow={shouldFadeOverflowEntry}
+                          isVisible={overflowIsVisible}
                         >
                           <ResultCardShell
                             onClick={(event) => {
@@ -3252,13 +3181,7 @@ export const HomeBuilderPage = () => {
                             className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-[10px] shadow-[0_2px_8px_rgba(59,130,246,0.12)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-[#2563EB] hover:shadow-[0_6px_16px_rgba(59,130,246,0.18)]"
                           >
                             <div className={`flex gap-3 ${pokemonHasVisibleFavoritePills ? "items-start" : "items-center"}`}>
-                              <div className="inline-flex shrink-0 items-center justify-center rounded-[var(--pk-radius-lg)] bg-[var(--pk-image-well)] p-2">
-                                {entry.pokemon.imageUrl ? (
-                                  <img src={entry.pokemon.imageUrl} alt={entry.pokemon.name} className="h-12 w-12 object-contain" />
-                                ) : (
-                                  <div className="h-12 w-12" />
-                                )}
-                              </div>
+                              <ResultCardImageWell src={entry.pokemon.imageUrl} alt={entry.pokemon.name} />
                               <div className="min-w-0 flex-1">
                                 <ResultCardTitle>{entry.pokemon.name}</ResultCardTitle>
                                 <p className="text-xs text-[var(--pk-text-desc)]">
@@ -3313,27 +3236,22 @@ export const HomeBuilderPage = () => {
                               </div>
                             </div>
                           </ResultCardShell>
-                        </div>
+                        </ResultCardOverflowWrapper>
                     );
                   })()
                         ))}
                         </div>
-                        {section.entries.length > MAX_POKEMON_CARDS_PER_SECTION && !isNullStateResults && !isFilteredSection && !isAlphabeticalSection ? (
-                          <div className="mt-3">
-                            <button
-                              type="button"
-                              onClick={() => togglePokemonSectionExpansion(sectionId)}
-                              className="pk-chip-count h-9 transition-colors hover:brightness-[0.98]"
-                            >
-                              {isSectionExpanded && !isSectionCollapsing ? "Show less" : `See all (${hiddenCount} more)`}
-                            </button>
-                          </div>
-                        ) : null}
+                        <SeeAllToggle
+                          show={section.entries.length > MAX_POKEMON_CARDS_PER_SECTION && !isNullStateResults && !isFilteredSection && !isAlphabeticalSection}
+                          isExpanded={isSectionExpanded}
+                          isCollapsing={isSectionCollapsing}
+                          hiddenCount={hiddenCount}
+                          onToggle={() => togglePokemonSectionExpansion(sectionId)}
+                        />
                       </CollapsibleResultsSection>
                     );
                   })}
-                </div>
-                )}
+                </ResultsContent>
               </>
             ) : null}
 

@@ -8,6 +8,7 @@ import { OverlapTooltip } from "../../../components/home-builder/BuilderTooltip"
 import { ResultCardShell, ResultCardTitle } from "../../../components/home-builder/ResultCardShell";
 import { SidebarPokemonCard } from "../../../components/home-builder/SidebarPokemonCard";
 import { BuilderResultsSkeleton, BuilderSidebarSkeleton } from "../../../components/home-builder/BuilderSkeletons";
+import { ActiveFilterChips, ResultsBrowserBar, ResultsContent, ResultCardImageWell, ResultCardOverflowWrapper, SeeAllToggle } from "../../../components/home-builder/BuilderBrowserComponents";
 
 type Token = {
   name: string;
@@ -81,7 +82,8 @@ const sectionNav = [
   { id: "typography", label: "02 Typography" },
   { id: "spacing", label: "03 Spacing & Radius" },
   { id: "components", label: "04 Components" },
-  { id: "semantic-signals", label: "05 Semantic Signals" },
+  { id: "browser-components", label: "05 Browser Components" },
+  { id: "semantic-signals", label: "06 Semantic Signals" },
 ];
 
 const allTokenVars = [
@@ -126,6 +128,8 @@ export const DesignSystemPage = () => {
   const [showDetailsEnabled, setShowDetailsEnabled] = useState(true);
   const [sortModePreview, setSortModePreview] = useState<"suggested" | "az">("suggested");
   const [activeSidebarFavoriteChips, setActiveSidebarFavoriteChips] = useState<string[]>(["construction"]);
+  const [activeFilterChips, setActiveFilterChips] = useState<string[]>(["construction", "exercise"]);
+  const [overflowVisible, setOverflowVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -382,8 +386,73 @@ export const DesignSystemPage = () => {
               </div>
             </section>
 
+            <section id="browser-components" className="space-y-4 border-t border-[var(--pk-border)] pt-6">
+              <h2 className="text-[28px] font-bold tracking-[-0.02em] text-[var(--pk-text-primary)]">05 Browser Components</h2>
+              <p className="text-[14px] text-[var(--pk-text-desc)]">Shared layout and interaction primitives used across the items and pokemon browser tabs.</p>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">ResultsBrowserBar (shared)</p>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Sticky search bar wrapper. Sticks to the top of its scroll container with the canvas background.</p>
+                <ResultsBrowserBar>
+                  <BuilderSearchField value="" onChange={() => {}} placeholder="Search items" />
+                  <FavoritesToggle checked={showDetailsEnabled} onToggle={() => setShowDetailsEnabled((v) => !v)} label="Show details" />
+                  <SortSegmentedControl activeValue={sortModePreview} onSuggested={() => setSortModePreview("suggested")} onAlphabetical={() => setSortModePreview("az")} />
+                </ResultsBrowserBar>
+              </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">ActiveFilterChips (shared)</p>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Dismissable filter chips row. Renders nothing when the chips array is empty.</p>
+                <ActiveFilterChips
+                  chips={activeFilterChips.map((id) => ({
+                    key: id,
+                    label: id.charAt(0).toUpperCase() + id.slice(1),
+                    onRemove: () => setActiveFilterChips((prev) => prev.filter((c) => c !== id)),
+                  }))}
+                  onClearAll={() => setActiveFilterChips([])}
+                />
+                {activeFilterChips.length === 0 ? (
+                  <button type="button" className="pk-btn pk-btn-secondary pk-btn-sm" onClick={() => setActiveFilterChips(["construction", "exercise"])}>
+                    Reset chips
+                  </button>
+                ) : null}
+              </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">ResultCardImageWell (shared)</p>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Rounded image well for pokemon and item thumbnails. Shows a blank placeholder when src is absent.</p>
+                <div className="flex gap-3">
+                  <ResultCardImageWell src="/assets/pokopia-pokemon/448.png" alt="Lucario" />
+                  <ResultCardImageWell src={null} alt="Empty" />
+                </div>
+              </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">ResultCardOverflowWrapper + SeeAllToggle (shared)</p>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Animated overflow wrapper for expand/collapse transitions on result cards.</p>
+                <div className="space-y-2">
+                  <ResultCardOverflowWrapper isOverflow={false} isVisible={true}>
+                    <div className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-3 text-[12px] text-[var(--pk-text-primary)]">Always visible card</div>
+                  </ResultCardOverflowWrapper>
+                  <ResultCardOverflowWrapper isOverflow={true} isVisible={overflowVisible}>
+                    <div className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-3 text-[12px] text-[var(--pk-text-primary)]">Overflow card — animates in/out</div>
+                  </ResultCardOverflowWrapper>
+                </div>
+                <SeeAllToggle
+                  show={true}
+                  isExpanded={overflowVisible}
+                  isCollapsing={false}
+                  hiddenCount={4}
+                  onToggle={() => setOverflowVisible((v) => !v)}
+                />
+              </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">ResultsContent (shared)</p>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Shows a refreshing skeleton while <code className="font-mono text-[var(--pk-brand)]">isRefreshing</code> is true, otherwise wraps children in the standard results list container.</p>
+                <ResultsContent isRefreshing={false}>
+                  <div className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-3 text-[12px] text-[var(--pk-text-desc)]">Results list container (mt-4 space-y-8)</div>
+                </ResultsContent>
+              </div>
+            </section>
+
             <section id="semantic-signals" className="space-y-4 border-t border-[var(--pk-border)] pt-6">
-              <h2 className="text-[28px] font-bold tracking-[-0.02em] text-[var(--pk-text-primary)]">05 Semantic Signals</h2>
+              <h2 className="text-[28px] font-bold tracking-[-0.02em] text-[var(--pk-text-primary)]">06 Semantic Signals</h2>
               <div className="flex flex-wrap gap-2">
                 <ScoreBadge score={94} label="excellent" />
                 <ScoreBadge score={78} label="good" />
