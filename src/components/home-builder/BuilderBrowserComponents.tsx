@@ -2,9 +2,12 @@ import type { ReactNode } from "react";
 import { BuilderResultsListSkeleton } from "./BuilderSkeletons";
 
 /** Sticky search bar wrapper used at the top of each browser tab (items / pokemon). */
-export const ResultsBrowserBar = ({ children }: { children: ReactNode }) => (
-  <div className="sticky top-0 z-20 flex flex-wrap items-center gap-2 bg-[var(--pk-canvas)] pb-4 pt-6">
-    {children}
+export const ResultsBrowserBar = ({ children, strip }: { children: ReactNode; strip?: ReactNode }) => (
+  <div className="sticky top-0 z-30 bg-[var(--pk-canvas)]">
+    {strip}
+    <div className="flex flex-wrap items-center gap-2 pb-4 pt-6">
+      {children}
+    </div>
   </div>
 );
 
