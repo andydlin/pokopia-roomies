@@ -29,6 +29,7 @@ import {
   tabPathByTab,
 } from "../../../lib/routing/builderSearchParams";
 import { Chip } from "../../../components/common/Chip";
+import { Tooltip } from "../../../components/common/Tooltip";
 import { BuilderSearchField, FavoritesToggle, SortSegmentedControl } from "../../../components/home-builder/BuilderControls";
 import { ResultCardShell, ResultCardTitle } from "../../../components/home-builder/ResultCardShell";
 import { OverlapTooltip } from "../../../components/home-builder/BuilderTooltip";
@@ -645,6 +646,7 @@ export const HomeBuilderPage = () => {
   });
   const [expandedResultPokemonIds, setExpandedResultPokemonIds] = useState<string[]>([]);
   const [expandedResultItemIds, setExpandedResultItemIds] = useState<string[]>([]);
+  const [expandedCoveragePokemonIds, setExpandedCoveragePokemonIds] = useState<Set<string>>(new Set());
   const tabContainerRef = useRef<HTMLDivElement | null>(null);
   const tabButtonRefs = useRef<Partial<Record<BuilderPhase, HTMLButtonElement | null>>>({
     pokemon: null,
@@ -2382,9 +2384,6 @@ export const HomeBuilderPage = () => {
                 const comfortEntries = buildItemEntries.filter(
                   (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) > 0,
                 );
-                const otherEntries = buildItemEntries.filter(
-                  (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) === 0,
-                );
                 const selectedPokemonCoverageSummaries = selectedPokemon.map((pokemon) => {
                   const favoriteCategoryIdSet = new Set(pokemon.favoriteCategoryIds);
                   const matchingItemEntries = comfortEntries.filter((entry) =>
@@ -2441,27 +2440,51 @@ export const HomeBuilderPage = () => {
                                 <p className="text-xs text-[#6c889b]">{summary.matchingItemCount} supporting items</p>
                               </div>
                             </div>
-                            {summary.matchingItemEntries.length > 0 && (
-                              <div className="mt-2 flex flex-wrap gap-1">
-                                {summary.matchingItemEntries.map((entry) => {
-                                  const item = entities.itemsById[entry.itemId];
-                                  if (!item) return null;
-                                  return (
-                                    <div
-                                      key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`}
-                                      className="rounded-[8px] bg-[var(--pk-border)] p-1"
-                                      title={item.name}
+                            {summary.matchingItemEntries.length > 0 && (() => {
+                              const ITEM_AVATAR_ROW_CAP = 7;
+                              const isCoverageExpanded = expandedCoveragePokemonIds.has(summary.pokemon.id);
+                              const visibleEntries = isCoverageExpanded
+                                ? summary.matchingItemEntries
+                                : summary.matchingItemEntries.slice(0, ITEM_AVATAR_ROW_CAP);
+                              const hiddenCount = summary.matchingItemEntries.length - ITEM_AVATAR_ROW_CAP;
+                              return (
+                                <div className="mt-2 flex flex-wrap gap-1">
+                                  {visibleEntries.map((entry) => {
+                                    const item = entities.itemsById[entry.itemId];
+                                    if (!item) return null;
+                                    return (
+                                      <Tooltip key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name} side="bottom">
+                                        <span className="inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                                          {item.image ? (
+                                            <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
+                                          ) : (
+                                            <span className="h-6 w-6" />
+                                          )}
+                                        </span>
+                                      </Tooltip>
+                                    );
+                                  })}
+                                  {!isCoverageExpanded && hiddenCount > 0 && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setExpandedCoveragePokemonIds((prev) => new Set([...prev, summary.pokemon.id]))}
+                                      className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
                                     >
-                                      {item.image ? (
-                                        <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
-                                      ) : (
-                                        <div className="h-6 w-6" />
-                                      )}
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            )}
+                                      +{hiddenCount}
+                                    </button>
+                                  )}
+                                  {isCoverageExpanded && hiddenCount > 0 && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setExpandedCoveragePokemonIds((prev) => { const next = new Set(prev); next.delete(summary.pokemon.id); return next; })}
+                                      className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                                    >
+                                      −
+                                    </button>
+                                  )}
+                                </div>
+                              );
+                            })()}
                             {summary.uncoveredFavoriteCategoryIds.length > 0 && (
                               <div className="mt-2">
                                 <p className="text-[11px] font-semibold text-[#c0602a]">
@@ -2486,91 +2509,7 @@ export const HomeBuilderPage = () => {
                   );
                 };
 
-                return (
-                  <>
-                    {buildItemEntries.length > 0 ? (
-                      <div className="space-y-4">
-                        {renderSelectedPokemonCoverageSection()}
-                        {(() => {
-                    const sections =
-                      activePhase === "comfort_items"
-                        ? [{ id: "comfort", title: "Comfort Items", entries: comfortEntries }]
-                        : activePhase === "extra_items"
-                          ? [{ id: "other", title: "Other Items", entries: otherEntries }]
-                          : [
-                              { id: "comfort", title: "Comfort Items", entries: comfortEntries },
-                              { id: "other", title: "Other Items", entries: otherEntries },
-                            ];
-
-                    return (
-                      <>
-                        {sections.map((section) => (
-                          <section key={`context-items-${section.id}`} className="space-y-2">
-                            <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{section.title}</p>
-                            {section.entries.length > 0 ? (
-                              <div className="space-y-1.5">
-                                {section.entries.map((entry) => {
-                                  const item = entities.itemsById[entry.itemId];
-                                  const favoriteCategoryIds = item?.favoriteCategoryIds ?? [];
-                                  const itemFavoriteCategoryIdSet = new Set(favoriteCategoryIds);
-                                  const matchedPokemonCount = selectedPokemon.reduce(
-                                    (count, pokemon) =>
-                                      count +
-                                      (pokemon.favoriteCategoryIds.some((categoryId) => itemFavoriteCategoryIdSet.has(categoryId))
-                                        ? 1
-                                        : 0),
-                                    0,
-                                  );
-                                  return (
-                                    <article
-                                      key={`context-item-${entry.itemId}`}
-                                      className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2 transition-colors hover:border-[#B3C9D2]"
-                                    >
-                                      <div className={`flex w-full gap-3 text-left ${showSidebarDetails ? "items-start" : "items-center"}`}>
-                                        <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
-                                          {item?.image ? <img src={item.image} alt={entry.itemName} className="h-8 w-8 object-contain" /> : null}
-                                        </div>
-                                        <div className="min-w-0 flex-1">
-                                          <p className="truncate text-base font-medium text-[#485864]">{entry.itemName}</p>
-                                          <p className="truncate text-xs text-[#6c889b]">
-                                            {item?.generalCategoryLabel || "Other"}
-                                          </p>
-                                          <p className="mt-0.5 text-xs text-[#6c889b]">Match {matchedPokemonCount} Pokemon</p>
-                                        </div>
-                                      </div>
-                                      <button
-                                        type="button"
-                                        onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                        className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] opacity-0 transition-opacity hover:text-[#485864] group-hover:opacity-100 focus-visible:opacity-100"
-                                        aria-label={`Remove ${entry.itemName}`}
-                                      >
-                                        <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
-                                      </button>
-                                    </article>
-                                  );
-                                })}
-                              </div>
-                            ) : (
-                              <div className="rounded-[12px] border border-dashed border-[#b3c9d2] px-3 py-2 text-xs italic text-[#6c889b]">
-                                No {section.title.toLowerCase()} added yet.
-                              </div>
-                            )}
-                          </section>
-                        ))}
-                      </>
-                    );
-                        })()}
-                      </div>
-                    ) : (
-                      <div className="space-y-3">
-                        {renderSelectedPokemonCoverageSection()}
-                        <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
-                          No items added yet.
-                        </div>
-                      </div>
-                    )}
-                  </>
-                );
+                return renderSelectedPokemonCoverageSection() ?? null;
               })()}
             </div>
           ) : (
@@ -2586,7 +2525,40 @@ export const HomeBuilderPage = () => {
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
-                <ResultsBrowserBar>
+                <ResultsBrowserBar strip={
+                  buildItemEntries.length > 0 ? (
+                    <div className="flex items-center gap-2 overflow-x-auto pb-2 pt-4">
+                      <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
+                        Added ({buildItemEntries.length})
+                      </span>
+                      <div className="flex gap-1.5">
+                        {buildItemEntries.map((entry) => {
+                          const stripItem = entities.itemsById[entry.itemId];
+                          if (!stripItem) return null;
+                          return (
+                            <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
+                              <span className="group/stripitem relative inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                                {stripItem.image ? (
+                                  <img src={stripItem.image} alt={stripItem.name} className="h-6 w-6 object-contain" />
+                                ) : (
+                                  <span className="h-6 w-6" />
+                                )}
+                                <button
+                                  type="button"
+                                  aria-label={`Remove ${stripItem.name}`}
+                                  onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
+                                  className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
+                                >
+                                  ✕
+                                </button>
+                              </span>
+                            </Tooltip>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : undefined
+                }>
                   <BuilderSearchField
                     value={state.browse.items.searchQuery}
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
@@ -2854,19 +2826,23 @@ export const HomeBuilderPage = () => {
                                         ))}
                                       </div>
                                       <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                        {matchedPokemon.map((pokemon) => (
-                                          <span
-                                            key={`${entry.item.id}-matched-pokemon-${pokemon.id}`}
-                                            className="inline-flex items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1"
-                                            title={pokemon.name}
-                                          >
-                                            {pokemon.imageUrl ? (
-                                              <img src={pokemon.imageUrl} alt={pokemon.name} className="h-6 w-6 object-contain" />
-                                            ) : (
-                                              <span className="h-6 w-6" />
-                                            )}
-                                          </span>
-                                        ))}
+                                        {matchedPokemon.map((pokemon) => {
+                                          const coveredLabels = pokemon.favoriteCategoryIds
+                                            .filter((id) => itemFavoriteCategoryIdSet.has(id))
+                                            .map(toCategoryLabel)
+                                            .join(", ");
+                                          return (
+                                            <Tooltip key={`${entry.item.id}-matched-pokemon-${pokemon.id}`} content={coveredLabels}>
+                                              <span className="inline-flex items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1">
+                                                {pokemon.imageUrl ? (
+                                                  <img src={pokemon.imageUrl} alt={pokemon.name} className="h-6 w-6 object-contain" />
+                                                ) : (
+                                                  <span className="h-6 w-6" />
+                                                )}
+                                              </span>
+                                            </Tooltip>
+                                          );
+                                        })}
                                       </div>
                                     </>
                                   ) : null}
