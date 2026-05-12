@@ -9,6 +9,7 @@ import { ResultCardShell, ResultCardTitle } from "../../../components/home-build
 import { SidebarPokemonCard } from "../../../components/home-builder/SidebarPokemonCard";
 import { BuilderResultsSkeleton, BuilderSidebarSkeleton } from "../../../components/home-builder/BuilderSkeletons";
 import { ActiveFilterChips, ResultsBrowserBar, ResultsContent, ResultCardImageWell, ResultCardOverflowWrapper, SeeAllToggle } from "../../../components/home-builder/BuilderBrowserComponents";
+import { Tooltip } from "../../../components/common/Tooltip";
 
 type Token = {
   name: string;
@@ -315,6 +316,30 @@ export const DesignSystemPage = () => {
                   <div className="flex items-center gap-2">
                     <code className="text-[11px] text-[var(--pk-text-desc)]">tone="default"</code>
                     <Chip tone="default">Default</Chip>
+                  </div>
+                </div>
+              </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">Tooltip (src/components/common/Tooltip.tsx)</p>
+                <p className="mb-4 text-[12px] text-[var(--pk-text-desc)]">Wraps any element and shows a text tooltip on hover. Supports <code className="font-mono text-[var(--pk-brand)]">side="top"</code> (default) and <code className="font-mono text-[var(--pk-brand)]">side="bottom"</code>.</p>
+                <div className="flex flex-wrap items-end gap-6">
+                  <div className="flex flex-col items-start gap-1">
+                    <code className="text-[11px] text-[var(--pk-text-desc)]">side="top"</code>
+                    <Tooltip content="Helpful hint about this action">
+                      <button type="button" className="pk-btn pk-btn-secondary pk-btn-md">Hover me</button>
+                    </Tooltip>
+                  </div>
+                  <div className="flex flex-col items-start gap-1">
+                    <code className="text-[11px] text-[var(--pk-text-desc)]">side="bottom"</code>
+                    <Tooltip content="Appears below the trigger" side="bottom">
+                      <button type="button" className="pk-btn pk-btn-secondary pk-btn-md">Hover me</button>
+                    </Tooltip>
+                  </div>
+                  <div className="flex flex-col items-start gap-1">
+                    <code className="text-[11px] text-[var(--pk-text-desc)]">wrapping a chip</code>
+                    <Tooltip content="Favorite category: Construction">
+                      <span className="pk-chip pk-chip-compact pk-chip-primary">Construction</span>
+                    </Tooltip>
                   </div>
                 </div>
               </div>
