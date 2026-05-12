@@ -1,7 +1,7 @@
 import { type KeyboardEvent, type ReactNode, type RefObject, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Check, ChevronDown, ChevronUp, Cube01, Grid01 } from "@untitledui/icons";
-import { favoriteCategories } from "../../../data/favoriteCategories";
+import { favoriteCategories, favoriteCategoryById } from "../../../data/favoriteCategories";
 import { habitatTraits } from "../../../domain/data";
 import {
   selectBuildMaterialsSummary,
@@ -2445,28 +2445,40 @@ export const HomeBuilderPage = () => {
                               </div>
                             </div>
                             {summary.matchingItemEntries.length > 0 && (
+                              <div className="mt-2 flex flex-wrap gap-1">
+                                {summary.matchingItemEntries.map((entry) => {
+                                  const item = entities.itemsById[entry.itemId];
+                                  if (!item) return null;
+                                  return (
+                                    <div
+                                      key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`}
+                                      className="rounded-[8px] bg-[var(--pk-border)] p-1"
+                                      title={item.name}
+                                    >
+                                      {item.image ? (
+                                        <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
+                                      ) : (
+                                        <div className="h-6 w-6" />
+                                      )}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            )}
+                            {summary.uncoveredFavoriteCategoryIds.length > 0 && (
                               <div className="mt-2">
-                                <p className="text-[11px] font-semibold text-[#6c889b]">
-                                  Covered ({summary.coveredFavoriteCategoryIds.length})
+                                <p className="text-[11px] font-semibold text-[#c0602a]">
+                                  Needs coverage ({summary.uncoveredFavoriteCategoryIds.length})
                                 </p>
-                                <div className="mt-1.5 flex flex-wrap gap-1">
-                                  {summary.matchingItemEntries.map((entry) => {
-                                    const item = entities.itemsById[entry.itemId];
-                                    if (!item) return null;
-                                    return (
-                                      <div
-                                        key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`}
-                                        className="rounded-[8px] bg-[var(--pk-border)] p-1"
-                                        title={item.name}
-                                      >
-                                        {item.imageUrl ? (
-                                          <img src={item.imageUrl} alt={item.name} className="h-6 w-6 object-contain" />
-                                        ) : (
-                                          <div className="h-6 w-6" />
-                                        )}
-                                      </div>
-                                    );
-                                  })}
+                                <div className="mt-1 flex flex-wrap gap-1">
+                                  {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
+                                    <span
+                                      key={`uncovered-${summary.pokemon.id}-${categoryId}`}
+                                      className="type-caption inline-flex rounded-full bg-[#fde8db] px-2 py-0.5 text-[#c0602a]"
+                                    >
+                                      {favoriteCategoryById.get(categoryId)?.name ?? categoryId}
+                                    </span>
+                                  ))}
                                 </div>
                               </div>
                             )}
