@@ -2407,6 +2407,7 @@ export const HomeBuilderPage = () => {
                   return {
                     pokemon,
                     matchingItemCount: matchingItemEntries.length,
+                    matchingItemEntries,
                     coveredFavoriteCategoryIds,
                     uncoveredFavoriteCategoryIds,
                   };
@@ -2443,62 +2444,32 @@ export const HomeBuilderPage = () => {
                                 <p className="text-xs text-[#6c889b]">{summary.matchingItemCount} supporting items</p>
                               </div>
                             </div>
-                            <div className="mt-2 space-y-1.5">
-                              <div>
+                            {summary.matchingItemEntries.length > 0 && (
+                              <div className="mt-2">
                                 <p className="text-[11px] font-semibold text-[#6c889b]">
                                   Covered ({summary.coveredFavoriteCategoryIds.length})
                                 </p>
-                                {summary.coveredFavoriteCategoryIds.length > 0 ? (
-                                  <div className="mt-1 flex flex-wrap gap-1">
-                                    {summary.coveredFavoriteCategoryIds.map((categoryId) => (
-                                      <button
-                                        type="button"
-                                        onClick={() => toggleComfortFavoriteFilter(categoryId)}
-                                        aria-pressed={activeComfortFavoriteFilters.includes(categoryId)}
-                                        disabled={activePhase !== "comfort_items"}
-                                        key={`context-items-covered-${summary.pokemon.id}-${categoryId}`}
-                                        className={`pk-chip pk-chip-compact transition-colors ${
-                                          activeComfortFavoriteFilters.includes(categoryId)
-                                            ? "pk-chip-primary"
-                                            : "pk-chip-best"
-                                        } ${activePhase !== "comfort_items" ? "cursor-default opacity-75" : ""}`}
+                                <div className="mt-1.5 flex flex-wrap gap-1">
+                                  {summary.matchingItemEntries.map((entry) => {
+                                    const item = entities.itemsById[entry.itemId];
+                                    if (!item) return null;
+                                    return (
+                                      <div
+                                        key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`}
+                                        className="rounded-[8px] bg-[var(--pk-border)] p-1"
+                                        title={item.name}
                                       >
-                                        {toCategoryLabel(categoryId)}
-                                      </button>
-                                    ))}
-                                  </div>
-                                ) : (
-                                  <p className="mt-1 text-xs italic text-[#8e9aa3]">No favorites covered yet.</p>
-                                )}
+                                        {item.imageUrl ? (
+                                          <img src={item.imageUrl} alt={item.name} className="h-6 w-6 object-contain" />
+                                        ) : (
+                                          <div className="h-6 w-6" />
+                                        )}
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                               </div>
-                              <div>
-                                <p className="text-[11px] font-semibold text-[#6c889b]">
-                                  Needs Coverage ({summary.uncoveredFavoriteCategoryIds.length})
-                                </p>
-                                {summary.uncoveredFavoriteCategoryIds.length > 0 ? (
-                                  <div className="mt-1 flex flex-wrap gap-1">
-                                    {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
-                                      <button
-                                        type="button"
-                                        onClick={() => toggleComfortFavoriteFilter(categoryId)}
-                                        aria-pressed={activeComfortFavoriteFilters.includes(categoryId)}
-                                        disabled={activePhase !== "comfort_items"}
-                                        key={`context-items-uncovered-${summary.pokemon.id}-${categoryId}`}
-                                        className={`pk-chip pk-chip-compact transition-colors ${
-                                          activeComfortFavoriteFilters.includes(categoryId)
-                                            ? "pk-chip-primary"
-                                            : "pk-chip-none"
-                                        } ${activePhase !== "comfort_items" ? "cursor-default opacity-75" : ""}`}
-                                      >
-                                        {toCategoryLabel(categoryId)}
-                                      </button>
-                                    ))}
-                                  </div>
-                                ) : (
-                                  <p className="mt-1 text-xs italic text-[#8e9aa3]">All favorites covered.</p>
-                                )}
-                              </div>
-                            </div>
+                            )}
                           </article>
                         ))}
                       </div>
