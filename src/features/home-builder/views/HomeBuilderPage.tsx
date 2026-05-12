@@ -1404,15 +1404,12 @@ export const HomeBuilderPage = () => {
   );
   const multiFilteredRankedItems = useMemo(() => {
     return phaseRankedItems.filter((entry) => {
-      if (currentHomeAddedItemIdSet.has(entry.item.id)) {
-        return false;
-      }
       if (EXCLUDED_ITEMS_PAGE_MAIN_CATEGORIES.has(entry.item.generalCategoryLabel || "")) {
         return false;
       }
       return true;
     });
-  }, [currentHomeAddedItemIdSet, phaseRankedItems]);
+  }, [phaseRankedItems]);
   const comfortFavoriteFilteredRankedItems = useMemo(() => {
     if (activePhase !== "comfort_items" || activeComfortFavoriteFilters.length === 0) {
       return multiFilteredRankedItems;
@@ -2810,6 +2807,7 @@ export const HomeBuilderPage = () => {
                                 ((selectedPokemon.length > 0 && showComfortContext
                                   ? itemPrimaryPillCount + itemSecondaryPillCount > 0
                                   : entry.item.favoriteCategoryIds.length > 0));
+                          const isAdded = currentHomeAddedItemIdSet.has(entry.item.id);
                           return (
                             <ResultCardOverflowWrapper
                               key={entry.item.id}
@@ -2817,10 +2815,20 @@ export const HomeBuilderPage = () => {
                               isVisible={overflowIsVisible}
                             >
                               <ResultCardShell
-                                onClick={() => dispatch({ type: "home/add-item", itemId: entry.item.id })}
-                                onKeyDown={(event) => activateWithKeyboard(event, () => dispatch({ type: "home/add-item", itemId: entry.item.id }))}
-                                className="rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-[10px] shadow-[var(--pk-shadow-sm)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-[var(--pk-brand-border)] hover:shadow-[var(--pk-shadow-md)]"
+                                onClick={() => dispatch({ type: isAdded ? "home/remove-item" : "home/add-item", itemId: entry.item.id })}
+                                onKeyDown={(event) => activateWithKeyboard(event, () => dispatch({ type: isAdded ? "home/remove-item" : "home/add-item", itemId: entry.item.id }))}
+                                className={`relative rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-[10px] shadow-[var(--pk-shadow-sm)] transition-[border-color,box-shadow,opacity] duration-300 ease-out hover:border-[var(--pk-brand-border)] hover:shadow-[var(--pk-shadow-md)] ${isAdded ? "opacity-50 hover:opacity-70" : ""}`}
                               >
+                              {isAdded && (
+                                <button
+                                  type="button"
+                                  aria-label="Remove item"
+                                  onClick={(e) => { e.stopPropagation(); dispatch({ type: "home/remove-item", itemId: entry.item.id }); }}
+                                  className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-xs leading-none hover:bg-[var(--pk-text-primary)]"
+                                >
+                                  ✕
+                                </button>
+                              )}
                               <div className={`flex gap-3 ${itemHasVisibleFavoritePills ? "items-start" : "items-center"}`}>
                                   <ResultCardImageWell src={entry.item.image} alt={entry.item.name} />
                                   <div className="min-w-0 flex-1">
