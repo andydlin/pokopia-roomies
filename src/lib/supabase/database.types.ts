@@ -20,6 +20,7 @@ export type Database = {
           nickname?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
       builds: {
         Row: {
@@ -58,7 +59,10 @@ export type Database = {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<never, never>;
+    Functions: Record<never, never>;
   };
 };

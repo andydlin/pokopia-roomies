@@ -218,9 +218,9 @@ export const PublicBuildPage = () => {
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-[12px] uppercase tracking-[0.08em] text-[#6c889b]">
-                Shared Build{build.ownerNickname ? ` · by ${build.ownerNickname}` : ""}
+                Shared Build{build!.ownerNickname ? ` · by ${build!.ownerNickname}` : ""}
               </p>
-              <h2 className="text-[24px] font-extrabold tracking-[-0.02em] text-[#485864]">{build.name}</h2>
+              <h2 className="text-[24px] font-extrabold tracking-[-0.02em] text-[#485864]">{build!.name}</h2>
             </div>
             <button
               type="button"
