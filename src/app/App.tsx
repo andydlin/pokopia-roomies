@@ -7,6 +7,10 @@ import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
 import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 import { DesignSystemPage } from "../features/design-system/views/DesignSystemPage";
+import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
+import { AuthModal } from "../features/auth/components/AuthModal";
+import { AccountMenu } from "../features/auth/components/AccountMenu";
+import { useAuth } from "../features/auth/AuthContext";
 
 const navLinkClass = (isActive: boolean) =>
   [
@@ -33,6 +37,7 @@ const AppRoutes = () => (
     </Route>
     <Route path="/homes/view" element={<BuildViewPage />} />
     <Route path="/homes" element={<SavedHomesPage />} />
+    <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/design-system" element={<DesignSystemPage />} />
 
     <Route path="/pokedex" element={<PokedexLayout />}>
@@ -54,6 +59,7 @@ export const App = () => (
 
 const AppShell = () => {
   const location = useLocation();
+  const { authModalOpen } = useAuth();
   const isBuilderActive = location.pathname.startsWith("/builder");
   const isBuilderRoute = location.pathname.startsWith("/builder");
   const isHomesActive = location.pathname.startsWith("/homes");
@@ -86,6 +92,8 @@ const AppShell = () => {
 
   return (
     <div className="relative min-h-screen bg-[var(--pk-canvas)]">
+      {authModalOpen && <AuthModal />}
+
       <div
         className={`transition-opacity duration-200 ${
           showAppShellSkeleton ? "opacity-100" : "pointer-events-none absolute inset-0 z-50 opacity-0"
@@ -123,6 +131,7 @@ const AppShell = () => {
               <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
                 Pokedex
               </Link>
+              <AccountMenu />
             </nav>
           </div>
         </header>
