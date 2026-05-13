@@ -261,7 +261,7 @@ a {
   border-radius: var(--pk-radius-pill);
   border: 1px solid var(--pk-brand-border);
   font-family: var(--pk-font-body);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
 }
 

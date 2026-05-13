@@ -300,22 +300,25 @@ export const DesignSystemPage = () => {
               </div>
               <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">Chip component (src/components/common/Chip.tsx)</p>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  <div className="flex items-center gap-2">
-                    <code className="text-[11px] text-[var(--pk-text-desc)]">tone="primary"</code>
-                    <Chip tone="primary">Primary</Chip>
+                <p className="mb-3 text-[12px] text-[var(--pk-text-desc)]">Pass <code className="font-mono text-[var(--pk-brand)]">onClick</code> to get a clickable <code className="font-mono text-[var(--pk-brand)]">&lt;button&gt;</code> with hover and active states. Omit it for a static <code className="font-mono text-[var(--pk-brand)]">&lt;span&gt;</code>.</p>
+                <div className="space-y-3">
+                  <div>
+                    <p className="mb-2 text-[11px] font-semibold text-[var(--pk-text-muted)]">Static</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Chip tone="primary">Primary</Chip>
+                      <Chip tone="accent">Best</Chip>
+                      <Chip tone="warning">Some</Chip>
+                      <Chip tone="default">Default</Chip>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <code className="text-[11px] text-[var(--pk-text-desc)]">tone="accent"</code>
-                    <Chip tone="accent">Best</Chip>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <code className="text-[11px] text-[var(--pk-text-desc)]">tone="warning"</code>
-                    <Chip tone="warning">Some</Chip>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <code className="text-[11px] text-[var(--pk-text-desc)]">tone="default"</code>
-                    <Chip tone="default">Default</Chip>
+                  <div>
+                    <p className="mb-2 text-[11px] font-semibold text-[var(--pk-text-muted)]">Clickable (hover me)</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Chip tone="primary" onClick={() => {}}>Primary</Chip>
+                      <Chip tone="accent" onClick={() => {}}>Best</Chip>
+                      <Chip tone="warning" onClick={() => {}}>Some</Chip>
+                      <Chip tone="default" onClick={() => {}}>Default</Chip>
+                    </div>
                   </div>
                 </div>
               </div>
