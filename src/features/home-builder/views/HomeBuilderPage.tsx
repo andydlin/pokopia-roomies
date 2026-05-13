@@ -55,7 +55,7 @@ const phaseTabs: Array<{ id: BuilderPhase; label: string }> = [
   { id: "pokemon", label: "Pokemon" },
   { id: "comfort_items", label: "Comfort Items" },
   { id: "extra_items", label: "Other Items" },
-  { id: "review_materials", label: "Complete Build" },
+  { id: "review_materials", label: "Build Plan" },
 ];
 const MAX_POKEMON_FAVORITES_TO_SHOW = 6;
 const MAX_POKEMON_CARDS_PER_SECTION = 6;
