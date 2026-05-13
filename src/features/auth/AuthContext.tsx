@@ -147,8 +147,8 @@ export const AuthProvider = ({
       options: { data: { nickname } },
     });
     if (error) throw new Error(error.message);
-    closeAuthModal();
-  }, [closeAuthModal]);
+    // Modal stays open — the form transitions to the "check your email" state.
+  }, []);
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut();
