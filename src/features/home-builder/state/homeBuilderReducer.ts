@@ -67,6 +67,7 @@ const defaultSessionState: SessionPortabilityState = {
   lastGeneratedCode: null,
   lastCodeExpiry: null,
   lastError: null,
+  cloudSyncError: null,
 };
 
 export const createInitialHomeBuilderState = ({
@@ -137,6 +138,7 @@ export type HomeBuilderAction =
   | { type: "saved/delete"; homeId: string }
   | { type: "saved/duplicate"; homeId: string }
   | { type: "saved/rename"; homeId: string; name: string }
+  | { type: "saved/add"; home: SavedHome }
   | { type: "browse/set-tab"; tab: BrowseTab }
   | { type: "browse/hydrate"; browse: BuilderBrowseState }
   | { type: "browse/items/set-mode"; mode: "contextual" | "all" }
@@ -176,7 +178,9 @@ export type HomeBuilderAction =
   | { type: "session/import-start" }
   | { type: "session/import-success" }
   | { type: "session/import-error"; message: string }
-  | { type: "session/apply-import"; currentHome: CurrentHomeState | null; savedHomes: SavedHome[] };
+  | { type: "session/apply-import"; currentHome: CurrentHomeState | null; savedHomes: SavedHome[] }
+  | { type: "session/cloud-sync-error"; message: string }
+  | { type: "session/cloud-sync-clear-error" };
 
 export const homeBuilderReducer = (
   state: HomeBuilderFeatureState,
@@ -397,6 +401,8 @@ export const homeBuilderReducer = (
         },
       };
     }
+    case "saved/add":
+      return { ...state, savedHomes: nextSavedHomesState(state.savedHomes, action.home, true) };
     case "saved/delete": {
       if (!state.savedHomes.byId[action.homeId]) return state;
       const byId = { ...state.savedHomes.byId };
@@ -753,6 +759,10 @@ export const homeBuilderReducer = (
         currentHome: normalizeCurrentHomeState(action.currentHome ?? makeEmptyCurrentHome()),
         savedHomes: makeSavedHomesState(normalizeSavedHomes(action.savedHomes)),
       };
+    case "session/cloud-sync-error":
+      return { ...state, session: { ...state.session, cloudSyncError: action.message } };
+    case "session/cloud-sync-clear-error":
+      return { ...state, session: { ...state.session, cloudSyncError: null } };
     default:
       return state;
   }

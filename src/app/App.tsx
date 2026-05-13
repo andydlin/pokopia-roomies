@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { HomeBuilderProvider } from "../features/home-builder/state/HomeBuilderContext";
 import { HomeBuilderPage } from "../features/home-builder/views/HomeBuilderPage";
 import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
+import { PublicBuildPage } from "../features/public-builds/views/PublicBuildPage";
 import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
 import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 import { DesignSystemPage } from "../features/design-system/views/DesignSystemPage";
+import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
+import { AuthModal } from "../features/auth/components/AuthModal";
+import { AccountMenu } from "../features/auth/components/AccountMenu";
+import { useAuth } from "../features/auth/AuthContext";
 
 const navLinkClass = (isActive: boolean) =>
   [
@@ -33,6 +37,8 @@ const AppRoutes = () => (
     </Route>
     <Route path="/homes/view" element={<BuildViewPage />} />
     <Route path="/homes" element={<SavedHomesPage />} />
+    <Route path="/builds/:buildId" element={<PublicBuildPage />} />
+    <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/design-system" element={<DesignSystemPage />} />
 
     <Route path="/pokedex" element={<PokedexLayout />}>
@@ -46,14 +52,11 @@ const AppRoutes = () => (
   </Routes>
 );
 
-export const App = () => (
-  <HomeBuilderProvider>
-    <AppShell />
-  </HomeBuilderProvider>
-);
+export const App = () => <AppShell />;
 
 const AppShell = () => {
   const location = useLocation();
+  const { authModalOpen } = useAuth();
   const isBuilderActive = location.pathname.startsWith("/builder");
   const isBuilderRoute = location.pathname.startsWith("/builder");
   const isHomesActive = location.pathname.startsWith("/homes");
@@ -86,6 +89,8 @@ const AppShell = () => {
 
   return (
     <div className="relative min-h-screen bg-[var(--pk-canvas)]">
+      {authModalOpen && <AuthModal />}
+
       <div
         className={`transition-opacity duration-200 ${
           showAppShellSkeleton ? "opacity-100" : "pointer-events-none absolute inset-0 z-50 opacity-0"
@@ -123,6 +128,7 @@ const AppShell = () => {
               <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
                 Pokedex
               </Link>
+              <AccountMenu />
             </nav>
           </div>
         </header>
