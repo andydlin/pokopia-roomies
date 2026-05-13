@@ -11,6 +11,7 @@ import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
 import { AuthPreviewPage } from "../features/auth/views/AuthPreviewPage";
 import { AuthModal } from "../features/auth/components/AuthModal";
 import { AccountMenu } from "../features/auth/components/AccountMenu";
+import { IntroModal } from "../features/home-builder/components/IntroModal";
 import { useAuth } from "../features/auth/AuthContext";
 
 const navLinkClass = (isActive: boolean) =>
@@ -92,6 +93,7 @@ const AppShell = () => {
   return (
     <div className="relative min-h-screen bg-[var(--pk-canvas)]">
       {authModalOpen && <AuthModal />}
+      {isBuilderRoute && <IntroModal />}
 
       <div
         className={`transition-opacity duration-200 ${
