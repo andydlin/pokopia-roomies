@@ -6,7 +6,71 @@ type Flow = "sign_in" | "sign_up" | "nickname_setup";
 
 const NICKNAME_RE = /^[a-zA-Z0-9_-]{2,24}$/;
 
-// ─── Sub-forms ───────────────────────────────────────────────────────────────
+// ─── Icons ────────────────────────────────────────────────────────────────────
+
+const EyeIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
+);
+
+const EyeOffIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
+    <line x1="1" y1="1" x2="23" y2="23" />
+  </svg>
+);
+
+// ─── Shared primitives ────────────────────────────────────────────────────────
+
+const inputClass =
+  "w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]";
+
+const PasswordInput = ({
+  value,
+  onChange,
+  placeholder,
+  minLength,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  placeholder: string;
+  minLength?: number;
+}) => {
+  const [show, setShow] = useState(false);
+  return (
+    <div className="relative">
+      <input
+        type={show ? "text" : "password"}
+        required
+        minLength={minLength}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${inputClass} pr-10`}
+      />
+      <button
+        type="button"
+        onClick={() => setShow((s) => !s)}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+        aria-label={show ? "Hide password" : "Show password"}
+      >
+        {show ? <EyeOffIcon /> : <EyeIcon />}
+      </button>
+    </div>
+  );
+};
+
+const OAuthDivider = () => (
+  <div className="relative flex items-center gap-3">
+    <div className="h-px flex-1 bg-[var(--pk-border)]" />
+    <span className="text-xs text-[var(--pk-text-desc)]">or</span>
+    <div className="h-px flex-1 bg-[var(--pk-border)]" />
+  </div>
+);
+
+// ─── Sub-forms ────────────────────────────────────────────────────────────────
 
 const SignInForm = ({ onSwitch }: { onSwitch: () => void }) => {
   const { signInWithEmail, signInWithGoogle } = useAuth();
@@ -36,25 +100,14 @@ const SignInForm = ({ onSwitch }: { onSwitch: () => void }) => {
         placeholder="Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
+        className={inputClass}
       />
-      <input
-        type="password"
-        required
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
-      />
+      <PasswordInput value={password} onChange={setPassword} placeholder="Password" />
       {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
       <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
         {loading ? "Signing in…" : "Sign in"}
       </button>
-      <div className="relative flex items-center gap-3">
-        <div className="h-px flex-1 bg-[var(--pk-border)]" />
-        <span className="text-xs text-[var(--pk-text-desc)]">or</span>
-        <div className="h-px flex-1 bg-[var(--pk-border)]" />
-      </div>
+      <OAuthDivider />
       <button type="button" onClick={signInWithGoogle} className="pk-btn pk-btn-secondary pk-btn-md w-full">
         Continue with Google
       </button>
@@ -69,12 +122,13 @@ const SignInForm = ({ onSwitch }: { onSwitch: () => void }) => {
 };
 
 const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
-  const { signUp, signInWithGoogle } = useAuth();
+  const { signUp, signInWithGoogle, closeAuthModal } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nickname, setNickname] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [checkedEmail, setCheckedEmail] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -86,6 +140,7 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
     setLoading(true);
     try {
       await signUp(email, password, nickname);
+      setCheckedEmail(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign up failed.");
     } finally {
@@ -93,52 +148,64 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="mt-5 space-y-3">
-      <input
-        type="text"
-        required
-        placeholder="Nickname (shown on shared builds)"
-        value={nickname}
-        onChange={(e) => setNickname(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
-      />
-      <input
-        type="email"
-        required
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
-      />
-      <input
-        type="password"
-        required
-        minLength={6}
-        placeholder="Password (min. 6 characters)"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
-      />
-      {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
-      <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
-        {loading ? "Creating account…" : "Create account"}
-      </button>
-      <div className="relative flex items-center gap-3">
-        <div className="h-px flex-1 bg-[var(--pk-border)]" />
-        <span className="text-xs text-[var(--pk-text-desc)]">or</span>
-        <div className="h-px flex-1 bg-[var(--pk-border)]" />
-      </div>
-      <button type="button" onClick={signInWithGoogle} className="pk-btn pk-btn-secondary pk-btn-md w-full">
-        Continue with Google
-      </button>
-      <p className="text-center text-sm text-[var(--pk-text-desc)]">
-        Already have an account?{" "}
-        <button type="button" onClick={onSwitch} className="font-semibold text-[var(--pk-brand)] hover:underline">
-          Sign in
+  if (checkedEmail) {
+    return (
+      <div className="mt-6 space-y-4 text-center">
+        <div className="text-5xl">📬</div>
+        <p className="text-base font-semibold text-[var(--pk-text-primary)]">Check your email</p>
+        <p className="text-sm text-[var(--pk-text-desc)]">
+          We sent a confirmation link to{" "}
+          <strong className="text-[var(--pk-text-primary)]">{email}</strong>.
+          Click it to activate your account.
+        </p>
+        <button type="button" onClick={closeAuthModal} className="pk-btn pk-btn-primary pk-btn-md w-full">
+          Got it
         </button>
-      </p>
-    </form>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-4">
+      <ul className="space-y-1 text-sm text-[var(--pk-text-desc)]">
+        <li>✓ Unlimited builds synced to the cloud</li>
+        <li>✓ Access your builds from any device</li>
+        <li>✓ Share builds with a permanent link</li>
+      </ul>
+      <form onSubmit={handleSubmit} className="mt-4 space-y-3">
+        <input
+          type="text"
+          required
+          placeholder="Nickname (shown on shared builds)"
+          value={nickname}
+          onChange={(e) => setNickname(e.target.value)}
+          className={inputClass}
+        />
+        <input
+          type="email"
+          required
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={inputClass}
+        />
+        <PasswordInput value={password} onChange={setPassword} placeholder="Password (min. 6 characters)" minLength={6} />
+        {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
+        <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
+          {loading ? "Creating account…" : "Create account"}
+        </button>
+        <OAuthDivider />
+        <button type="button" onClick={signInWithGoogle} className="pk-btn pk-btn-secondary pk-btn-md w-full">
+          Continue with Google
+        </button>
+        <p className="text-center text-sm text-[var(--pk-text-desc)]">
+          Already have an account?{" "}
+          <button type="button" onClick={onSwitch} className="font-semibold text-[var(--pk-brand)] hover:underline">
+            Sign in
+          </button>
+        </p>
+      </form>
+    </div>
   );
 };
 
@@ -163,7 +230,6 @@ const NicknameSetupForm = () => {
         .from("profiles")
         .upsert({ id: user.id, nickname });
       if (upsertError) throw new Error(upsertError.message);
-      // Trigger a session refresh so onAuthStateChange fires and re-fetches the nickname.
       await supabase.auth.refreshSession();
       closeAuthModal();
     } catch (err) {
@@ -184,7 +250,7 @@ const NicknameSetupForm = () => {
         placeholder="Nickname"
         value={nickname}
         onChange={(e) => setNickname(e.target.value)}
-        className="w-full rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-sm text-[var(--pk-text-primary)] outline-none focus:border-[var(--pk-brand)]"
+        className={inputClass}
       />
       {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
       <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
@@ -194,14 +260,12 @@ const NicknameSetupForm = () => {
   );
 };
 
-// ─── Modal shell ─────────────────────────────────────────────────────────────
+// ─── Modal shell ──────────────────────────────────────────────────────────────
 
 export const AuthModal = () => {
   const { authModalOpen, authModalIntent, closeAuthModal } = useAuth();
   const [flow, setFlow] = useState<Flow>(authModalIntent);
 
-  // Sync external intent changes (e.g. "Sign in" vs "Create account" buttons).
-  // Using a key on the modal would also work but this avoids remounting.
   if (!authModalOpen) return null;
 
   const isNicknameSetup = flow === "nickname_setup" || authModalIntent === "nickname_setup";
