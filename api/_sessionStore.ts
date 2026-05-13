@@ -1,4 +1,4 @@
-import type { PersistedSessionPayload } from "../../src/domain/home-builder/models";
+import type { PersistedSessionPayload } from "../src/domain/home-builder/models";
 
 export type PortableSessionRecord = {
   code: string;
@@ -18,7 +18,6 @@ const getStore = (): SessionStore => {
   if (!globalThis.__POKOPIA_SESSION_STORE__) {
     globalThis.__POKOPIA_SESSION_STORE__ = new Map<string, PortableSessionRecord>();
   }
-
   return globalThis.__POKOPIA_SESSION_STORE__;
 };
 
@@ -46,28 +45,17 @@ export const putSession = (payload: PersistedSessionPayload) => {
   const code = createUniqueCode();
   const expiresAt = now + 1000 * 60 * 60 * 24 * 14;
 
-  getStore().set(code, {
-    code,
-    payload,
-    createdAt: now,
-    expiresAt,
-  });
-
-  return {
-    code,
-    expiresAt,
-  };
+  getStore().set(code, { code, payload, createdAt: now, expiresAt });
+  return { code, expiresAt };
 };
 
 export const getSession = (code: string): PortableSessionRecord | null => {
   const record = getStore().get(code.toUpperCase()) ?? null;
   if (!record) return null;
-
   if (Date.now() > record.expiresAt) {
     getStore().delete(code.toUpperCase());
     return null;
   }
-
   return record;
 };
 
