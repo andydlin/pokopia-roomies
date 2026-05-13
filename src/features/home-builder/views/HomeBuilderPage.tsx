@@ -2372,15 +2372,6 @@ export const HomeBuilderPage = () => {
                   (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) > 0,
                 );
 
-                if (comfortEntries.length === 0) {
-                  return (
-                    <div className="rounded-[16px] border border-dashed border-[var(--pk-border)] p-5 text-center">
-                      <p className="text-sm font-semibold text-[var(--pk-text-primary)]">No comfort items yet</p>
-                      <p className="mt-1 text-xs text-[var(--pk-text-desc)]">Browse and add comfort items to see how they support your Pokémon.</p>
-                    </div>
-                  );
-                }
-
                 const selectedPokemonCoverageSummaries = selectedPokemon.map((pokemon) => {
                   const favoriteCategoryIdSet = new Set(pokemon.favoriteCategoryIds);
                   const matchingItemEntries = comfortEntries.filter((entry) =>
@@ -2407,7 +2398,14 @@ export const HomeBuilderPage = () => {
                 });
 
                 const renderSelectedPokemonCoverageSection = () => {
-                  if (selectedPokemonCoverageSummaries.length === 0) return null;
+                  if (selectedPokemonCoverageSummaries.length === 0) {
+                    return (
+                      <div className="rounded-[16px] border border-dashed border-[var(--pk-border)] p-5 text-center">
+                        <p className="text-sm font-semibold text-[var(--pk-text-primary)]">No Pokémon selected</p>
+                        <p className="mt-1 text-xs text-[var(--pk-text-desc)]">Add Pokémon to see how comfort items support them.</p>
+                      </div>
+                    );
+                  }
                   const toggleComfortFavoriteFilter = (categoryId: string) => {
                     setActiveComfortFavoriteFilters((previous) =>
                       previous.includes(categoryId)
@@ -2418,7 +2416,7 @@ export const HomeBuilderPage = () => {
 
                   return (
                     <section className="space-y-2">
-                      <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Selected Pokemon</p>
+                      <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
                       <div className="space-y-1.5">
                         {selectedPokemonCoverageSummaries.map((summary) => (
                           <article
@@ -2437,7 +2435,7 @@ export const HomeBuilderPage = () => {
                               </div>
                             </div>
                             {summary.matchingItemEntries.length > 0 && (() => {
-                              const ITEM_AVATAR_ROW_CAP = 7;
+                              const ITEM_AVATAR_ROW_CAP = 6;
                               const isCoverageExpanded = expandedCoveragePokemonIds.has(summary.pokemon.id);
                               const visibleEntries = isCoverageExpanded
                                 ? summary.matchingItemEntries
@@ -2449,7 +2447,7 @@ export const HomeBuilderPage = () => {
                                     const item = entities.itemsById[entry.itemId];
                                     if (!item) return null;
                                     return (
-                                      <Tooltip key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name} side="bottom">
+                                      <Tooltip key={`context-items-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name}>
                                         <span className="inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
                                           {item.image ? (
                                             <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
@@ -2523,40 +2521,42 @@ export const HomeBuilderPage = () => {
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
-                <ResultsBrowserBar strip={
-                  buildItemEntries.length > 0 ? (
-                    <div className="flex items-center gap-2 overflow-x-auto pb-2 pt-4">
-                      <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
-                        Added ({buildItemEntries.length})
-                      </span>
-                      <div className="flex gap-1.5">
-                        {buildItemEntries.map((entry) => {
-                          const stripItem = entities.itemsById[entry.itemId];
-                          if (!stripItem) return null;
-                          return (
-                            <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
-                              <span className="group/stripitem relative inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
-                                {stripItem.image ? (
-                                  <img src={stripItem.image} alt={stripItem.name} className="h-6 w-6 object-contain" />
-                                ) : (
-                                  <span className="h-6 w-6" />
-                                )}
-                                <button
-                                  type="button"
-                                  aria-label={`Remove ${stripItem.name}`}
-                                  onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                  className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
-                                >
-                                  ✕
-                                </button>
-                              </span>
-                            </Tooltip>
-                          );
-                        })}
-                      </div>
+                {buildItemEntries.length > 0 && (
+                  <div
+                    className="sticky z-20 flex items-center gap-2 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2"
+                    style={{ top: "calc(52px + var(--builder-header-h, 0px))" }}
+                  >
+                    <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
+                      Items Added ({buildItemEntries.length})
+                    </span>
+                    <div className="flex gap-1.5">
+                      {buildItemEntries.map((entry) => {
+                        const stripItem = entities.itemsById[entry.itemId];
+                        if (!stripItem) return null;
+                        return (
+                          <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
+                            <span className="group/stripitem relative inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                              {stripItem.image ? (
+                                <img src={stripItem.image} alt={stripItem.name} className="h-6 w-6 object-contain" />
+                              ) : (
+                                <span className="h-6 w-6" />
+                              )}
+                              <button
+                                type="button"
+                                aria-label={`Remove ${stripItem.name}`}
+                                onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
+                                className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
+                              >
+                                ✕
+                              </button>
+                            </span>
+                          </Tooltip>
+                        );
+                      })}
                     </div>
-                  ) : undefined
-                }>
+                  </div>
+                )}
+                <ResultsBrowserBar>
                   <BuilderSearchField
                     value={state.browse.items.searchQuery}
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
@@ -2804,35 +2804,40 @@ export const HomeBuilderPage = () => {
                                   {usePokemonSatisfactionUi && showFavoritesByTab.items && matchedPokemon.length > 0 ? (
                                     <>
                                       <div className="mt-2 flex flex-wrap gap-1">
-                                        {visibleFavoriteCategoryIds.map((categoryId) => (
-                                          <span
-                                            key={`${entry.item.id}-favorite-chip-${categoryId}`}
-                                            className={`pk-chip pk-chip-compact ${
-                                              selectedPokemonAllFavoriteCategoryIdSet.has(categoryId) ? "pk-chip-primary" : "pk-chip-none"
-                                            }`}
-                                          >
-                                            {toCategoryLabel(categoryId)}
-                                          </span>
-                                        ))}
-                                      </div>
-                                      <div className="mt-1.5 flex flex-wrap gap-1.5">
-                                        {matchedPokemon.map((pokemon) => {
-                                          const coveredLabels = pokemon.favoriteCategoryIds
-                                            .filter((id) => itemFavoriteCategoryIdSet.has(id))
-                                            .map(toCategoryLabel)
-                                            .join(", ");
+                                        {visibleFavoriteCategoryIds.map((categoryId) => {
+                                          const sharedCount = sharedFavoriteCountByCategoryId.get(categoryId) ?? 0;
+                                          const chipTone =
+                                            selectedPokemon.length <= 1
+                                              ? selectedPokemonAllFavoriteCategoryIdSet.has(categoryId) ? "pk-chip-best" : "pk-chip-none"
+                                              : sharedCount === selectedPokemon.length ? "pk-chip-best"
+                                              : sharedCount >= 1 ? "pk-chip-some"
+                                              : "pk-chip-none";
+                                          const pokemonForCategory = overlapPokemonByCategoryId.get(categoryId) ?? [];
                                           return (
-                                            <Tooltip key={`${entry.item.id}-matched-pokemon-${pokemon.id}`} content={coveredLabels}>
-                                              <span className="inline-flex items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1">
-                                                {pokemon.imageUrl ? (
-                                                  <img src={pokemon.imageUrl} alt={pokemon.name} className="h-6 w-6 object-contain" />
-                                                ) : (
-                                                  <span className="h-6 w-6" />
-                                                )}
+                                            <span key={`${entry.item.id}-favorite-chip-${categoryId}`} className="group/overlap relative inline-flex">
+                                              <span className={`pk-chip pk-chip-compact ${chipTone}`}>
+                                                {toCategoryLabel(categoryId)}
                                               </span>
-                                            </Tooltip>
+                                              {pokemonForCategory.length > 0 ? (
+                                                <OverlapTooltip
+                                                  items={pokemonForCategory.map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                                                  tooltipKeyPrefix={`item-sat-overlap-${entry.item.id}-${categoryId}`}
+                                                />
+                                              ) : null}
+                                            </span>
                                           );
                                         })}
+                                      </div>
+                                      <div className="mt-1.5 flex flex-wrap gap-1.5">
+                                        {matchedPokemon.map((pokemon) => (
+                                          <span key={`${entry.item.id}-matched-pokemon-${pokemon.id}`} className="inline-flex items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1">
+                                            {pokemon.imageUrl ? (
+                                              <img src={pokemon.imageUrl} alt={pokemon.name} className="h-6 w-6 object-contain" />
+                                            ) : (
+                                              <span className="h-6 w-6" />
+                                            )}
+                                          </span>
+                                        ))}
                                       </div>
                                     </>
                                   ) : null}
@@ -2845,7 +2850,7 @@ export const HomeBuilderPage = () => {
                                             <span
                                               className={`pk-chip pk-chip-compact ${
                                                 selectedPokemonAllFavoriteCategoryIdSet.has(categoryId)
-                                                  ? "pk-chip-primary"
+                                                  ? "pk-chip-best"
                                                   : "pk-chip-none"
                                               }`}
                                             >
@@ -2865,7 +2870,7 @@ export const HomeBuilderPage = () => {
                                               const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
                                               return (
                                               <span key={`${entry.item.id}-${categoryId}-individual`} className="group/overlap relative inline-flex">
-                                                <span className="pk-chip pk-chip-compact pk-chip-primary">
+                                                <span className="pk-chip pk-chip-compact pk-chip-some">
                                                   {toCategoryLabel(categoryId)}
                                                 </span>
                                                 {overlapPokemon.length > 0 ? (
