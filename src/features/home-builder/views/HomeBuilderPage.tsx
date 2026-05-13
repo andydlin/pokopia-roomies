@@ -2412,7 +2412,6 @@ export const HomeBuilderPage = () => {
                 const renderSelectedPokemonCoverageSection = () => {
                   if (selectedPokemonCoverageSummaries.length === 0) return null;
                   const toggleComfortFavoriteFilter = (categoryId: string) => {
-                    if (activePhase !== "comfort_items") return;
                     setActiveComfortFavoriteFilters((previous) =>
                       previous.includes(categoryId)
                         ? previous.filter((id) => id !== categoryId)
@@ -2487,17 +2486,19 @@ export const HomeBuilderPage = () => {
                             })()}
                             {summary.uncoveredFavoriteCategoryIds.length > 0 && (
                               <div className="mt-2">
-                                <p className="text-[11px] font-semibold text-[#c0602a]">
+                                <p className="text-[11px] font-semibold text-[var(--pk-text-desc)]">
                                   Needs coverage ({summary.uncoveredFavoriteCategoryIds.length})
                                 </p>
                                 <div className="mt-1 flex flex-wrap gap-1">
                                   {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
-                                    <span
+                                    <Chip
                                       key={`uncovered-${summary.pokemon.id}-${categoryId}`}
-                                      className="type-caption inline-flex rounded-full bg-[#fde8db] px-2 py-0.5 text-[#c0602a]"
+                                      size="compact"
+                                      tone={activeComfortFavoriteFilters.includes(categoryId) ? "primary" : "default"}
+                                      onClick={() => toggleComfortFavoriteFilter(categoryId)}
                                     >
                                       {favoriteCategoryById.get(categoryId)?.name ?? categoryId}
-                                    </span>
+                                    </Chip>
                                   ))}
                                 </div>
                               </div>
@@ -2580,14 +2581,6 @@ export const HomeBuilderPage = () => {
                       window.setTimeout(() => setItemSortMode("az_category"), 0);
                     }}
                   />
-                  {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
-                    <CustomSingleSelect
-                      label="Filter by Pokemon"
-                      options={itemPokemonFilterOptions}
-                      selectedId={activeItemPokemonFilterId ?? "all"}
-                      onChange={(nextId) => setActiveItemPokemonFilterId(nextId === "all" ? null : nextId)}
-                    />
-                  ) : null}
                   {activePhase === "comfort_items" ? (
                     <ActiveFilterChips
                       chips={[
@@ -3164,7 +3157,7 @@ export const HomeBuilderPage = () => {
                                       <span
                                         className={`pk-chip pk-chip-compact ${
                                           overlapFavoriteIds.has(categoryId)
-                                            ? "pk-chip-primary"
+                                            ? "pk-chip-best"
                                             : "pk-chip-none"
                                         }`}
                                       >
@@ -3184,7 +3177,7 @@ export const HomeBuilderPage = () => {
                                         const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
                                         return (
                                         <span key={`${entry.pokemon.id}-${categoryId}-extra`} className="group/overlap relative inline-flex">
-                                          <span className="pk-chip pk-chip-compact pk-chip-primary">
+                                          <span className="pk-chip pk-chip-compact pk-chip-some">
                                             {toCategoryLabel(categoryId)}
                                           </span>
                                           {overlapPokemon.length > 0 ? (
