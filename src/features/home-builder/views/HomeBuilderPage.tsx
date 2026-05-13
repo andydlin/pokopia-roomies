@@ -682,14 +682,13 @@ export const HomeBuilderPage = () => {
   const lastAppliedComfortFilterKeyRef = useRef<string>("");
   const refreshSkeletonTimerRef = useRef<number | null>(null);
   const lastResultsRefreshKeyRef = useRef<string | null>(null);
-  const builderBodyRef = useRef<HTMLDivElement | null>(null);
+  const builderHeaderRef = useRef<HTMLElement | null>(null);
   const resultsPaneRef = useRef<HTMLDivElement | null>(null);
   const completeBuildSummaryRef = useRef<HTMLElement | null>(null);
   const completeBuildItemsRef = useRef<HTMLElement | null>(null);
   const completeBuildMaterialsRef = useRef<HTMLElement | null>(null);
   const completeBuildCoverageRef = useRef<HTMLElement | null>(null);
   const [activeCompleteBuildSection, setActiveCompleteBuildSection] = useState<CompleteBuildSectionId>("summary");
-  const [desktopBodyHeight, setDesktopBodyHeight] = useState<number | null>(null);
 
   const startResultsRefresh = () => {
     if (showInitialSkeleton) return;
@@ -1814,7 +1813,7 @@ export const HomeBuilderPage = () => {
       setCollapsingItemSectionIds((previousIds) => (previousIds.length === 0 ? previousIds : []));
       setEnteringItemSectionIds((previousIds) => (previousIds.length === 0 ? previousIds : []));
       if (lastAppliedComfortFilterKeyRef.current !== filterKey) {
-        resultsPaneRef.current?.scrollTo({ top: 0, behavior: "smooth" });
+        window.scrollTo({ top: 0, behavior: "smooth" });
         lastAppliedComfortFilterKeyRef.current = filterKey;
       }
       return;
@@ -1843,27 +1842,16 @@ export const HomeBuilderPage = () => {
   }, [activePhase]);
 
   useLayoutEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const measureDesktopBodyHeight = () => {
-      const bodyNode = builderBodyRef.current;
-      if (!bodyNode) return;
-
-      const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
-      if (!isDesktop) {
-        setDesktopBodyHeight(null);
-        return;
-      }
-
-      const top = bodyNode.getBoundingClientRect().top;
-      const nextHeight = Math.max(240, Math.floor(window.innerHeight - top));
-      setDesktopBodyHeight((previousHeight) => (previousHeight === nextHeight ? previousHeight : nextHeight));
+    const header = builderHeaderRef.current;
+    if (!header) return;
+    const update = () => {
+      document.documentElement.style.setProperty("--builder-header-h", `${header.getBoundingClientRect().height}px`);
     };
-
-    measureDesktopBodyHeight();
-    window.addEventListener("resize", measureDesktopBodyHeight);
-    return () => window.removeEventListener("resize", measureDesktopBodyHeight);
-  }, [activePhase, isTabTransitionLoading]);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(header);
+    return () => ro.disconnect();
+  }, []);
 
   useEffect(() => {
     const detailItemId = state.browse.items.detailItemId;
@@ -1890,7 +1878,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section className="sticky top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pt-3">
+        <section ref={builderHeaderRef} className="sticky top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pt-3">
           <div className="w-full px-5 sm:px-8 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
@@ -1941,11 +1929,7 @@ export const HomeBuilderPage = () => {
         </section>
 
       {/* Section: Main layout */}
-      <div
-        ref={builderBodyRef}
-        className="grid gap-4 lg:overflow-hidden"
-        style={desktopBodyHeight ? { height: `${desktopBodyHeight}px` } : undefined}
-      >
+      <div className="grid gap-4">
         {/* Section: Current Home sidebar */}
         <aside className="hidden h-[904px] overflow-hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] lg:sticky lg:top-0">
           <div className="flex h-full flex-col">
@@ -2143,7 +2127,7 @@ export const HomeBuilderPage = () => {
         </aside>
 
         {/* Section: Browse workspace */}
-        <section className="space-y-6 lg:flex lg:h-full lg:min-h-0 lg:flex-col">
+        <section className="space-y-6">
           {/* Section: Controls */}
           {activePhase === "review_materials" ? (
             <div className="space-y-2">
@@ -2174,9 +2158,12 @@ export const HomeBuilderPage = () => {
             </div>
           ) : null}
 
-          <div className="grid gap-4 lg:flex-1 lg:min-h-0 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+          <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
             {/* Section: Context sidebar */}
-            <aside className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:block lg:h-full lg:min-h-0 lg:overflow-x-hidden lg:overflow-y-auto">
+            <aside
+              className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:sticky lg:block lg:overflow-x-hidden lg:overflow-y-auto"
+              style={{ top: "calc(52px + var(--builder-header-h, 0px))", height: "calc(100dvh - 52px - var(--builder-header-h, 0px))" }}
+            >
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
@@ -2521,7 +2508,7 @@ export const HomeBuilderPage = () => {
             </aside>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="app-scrollbar order-2 bg-transparent p-0 pb-12 pr-4 lg:h-full lg:min-h-0 lg:overflow-y-auto" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pr-4" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
             {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
