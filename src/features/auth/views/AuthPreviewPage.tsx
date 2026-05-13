@@ -180,12 +180,37 @@ const SignInErrorPreview = () => (
   </Panel>
 );
 
+const IntroModalPreview = () => (
+  <Panel label="First-visit intro modal">
+    <p className="text-xs font-semibold uppercase tracking-widest text-[var(--pk-brand)]">Welcome</p>
+    <h2 className="mt-1 text-xl font-extrabold tracking-tight text-[var(--pk-text-primary)]">
+      Plan the perfect Pokémon home
+    </h2>
+    <ul className="mt-4 space-y-2 text-sm text-[var(--pk-text-desc)]">
+      <li className="flex gap-2"><span className="mt-0.5 text-[var(--pk-brand)]">✓</span>Pick your Pokémon and get comfort item suggestions ranked by how well they fit your group</li>
+      <li className="flex gap-2"><span className="mt-0.5 text-[var(--pk-brand)]">✓</span>Track every material you need to craft your full build</li>
+      <li className="flex gap-2"><span className="mt-0.5 text-[var(--pk-brand)]">✓</span>Save multiple homes and share them with friends</li>
+    </ul>
+    <div className="mt-6 flex flex-col gap-2">
+      <button className="pk-btn pk-btn-primary pk-btn-md w-full">Start building</button>
+      <button className="w-full text-center text-sm text-[var(--pk-text-desc)] hover:underline">Maybe later</button>
+    </div>
+  </Panel>
+);
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 export const AuthPreviewPage = () => (
   <div className="min-h-screen bg-[var(--pk-canvas)] px-6 py-10">
     <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-[var(--pk-text-desc)]">Dev only</p>
     <h1 className="mb-8 text-2xl font-extrabold tracking-tight text-[var(--pk-text-primary)]">Auth UI Preview</h1>
+
+    <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--pk-text-desc)]">Intro modal</p>
+    <div className="mb-10 flex flex-wrap gap-8">
+      <IntroModalPreview />
+    </div>
+
+    <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-[var(--pk-text-desc)]">Auth modal states</p>
     <div className="flex flex-wrap gap-8">
       <SignInPreview />
       <SignUpPreview />
