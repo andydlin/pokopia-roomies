@@ -158,6 +158,7 @@ export type SessionPortabilityState = {
   lastGeneratedCode: string | null;
   lastCodeExpiry: number | null;
   lastError: string | null;
+  cloudSyncError: string | null;
 };
 
 export type HomeBuilderFeatureState = {

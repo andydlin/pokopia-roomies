@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
-import { HomeBuilderProvider } from "../features/home-builder/state/HomeBuilderContext";
 import { HomeBuilderPage } from "../features/home-builder/views/HomeBuilderPage";
 import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
 import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
@@ -51,11 +50,7 @@ const AppRoutes = () => (
   </Routes>
 );
 
-export const App = () => (
-  <HomeBuilderProvider>
-    <AppShell />
-  </HomeBuilderProvider>
-);
+export const App = () => <AppShell />;
 
 const AppShell = () => {
   const location = useLocation();

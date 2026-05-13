@@ -8,12 +8,14 @@ import type {
   SavedHome,
 } from "../../../domain/home-builder/models";
 import { localSessionAdapter } from "../../../lib/storage/localSessionAdapter";
+import { supabaseBuildsAdapter } from "../../../lib/storage/supabaseBuildsAdapter";
 import { SessionTransportError, sessionTransportAdapter } from "../../../lib/transport/sessionTransportAdapter";
 import {
   createInitialHomeBuilderState,
   homeBuilderReducer,
   type HomeBuilderAction,
 } from "./homeBuilderReducer";
+import { useAuth } from "../../auth/AuthContext";
 
 const toSavedHomesArray = (state: HomeBuilderFeatureState): SavedHome[] =>
   state.savedHomes.allIds.map((homeId) => state.savedHomes.byId[homeId]).filter(Boolean);
@@ -24,6 +26,24 @@ const toPersistedPayload = (state: HomeBuilderFeatureState): PersistedSessionPay
   savedHomes: toSavedHomesArray(state),
   exportedAt: Date.now(),
 });
+
+// Snapshot of currentHome as a SavedHome for Supabase upsert.
+function currentHomeAsSnapshot(state: HomeBuilderFeatureState): SavedHome | null {
+  const { currentHome } = state;
+  if (!currentHome.id) return null;
+  const existing = state.savedHomes.byId[currentHome.id];
+  return {
+    id: currentHome.id,
+    name: currentHome.name,
+    pokemonIds: [...currentHome.pokemonIds],
+    itemIds: [...currentHome.itemIds],
+    itemQuantities: { ...currentHome.itemQuantities },
+    materialProgress: { ...currentHome.materialProgress },
+    habitatId: currentHome.habitatId,
+    createdAt: existing?.createdAt ?? Date.now(),
+    updatedAt: Date.now(),
+  };
+}
 
 type HomeBuilderContextValue = {
   entities: typeof entityStore;
@@ -44,22 +64,32 @@ type HomeBuilderContextValue = {
 
 const HomeBuilderContext = createContext<HomeBuilderContextValue | null>(null);
 
-const buildInitialState = () => {
-  const local = localSessionAdapter.load();
-  return createInitialHomeBuilderState({
-    currentHome: local?.currentHome ?? makeEmptyCurrentHome(),
-    savedHomes: local?.savedHomes ?? [],
-  });
-};
+export const HomeBuilderProvider = ({
+  children,
+  initialPayload,
+}: {
+  children: React.ReactNode;
+  initialPayload: PersistedSessionPayload;
+}) => {
+  const { authState } = useAuth();
 
-export const HomeBuilderProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, dispatch] = useReducer(homeBuilderReducer, undefined, buildInitialState);
+  const [state, dispatch] = useReducer(
+    homeBuilderReducer,
+    undefined,
+    () =>
+      createInitialHomeBuilderState({
+        currentHome: initialPayload.currentHome,
+        savedHomes: initialPayload.savedHomes,
+      }),
+  );
+
   const [localSaveStatus, setLocalSaveStatus] = useReducer(
     (_: "saving" | "saved", next: "saving" | "saved") => next,
     "saved",
   );
   const [lastLocalSaveAt, setLastLocalSaveAt] = useReducer((_prev: number | null, next: number | null) => next, null);
 
+  // 250ms localStorage debounce — always runs as crash-recovery draft.
   useEffect(() => {
     setLocalSaveStatus("saving");
     const timeout = window.setTimeout(() => {
@@ -67,20 +97,117 @@ export const HomeBuilderProvider = ({ children }: { children: React.ReactNode })
       setLocalSaveStatus("saved");
       setLastLocalSaveAt(Date.now());
     }, 250);
-
     return () => window.clearTimeout(timeout);
   }, [state]);
+
+  // 3s Supabase debounce — only for authenticated users with a dirty named build.
+  useEffect(() => {
+    if (authState.status !== "authenticated") return;
+    if (!state.currentHome.isDirty || !state.currentHome.id) return;
+
+    const snapshot = currentHomeAsSnapshot(state);
+    if (!snapshot) return;
+
+    const userId = authState.user.id;
+    const timeout = window.setTimeout(async () => {
+      try {
+        await supabaseBuildsAdapter.saveBuild(userId, snapshot);
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Failed to sync build.";
+        dispatch({ type: "session/cloud-sync-error", message });
+      }
+    }, 3000);
+
+    return () => window.clearTimeout(timeout);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.currentHome, authState.status, authState.status === "authenticated" ? (authState as { status: "authenticated"; user: { id: string } }).user.id : null]);
 
   const setBrowseStateFromRoute = useCallback((browse: BuilderBrowseState) => {
     dispatch({ type: "browse/hydrate", browse });
   }, []);
 
-  const saveCurrentHome = useCallback(() => dispatch({ type: "saved/save-current" }), []);
-  const saveCurrentHomeAsNew = useCallback(() => dispatch({ type: "saved/save-current-as-new" }), []);
+  // Helper to fire a Supabase write after an optimistic dispatch.
+  const syncAfterDispatch = useCallback(
+    async (op: () => Promise<void>) => {
+      if (authState.status !== "authenticated") return;
+      try {
+        await op();
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Failed to sync build.";
+        dispatch({ type: "session/cloud-sync-error", message });
+      }
+    },
+    [authState],
+  );
+
+  const saveCurrentHome = useCallback(() => {
+    dispatch({ type: "saved/save-current" });
+    // The 3s debounce will pick up the dirty→clean transition and sync.
+  }, []);
+
+  const saveCurrentHomeAsNew = useCallback(() => {
+    dispatch({ type: "saved/save-current-as-new" });
+    // New build will be synced by the 3s debounce on next dirty write.
+    // For immediate persistence, we do a best-effort sync here too.
+    void syncAfterDispatch(async () => {
+      if (authState.status !== "authenticated") return;
+      const snapshot = currentHomeAsSnapshot(state);
+      if (snapshot) await supabaseBuildsAdapter.saveBuild(authState.user.id, snapshot);
+    });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [syncAfterDispatch, authState, state]);
+
   const loadSavedHome = useCallback((homeId: string) => dispatch({ type: "saved/load", homeId }), []);
-  const duplicateSavedHome = useCallback((homeId: string) => dispatch({ type: "saved/duplicate", homeId }), []);
-  const deleteSavedHome = useCallback((homeId: string) => dispatch({ type: "saved/delete", homeId }), []);
-  const renameSavedHome = useCallback((homeId: string, name: string) => dispatch({ type: "saved/rename", homeId, name }), []);
+
+  const duplicateSavedHome = useCallback(
+    (homeId: string) => {
+      dispatch({ type: "saved/duplicate", homeId });
+      void syncAfterDispatch(async () => {
+        if (authState.status !== "authenticated") return;
+        // The duplicated home gets a new ID generated by the reducer. We need
+        // to read the resulting state to find it — we can't do that here, so
+        // we instead rely on the 3s debounce after the user first modifies it.
+        // For immediate persistence of the copy, duplicate via Supabase directly.
+        const original = state.savedHomes.byId[homeId];
+        if (!original) return;
+        const copy: SavedHome = {
+          ...original,
+          id: `home-${Math.random().toString(36).slice(2, 10)}`,
+          name: `${original.name} Copy`,
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        };
+        await supabaseBuildsAdapter.saveBuild(authState.user.id, copy);
+      });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [syncAfterDispatch, authState, state.savedHomes],
+  );
+
+  const deleteSavedHome = useCallback(
+    (homeId: string) => {
+      dispatch({ type: "saved/delete", homeId });
+      void syncAfterDispatch(async () => {
+        if (authState.status !== "authenticated") return;
+        await supabaseBuildsAdapter.deleteBuild(authState.user.id, homeId);
+      });
+    },
+    [syncAfterDispatch, authState],
+  );
+
+  const renameSavedHome = useCallback(
+    (homeId: string, name: string) => {
+      dispatch({ type: "saved/rename", homeId, name });
+      void syncAfterDispatch(async () => {
+        if (authState.status !== "authenticated") return;
+        const home = state.savedHomes.byId[homeId];
+        if (!home) return;
+        await supabaseBuildsAdapter.saveBuild(authState.user.id, { ...home, name, updatedAt: Date.now() });
+      });
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [syncAfterDispatch, authState, state.savedHomes],
+  );
 
   const generateRestoreCode = useCallback(async () => {
     dispatch({ type: "session/export-start" });
@@ -110,14 +237,12 @@ export const HomeBuilderProvider = ({ children }: { children: React.ReactNode })
           imported.savedHomes.forEach((home) => {
             mergedById.set(home.id, home);
           });
-
           dispatch({
             type: "session/apply-import",
             currentHome: imported.currentHome ?? state.currentHome,
-            savedHomes: [...mergedById.values()].sort((left, right) => right.updatedAt - left.updatedAt),
+            savedHomes: [...mergedById.values()].sort((l, r) => r.updatedAt - l.updatedAt),
           });
         }
-
         dispatch({ type: "session/import-success" });
       } catch (error) {
         const message = error instanceof SessionTransportError ? error.message : "Failed to restore from code.";
@@ -168,6 +293,5 @@ export const useHomeBuilder = () => {
   if (!context) {
     throw new Error("useHomeBuilder must be used within HomeBuilderProvider");
   }
-
   return context;
 };

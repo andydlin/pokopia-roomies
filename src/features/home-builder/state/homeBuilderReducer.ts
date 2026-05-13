@@ -67,6 +67,7 @@ const defaultSessionState: SessionPortabilityState = {
   lastGeneratedCode: null,
   lastCodeExpiry: null,
   lastError: null,
+  cloudSyncError: null,
 };
 
 export const createInitialHomeBuilderState = ({
@@ -176,7 +177,9 @@ export type HomeBuilderAction =
   | { type: "session/import-start" }
   | { type: "session/import-success" }
   | { type: "session/import-error"; message: string }
-  | { type: "session/apply-import"; currentHome: CurrentHomeState | null; savedHomes: SavedHome[] };
+  | { type: "session/apply-import"; currentHome: CurrentHomeState | null; savedHomes: SavedHome[] }
+  | { type: "session/cloud-sync-error"; message: string }
+  | { type: "session/cloud-sync-clear-error" };
 
 export const homeBuilderReducer = (
   state: HomeBuilderFeatureState,
@@ -753,6 +756,10 @@ export const homeBuilderReducer = (
         currentHome: normalizeCurrentHomeState(action.currentHome ?? makeEmptyCurrentHome()),
         savedHomes: makeSavedHomesState(normalizeSavedHomes(action.savedHomes)),
       };
+    case "session/cloud-sync-error":
+      return { ...state, session: { ...state.session, cloudSyncError: action.message } };
+    case "session/cloud-sync-clear-error":
+      return { ...state, session: { ...state.session, cloudSyncError: null } };
     default:
       return state;
   }
