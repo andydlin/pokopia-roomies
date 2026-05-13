@@ -682,7 +682,7 @@ export const HomeBuilderPage = () => {
   const lastAppliedComfortFilterKeyRef = useRef<string>("");
   const refreshSkeletonTimerRef = useRef<number | null>(null);
   const lastResultsRefreshKeyRef = useRef<string | null>(null);
-  const builderHeaderRef = useRef<HTMLElement | null>(null);
+  const builderHeaderRef = useRef<HTMLDivElement | null>(null);
   const resultsPaneRef = useRef<HTMLDivElement | null>(null);
   const completeBuildSummaryRef = useRef<HTMLElement | null>(null);
   const completeBuildItemsRef = useRef<HTMLElement | null>(null);
