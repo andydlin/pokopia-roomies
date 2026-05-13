@@ -1878,8 +1878,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section ref={builderHeaderRef} className="sticky top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pt-3">
-          <div className="w-full px-5 sm:px-8 lg:px-10">
+        <section className="w-full bg-[var(--pk-brand-light)] px-5 pb-4 pt-3 sm:px-8 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h1 className="text-xl font-bold tracking-[-0.03em] text-[var(--pk-text-primary)]">Build Planner</h1>
@@ -1904,29 +1903,28 @@ export const HomeBuilderPage = () => {
               </button>
             </div>
           </div>
-          <div className="mt-4">
-            <div ref={tabContainerRef} className="inline-flex items-center justify-start gap-1 rounded-[var(--pk-radius-md)] bg-[var(--pk-brand-light)] p-[3px]">
-              {phaseTabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  type="button"
-                  onClick={() => goToPhase(tab.id)}
-                  ref={(node) => {
-                    tabButtonRefs.current[tab.id] = node;
-                  }}
-                  className={`pk-btn pk-btn-sm relative inline-flex items-center justify-center rounded-[6px] px-4 py-2 text-sm leading-none transition-colors ${
-                    activePhase === tab.id
-                      ? "pk-btn-secondary border-[var(--pk-brand)] bg-[var(--pk-card)] font-semibold text-[var(--pk-text-primary)] shadow-[var(--pk-shadow-sm)]"
-                      : "pk-btn-ghost border-transparent bg-transparent font-normal text-[var(--pk-brand-dark)] hover:border-transparent hover:bg-transparent hover:text-[var(--pk-brand)]"
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
-          </div>
         </section>
+        <div ref={builderHeaderRef} className="sticky top-0 sm:top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-3 sm:px-8 lg:px-10">
+          <div ref={tabContainerRef} className="inline-flex items-center justify-start gap-1 rounded-[var(--pk-radius-md)] bg-[var(--pk-brand-light)] p-[3px]">
+            {phaseTabs.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => goToPhase(tab.id)}
+                ref={(node) => {
+                  tabButtonRefs.current[tab.id] = node;
+                }}
+                className={`pk-btn pk-btn-sm relative inline-flex items-center justify-center rounded-[6px] px-4 py-2 text-sm leading-none transition-colors ${
+                  activePhase === tab.id
+                    ? "pk-btn-secondary border-[var(--pk-brand)] bg-[var(--pk-card)] font-semibold text-[var(--pk-text-primary)] shadow-[var(--pk-shadow-sm)]"
+                    : "pk-btn-ghost border-transparent bg-transparent font-normal text-[var(--pk-brand-dark)] hover:border-transparent hover:bg-transparent hover:text-[var(--pk-brand)]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
 
       {/* Section: Main layout */}
       <div className="grid gap-4">
@@ -2162,7 +2160,7 @@ export const HomeBuilderPage = () => {
             {/* Section: Context sidebar */}
             <aside
               className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:sticky lg:block lg:overflow-x-hidden lg:overflow-y-auto"
-              style={{ top: "calc(52px + var(--builder-header-h, 0px))", height: "calc(100dvh - 52px - var(--builder-header-h, 0px))" }}
+              style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))", height: "calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-header-h, 0px))" }}
             >
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
@@ -2524,7 +2522,7 @@ export const HomeBuilderPage = () => {
                 {buildItemEntries.length > 0 && (
                   <div
                     className="sticky z-20 flex items-center gap-2 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2"
-                    style={{ top: "calc(52px + var(--builder-header-h, 0px))" }}
+                    style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
                   >
                     <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
                       Items Added ({buildItemEntries.length})

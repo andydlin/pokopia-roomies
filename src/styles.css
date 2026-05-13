@@ -15,6 +15,16 @@
 }
 
 :root {
+  --pk-sticky-nav-h: 0px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --pk-sticky-nav-h: 52px;
+  }
+}
+
+:root {
   /* Pokopia Roomies — Finalized Design System (Variation C) */
   --pk-canvas: #f2f9ff;
   --pk-card: #ffffff;
