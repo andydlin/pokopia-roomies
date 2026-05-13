@@ -2371,6 +2371,16 @@ export const HomeBuilderPage = () => {
                 const comfortEntries = buildItemEntries.filter(
                   (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) > 0,
                 );
+
+                if (comfortEntries.length === 0) {
+                  return (
+                    <div className="rounded-[16px] border border-dashed border-[var(--pk-border)] p-5 text-center">
+                      <p className="text-sm font-semibold text-[var(--pk-text-primary)]">No comfort items yet</p>
+                      <p className="mt-1 text-xs text-[var(--pk-text-desc)]">Browse and add comfort items to see how they support your Pokémon.</p>
+                    </div>
+                  );
+                }
+
                 const selectedPokemonCoverageSummaries = selectedPokemon.map((pokemon) => {
                   const favoriteCategoryIdSet = new Set(pokemon.favoriteCategoryIds);
                   const matchingItemEntries = comfortEntries.filter((entry) =>
