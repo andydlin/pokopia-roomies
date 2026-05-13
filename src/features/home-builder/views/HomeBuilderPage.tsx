@@ -21,7 +21,7 @@ import {
   getHighlightedItemIdsForMaterial,
   getHoveredItemMaterialIds,
 } from "../../../domain/home-builder/materialPlanning";
-import type { BrowseTab } from "../../../domain/home-builder/models";
+import type { BrowseTab, SessionPortabilityState } from "../../../domain/home-builder/models";
 import {
   applySearchParamsToBrowseState,
   buildSearchParamsFromBrowseState,
@@ -556,6 +556,81 @@ const HabitatDetailOverlay = ({ habitatId, onClose }: { habitatId: string; onClo
   );
 };
 
+// Component: Share Build modal
+const ShareBuildModal = ({
+  onClose,
+  generateRestoreCode,
+  session,
+}: {
+  onClose: () => void;
+  generateRestoreCode: () => Promise<void>;
+  session: SessionPortabilityState;
+}) => {
+  const triggeredRef = useRef(false);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (triggeredRef.current) return;
+    triggeredRef.current = true;
+    void generateRestoreCode();
+  }, [generateRestoreCode]);
+
+  const shareUrl = session.lastGeneratedCode
+    ? `${window.location.origin}/builder/pokemon?restore=${session.lastGeneratedCode}`
+    : null;
+
+  const copy = () => {
+    if (!shareUrl) return;
+    void navigator.clipboard.writeText(shareUrl).then(() => {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-3 md:items-center"
+      onClick={onClose}
+    >
+      <section
+        className="w-full max-w-md rounded-3xl border border-white/70 bg-white p-5 shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="text-lg font-bold tracking-tight text-[var(--pk-text-primary)]">Share Build</h3>
+          <button type="button" onClick={onClose} className="pk-btn pk-btn-secondary pk-btn-sm">
+            Close
+          </button>
+        </div>
+        <p className="mt-2 text-sm text-[var(--pk-text-desc)]">
+          Copy this link to continue your build on another device or share it with others. The link expires in 14 days.
+        </p>
+        <div className="mt-4">
+          {session.exportStatus === "loading" && (
+            <p className="text-sm text-[var(--pk-text-desc)]">Generating link…</p>
+          )}
+          {session.exportStatus === "error" && (
+            <p className="text-sm text-[var(--pk-destructive-text)]">{session.lastError ?? "Failed to generate link."}</p>
+          )}
+          {session.exportStatus === "success" && shareUrl && (
+            <div className="flex items-center gap-2">
+              <input
+                readOnly
+                value={shareUrl}
+                onFocus={(e) => e.target.select()}
+                className="min-w-0 flex-1 rounded-lg border border-[var(--pk-border)] bg-[var(--pk-canvas)] px-3 py-2 text-xs font-mono text-[var(--pk-text-primary)]"
+              />
+              <button type="button" onClick={copy} className="pk-btn pk-btn-primary pk-btn-sm shrink-0">
+                {copied ? "Copied!" : "Copy"}
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+};
+
 // Component: Unified Home Builder page
 export const HomeBuilderPage = () => {
   const {
@@ -573,6 +648,7 @@ export const HomeBuilderPage = () => {
   const navigate = useNavigate();
   const browseStateRef = useRef(state.browse);
 
+  const [showShareModal, setShowShareModal] = useState(false);
   const [restoreCodeInput, setRestoreCodeInput] = useState("");
   const [restoreMode, setRestoreMode] = useState<"replace" | "merge">("replace");
   const [itemDetailTrail, setItemDetailTrail] = useState<string[]>([]);
@@ -853,6 +929,18 @@ export const HomeBuilderPage = () => {
       setBrowseStateFromRoute(incoming);
     }
   }, [location.pathname, location.search, setBrowseStateFromRoute]);
+
+  const initialRestoreCode = useRef(new URLSearchParams(location.search).get("restore"));
+  useEffect(() => {
+    const code = initialRestoreCode.current;
+    if (!code) return;
+    void restoreFromCode(code, "replace");
+    const params = new URLSearchParams(window.location.search);
+    params.delete("restore");
+    const nextSearch = params.toString();
+    navigate(location.pathname + (nextSearch ? `?${nextSearch}` : ""), { replace: true });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const commitTabChange = (tab: BrowseTab, phase?: BuilderPhase) => {
     dispatch({ type: "browse/set-tab", tab });
@@ -1877,6 +1965,13 @@ export const HomeBuilderPage = () => {
 
   return (
     <div className="relative pb-24 lg:pb-0">
+      {showShareModal && (
+        <ShareBuildModal
+          onClose={() => setShowShareModal(false)}
+          generateRestoreCode={generateRestoreCode}
+          session={state.session}
+        />
+      )}
       <div className="space-y-0">
         <section className="w-full bg-[var(--pk-brand-light)] px-5 pb-4 pt-3 sm:px-8 lg:px-10">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -1889,10 +1984,10 @@ export const HomeBuilderPage = () => {
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={() => navigate("/homes/view")}
+                onClick={() => setShowShareModal(true)}
                 className="pk-btn pk-btn-primary pk-btn-sm"
               >
-                View Build
+                Share Build
               </button>
               <button
                 type="button"
