@@ -8,6 +8,7 @@ import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../fe
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 import { DesignSystemPage } from "../features/design-system/views/DesignSystemPage";
 import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
+import { AuthPreviewPage } from "../features/auth/views/AuthPreviewPage";
 import { AuthModal } from "../features/auth/components/AuthModal";
 import { AccountMenu } from "../features/auth/components/AccountMenu";
 import { useAuth } from "../features/auth/AuthContext";
@@ -40,6 +41,7 @@ const AppRoutes = () => (
     <Route path="/builds/:buildId" element={<PublicBuildPage />} />
     <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/design-system" element={<DesignSystemPage />} />
+    <Route path="/auth-preview" element={<AuthPreviewPage />} />
 
     <Route path="/pokedex" element={<PokedexLayout />}>
       <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
@@ -61,7 +63,7 @@ const AppShell = () => {
   const isBuilderRoute = location.pathname.startsWith("/builder");
   const isHomesActive = location.pathname.startsWith("/homes");
   const isPokedexActive = location.pathname.startsWith("/pokedex");
-  const isDesignSystemRoute = location.pathname.startsWith("/design-system");
+  const isDesignSystemRoute = location.pathname.startsWith("/design-system") || location.pathname.startsWith("/auth-preview");
   const [showAppShellSkeleton, setShowAppShellSkeleton] = useState(() => {
     if (typeof window === "undefined") return true;
     try {
