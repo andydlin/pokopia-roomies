@@ -3446,14 +3446,34 @@ export const HomeBuilderPage = () => {
             ) : (
               <p className="mt-3 text-sm text-ink/50">No Pokémon selected.</p>
             )}
-            {(buildItemEntries.length > 0 || selectedHabitat) ? (
+            {buildItemEntries.length > 0 ? (
+              <div className="-mx-4 mt-3 overflow-x-auto">
+                <div className="flex gap-2 px-4 pb-1">
+                  {buildItemEntries.map((entry) => (
+                    <div key={entry.itemId} className="relative flex w-20 shrink-0 flex-col items-center rounded-2xl border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--pk-border)]">
+                        {entry.item.image ? (
+                          <img src={entry.item.image} alt={entry.itemName} className="h-9 w-9 object-contain" />
+                        ) : null}
+                      </div>
+                      <p className="mt-1 w-full truncate text-center text-xs font-medium text-ink">{entry.itemName}</p>
+                      <p className="w-full truncate text-center text-[10px] text-ink/60">x{entry.quantityInBuild}</p>
+                      <button
+                        type="button"
+                        onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
+                        className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[var(--pk-border)] bg-white text-sm leading-none text-ink/50 hover:border-ink/30 hover:text-ink"
+                        aria-label={`Remove ${entry.itemName}`}
+                      >
+                        ×
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+            {selectedHabitat ? (
               <div className="mt-3 flex flex-wrap gap-2">
-                {buildItemEntries.map((entry) => (
-                  <Chip key={entry.itemId}>
-                    {entry.itemName} x{entry.quantityInBuild}
-                  </Chip>
-                ))}
-                {selectedHabitat ? <Chip>{selectedHabitat.name}</Chip> : null}
+                <Chip>{selectedHabitat.name}</Chip>
               </div>
             ) : null}
             <div className="mt-4 flex gap-2">
