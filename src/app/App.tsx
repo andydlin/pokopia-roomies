@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { HomeBuilderPage } from "../features/home-builder/views/HomeBuilderPage";
 import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
+import { PublicBuildPage } from "../features/public-builds/views/PublicBuildPage";
 import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
 import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
@@ -36,6 +37,7 @@ const AppRoutes = () => (
     </Route>
     <Route path="/homes/view" element={<BuildViewPage />} />
     <Route path="/homes" element={<SavedHomesPage />} />
+    <Route path="/builds/:buildId" element={<PublicBuildPage />} />
     <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/design-system" element={<DesignSystemPage />} />
 

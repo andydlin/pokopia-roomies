@@ -1,5 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../auth/AuthContext";
+import { SignUpUpsellModal } from "../../auth/components/SignUpUpsellModal";
 import { getBuildComparisonStats, getBuildMaterialAggregation } from "../../../domain/home-builder/materialPlanning";
 import { normalizeSavedHome } from "../../../domain/home-builder/logic";
 import type { CurrentHomeState, SavedHome } from "../../../domain/home-builder/models";
@@ -21,9 +23,24 @@ const toComparisonHome = (savedHome: SavedHome): CurrentHomeState => ({
 
 export const SavedHomesPage = () => {
   const { state, entities, loadSavedHome, deleteSavedHome, duplicateSavedHome, renameSavedHome } = useHomeBuilder();
+  const { authState } = useAuth();
   const navigate = useNavigate();
   const savedHomes = selectSavedHomes(state.savedHomes);
   const [compareSelection, setCompareSelection] = useState<Record<string, boolean>>({});
+  const [showUpsell, setShowUpsell] = useState(false);
+  const [copiedLinkId, setCopiedLinkId] = useState<string | null>(null);
+
+  const handleCopyLink = (homeId: string) => {
+    if (authState.status !== "authenticated") {
+      setShowUpsell(true);
+      return;
+    }
+    const url = `${window.location.origin}/builds/${homeId}`;
+    void navigator.clipboard.writeText(url).then(() => {
+      setCopiedLinkId(homeId);
+      window.setTimeout(() => setCopiedLinkId((prev) => (prev === homeId ? null : prev)), 2000);
+    });
+  };
 
   const normalizedHomes = useMemo(
     () => savedHomes.map((home) => normalizeSavedHome(home)),
@@ -61,6 +78,13 @@ export const SavedHomesPage = () => {
 
   return (
     <div className="space-y-6">
+      {showUpsell && (
+        <SignUpUpsellModal
+          onClose={() => setShowUpsell(false)}
+          title="Sign in to share builds"
+          body="Create an account to get a permanent shareable link for each build."
+        />
+      )}
       {/* Section: Header */}
       <section>
         <p className="type-overline text-moss/60">Saved Homes</p>
@@ -131,8 +155,15 @@ export const SavedHomesPage = () => {
                     </button>
                     <button
                       type="button"
+                      onClick={() => handleCopyLink(home.id)}
+                      className="type-ui rounded-full border border-ink/10 bg-white px-3 py-2"
+                    >
+                      {copiedLinkId === home.id ? "Copied!" : "Copy link"}
+                    </button>
+                    <button
+                      type="button"
                       onClick={() => deleteSavedHome(home.id)}
-                      className="type-ui col-span-2 rounded-full border border-berry/20 bg-berry/10 px-3 py-2 text-berry"
+                      className="type-ui rounded-full border border-berry/20 bg-berry/10 px-3 py-2 text-berry"
                     >
                       Delete
                     </button>

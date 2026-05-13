@@ -138,6 +138,7 @@ export type HomeBuilderAction =
   | { type: "saved/delete"; homeId: string }
   | { type: "saved/duplicate"; homeId: string }
   | { type: "saved/rename"; homeId: string; name: string }
+  | { type: "saved/add"; home: SavedHome }
   | { type: "browse/set-tab"; tab: BrowseTab }
   | { type: "browse/hydrate"; browse: BuilderBrowseState }
   | { type: "browse/items/set-mode"; mode: "contextual" | "all" }
@@ -400,6 +401,8 @@ export const homeBuilderReducer = (
         },
       };
     }
+    case "saved/add":
+      return { ...state, savedHomes: nextSavedHomesState(state.savedHomes, action.home, true) };
     case "saved/delete": {
       if (!state.savedHomes.byId[action.homeId]) return state;
       const byId = { ...state.savedHomes.byId };

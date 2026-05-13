@@ -58,6 +58,7 @@ type HomeBuilderContextValue = {
   duplicateSavedHome: (homeId: string) => void;
   deleteSavedHome: (homeId: string) => void;
   renameSavedHome: (homeId: string, name: string) => void;
+  addSavedHome: (home: SavedHome) => void;
   generateRestoreCode: () => Promise<void>;
   restoreFromCode: (code: string, mode: "replace" | "merge") => Promise<void>;
 };
@@ -195,6 +196,17 @@ export const HomeBuilderProvider = ({
     [syncAfterDispatch, authState],
   );
 
+  const addSavedHome = useCallback(
+    (home: SavedHome) => {
+      dispatch({ type: "saved/add", home });
+      void syncAfterDispatch(async () => {
+        if (authState.status !== "authenticated") return;
+        await supabaseBuildsAdapter.saveBuild(authState.user.id, home);
+      });
+    },
+    [syncAfterDispatch, authState],
+  );
+
   const renameSavedHome = useCallback(
     (homeId: string, name: string) => {
       dispatch({ type: "saved/rename", homeId, name });
@@ -266,6 +278,7 @@ export const HomeBuilderProvider = ({
       duplicateSavedHome,
       deleteSavedHome,
       renameSavedHome,
+      addSavedHome,
       generateRestoreCode,
       restoreFromCode,
     }),
@@ -280,6 +293,7 @@ export const HomeBuilderProvider = ({
       duplicateSavedHome,
       deleteSavedHome,
       renameSavedHome,
+      addSavedHome,
       generateRestoreCode,
       restoreFromCode,
     ],

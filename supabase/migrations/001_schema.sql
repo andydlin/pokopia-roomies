@@ -6,7 +6,13 @@ create table public.profiles (
 );
 
 alter table public.profiles enable row level security;
-create policy "profiles: owner" on public.profiles for all using (auth.uid() = id);
+-- Nicknames are public — anyone can look up a profile by ID.
+create policy "profiles: public read" on public.profiles for select using (true);
+-- Only the owner can write their own profile.
+create policy "profiles: owner write" on public.profiles
+  for insert with check (auth.uid() = id);
+create policy "profiles: owner update" on public.profiles
+  for update using (auth.uid() = id);
 
 -- builds: replaces localStorage SavedHome[] for authenticated users
 create table public.builds (
