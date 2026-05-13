@@ -117,6 +117,9 @@ const AppShell = () => {
               <Link to="/builder/pokemon" className={navLinkClass(isBuilderActive)}>
                 Home Builder
               </Link>
+              <Link to="/homes" className={navLinkClass(isHomesActive)}>
+                Saved Homes
+              </Link>
               <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
                 Pokedex
               </Link>
