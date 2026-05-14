@@ -346,6 +346,13 @@ export const DesignSystemPage = () => {
                   </div>
                 </div>
               </div>
+              <div className="rounded-[12px] border border-[var(--pk-border)] bg-[var(--pk-brand-light)] p-4">
+                <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">pk-chip-surface (for tinted backgrounds)</p>
+                <div className="flex flex-wrap gap-2">
+                  <button type="button" className="pk-chip pk-chip-standard pk-chip-surface">Default</button>
+                  <button type="button" className="pk-chip pk-chip-standard pk-chip-surface pk-chip-primary">Active</button>
+                </div>
+              </div>
               <div className="rounded-[12px] border border-[var(--pk-border)] bg-white p-4">
                 <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--pk-text-desc)]">Overlap Tooltip (shared)</p>
                 <span className="group/overlap relative inline-flex">

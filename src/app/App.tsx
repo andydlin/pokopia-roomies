@@ -25,10 +25,10 @@ const HomeBuilderLayout = () => (
 
 const navLinkClass = (isActive: boolean) =>
   [
-    "inline-flex h-8 items-center rounded-[7px] border px-3 text-[14px] tracking-[0.01em] transition-colors",
+    "inline-flex h-8 items-center rounded-[7px] border px-3 text-[12px] tracking-[0.01em] transition-colors",
     isActive
-      ? "border-[var(--pk-brand-border)] bg-[var(--pk-brand-light)] font-semibold text-[var(--pk-brand)]"
-      : "border-transparent bg-transparent font-normal text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)]",
+      ? "border-transparent bg-transparent font-semibold text-[var(--pk-text-primary)]"
+      : "border-transparent bg-transparent font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)]",
   ].join(" ");
 
 const LOCAL_SESSION_STORAGE_KEY = "pokopia.home-builder.session.v1";
@@ -125,7 +125,7 @@ const AppShell = () => {
       </div>
 
       <div className={`transition-opacity duration-200 ${showAppShellSkeleton ? "pointer-events-none opacity-0" : "opacity-100"}`}>
-        <header className="relative sm:sticky sm:top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
+        <header className="relative sm:sticky sm:top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
           <div className="flex h-[52px] w-full items-center justify-between px-5 sm:px-8 lg:px-10">
             <Link
               to="/builder"
@@ -147,7 +147,7 @@ const AppShell = () => {
               <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
                 Pokedex
               </Link>
-              <AccountMenu />
+              <AccountMenu inactiveLinkClass={navLinkClass(false)} />
             </nav>
           </div>
         </header>

@@ -5,18 +5,21 @@ export const FavoritesToggle = ({
   checked,
   onToggle,
   label = "Show Favorites",
+  disabled = false,
 }: {
   checked: boolean;
   onToggle: () => void;
   label?: string;
+  disabled?: boolean;
 }) => (
   <button
     type="button"
     role="switch"
     aria-checked={checked}
     aria-label="Toggle favorites"
-    onClick={onToggle}
-    className="group inline-flex h-10 items-center justify-between gap-3 rounded-[9px] border border-[#DBEAFE] bg-[#FFFFFF] px-3 text-left"
+    onClick={disabled ? undefined : onToggle}
+    disabled={disabled}
+    className={`group inline-flex h-10 items-center justify-between gap-3 rounded-[9px] border border-[#DBEAFE] bg-[#FFFFFF] px-3 text-left transition-opacity duration-150 ${disabled ? "cursor-not-allowed opacity-40" : ""}`}
   >
     <span className="flex min-w-[86px] leading-none">
       <span className="text-xs font-medium text-[#1E3A5F]">{label}</span>
@@ -64,11 +67,10 @@ export const BuilderSearchField = ({
           type="button"
           onClick={() => onChange("")}
           aria-label="Clear search"
-          className="inline-flex h-4 w-4 items-center justify-center"
+          className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#DBEAFE] hover:bg-[#BFDBFE] transition-colors duration-100"
         >
           <svg viewBox="0 0 12 12" fill="none" className="h-3 w-3">
-            <circle cx="6" cy="6" r="6" fill="#DBEAFE" />
-            <path d="M3.8 3.8L8.2 8.2M8.2 3.8L3.8 8.2" stroke="#64748B" strokeWidth="1.25" strokeLinecap="round" />
+            <path d="M3.8 3.8L8.2 8.2M8.2 3.8L3.8 8.2" stroke="#1E3A5F" strokeWidth="1.5" strokeLinecap="round" />
           </svg>
         </button>
       ) : null}
@@ -80,10 +82,12 @@ export const SortSegmentedControl = ({
   activeValue,
   onSuggested,
   onAlphabetical,
+  disabled = false,
 }: {
   activeValue: "suggested" | "az" | "az_category";
   onSuggested: () => void;
   onAlphabetical: () => void;
+  disabled?: boolean;
 }) => {
   const [visualValue, setVisualValue] = useState<"suggested" | "az" | "az_category">(activeValue);
   const commitTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -112,7 +116,7 @@ export const SortSegmentedControl = ({
   const isVisualSuggested = !isVisualAlphabetical;
 
   return (
-    <div className="relative inline-grid h-10 grid-cols-2 items-center rounded-[9px] border border-[#DBEAFE] bg-[var(--pk-brand-light)] p-[3px]">
+    <div className={`relative inline-grid h-10 grid-cols-2 items-center rounded-[9px] border border-[#DBEAFE] bg-[var(--pk-brand-light)] p-[3px] transition-opacity duration-150 ${disabled ? "cursor-not-allowed opacity-40" : ""}`}>
       <span
         aria-hidden
         className={`pointer-events-none absolute bottom-[3px] left-[3px] top-[3px] w-[calc(50%-3px)] rounded-[7px] bg-[#FFFFFF] shadow-[0_2px_8px_rgba(59,130,246,0.18)] transition-transform duration-200 ease-out ${
@@ -121,10 +125,11 @@ export const SortSegmentedControl = ({
       />
       <button
         type="button"
-        onClick={() => {
+        onClick={disabled ? undefined : () => {
           setVisualValue("suggested");
           queueCommit(onSuggested);
         }}
+        disabled={disabled}
         aria-pressed={isVisualSuggested}
         style={{ fontFamily: "'Space Grotesk', var(--pk-font-body)" }}
         className={`relative z-10 inline-flex h-full w-full items-center justify-center rounded-[7px] px-3 text-xs transition-colors duration-150 ease-out ${
@@ -137,10 +142,11 @@ export const SortSegmentedControl = ({
       </button>
       <button
         type="button"
-        onClick={() => {
+        onClick={disabled ? undefined : () => {
           setVisualValue("az");
           queueCommit(onAlphabetical);
         }}
+        disabled={disabled}
         aria-pressed={isVisualAlphabetical}
         style={{ fontFamily: "'Space Grotesk', var(--pk-font-body)" }}
         className={`relative z-10 inline-flex h-full w-full items-center justify-center rounded-[7px] px-3 text-xs transition-colors duration-150 ease-out ${

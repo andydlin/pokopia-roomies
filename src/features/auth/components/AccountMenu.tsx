@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useAuth } from "../AuthContext";
 
-export const AccountMenu = () => {
+export const AccountMenu = ({ inactiveLinkClass = "" }: { inactiveLinkClass?: string }) => {
   const { authState, openAuthModal, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -10,13 +10,13 @@ export const AccountMenu = () => {
 
   if (authState.status === "guest") {
     return (
-      <button
-        type="button"
-        onClick={() => openAuthModal("sign_in")}
-        className="inline-flex h-8 items-center rounded-[7px] border border-transparent px-3 text-[14px] font-normal tracking-[0.01em] text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-brand-dark)]"
+      <a
+        href="#"
+        onClick={(e) => { e.preventDefault(); openAuthModal("sign_in"); }}
+        className={inactiveLinkClass}
       >
         Sign in
-      </button>
+      </a>
     );
   }
 

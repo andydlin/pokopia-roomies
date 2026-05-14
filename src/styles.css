@@ -135,8 +135,10 @@ pre,
   font-family: var(--pk-font-mono);
 }
 
-a {
-  color: inherit;
+@layer base {
+  a {
+    color: inherit;
+  }
 }
 
 /* Eliminate the 300ms tap delay on mobile by opting interactive elements
@@ -331,6 +333,11 @@ a {
   border-color: var(--pk-none-border);
   color: var(--pk-none-text);
 }
+.pk-chip-surface {
+  background: #ffffff;
+  border-color: #c8dae8;
+  color: var(--pk-none-text);
+}
 .pk-chip-type {
   border-radius: var(--pk-radius-pill);
   font-family: var(--pk-font-body);
@@ -411,6 +418,20 @@ button.pk-chip.pk-chip-default:hover:not(:disabled),
 
 button.pk-chip.pk-chip-default:active:not(:disabled),
 .pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-default {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  color: #2563eb;
+}
+
+button.pk-chip.pk-chip-surface:hover:not(:disabled),
+.pk-chip-actionable:hover:not(:disabled) > .pk-chip.pk-chip-surface {
+  background: var(--pk-brand-light);
+  border-color: var(--pk-brand);
+  color: var(--pk-brand-dark);
+}
+
+button.pk-chip.pk-chip-surface:active:not(:disabled),
+.pk-chip-actionable:active:not(:disabled) > .pk-chip.pk-chip-surface {
   background: #dbeafe;
   border-color: #93c5fd;
   color: #2563eb;
@@ -738,15 +759,4 @@ button.pk-chip.pk-chip-none:active:not(:disabled),
 
 .app-scrollbar::-webkit-scrollbar-thumb:active {
   background-color: rgba(88, 126, 145, 0.55);
-}
-
-/* On large screens, only the results column scrolls; navbar + title + tab bar + left sidebar stay fixed. */
-@media (min-width: 1024px) {
-  .builder-results-col {
-    position: sticky;
-    top: calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px));
-    height: calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-title-h, 0px) - var(--builder-header-h, 0px));
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
 }

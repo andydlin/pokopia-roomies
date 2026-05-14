@@ -1963,202 +1963,6 @@ export const HomeBuilderPage = () => {
 
       {/* Section: Main layout */}
       <div className="grid gap-4">
-        {/* Section: Current Home sidebar */}
-        <aside className="hidden h-[904px] overflow-hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] lg:sticky lg:top-0">
-          <div className="flex h-full flex-col">
-            {/* Header */}
-            <div className="space-y-2 border-b border-[#e1e1e1] px-4 py-4">
-              <div className="flex items-center justify-between">
-                <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Build Summary</p>
-                <p className="text-xs text-[#8e9aa3]/80">
-                  {localSaveStatus === "saving"
-                    ? "Saving..."
-                    : lastLocalSaveAt
-                      ? `Saved ${new Date(lastLocalSaveAt).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }).toLowerCase()}`
-                      : "Saved"}
-                </p>
-              </div>
-              <input
-                value={state.currentHome.name}
-                onChange={(event) => dispatch({ type: "home/set-name", name: event.target.value })}
-                className="h-10 w-full rounded-[8px] border border-[#e1e1e1] px-4 text-base text-[#1a1a1a]"
-              />
-            </div>
-
-            {/* Content */}
-            <div className="app-scrollbar flex-1 space-y-6 overflow-y-auto px-4 py-4">
-              {isBuildSummaryNullState ? (
-                <>
-                  <section className="space-y-3">
-                    <p className="text-lg font-extrabold tracking-[-0.02em] text-[#485864]">Pokemon</p>
-                    <p className="text-xs font-normal italic text-[#8e9aa3]">No Pokemon added yet.</p>
-                  </section>
-                  <div className="h-px w-full bg-[#e1e1e1]" />
-                  <section className="space-y-3">
-                    <p className="text-lg font-extrabold tracking-[-0.02em] text-[#485864]">Items</p>
-                    <p className="text-xs font-normal italic text-[#8e9aa3]">No items added yet.</p>
-                  </section>
-                  <div className="h-px w-full bg-[#e1e1e1]" />
-                  <section className="space-y-3">
-                    <p className="text-lg font-extrabold tracking-[-0.02em] text-[#485864]">Materials</p>
-                    <p className="text-xs font-normal italic text-[#8e9aa3]">No materials yet.</p>
-                  </section>
-                </>
-              ) : (
-                <>
-                  {/* Pokemon */}
-                  <section className="space-y-2">
-                    <p className="text-sm font-extrabold tracking-[-0.02em] text-[#485864]">Pokemon ({selectedPokemon.length})</p>
-                    <div className={isSummaryPokemonExpanded ? "grid grid-cols-6 gap-[4px] items-start w-full" : "flex gap-[4px] items-start w-full"}>
-                      {summaryVisiblePokemon.map((pokemon) => (
-                        <div
-                          key={`summary-pokemon-${pokemon.id}`}
-                          className="aspect-square max-h-11 max-w-11 min-w-0 flex-1 rounded-[16px] bg-[#f5f5f5] p-1"
-                        >
-                          <div className="flex h-full w-full items-center justify-center">
-                            {pokemon.imageUrl ? <img src={pokemon.imageUrl} alt={pokemon.name} className="h-8 w-8 object-contain" /> : null}
-                          </div>
-                        </div>
-                      ))}
-                      {!isSummaryPokemonExpanded && selectedPokemon.length > 6 ? (
-                        <button
-                          type="button"
-                          onClick={() => setIsSummaryPokemonExpanded(true)}
-                          className="pk-btn pk-btn-sm pk-btn-ghost aspect-square max-h-11 max-w-11 min-w-0 flex-1 border border-dashed border-[#b3c9d2] bg-white p-1 text-xs font-semibold text-[#6c889b]"
-                          aria-label={`Show ${summaryOverflowPokemonCount} more Pokemon`}
-                        >
-                          <span className="flex h-full w-full items-center justify-center">+{summaryOverflowPokemonCount}</span>
-                        </button>
-                      ) : null}
-                      {isSummaryPokemonExpanded && selectedPokemon.length > 6 ? (
-                        <button
-                          type="button"
-                          onClick={() => setIsSummaryPokemonExpanded(false)}
-                          className="pk-btn pk-btn-sm pk-btn-ghost aspect-square max-h-11 max-w-11 min-w-0 flex-1 border border-dashed border-[#b3c9d2] bg-white p-1 text-xs font-semibold text-[#6c889b]"
-                          aria-label="Collapse Pokemon list"
-                        >
-                          <span className="flex h-full w-full items-center justify-center">−</span>
-                        </button>
-                      ) : null}
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                  <div className="rounded-[8px] border border-[#d8e7ee] bg-[#eef5f8] px-3 py-2">
-                        <p className="text-xs uppercase text-[#8e9aa3]">Shared Favorites</p>
-                        <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{sharedFavoriteTotal}</p>
-                      </div>
-                  <div className="rounded-[8px] border border-[#d8e7ee] bg-[#eef5f8] px-3 py-2">
-                        <p className="text-xs uppercase text-[#8e9aa3]">Shared Habitats</p>
-                        <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{sharedHabitatTotal}</p>
-                      </div>
-                    </div>
-                    {selectedPokemon.length === 1 ? (
-                      <p className="text-xs italic text-[#8e9aa3]">Add 1 more Pokemon to compare overlaps.</p>
-                    ) : null}
-                  </section>
-
-                  <div className="h-px w-full bg-[#e1e1e1]" />
-
-                  {/* Items */}
-                  <section className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <p className="text-sm font-extrabold tracking-[-0.02em] text-[#485864]">Items ({totalItemQuantity})</p>
-                    </div>
-                    {isItemsSummaryEmpty ? (
-                      <p className="text-xs italic text-[#8e9aa3]">No items added yet.</p>
-                    ) : (
-                      <>
-                        <div className="grid grid-cols-2 gap-2">
-                        <div className="rounded-[8px] border border-[#d8e7ee] bg-[#eef5f8] px-3 py-2">
-                            <p className="text-xs uppercase text-[#8e9aa3]">Craftable</p>
-                            <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{recipeStatusBreakdown.craftableWithRecipe}</p>
-                          </div>
-                          <div className="rounded-[8px] border border-[#d8e7ee] bg-[#eef5f8] px-3 py-2">
-                            <p className="text-xs uppercase text-[#8e9aa3]">No Recipe</p>
-                            <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">
-                              {recipeStatusBreakdown.nonCraftable + recipeStatusBreakdown.unknownRecipe}
-                            </p>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <p className="text-xs uppercase text-[#8e9aa3]">Top favorites</p>
-                          <div className="flex flex-wrap gap-1">
-                            {topFavoriteCategoryChips.slice(0, 4).map(([categoryId, count]) => (
-                              <span key={`summary-fav-${categoryId}`} className="pk-chip pk-chip-standard pk-chip-none">
-                                {toCategoryLabel(categoryId)} ({count})
-                              </span>
-                            ))}
-                            {topFavoriteCategoryChips.length > 4 ? (
-                              <span className="pk-chip pk-chip-standard pk-chip-none">
-                                +{topFavoriteCategoryChips.length - 4} more
-                              </span>
-                            ) : null}
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </section>
-
-                  <div className="h-px w-full bg-[#e1e1e1]" />
-
-                  {/* Materials */}
-                  <section className="space-y-2">
-                    <p className="text-sm font-extrabold tracking-[-0.02em] text-[#485864]">Materials</p>
-                    {isMaterialsSummaryEmpty ? (
-                      <p className="text-xs italic text-[#8e9aa3]">No materials yet.</p>
-                    ) : (
-                      <>
-                        <div className="grid grid-cols-2 gap-2">
-                          <div className="rounded-[8px] bg-[#fafafa] px-3 py-2">
-                            <p className="text-xs uppercase text-[#8e9aa3]">Unique</p>
-                            <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{buildProgressSummary.totalMaterials}</p>
-                          </div>
-                          <div className="rounded-[8px] bg-[#fafafa] px-3 py-2">
-                            <p className="text-xs uppercase text-[#8e9aa3]">Total</p>
-                            <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">{buildProgressSummary.totalMaterialPiecesNeeded}</p>
-                          </div>
-                        </div>
-                        <div className="space-y-2">
-                          <p className="text-xs uppercase text-[#8e9aa3]">Top materials</p>
-                          <div className="flex flex-wrap gap-1">
-                            {materialProgressEntries.slice(0, 4).map((entry) => (
-                              <span key={`summary-material-${entry.materialId}`} className="pk-chip pk-chip-standard pk-chip-none">
-                                {entry.totalNeeded}x {entry.materialName}
-                              </span>
-                            ))}
-                            {materialProgressEntries.length > 4 ? (
-                              <span className="pk-chip pk-chip-standard pk-chip-none">
-                                +{materialProgressEntries.length - 4} more
-                              </span>
-                            ) : null}
-                          </div>
-                        </div>
-                      </>
-                    )}
-                  </section>
-                </>
-              )}
-            </div>
-
-            {/* Footer actions */}
-            <div className="flex items-center justify-center gap-2 px-4 py-4">
-              <button
-                type="button"
-                onClick={saveCurrentHomeAsNew}
-                className="pk-btn pk-btn-secondary pk-btn-sm"
-              >
-                New build
-              </button>
-              <button
-                type="button"
-                onClick={() => dispatch({ type: "ui/open-expanded-home" })}
-                className="pk-btn pk-btn-primary pk-btn-sm"
-              >
-                View full details
-              </button>
-            </div>
-          </div>
-        </aside>
-
         {/* Section: Browse workspace */}
         <section className="space-y-6">
           {/* Section: Controls */}
@@ -2285,7 +2089,7 @@ export const HomeBuilderPage = () => {
                           className={`pk-chip pk-chip-standard transition-colors ${
                             activePokemonHabitatFilters.includes(habitatId)
                               ? "pk-chip-primary"
-                              : "pk-chip-default"
+                              : "pk-chip-surface"
                           }`}
                         >
                           {getPreferredHabitatLabel(habitatId)} ({count})
@@ -2328,7 +2132,7 @@ export const HomeBuilderPage = () => {
                           className={`pk-chip pk-chip-standard transition-colors ${
                             activePokemonFavoriteFilters.includes(categoryId)
                               ? "pk-chip-primary"
-                              : "pk-chip-default"
+                              : "pk-chip-surface"
                           }`}
                         >
                           {toCategoryLabel(categoryId)} ({count})
@@ -2356,7 +2160,7 @@ export const HomeBuilderPage = () => {
                               className={`pk-chip pk-chip-standard transition-colors ${
                                 activePokemonFavoriteFilters.includes(categoryId)
                                   ? "pk-chip-primary"
-                                  : "pk-chip-default"
+                                  : "pk-chip-surface"
                               }`}
                             >
                               {toCategoryLabel(categoryId)} ({count})
