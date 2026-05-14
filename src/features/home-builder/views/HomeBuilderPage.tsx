@@ -3014,7 +3014,7 @@ export const HomeBuilderPage = () => {
                                   {getPreferredHabitatLabel(entry.pokemon.idealHabitatId)}
                                   {selectedPokemon.length > 0 ? ` · ${overlapMetadataText}` : ""}
                                 </p>
-                                {showFavoritesByTab.pokemon && (pokemonPrimaryPillCount + pokemonSecondaryPillCount > 0) ? (
+                                {pokemonHasVisibleFavoritePills ? (
                                   <div className="mt-2 flex flex-wrap gap-1">
                                   {(section.id === "none" ? visibleFavoriteCategoryIds : primaryMatchCategoryIds).map((categoryId) => {
                                     const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
