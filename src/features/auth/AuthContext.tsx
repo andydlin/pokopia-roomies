@@ -76,6 +76,12 @@ export const AuthProvider = ({
   const closeAuthModal = useCallback(() => setAuthModalOpen(false), []);
 
   useEffect(() => {
+    // Safety net: if auth hasn't resolved within 4s (e.g. token refresh hangs on
+    // a slow mobile connection), fall back to guest so the app never stays blank.
+    const fallbackTimer = window.setTimeout(() => {
+      setAuthState((prev) => (prev.status === "loading" ? { status: "guest" } : prev));
+    }, 4000);
+
     // Hydrate on mount.
     supabase.auth.getSession().then(async ({ data: { session } }) => {
       if (!session) {
@@ -135,7 +141,10 @@ export const AuthProvider = ({
       }
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      subscription.unsubscribe();
+    };
   // openAuthModal is stable (useCallback with no deps); onNewAccount from parent.
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
