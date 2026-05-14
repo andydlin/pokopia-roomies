@@ -2514,14 +2514,14 @@ export const HomeBuilderPage = () => {
             </aside>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pr-4" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pr-4 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
             {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
                 {buildItemEntries.length > 0 && (
                   <div
-                    className="sticky z-20 flex items-center gap-2 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2"
+                    className="sticky z-20 flex items-center gap-2 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 lg:!top-0"
                     style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
                   >
                     <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
