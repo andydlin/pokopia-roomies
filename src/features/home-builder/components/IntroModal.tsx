@@ -49,20 +49,13 @@ export const IntroModal = () => {
             Save multiple homes and share them with friends
           </li>
         </ul>
-        <div className="mt-6 flex flex-col gap-2">
+        <div className="mt-6">
           <button
             type="button"
             onClick={dismiss}
             className="pk-btn pk-btn-primary pk-btn-md w-full"
           >
             Start building
-          </button>
-          <button
-            type="button"
-            onClick={dismiss}
-            className="w-full text-center text-sm text-[var(--pk-text-desc)] hover:underline"
-          >
-            Maybe later
           </button>
         </div>
       </section>
