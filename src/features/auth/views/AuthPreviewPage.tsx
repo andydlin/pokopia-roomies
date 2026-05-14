@@ -191,9 +191,8 @@ const IntroModalPreview = () => (
       <li className="flex gap-2"><span className="mt-0.5 text-[var(--pk-brand)]">✓</span>Track every material you need to craft your full build</li>
       <li className="flex gap-2"><span className="mt-0.5 text-[var(--pk-brand)]">✓</span>Save multiple homes and share them with friends</li>
     </ul>
-    <div className="mt-6 flex flex-col gap-2">
+    <div className="mt-6">
       <button className="pk-btn pk-btn-primary pk-btn-md w-full">Start building</button>
-      <button className="w-full text-center text-sm text-[var(--pk-text-desc)] hover:underline">Maybe later</button>
     </div>
   </Panel>
 );
