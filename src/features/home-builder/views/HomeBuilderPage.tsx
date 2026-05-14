@@ -1646,7 +1646,21 @@ export const HomeBuilderPage = () => {
         }));
     }
     if (selectedPokemon.length === 0) {
-      return [{ id: "all", title: "Comfort Items", items: sortedPlannerItemEntries }];
+      const groupedByCategory = new Map<string, typeof sortedPlannerItemEntries>();
+      sortedPlannerItemEntries.forEach((entry) => {
+        const categoryLabel = entry.item.generalCategoryLabel || "Other";
+        if (!groupedByCategory.has(categoryLabel)) {
+          groupedByCategory.set(categoryLabel, []);
+        }
+        groupedByCategory.get(categoryLabel)!.push(entry);
+      });
+      return [...groupedByCategory.entries()]
+        .sort((left, right) => left[0].localeCompare(right[0]))
+        .map(([categoryLabel, items]) => ({
+          id: `comfort_${categoryLabel.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`,
+          title: categoryLabel,
+          items: [...items].sort((left, right) => left.item.name.localeCompare(right.item.name)),
+        }));
     }
     if (activePhase === "comfort_items" && selectedPokemon.length > 1) {
       const best = sortedPlannerItemEntries.filter(
