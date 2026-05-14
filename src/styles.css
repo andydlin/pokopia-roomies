@@ -740,12 +740,12 @@ button.pk-chip.pk-chip-none:active:not(:disabled),
   background-color: rgba(88, 126, 145, 0.55);
 }
 
-/* On large screens, only the results column scrolls; navbar + tab bar + left sidebar stay fixed. */
+/* On large screens, only the results column scrolls; navbar + title + tab bar + left sidebar stay fixed. */
 @media (min-width: 1024px) {
   .builder-results-col {
     position: sticky;
-    top: calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px));
-    height: calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-header-h, 0px));
+    top: calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px));
+    height: calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-title-h, 0px) - var(--builder-header-h, 0px));
     overflow-y: auto;
     overflow-x: hidden;
   }
