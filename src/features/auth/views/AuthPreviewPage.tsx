@@ -16,6 +16,12 @@ const EyeOffIcon = () => (
     <line x1="1" y1="1" x2="23" y2="23" />
   </svg>
 );
+const XIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+);
 
 const PasswordInput = ({ placeholder }: { placeholder: string }) => {
   const [show, setShow] = useState(false);
@@ -60,7 +66,15 @@ const Panel = ({ label, children }: { label: string; children: React.ReactNode }
 const ModalHeader = ({ title, showClose = true }: { title: string; showClose?: boolean }) => (
   <div className="flex items-center justify-between gap-3">
     <h2 className="text-lg font-bold tracking-tight text-[var(--pk-text-primary)]">{title}</h2>
-    {showClose && <button type="button" className="pk-btn pk-btn-secondary pk-btn-sm">Close</button>}
+    {showClose && (
+      <button
+        type="button"
+        className="rounded-full p-1 text-[var(--pk-text-desc)] hover:bg-[var(--pk-border)] hover:text-[var(--pk-text-primary)]"
+        aria-label="Close"
+      >
+        <XIcon />
+      </button>
+    )}
   </div>
 );
 
@@ -93,9 +107,9 @@ const SignUpPreview = () => (
         <li>✓ Share builds with a permanent link</li>
       </ul>
       <div className="mt-4 space-y-3">
-        <input type="text" placeholder="Nickname (shown on shared builds)" className={inputClass} />
         <input type="email" placeholder="Email" className={inputClass} />
         <PasswordInput placeholder="Password (min. 6 characters)" />
+        <PasswordInput placeholder="Confirm password" />
         <button className="pk-btn pk-btn-primary pk-btn-md w-full">Create account</button>
         <OAuthDivider />
         <button className="pk-btn pk-btn-secondary pk-btn-md w-full">Continue with Google</button>
@@ -117,22 +131,22 @@ const CheckEmailPreview = () => (
       <p className="text-sm text-[var(--pk-text-desc)]">
         We sent a confirmation link to{" "}
         <strong className="text-[var(--pk-text-primary)]">you@example.com</strong>.
-        Click it to activate your account.
+        Click it to activate your account — you'll choose your username right after.
       </p>
       <button className="pk-btn pk-btn-primary pk-btn-md w-full">Got it</button>
     </div>
   </Panel>
 );
 
-const NicknameSetupPreview = () => (
-  <Panel label="Nickname Setup (post-Google OAuth)">
-    <ModalHeader title="Choose a nickname" showClose={false} />
+const UsernameSetupPreview = () => (
+  <Panel label="Username Setup (after email confirmation or Google OAuth)">
+    <ModalHeader title="Choose a username" showClose={false} />
     <div className="mt-5 space-y-3">
       <p className="text-sm text-[var(--pk-text-desc)]">
-        Choose a nickname. It will appear as "created by [nickname]" on builds you share.
+        Choose a username. It will appear as "created by [username]" on builds you share.
       </p>
-      <input type="text" placeholder="Nickname" className={inputClass} />
-      <button className="pk-btn pk-btn-primary pk-btn-md w-full">Save nickname</button>
+      <input type="text" placeholder="Username" className={inputClass} />
+      <button className="pk-btn pk-btn-primary pk-btn-md w-full">Save username</button>
     </div>
   </Panel>
 );
@@ -214,7 +228,7 @@ export const AuthPreviewPage = () => (
       <SignInPreview />
       <SignUpPreview />
       <CheckEmailPreview />
-      <NicknameSetupPreview />
+      <UsernameSetupPreview />
       <UpsellPreview />
       <SignInErrorPreview />
       <CallbackLoadingPreview />

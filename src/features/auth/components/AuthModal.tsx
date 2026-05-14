@@ -4,7 +4,7 @@ import { useAuth } from "../AuthContext";
 
 type Flow = "sign_in" | "sign_up" | "nickname_setup";
 
-const NICKNAME_RE = /^[a-zA-Z0-9_-]{2,24}$/;
+const USERNAME_RE = /^[a-zA-Z0-9_-]{2,24}$/;
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 
@@ -19,6 +19,13 @@ const EyeOffIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24" />
     <line x1="1" y1="1" x2="23" y2="23" />
+  </svg>
+);
+
+const XIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18" />
+    <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
 
@@ -125,7 +132,7 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
   const { signUp, signInWithGoogle, closeAuthModal } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [nickname, setNickname] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [checkedEmail, setCheckedEmail] = useState(false);
@@ -133,13 +140,13 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
-    if (!NICKNAME_RE.test(nickname)) {
-      setError("Nickname must be 2–24 characters: letters, numbers, _ or -");
+    if (password !== confirmPassword) {
+      setError("Passwords do not match.");
       return;
     }
     setLoading(true);
     try {
-      await signUp(email, password, nickname);
+      await signUp(email, password);
       setCheckedEmail(true);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign up failed.");
@@ -156,7 +163,7 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
         <p className="text-sm text-[var(--pk-text-desc)]">
           We sent a confirmation link to{" "}
           <strong className="text-[var(--pk-text-primary)]">{email}</strong>.
-          Click it to activate your account.
+          Click it to activate your account — you'll choose your username right after.
         </p>
         <button type="button" onClick={closeAuthModal} className="pk-btn pk-btn-primary pk-btn-md w-full">
           Got it
@@ -174,14 +181,6 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
       </ul>
       <form onSubmit={handleSubmit} className="mt-4 space-y-3">
         <input
-          type="text"
-          required
-          placeholder="Nickname (shown on shared builds)"
-          value={nickname}
-          onChange={(e) => setNickname(e.target.value)}
-          className={inputClass}
-        />
-        <input
           type="email"
           required
           placeholder="Email"
@@ -190,6 +189,7 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
           className={inputClass}
         />
         <PasswordInput value={password} onChange={setPassword} placeholder="Password (min. 6 characters)" minLength={6} />
+        <PasswordInput value={confirmPassword} onChange={setConfirmPassword} placeholder="Confirm password" />
         {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
         <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
           {loading ? "Creating account…" : "Create account"}
@@ -209,17 +209,17 @@ const SignUpForm = ({ onSwitch }: { onSwitch: () => void }) => {
   );
 };
 
-const NicknameSetupForm = () => {
+const UsernameSetupForm = () => {
   const { closeAuthModal } = useAuth();
-  const [nickname, setNickname] = useState("");
+  const [username, setUsername] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError(null);
-    if (!NICKNAME_RE.test(nickname)) {
-      setError("Nickname must be 2–24 characters: letters, numbers, _ or -");
+    if (!USERNAME_RE.test(username)) {
+      setError("Username must be 2–24 characters: letters, numbers, _ or -");
       return;
     }
     setLoading(true);
@@ -228,12 +228,12 @@ const NicknameSetupForm = () => {
       if (!user) throw new Error("Not signed in.");
       const { error: upsertError } = await supabase
         .from("profiles")
-        .upsert({ id: user.id, nickname });
+        .upsert({ id: user.id, nickname: username });
       if (upsertError) throw new Error(upsertError.message);
       await supabase.auth.refreshSession();
       closeAuthModal();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to save nickname.");
+      setError(err instanceof Error ? err.message : "Failed to save username.");
     } finally {
       setLoading(false);
     }
@@ -242,19 +242,19 @@ const NicknameSetupForm = () => {
   return (
     <form onSubmit={handleSubmit} className="mt-5 space-y-3">
       <p className="text-sm text-[var(--pk-text-desc)]">
-        Choose a nickname. It will appear as "created by [nickname]" on builds you share.
+        Choose a username. It will appear as "created by [username]" on builds you share.
       </p>
       <input
         type="text"
         required
-        placeholder="Nickname"
-        value={nickname}
-        onChange={(e) => setNickname(e.target.value)}
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
         className={inputClass}
       />
       {error && <p className="text-sm text-[var(--pk-destructive-text)]">{error}</p>}
       <button type="submit" disabled={loading} className="pk-btn pk-btn-primary pk-btn-md w-full">
-        {loading ? "Saving…" : "Save nickname"}
+        {loading ? "Saving…" : "Save username"}
       </button>
     </form>
   );
@@ -268,18 +268,18 @@ export const AuthModal = () => {
 
   if (!authModalOpen) return null;
 
-  const isNicknameSetup = flow === "nickname_setup" || authModalIntent === "nickname_setup";
+  const isUsernameSetup = flow === "nickname_setup" || authModalIntent === "nickname_setup";
 
   const titles: Record<Flow, string> = {
     sign_in: "Sign in",
     sign_up: "Create account",
-    nickname_setup: "Choose a nickname",
+    nickname_setup: "Choose a username",
   };
 
   return (
     <div
       className="fixed inset-0 z-[60] flex items-end justify-center bg-black/40 p-3 md:items-center"
-      onClick={isNicknameSetup ? undefined : closeAuthModal}
+      onClick={isUsernameSetup ? undefined : closeAuthModal}
     >
       <section
         className="w-full max-w-sm rounded-3xl border border-white/70 bg-white p-6 shadow-2xl"
@@ -287,17 +287,22 @@ export const AuthModal = () => {
       >
         <div className="flex items-center justify-between gap-3">
           <h2 className="text-lg font-bold tracking-tight text-[var(--pk-text-primary)]">
-            {titles[isNicknameSetup ? "nickname_setup" : flow]}
+            {titles[isUsernameSetup ? "nickname_setup" : flow]}
           </h2>
-          {!isNicknameSetup && (
-            <button type="button" onClick={closeAuthModal} className="pk-btn pk-btn-secondary pk-btn-sm">
-              Close
+          {!isUsernameSetup && (
+            <button
+              type="button"
+              onClick={closeAuthModal}
+              className="rounded-full p-1 text-[var(--pk-text-desc)] hover:bg-[var(--pk-border)] hover:text-[var(--pk-text-primary)]"
+              aria-label="Close"
+            >
+              <XIcon />
             </button>
           )}
         </div>
 
-        {isNicknameSetup ? (
-          <NicknameSetupForm />
+        {isUsernameSetup ? (
+          <UsernameSetupForm />
         ) : flow === "sign_in" ? (
           <SignInForm onSwitch={() => setFlow("sign_up")} />
         ) : (
