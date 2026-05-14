@@ -139,6 +139,23 @@ a {
   color: inherit;
 }
 
+/* Eliminate the 300ms tap delay on mobile by opting interactive elements
+   out of double-tap-to-zoom detection. Does not affect scroll gestures. */
+:where(
+  a[href],
+  button,
+  summary,
+  label[for],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  [role="link"],
+  [data-clickable="true"]
+) {
+  touch-action: manipulation;
+}
+
 @media (hover: hover) and (pointer: fine) {
   :where(
     a[href],

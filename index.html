@@ -17,9 +17,45 @@
       name="description"
       content="Build compatible Pokopia roommate groups, save them locally, and share them across devices."
     />
+    <style>
+      /* Pre-render skeleton visible before JS loads. React replaces #root on mount. */
+      body { margin: 0; background: #f2f9ff; }
+      #pk-pre-skeleton { font-size: 0; }
+      #pk-pre-skeleton header {
+        position: sticky; top: 0; z-index: 50;
+        height: 52px; background: #fff;
+        border-bottom: 1px solid #dbeafe;
+        box-shadow: 0 1px 3px rgba(0,0,0,.06);
+        display: flex; align-items: center;
+        padding: 0 20px; gap: 16px; box-sizing: border-box;
+      }
+      .pk-sk {
+        display: inline-block;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #dbeafe 0%, #eff6ff 40%, #dbeafe 80%);
+        background-size: 600px 100%;
+        animation: pk-sk-shimmer 1.4s ease-in-out infinite;
+      }
+      @keyframes pk-sk-shimmer {
+        0%   { background-position: -300px 0; }
+        100% { background-position: 300px 0; }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Skeleton shown before React JS loads — replaced automatically on mount -->
+      <div id="pk-pre-skeleton">
+        <header>
+          <div class="pk-sk" style="width:110px;height:22px"></div>
+          <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+            <div class="pk-sk" style="width:80px;height:14px"></div>
+            <div class="pk-sk" style="width:80px;height:14px"></div>
+            <div class="pk-sk" style="width:80px;height:14px"></div>
+          </div>
+        </header>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
