@@ -31,6 +31,14 @@ const navLinkClass = (isActive: boolean) =>
       : "border-transparent bg-transparent font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)]",
   ].join(" ");
 
+const mobileNavLinkClass = (isActive: boolean) =>
+  [
+    "flex h-11 w-full items-center rounded-[7px] px-3 text-[14px] tracking-[0.01em] transition-colors",
+    isActive
+      ? "font-semibold text-[var(--pk-text-primary)]"
+      : "font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)]",
+  ].join(" ");
+
 const LOCAL_SESSION_STORAGE_KEY = "pokopia.home-builder.session.v1";
 const APP_SHELL_SKELETON_MIN_MS = 300;
 
@@ -80,6 +88,7 @@ const AppShell = () => {
   const isHomesActive = location.pathname.startsWith("/homes");
   const isPokedexActive = location.pathname.startsWith("/pokedex");
   const isDesignSystemRoute = location.pathname.startsWith("/design-system") || location.pathname.startsWith("/auth-preview");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showAppShellSkeleton, setShowAppShellSkeleton] = useState(() => {
     if (typeof window === "undefined") return true;
     try {
@@ -88,6 +97,10 @@ const AppShell = () => {
       return true;
     }
   });
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (!showAppShellSkeleton) return;
@@ -138,18 +151,51 @@ const AppShell = () => {
             </Link>
 
             <nav className="flex items-center gap-1.5">
-              <Link to="/builder/pokemon" className={navLinkClass(isBuilderActive)}>
+              <Link to="/builder/pokemon" className={`hidden sm:inline-flex ${navLinkClass(isBuilderActive)}`}>
                 Home Builder
               </Link>
-              <Link to="/homes" className={navLinkClass(isHomesActive)}>
+              <Link to="/homes" className={`hidden sm:inline-flex ${navLinkClass(isHomesActive)}`}>
                 Saved Homes
               </Link>
-              <Link to="/pokedex/pokemon" className={navLinkClass(isPokedexActive)}>
+              <Link to="/pokedex/pokemon" className={`hidden sm:inline-flex ${navLinkClass(isPokedexActive)}`}>
                 Pokedex
               </Link>
               <AccountMenu inactiveLinkClass={navLinkClass(false)} />
+              <button
+                type="button"
+                className="sm:hidden flex h-8 w-8 items-center justify-center rounded-[7px] text-[var(--pk-text-desc)] hover:text-[var(--pk-brand-dark)] transition-colors"
+                onClick={() => setMobileMenuOpen((o) => !o)}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+              >
+                {mobileMenuOpen ? (
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                )}
+              </button>
             </nav>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="sm:hidden border-t border-[var(--pk-border)] bg-[var(--pk-card)] px-3 py-2">
+              <nav className="flex flex-col gap-0.5">
+                <Link to="/builder/pokemon" className={mobileNavLinkClass(isBuilderActive)}>
+                  Home Builder
+                </Link>
+                <Link to="/homes" className={mobileNavLinkClass(isHomesActive)}>
+                  Saved Homes
+                </Link>
+                <Link to="/pokedex/pokemon" className={mobileNavLinkClass(isPokedexActive)}>
+                  Pokedex
+                </Link>
+              </nav>
+            </div>
+          )}
         </header>
 
         <main

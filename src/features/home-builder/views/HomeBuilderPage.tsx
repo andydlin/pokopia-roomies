@@ -1841,19 +1841,27 @@ export const HomeBuilderPage = () => {
     lastAppliedComfortFilterKeyRef.current = "";
   }, [activeComfortFavoriteFilters, activePhase, itemPlannerSections]);
   useLayoutEffect(() => {
-    const updateActiveTabIndicator = () => {
-      const container = tabContainerRef.current;
-      const activeButton = tabButtonRefs.current[activePhase];
-      if (!container || !activeButton) return;
-      setActiveTabIndicator({
-        left: activeButton.offsetLeft,
-        width: activeButton.offsetWidth,
-      });
-    };
+    const container = tabContainerRef.current;
+    const activeButton = tabButtonRefs.current[activePhase];
+    if (!container || !activeButton) return;
 
-    updateActiveTabIndicator();
-    window.addEventListener("resize", updateActiveTabIndicator);
-    return () => window.removeEventListener("resize", updateActiveTabIndicator);
+    setActiveTabIndicator({
+      left: activeButton.offsetLeft,
+      width: activeButton.offsetWidth,
+    });
+
+    const scrollContainer = container.parentElement;
+    if (scrollContainer) {
+      const btnLeft = activeButton.offsetLeft;
+      const btnRight = btnLeft + activeButton.offsetWidth;
+      const visibleLeft = scrollContainer.scrollLeft;
+      const visibleRight = visibleLeft + scrollContainer.clientWidth;
+      if (btnLeft < visibleLeft) {
+        scrollContainer.scrollLeft = btnLeft;
+      } else if (btnRight > visibleRight) {
+        scrollContainer.scrollLeft = btnRight - scrollContainer.clientWidth;
+      }
+    }
   }, [activePhase]);
 
   useLayoutEffect(() => {
@@ -1939,8 +1947,8 @@ export const HomeBuilderPage = () => {
             </div>
           </div>
         </section>
-        <div ref={builderHeaderRef} className="sticky z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 pb-0 pt-0 sm:px-8 lg:px-10" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
-          <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1">
+        <div ref={builderHeaderRef} className="sticky z-40 w-full overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pb-0 pt-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
+          <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1 px-5 sm:px-8 lg:px-10">
             {phaseTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -1954,7 +1962,7 @@ export const HomeBuilderPage = () => {
                   borderRadius: "0",
                   fontFamily: "inherit",
                 }}
-                className={`relative inline-flex items-center justify-center rounded-tl-[6px] rounded-tr-[6px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
+                className={`relative inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-tl-[6px] rounded-tr-[6px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
                   activePhase === tab.id
                     ? "bg-white text-[var(--pk-brand)]"
                     : "bg-transparent text-[var(--pk-text-desc)] hover:text-[var(--pk-brand)]"
