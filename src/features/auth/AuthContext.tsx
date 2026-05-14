@@ -82,17 +82,25 @@ export const AuthProvider = ({
         setAuthState({ status: "guest" });
         return;
       }
-      const nickname = await fetchNickname(session.user.id);
-      if (!nickname) {
-        // OAuth user who hasn't set a nickname yet.
+      try {
+        const nickname = await fetchNickname(session.user.id);
+        if (!nickname) {
+          // OAuth user who hasn't set a nickname yet.
+          setAuthState({ status: "guest" });
+          openAuthModal("nickname_setup");
+          return;
+        }
+        setAuthState({
+          status: "authenticated",
+          user: { id: session.user.id, email: session.user.email ?? "", nickname },
+        });
+      } catch {
+        // Network error fetching profile — fall back to guest so the app renders.
         setAuthState({ status: "guest" });
-        openAuthModal("nickname_setup");
-        return;
       }
-      setAuthState({
-        status: "authenticated",
-        user: { id: session.user.id, email: session.user.email ?? "", nickname },
-      });
+    }).catch(() => {
+      // getSession itself failed — fall back to guest.
+      setAuthState({ status: "guest" });
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
@@ -100,7 +108,13 @@ export const AuthProvider = ({
         setAuthState({ status: "guest" });
         return;
       }
-      const nickname = await fetchNickname(session.user.id);
+      let nickname: string | null = null;
+      try {
+        nickname = await fetchNickname(session.user.id);
+      } catch {
+        setAuthState({ status: "guest" });
+        return;
+      }
       if (!nickname) {
         setAuthState({ status: "guest" });
         openAuthModal("nickname_setup");
