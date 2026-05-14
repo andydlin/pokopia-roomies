@@ -1913,7 +1913,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section ref={builderTitleRef} className="w-full bg-[var(--pk-brand-light)] px-5 pb-4 pt-3 sm:px-8 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
+        <section ref={builderTitleRef} className="w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-4 sm:px-8 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h1 className="text-xl font-bold tracking-[-0.03em] text-[var(--pk-text-primary)]">Build Planner</h1>
@@ -1939,8 +1939,8 @@ export const HomeBuilderPage = () => {
             </div>
           </div>
         </section>
-        <div ref={builderHeaderRef} className="sticky z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-3 sm:px-8 lg:px-10" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
-          <div ref={tabContainerRef} className="inline-flex items-center justify-start gap-1 rounded-[var(--pk-radius-md)] bg-[var(--pk-brand-light)] p-[3px]">
+        <div ref={builderHeaderRef} className="sticky z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 pb-0 pt-0 sm:px-8 lg:px-10" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
+          <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1">
             {phaseTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -1949,10 +1949,15 @@ export const HomeBuilderPage = () => {
                 ref={(node) => {
                   tabButtonRefs.current[tab.id] = node;
                 }}
-                className={`pk-btn pk-btn-sm relative inline-flex items-center justify-center rounded-[6px] px-4 py-2 text-sm leading-none transition-colors ${
+                style={{
+                  borderBottom: activePhase === tab.id ? "2px solid var(--pk-brand)" : "2px solid transparent",
+                  borderRadius: "0",
+                  fontFamily: "inherit",
+                }}
+                className={`relative inline-flex items-center justify-center rounded-tl-[6px] rounded-tr-[6px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
                   activePhase === tab.id
-                    ? "pk-btn-secondary border-[var(--pk-brand)] bg-[var(--pk-card)] font-semibold text-[var(--pk-text-primary)] shadow-[var(--pk-shadow-sm)]"
-                    : "pk-btn-ghost border-transparent bg-transparent font-normal text-[var(--pk-brand-dark)] hover:border-transparent hover:bg-transparent hover:text-[var(--pk-brand)]"
+                    ? "bg-white text-[var(--pk-brand)]"
+                    : "bg-transparent text-[var(--pk-text-desc)] hover:text-[var(--pk-brand)]"
                 }`}
               >
                 {tab.label}
@@ -2399,26 +2404,24 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
                     placeholder="Search items"
                   />
-                  {selectedPokemon.length > 0 && (
-                    <>
-                      <FavoritesToggle
-                        checked={showFavoritesByTab.items}
-                        label="Show details"
-                        onToggle={() => setShowFavoritesByTab((value) => ({ ...value, items: !value.items }))}
-                      />
-                      <SortSegmentedControl
-                        activeValue={itemSortMode}
-                        onSuggested={() => {
-                          startResultsRefresh();
-                          window.setTimeout(() => setItemSortMode("suggested"), 0);
-                        }}
-                        onAlphabetical={() => {
-                          startResultsRefresh();
-                          window.setTimeout(() => setItemSortMode("az_category"), 0);
-                        }}
-                      />
-                    </>
-                  )}
+                  <FavoritesToggle
+                    checked={showFavoritesByTab.items}
+                    label="Show details"
+                    onToggle={() => setShowFavoritesByTab((value) => ({ ...value, items: !value.items }))}
+                    disabled={selectedPokemon.length === 0}
+                  />
+                  <SortSegmentedControl
+                    activeValue={itemSortMode}
+                    onSuggested={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setItemSortMode("suggested"), 0);
+                    }}
+                    onAlphabetical={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setItemSortMode("az_category"), 0);
+                    }}
+                    disabled={selectedPokemon.length === 0}
+                  />
                   {activePhase === "comfort_items" ? (
                     <ActiveFilterChips
                       chips={[
@@ -2618,7 +2621,13 @@ export const HomeBuilderPage = () => {
                               isVisible={overflowIsVisible}
                             >
                               <ResultCardShell
-                                onClick={() => dispatch({ type: isAdded ? "home/remove-item" : "home/add-item", itemId: entry.item.id })}
+                                onClick={() => {
+                                  if (!isAdded && state.browse.items.searchQuery) {
+                                    const remaining = sortedPlannerItemEntries.filter((e) => e.item.id !== entry.item.id && !currentHomeAddedItemIdSet.has(e.item.id));
+                                    if (remaining.length === 0) dispatch({ type: "browse/items/set-search", query: "" });
+                                  }
+                                  dispatch({ type: isAdded ? "home/remove-item" : "home/add-item", itemId: entry.item.id });
+                                }}
                                 onKeyDown={(event) => activateWithKeyboard(event, () => dispatch({ type: isAdded ? "home/remove-item" : "home/add-item", itemId: entry.item.id }))}
                                 className={`relative rounded-[var(--pk-radius-md)] border border-[var(--pk-border)] bg-[var(--pk-card)] p-[10px] shadow-[var(--pk-shadow-sm)] transition-[border-color,box-shadow,opacity] duration-300 ease-out hover:border-[var(--pk-brand-border)] hover:shadow-[var(--pk-shadow-md)] ${isAdded ? "opacity-50 hover:opacity-70" : ""}`}
                               >
@@ -2780,26 +2789,24 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/pokemon/set-search", query })}
                     placeholder="Search Pokemon"
                   />
-                  {selectedPokemon.length > 0 && (
-                    <>
-                      <FavoritesToggle
-                        checked={showFavoritesByTab.pokemon}
-                        label="Show details"
-                        onToggle={() => setShowFavoritesByTab((value) => ({ ...value, pokemon: !value.pokemon }))}
-                      />
-                      <SortSegmentedControl
-                        activeValue={pokemonSortMode}
-                        onSuggested={() => {
-                          startResultsRefresh();
-                          window.setTimeout(() => setPokemonSortMode("suggested"), 0);
-                        }}
-                        onAlphabetical={() => {
-                          startResultsRefresh();
-                          window.setTimeout(() => setPokemonSortMode("az"), 0);
-                        }}
-                      />
-                    </>
-                  )}
+                  <FavoritesToggle
+                    checked={showFavoritesByTab.pokemon}
+                    label="Show details"
+                    onToggle={() => setShowFavoritesByTab((value) => ({ ...value, pokemon: !value.pokemon }))}
+                    disabled={selectedPokemon.length === 0}
+                  />
+                  <SortSegmentedControl
+                    activeValue={pokemonSortMode}
+                    onSuggested={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setPokemonSortMode("suggested"), 0);
+                    }}
+                    onAlphabetical={() => {
+                      startResultsRefresh();
+                      window.setTimeout(() => setPokemonSortMode("az"), 0);
+                    }}
+                    disabled={selectedPokemon.length === 0}
+                  />
                   <ActiveFilterChips
                     chips={[
                       ...activePokemonFavoriteFilters.map((categoryId) => ({
@@ -2966,7 +2973,7 @@ export const HomeBuilderPage = () => {
                     const pokemonSecondaryPillCount =
                       selectedPokemon.length > 1 && section.id !== "none" ? individualMatchCategoryIds.length : 0;
                     const pokemonHasVisibleFavoritePills =
-                      showFavoritesByTab.pokemon && pokemonPrimaryPillCount + pokemonSecondaryPillCount > 0;
+                      selectedPokemon.length > 0 && showFavoritesByTab.pokemon && pokemonPrimaryPillCount + pokemonSecondaryPillCount > 0;
                     if (shouldHideOverflowEntry) return null;
 
                     const shouldFadeOverflowEntry = isOverflowEntry;
@@ -2982,6 +2989,10 @@ export const HomeBuilderPage = () => {
                             onClick={(event) => {
                               event.preventDefault();
                               event.stopPropagation();
+                              if (state.browse.pokemon.searchQuery) {
+                                const remaining = favoriteFilteredRankedPokemonEntries.filter((e) => e.pokemon.id !== entry.pokemon.id);
+                                if (remaining.length === 0) dispatch({ type: "browse/pokemon/set-search", query: "" });
+                              }
                               dispatch({ type: "home/add-pokemon", pokemonId: entry.pokemon.id });
                             }}
                             onKeyDown={(event) => activateWithKeyboard(event, () => dispatch({ type: "home/add-pokemon", pokemonId: entry.pokemon.id }))}
