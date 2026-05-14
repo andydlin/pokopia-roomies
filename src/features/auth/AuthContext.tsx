@@ -24,7 +24,7 @@ type AuthContextValue = {
   closeAuthModal: () => void;
   signInWithEmail: (email: string, password: string) => Promise<void>;
   signInWithGoogle: () => Promise<void>;
-  signUp: (email: string, password: string, nickname: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 };
 
@@ -163,14 +163,11 @@ export const AuthProvider = ({
     if (error) throw new Error(error.message);
   }, []);
 
-  const signUp = useCallback(async (email: string, password: string, nickname: string) => {
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: { data: { nickname } },
-    });
+  const signUp = useCallback(async (email: string, password: string) => {
+    const { error } = await supabase.auth.signUp({ email, password });
     if (error) throw new Error(error.message);
     // Modal stays open — the form transitions to the "check your email" state.
+    // Username is collected after the user confirms their email (nickname_setup flow).
   }, []);
 
   const signOut = useCallback(async () => {
