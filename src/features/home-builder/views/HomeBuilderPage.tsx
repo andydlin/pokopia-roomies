@@ -683,6 +683,7 @@ export const HomeBuilderPage = () => {
   const refreshSkeletonTimerRef = useRef<number | null>(null);
   const lastResultsRefreshKeyRef = useRef<string | null>(null);
   const builderHeaderRef = useRef<HTMLDivElement | null>(null);
+  const builderTitleRef = useRef<HTMLElement | null>(null);
   const resultsPaneRef = useRef<HTMLDivElement | null>(null);
   const completeBuildSummaryRef = useRef<HTMLElement | null>(null);
   const completeBuildItemsRef = useRef<HTMLElement | null>(null);
@@ -1867,6 +1868,26 @@ export const HomeBuilderPage = () => {
     return () => ro.disconnect();
   }, []);
 
+  useLayoutEffect(() => {
+    const title = builderTitleRef.current;
+    if (!title) return;
+    const update = () => {
+      const isLg = window.innerWidth >= 1024;
+      document.documentElement.style.setProperty(
+        "--builder-title-h",
+        isLg ? `${title.getBoundingClientRect().height}px` : "0px",
+      );
+    };
+    update();
+    window.addEventListener("resize", update);
+    const ro = new ResizeObserver(update);
+    ro.observe(title);
+    return () => {
+      window.removeEventListener("resize", update);
+      ro.disconnect();
+    };
+  }, []);
+
   useEffect(() => {
     const detailItemId = state.browse.items.detailItemId;
     if (!detailItemId) {
@@ -1892,7 +1913,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section className="w-full bg-[var(--pk-brand-light)] px-5 pb-4 pt-3 sm:px-8 lg:px-10">
+        <section ref={builderTitleRef} className="w-full bg-[var(--pk-brand-light)] px-5 pb-4 pt-3 sm:px-8 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h1 className="text-xl font-bold tracking-[-0.03em] text-[var(--pk-text-primary)]">Build Planner</h1>
@@ -1918,7 +1939,7 @@ export const HomeBuilderPage = () => {
             </div>
           </div>
         </section>
-        <div ref={builderHeaderRef} className="sticky top-0 sm:top-[52px] z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-3 sm:px-8 lg:px-10">
+        <div ref={builderHeaderRef} className="sticky z-40 w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-3 sm:px-8 lg:px-10" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
           <div ref={tabContainerRef} className="inline-flex items-center justify-start gap-1 rounded-[var(--pk-radius-md)] bg-[var(--pk-brand-light)] p-[3px]">
             {phaseTabs.map((tab) => (
               <button
@@ -2174,7 +2195,7 @@ export const HomeBuilderPage = () => {
             {/* Section: Context sidebar */}
             <aside
               className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:sticky lg:block lg:overflow-x-hidden lg:overflow-y-auto"
-              style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))", height: "calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-header-h, 0px))" }}
+              style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px))", height: "calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-title-h, 0px) - var(--builder-header-h, 0px))" }}
             >
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
