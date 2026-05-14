@@ -180,7 +180,8 @@ export type HomeBuilderAction =
   | { type: "session/import-error"; message: string }
   | { type: "session/apply-import"; currentHome: CurrentHomeState | null; savedHomes: SavedHome[] }
   | { type: "session/cloud-sync-error"; message: string }
-  | { type: "session/cloud-sync-clear-error" };
+  | { type: "session/cloud-sync-clear-error" }
+  | { type: "saved/refresh-from-cloud"; savedHomes: SavedHome[] };
 
 export const homeBuilderReducer = (
   state: HomeBuilderFeatureState,
@@ -757,6 +758,11 @@ export const homeBuilderReducer = (
       return {
         ...state,
         currentHome: normalizeCurrentHomeState(action.currentHome ?? makeEmptyCurrentHome()),
+        savedHomes: makeSavedHomesState(normalizeSavedHomes(action.savedHomes)),
+      };
+    case "saved/refresh-from-cloud":
+      return {
+        ...state,
         savedHomes: makeSavedHomesState(normalizeSavedHomes(action.savedHomes)),
       };
     case "session/cloud-sync-error":
