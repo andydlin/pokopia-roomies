@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Link, Navigate, Outlet, Route, Routes, useLocation } from "react-router-dom";
+import { HomeBuilderLoader } from "../features/home-builder/state/HomeBuilderLoader";
 import { HomeBuilderPage } from "../features/home-builder/views/HomeBuilderPage";
 import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
 import { PublicBuildPage } from "../features/public-builds/views/PublicBuildPage";
@@ -13,6 +14,14 @@ import { AuthModal } from "../features/auth/components/AuthModal";
 import { AccountMenu } from "../features/auth/components/AccountMenu";
 import { IntroModal } from "../features/home-builder/components/IntroModal";
 import { useAuth } from "../features/auth/AuthContext";
+
+// Layout wrapper: only routes that need builder state wait for HomeBuilderLoader.
+// Non-builder pages (auth-preview, design-system, pokedex, auth/callback) render immediately.
+const HomeBuilderLayout = () => (
+  <HomeBuilderLoader>
+    <Outlet />
+  </HomeBuilderLoader>
+);
 
 const navLinkClass = (isActive: boolean) =>
   [
@@ -28,18 +37,24 @@ const APP_SHELL_SKELETON_MIN_MS = 300;
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Navigate to="/builder" replace />} />
-    <Route path="/builder">
-      <Route index element={<Navigate to="/builder/pokemon" replace />} />
-      <Route path="pokemon" element={<HomeBuilderPage />} />
-      <Route path="items" element={<Navigate to="/builder/items/comfort" replace />} />
-      <Route path="items/comfort" element={<HomeBuilderPage />} />
-      <Route path="items/other" element={<HomeBuilderPage />} />
-      <Route path="favorites" element={<HomeBuilderPage />} />
-      <Route path="habitats" element={<Navigate to="/builder/favorites" replace />} />
+
+    {/* Routes that need HomeBuilder state — wait for auth + data load */}
+    <Route element={<HomeBuilderLayout />}>
+      <Route path="/builder">
+        <Route index element={<Navigate to="/builder/pokemon" replace />} />
+        <Route path="pokemon" element={<HomeBuilderPage />} />
+        <Route path="items" element={<Navigate to="/builder/items/comfort" replace />} />
+        <Route path="items/comfort" element={<HomeBuilderPage />} />
+        <Route path="items/other" element={<HomeBuilderPage />} />
+        <Route path="favorites" element={<HomeBuilderPage />} />
+        <Route path="habitats" element={<Navigate to="/builder/favorites" replace />} />
+      </Route>
+      <Route path="/homes/view" element={<BuildViewPage />} />
+      <Route path="/homes" element={<SavedHomesPage />} />
+      <Route path="/builds/:buildId" element={<PublicBuildPage />} />
     </Route>
-    <Route path="/homes/view" element={<BuildViewPage />} />
-    <Route path="/homes" element={<SavedHomesPage />} />
-    <Route path="/builds/:buildId" element={<PublicBuildPage />} />
+
+    {/* Routes that render immediately — no HomeBuilder context needed */}
     <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/design-system" element={<DesignSystemPage />} />
     <Route path="/auth-preview" element={<AuthPreviewPage />} />
