@@ -50,6 +50,7 @@ type HomeBuilderContextValue = {
   state: HomeBuilderFeatureState;
   localSaveStatus: "saving" | "saved";
   lastLocalSaveAt: number | null;
+  isCloudSyncing: boolean;
   dispatch: (action: HomeBuilderAction) => void;
   setBrowseStateFromRoute: (browse: BuilderBrowseState) => void;
   saveCurrentHome: () => void;
@@ -89,6 +90,28 @@ export const HomeBuilderProvider = ({
     "saved",
   );
   const [lastLocalSaveAt, setLastLocalSaveAt] = useReducer((_prev: number | null, next: number | null) => next, null);
+  const [isCloudSyncing, setIsCloudSyncing] = useReducer((_: boolean, next: boolean) => next, false);
+
+  // On mount (and on sign-in), fetch the latest savedHomes from Supabase in the background.
+  // The provider already has localStorage data so the UI is responsive immediately.
+  // This effect only updates savedHomes — it never touches currentHome.
+  useEffect(() => {
+    if (authState.status !== "authenticated") return;
+    const userId = authState.user.id;
+    setIsCloudSyncing(true);
+    supabaseBuildsAdapter
+      .load(userId)
+      .then((cloudPayload) => {
+        dispatch({ type: "saved/refresh-from-cloud", savedHomes: cloudPayload.savedHomes });
+      })
+      .catch(() => {
+        // Local data is fine — just couldn't reach Supabase.
+      })
+      .finally(() => {
+        setIsCloudSyncing(false);
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authState.status, authState.status === "authenticated" ? (authState as { status: "authenticated"; user: { id: string } }).user.id : null]);
 
   // 250ms localStorage debounce — always runs as crash-recovery draft.
   useEffect(() => {
@@ -270,6 +293,7 @@ export const HomeBuilderProvider = ({
       state,
       localSaveStatus,
       lastLocalSaveAt,
+      isCloudSyncing,
       dispatch,
       setBrowseStateFromRoute,
       saveCurrentHome,
@@ -286,6 +310,7 @@ export const HomeBuilderProvider = ({
       state,
       localSaveStatus,
       lastLocalSaveAt,
+      isCloudSyncing,
       setBrowseStateFromRoute,
       saveCurrentHome,
       saveCurrentHomeAsNew,

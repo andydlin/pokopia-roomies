@@ -22,7 +22,7 @@ const toComparisonHome = (savedHome: SavedHome): CurrentHomeState => ({
 });
 
 export const SavedHomesPage = () => {
-  const { state, entities, loadSavedHome, deleteSavedHome, duplicateSavedHome, renameSavedHome } = useHomeBuilder();
+  const { state, entities, isCloudSyncing, loadSavedHome, deleteSavedHome, duplicateSavedHome, renameSavedHome } = useHomeBuilder();
   const { authState } = useAuth();
   const navigate = useNavigate();
   const savedHomes = selectSavedHomes(state.savedHomes);
@@ -87,7 +87,17 @@ export const SavedHomesPage = () => {
       )}
       {/* Section: Header */}
       <section>
-        <p className="type-overline text-moss/60">Saved Homes</p>
+        <div className="flex items-center gap-2">
+          <p className="type-overline text-moss/60">Saved Homes</p>
+          {isCloudSyncing && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--pk-brand-light)] px-2 py-0.5 text-[11px] font-medium text-[var(--pk-brand)]">
+              <svg className="animate-spin" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+              </svg>
+              Syncing
+            </span>
+          )}
+        </div>
         <h2 className="type-h2 mt-1 text-ink">Manage your homes</h2>
         <p className="type-body mt-2 text-ink/68">
           Open, duplicate, rename, compare, and track build-planning progress without leaving the workflow.
