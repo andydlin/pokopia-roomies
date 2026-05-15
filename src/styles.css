@@ -716,7 +716,7 @@ button.pk-chip.pk-chip-none:active:not(:disabled),
   overflow: hidden;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .builder-sidebar-panel {
     position: sticky;
     top: calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px));

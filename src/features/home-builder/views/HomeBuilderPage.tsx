@@ -1990,13 +1990,13 @@ export const HomeBuilderPage = () => {
             </div>
           ) : null}
 
-          <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+          <div className="grid md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
             {/* Section: Context sidebar — unified mobile drawer + desktop sidebar */}
-            <div className="app-scrollbar builder-sidebar-panel order-1 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] lg:border-b-0 lg:border-r">
+            <div className="app-scrollbar builder-sidebar-panel order-1 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] md:border-b-0 md:border-r">
               {/* Mobile toggle strip */}
               <button
                 type="button"
-                className="flex w-full items-center justify-between px-5 py-3 text-left lg:hidden"
+                className="flex w-full items-center justify-between px-5 py-3 text-left md:hidden"
                 onClick={() => setMobileContextOpen((o) => !o)}
               >
                 <div className="flex items-center gap-2">
@@ -2015,7 +2015,7 @@ export const HomeBuilderPage = () => {
               </button>
 
               {/* Sidebar content */}
-              <div className={`px-6 pb-12 pt-6 ${mobileContextOpen ? "block" : "hidden lg:block"}`}>
+              <div className={`px-6 pb-12 pt-6 ${mobileContextOpen ? "block" : "hidden md:block"}`}>
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
