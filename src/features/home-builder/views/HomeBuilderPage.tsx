@@ -1010,12 +1010,17 @@ export const HomeBuilderPage = () => {
     [state.currentHome, state.browse, entities],
   );
   const itemCategories = useMemo(() => {
+    const browseWithoutCategoryFilter = { ...state.browse, items: { ...state.browse.items, generalCategoryId: null } };
+    const tabItems =
+      activePhase === "extra_items"
+        ? selectNonComfortItemsExcludingMaterials(state.currentHome, browseWithoutCategoryFilter, entities)
+        : selectComfortItems(state.currentHome, browseWithoutCategoryFilter, entities);
     const seen = new Map<string, string>();
-    Object.values(entities.itemsById).forEach((item) => {
-      if (!seen.has(item.generalCategoryId)) seen.set(item.generalCategoryId, item.generalCategoryLabel);
+    tabItems.forEach((entry) => {
+      if (!seen.has(entry.item.generalCategoryId)) seen.set(entry.item.generalCategoryId, entry.item.generalCategoryLabel);
     });
     return [...seen.entries()].map(([id, label]) => ({ id, label })).sort((a, b) => a.label.localeCompare(b.label));
-  }, [entities.itemsById]);
+  }, [state.currentHome, state.browse.items.searchQuery, state.browse.items.browseMode, state.browse.items.comfortCategoryId, state.browse.items.favoriteCategoryId, entities, activePhase]);
   const pokemonSections = useMemo(() => selectPokemonBrowserSections(state.currentHome, state.browse, entities), [state.currentHome, state.browse, entities]);
   const pokemonResultEntries = useMemo(
     () => [...pokemonSections.best, ...pokemonSections.supporting, ...pokemonSections.neutral],
