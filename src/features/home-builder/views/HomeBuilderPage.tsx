@@ -2931,13 +2931,10 @@ export const HomeBuilderPage = () => {
                       if (groupCount === 0 && individualCount === 0) {
                         return "";
                       }
-                      if (groupCount > 0 && individualCount > 0) {
-                        return `${groupCount} group match${groupCount === 1 ? "" : "es"} · ${individualCount} individual match${individualCount === 1 ? "" : "es"}`;
-                      }
                       if (groupCount > 0) {
-                        return `${groupCount} group match${groupCount === 1 ? "" : "es"}`;
+                        return `${groupCount} shared favorite${groupCount === 1 ? "" : "s"}`;
                       }
-                      return `${individualCount} individual match${individualCount === 1 ? "" : "es"}`;
+                      return "";
                     })();
                     const pokemonPrimaryPillCount = section.id === "none" ? visibleFavoriteCategoryIds.length : primaryMatchCategoryIds.length;
                     const pokemonSecondaryPillCount =
