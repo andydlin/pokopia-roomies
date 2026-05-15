@@ -3302,7 +3302,7 @@ export const HomeBuilderPage = () => {
                                 type="button"
                                 aria-label={`Remove ${sheetItem.name}`}
                                 onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] hover:text-[#485864]"
+                                className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] transition-opacity hover:text-[#485864] focus-visible:opacity-100 opacity-100"
                               >
                                 <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
                               </button>
