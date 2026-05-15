@@ -2334,7 +2334,7 @@ export const HomeBuilderPage = () => {
               <>
                 {buildItemEntries.length > 0 && (
                   <div
-                    className="sticky z-20 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:!top-0"
+                    className="sticky z-20 overflow-x-auto overflow-y-hidden border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:!top-0"
                     style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
                   >
                     <div className="flex gap-3 px-4">
