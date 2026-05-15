@@ -53,7 +53,7 @@ const toTypeLabel = (typeId: string) =>
 
 const phaseTabs: Array<{ id: BuilderPhase; label: string }> = [
   { id: "pokemon", label: "Pokemon" },
-  { id: "comfort_items", label: "Comfort Items" },
+  { id: "comfort_items", label: "Favorite Items" },
   { id: "extra_items", label: "Other Items" },
   { id: "review_materials", label: "Build Plan" },
 ];
@@ -1877,7 +1877,7 @@ export const HomeBuilderPage = () => {
 
   const renderItemsContextPanel = (keyPrefix: string, mode: "sidebar" | "sheet" = "sidebar") => {
     const comfortEntries = buildItemEntries.filter(
-      (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) > 0,
+      (entry) => (entities.itemsById[entry.itemId]?.favoriteCategoryIds.length ?? 0) > 0,
     );
     const selectedPokemonCoverageSummaries = selectedPokemon.map((pokemon) => {
       const favoriteCategoryIdSet = new Set(pokemon.favoriteCategoryIds);
@@ -2536,12 +2536,13 @@ export const HomeBuilderPage = () => {
                           const itemSecondaryPillCount =
                             useComfortGroupModel && section.id !== "none" ? individualMatchCategoryIds.length : 0;
                           const itemHasVisibleFavoritePills =
-                            usePokemonSatisfactionUi
+                            (activePhase === "extra_items" && entry.item.comfortCategoryIds.length > 0) ||
+                            (usePokemonSatisfactionUi
                               ? (showFavoritesByTab.items && matchedPokemon.length > 0) || (selectedPokemon.length === 0 && entry.item.favoriteCategoryIds.length > 0)
                               : (showFavoritesByTab.items || selectedPokemon.length === 0) &&
                                 ((selectedPokemon.length > 0 && showComfortContext
                                   ? itemPrimaryPillCount + itemSecondaryPillCount > 0
-                                  : entry.item.favoriteCategoryIds.length > 0));
+                                  : entry.item.favoriteCategoryIds.length > 0)));
                           const isAdded = currentHomeAddedItemIdSet.has(entry.item.id);
                           return (
                             <ResultCardOverflowWrapper
@@ -2683,6 +2684,15 @@ export const HomeBuilderPage = () => {
                                         ))}
                                       </div>
                                     ) : null}
+                                  {activePhase === "extra_items" && entry.item.comfortCategoryIds.length > 0 ? (
+                                    <div className="mt-2 flex flex-wrap gap-1">
+                                      {entry.item.comfortCategoryIds.map((categoryId) => (
+                                        <span key={`${entry.item.id}-comfort-${categoryId}`} className="pk-chip pk-chip-compact pk-chip-default">
+                                          {toCategoryLabel(categoryId)}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  ) : null}
                                   </div>
                                 </div>
                               </ResultCardShell>

@@ -132,7 +132,7 @@ export const selectComfortItems = (
   currentHome: CurrentHomeState,
   browseState: BuilderBrowseState,
   entities: EntityStore,
-) => selectFilteredRankedItems(currentHome, browseState, entities).filter((entry) => entry.item.comfortCategoryIds.length > 0);
+) => selectFilteredRankedItems(currentHome, browseState, entities).filter((entry) => entry.item.favoriteCategoryIds.length > 0);
 
 export const selectNonComfortItemsExcludingMaterials = (
   currentHome: CurrentHomeState,
@@ -141,7 +141,6 @@ export const selectNonComfortItemsExcludingMaterials = (
 ) =>
   selectFilteredRankedItems(currentHome, browseState, entities).filter(
     (entry) =>
-      entry.item.comfortCategoryIds.length === 0 &&
       entry.item.favoriteCategoryIds.length === 0 &&
       entry.item.generalCategoryLabel !== "Materials" &&
       entry.item.generalCategoryLabel !== "Key Items",
