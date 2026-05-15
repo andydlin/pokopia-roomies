@@ -3242,61 +3242,8 @@ export const HomeBuilderPage = () => {
                   </section>
                 )}
 
-                {/* Pokémon h-scroll */}
-                {selectedPokemon.length > 0 && (
-                  <section className="space-y-2">
-                    <div className="overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                      <div className="flex gap-3 px-4 pb-2">
-                        {selectedPokemon.map((pokemon) => {
-                          const overlapFavoriteIds =
-                            selectedPokemonFavoriteSets.excludingSelfByPokemonId.get(pokemon.id) ??
-                            selectedPokemonFavoriteSets.allSelectedFavoriteIds;
-                          const sharedCount = pokemon.favoriteCategoryIds.filter((categoryId) => (sharedFavoriteCounts.find(([id]) => id === categoryId)?.[1] ?? 0) > 1).length;
-                          const hasFavorites = pokemon.favoriteCategoryIds.length > 0;
-                          const chips = (() => {
-                            if (!hasFavorites) return [];
-                            const originalOrder = new Map(pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]));
-                            return [...pokemon.favoriteCategoryIds]
-                              .sort((left, right) => {
-                                const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
-                                const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
-                                if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
-                                const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
-                                const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
-                                if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
-                                return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
-                              })
-                              .map((categoryId) => ({
-                                id: categoryId,
-                                label: toCategoryLabel(categoryId),
-                                isSelected: activePokemonFavoriteFilters.includes(categoryId),
-                                tone: (overlapFavoriteIds.has(categoryId) ? "primary" : "default") as "primary" | "default",
-                                onToggle: () =>
-                                  setActivePokemonFavoriteFilters((previous) =>
-                                    previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
-                                  ),
-                              }));
-                          })();
-                          return (
-                            <div key={`sheet-wrap-${pokemon.id}`} className="w-[80%] shrink-0">
-                              <SidebarPokemonCard
-                                name={pokemon.name}
-                                subtitle={
-                                  selectedPokemon.length >= 2 && sharedCount > 0
-                                    ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
-                                    : getPreferredHabitatLabel(pokemon.idealHabitatId)
-                                }
-                                imageUrl={pokemon.imageUrl}
-                                onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
-                                chips={chips}
-                              />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </section>
-                )}
+                {/* Pokémon coverage (matches sidebar on item browse pages) */}
+                {renderItemsContextPanel("sheet-items", "sheet")}
 
                 {buildItemEntries.length === 0 && selectedPokemon.length === 0 && (
                   <p className="px-4 text-sm italic text-[var(--pk-text-desc)]">Add Pokémon and items to get started.</p>
