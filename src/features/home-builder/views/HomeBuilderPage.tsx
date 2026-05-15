@@ -3206,12 +3206,11 @@ export const HomeBuilderPage = () => {
             {showInitialSkeleton || isTabTransitionLoading ? (
               <div className="px-4"><BuilderSidebarSkeleton /></div>
             ) : (
-              <div className="space-y-5">
-                {/* Items h-scroll with × remove */}
+              <div className="space-y-3">
                 {buildItemEntries.length > 0 && (
                   <section className="space-y-2">
-                    <div className="overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                      <div className="flex gap-3 px-4 pb-2">
+                    <div className="overflow-x-auto overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <div className="flex gap-3 px-4 pb-2 pt-3">
                         {[...buildItemEntries].reverse().map((entry) => {
                           const sheetItem = entities.itemsById[entry.itemId];
                           if (!sheetItem) return null;
@@ -3226,7 +3225,7 @@ export const HomeBuilderPage = () => {
                                 >
                                   <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
                                 </button>
-                                <div className="flex justify-center rounded-[8px] bg-[var(--pk-border)] p-1.5">
+                                <div className="aspect-square flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
                                   {sheetItem.image ? (
                                     <img src={sheetItem.image} alt={sheetItem.name} className="h-8 w-8 object-contain" />
                                   ) : (
