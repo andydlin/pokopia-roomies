@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import type { PersistedSessionPayload } from "../src/domain/home-builder/models";
-import { isValidPayload, putSession } from "./_sessionStore";
+import type { PersistedSessionPayload } from "../src/domain/home-builder/models.js";
+import { isValidPayload, putSession } from "./_sessionStore.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {

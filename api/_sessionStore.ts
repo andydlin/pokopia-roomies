@@ -1,4 +1,4 @@
-import type { PersistedSessionPayload } from "../src/domain/home-builder/models";
+import type { PersistedSessionPayload } from "../src/domain/home-builder/models.js";
 
 export type PortableSessionRecord = {
   code: string;
