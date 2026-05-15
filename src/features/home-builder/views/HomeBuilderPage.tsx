@@ -2329,19 +2329,19 @@ export const HomeBuilderPage = () => {
               <>
                 {buildItemEntries.length > 0 && (
                   <div
-                    className="sticky z-20 flex items-center gap-2 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 lg:!top-0"
+                    className="sticky z-20 flex items-center gap-2 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 lg:!top-0"
                     style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
                   >
                     <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
                       Items Added ({buildItemEntries.length})
                     </span>
-                    <div className="flex gap-1.5">
+                    <div className="flex gap-1.5 overflow-x-auto [scrollbar-width:none]">
                       {buildItemEntries.map((entry) => {
                         const stripItem = entities.itemsById[entry.itemId];
                         if (!stripItem) return null;
                         return (
                           <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
-                            <span className="group/stripitem relative inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                            <span className="group/stripitem relative inline-flex shrink-0 rounded-[8px] bg-[var(--pk-border)] p-1">
                               {stripItem.image ? (
                                 <img src={stripItem.image} alt={stripItem.name} className="h-6 w-6 object-contain" />
                               ) : (
