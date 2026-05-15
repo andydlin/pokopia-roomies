@@ -3275,6 +3275,7 @@ export const HomeBuilderPage = () => {
                               imageUrl={pokemon.imageUrl}
                               onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
                               chips={chips}
+                              alwaysShowRemove
                             />
                           </div>
                         );
