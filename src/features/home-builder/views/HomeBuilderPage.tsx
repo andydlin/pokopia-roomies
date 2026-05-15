@@ -1990,7 +1990,7 @@ export const HomeBuilderPage = () => {
             </div>
           ) : null}
 
-          <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+          <div className="grid lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
             {/* Section: Context sidebar — unified mobile drawer + desktop sidebar */}
             <div className="app-scrollbar builder-sidebar-panel order-1 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] lg:border-b-0 lg:border-r">
               {/* Mobile toggle strip */}
