@@ -2332,40 +2332,6 @@ export const HomeBuilderPage = () => {
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
-                {buildItemEntries.length > 0 && (
-                  <div
-                    className="sticky z-20 overflow-x-auto overflow-y-hidden border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:!top-0"
-                    style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
-                  >
-                    <div className="flex gap-3 px-4">
-                      {buildItemEntries.map((entry) => {
-                        const stripItem = entities.itemsById[entry.itemId];
-                        if (!stripItem) return null;
-                        return (
-                          <span key={`strip-wrap-${entry.itemId}`} className="shrink-0">
-                            <Tooltip content={stripItem.name} side="bottom">
-                              <span className="group/stripitem relative inline-flex rounded-[8px] bg-[var(--pk-border)] p-1.5">
-                                {stripItem.image ? (
-                                  <img src={stripItem.image} alt={stripItem.name} className="h-8 w-8 object-contain" />
-                                ) : (
-                                  <span className="h-8 w-8" />
-                                )}
-                                <button
-                                  type="button"
-                                  aria-label={`Remove ${stripItem.name}`}
-                                  onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                  className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
-                                >
-                                  ✕
-                                </button>
-                              </span>
-                            </Tooltip>
-                          </span>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
                 <ResultsBrowserBar>
                   <BuilderSearchField
                     value={state.browse.items.searchQuery}
@@ -3209,16 +3175,21 @@ export const HomeBuilderPage = () => {
           onClick={() => dispatch({ type: state.ui.isMobileBuilderSheetOpen ? "ui/close-mobile-sheet" : "ui/open-mobile-sheet" })}
           className="flex w-full items-center justify-between px-4 py-3 text-left"
         >
-          <div className="flex items-center gap-2">
-            {selectedPokemon.slice(0, 6).map((p) =>
-              p.imageUrl ? (
-                <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 object-contain" />
+          <div className="flex min-w-0 items-center gap-2 overflow-hidden">
+            {[...buildItemEntries].reverse().slice(0, 6).map((entry) => {
+              const barItem = entities.itemsById[entry.itemId];
+              if (!barItem) return null;
+              return barItem.image ? (
+                <img key={entry.itemId} src={barItem.image} alt={barItem.name} className="h-8 w-8 shrink-0 object-contain" />
               ) : (
-                <div key={p.id} className="h-8 w-8 rounded-full bg-[var(--pk-border)]" />
-              ),
+                <div key={entry.itemId} className="h-8 w-8 shrink-0 rounded-[6px] bg-[var(--pk-border)]" />
+              );
+            })}
+            {buildItemEntries.length > 6 && (
+              <span className="shrink-0 text-sm font-medium text-[var(--pk-text-desc)]">+{buildItemEntries.length - 6}</span>
             )}
-            {selectedPokemon.length > 6 && (
-              <span className="text-sm font-medium text-[var(--pk-text-desc)]">+{selectedPokemon.length - 6}</span>
+            {buildItemEntries.length === 0 && selectedPokemon.length === 0 && (
+              <span className="text-sm text-[var(--pk-text-desc)]">Add Pokémon and items to get started</span>
             )}
           </div>
           <ChevronUp className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${state.ui.isMobileBuilderSheetOpen ? "rotate-180" : ""}`} />
@@ -3232,14 +3203,50 @@ export const HomeBuilderPage = () => {
             className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] pb-8 pt-4"
             onClick={(event) => event.stopPropagation()}
           >
-
             {showInitialSkeleton || isTabTransitionLoading ? (
               <div className="px-4"><BuilderSidebarSkeleton /></div>
-            ) : contentActiveTab === "pokemon" ? (
+            ) : (
               <div className="space-y-5">
-                <section className="space-y-2">
-                  {selectedPokemon.length > 0 ? (
-                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {/* Items h-scroll with × remove */}
+                {buildItemEntries.length > 0 && (
+                  <section className="space-y-2">
+                    <div className="overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <div className="flex gap-3 px-4 pb-2">
+                        {[...buildItemEntries].reverse().map((entry) => {
+                          const sheetItem = entities.itemsById[entry.itemId];
+                          if (!sheetItem) return null;
+                          return (
+                            <div key={`sheet-item-${entry.itemId}`} className="w-20 shrink-0">
+                              <article className="relative rounded-[12px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2 text-center">
+                                <button
+                                  type="button"
+                                  aria-label={`Remove ${sheetItem.name}`}
+                                  onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
+                                  className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] hover:text-[#485864]"
+                                >
+                                  <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
+                                </button>
+                                <div className="flex justify-center rounded-[8px] bg-[var(--pk-border)] p-1.5">
+                                  {sheetItem.image ? (
+                                    <img src={sheetItem.image} alt={sheetItem.name} className="h-8 w-8 object-contain" />
+                                  ) : (
+                                    <span className="h-8 w-8" />
+                                  )}
+                                </div>
+                                <p className="mt-1 truncate text-[10px] leading-tight text-[var(--pk-text-desc)]">{sheetItem.name}</p>
+                              </article>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+                {/* Pokémon h-scroll */}
+                {selectedPokemon.length > 0 && (
+                  <section className="space-y-2">
+                    <div className="overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                       <div className="flex gap-3 px-4 pb-2">
                         {selectedPokemon.map((pokemon) => {
                           const overlapFavoriteIds =
@@ -3274,7 +3281,6 @@ export const HomeBuilderPage = () => {
                           return (
                             <div key={`sheet-wrap-${pokemon.id}`} className="w-[80%] shrink-0">
                               <SidebarPokemonCard
-                                key={`sheet-${pokemon.id}`}
                                 name={pokemon.name}
                                 subtitle={
                                   selectedPokemon.length >= 2 && sharedCount > 0
@@ -3290,88 +3296,14 @@ export const HomeBuilderPage = () => {
                         })}
                       </div>
                     </div>
-                  ) : (
-                    <div className="mx-4 rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
-                      Select Pokemon to get started.
-                    </div>
-                  )}
-                </section>
+                  </section>
+                )}
 
-                <section className="space-y-2">
-                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Preferred Habitats</p>
-                  {selectedPokemon.length >= 2 && sharedHabitatCounts.length > 0 ? (
-                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                      <div className="flex gap-1.5 px-4 pb-1">
-                        {sharedHabitatCounts.map(([habitatId, count]) => (
-                          <span key={`sheet-habitat-${habitatId}`} className="group/overlap relative inline-flex shrink-0">
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setActivePokemonHabitatFilters((previous) =>
-                                  previous.includes(habitatId) ? previous.filter((id) => id !== habitatId) : [...previous, habitatId],
-                                )
-                              }
-                              className={`pk-chip pk-chip-standard transition-colors ${activePokemonHabitatFilters.includes(habitatId) ? "pk-chip-primary" : "pk-chip-surface"}`}
-                            >
-                              {getPreferredHabitatLabel(habitatId)} ({count})
-                            </button>
-                            <OverlapTooltip
-                              items={selectedPokemon
-                                .filter((pokemon) => pokemon.idealHabitatId === habitatId)
-                                .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
-                              tooltipKeyPrefix={`sheet-habitat-${habitatId}-tooltip`}
-                            />
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <p className="px-4 text-xs italic text-[#8e9aa3]">
-                      {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see shared habitats." : "No shared habitats yet."}
-                    </p>
-                  )}
-                </section>
-
-                <section className="space-y-2">
-                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Group Overlap</p>
-                  {selectedPokemon.length >= 2 && sharedFavoriteCounts.length > 0 ? (
-                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                      <div className="flex gap-1.5 px-4 pb-1">
-                        {[...sidebarPrimarySharedFavorites, ...sidebarSecondarySharedFavorites].map(([categoryId, count]) => (
-                          <span key={`sheet-fav-${categoryId}`} className="group/overlap relative inline-flex shrink-0">
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setActivePokemonFavoriteFilters((previous) =>
-                                  previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
-                                )
-                              }
-                              className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
-                            >
-                              {toCategoryLabel(categoryId)} ({count})
-                            </button>
-                            <OverlapTooltip
-                              items={selectedPokemon
-                                .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
-                                .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
-                              tooltipKeyPrefix={`sheet-fav-${categoryId}-tooltip`}
-                            />
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <p className="px-4 text-xs italic text-[#8e9aa3]">
-                      {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see group overlap." : "No shared favorites yet."}
-                    </p>
-                  )}
-                </section>
+                {buildItemEntries.length === 0 && selectedPokemon.length === 0 && (
+                  <p className="px-4 text-sm italic text-[var(--pk-text-desc)]">Add Pokémon and items to get started.</p>
+                )}
               </div>
-            ) : contentActiveTab === "items" ? (
-              <div className="space-y-3">
-                {renderItemsContextPanel("sheet-items", "sheet")}
-              </div>
-            ) : null}
+            )}
           </section>
         </div>
       ) : null}
