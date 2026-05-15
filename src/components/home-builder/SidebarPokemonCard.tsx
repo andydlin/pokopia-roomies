@@ -34,7 +34,7 @@ export const SidebarPokemonCard = ({
     <button
       type="button"
       onClick={onRemove}
-      className={`pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] transition-opacity hover:text-[#485864] focus-visible:opacity-100 ${alwaysShowRemove ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+      className={`absolute -right-2 -top-2 inline-flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[#b3c9d2] bg-white text-[#6c889b] transition-opacity hover:text-[#485864] focus-visible:opacity-100 ${alwaysShowRemove ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
       aria-label={`Remove ${name}`}
     >
       <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
