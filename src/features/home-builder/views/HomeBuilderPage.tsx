@@ -2537,8 +2537,8 @@ export const HomeBuilderPage = () => {
                             useComfortGroupModel && section.id !== "none" ? individualMatchCategoryIds.length : 0;
                           const itemHasVisibleFavoritePills =
                             usePokemonSatisfactionUi
-                              ? showFavoritesByTab.items && matchedPokemon.length > 0
-                              : showFavoritesByTab.items &&
+                              ? (showFavoritesByTab.items && matchedPokemon.length > 0) || (selectedPokemon.length === 0 && entry.item.favoriteCategoryIds.length > 0)
+                              : (showFavoritesByTab.items || selectedPokemon.length === 0) &&
                                 ((selectedPokemon.length > 0 && showComfortContext
                                   ? itemPrimaryPillCount + itemSecondaryPillCount > 0
                                   : entry.item.favoriteCategoryIds.length > 0));
@@ -2580,6 +2580,15 @@ export const HomeBuilderPage = () => {
                                       ? ` · ${itemMetadataText}`
                                       : ""}
                                   </p>
+                                  {usePokemonSatisfactionUi && selectedPokemon.length === 0 && entry.item.favoriteCategoryIds.length > 0 ? (
+                                    <div className="mt-2 flex flex-wrap gap-1">
+                                      {entry.item.favoriteCategoryIds.map((categoryId) => (
+                                        <span key={`${entry.item.id}-${categoryId}-empty`} className="pk-chip pk-chip-compact pk-chip-none">
+                                          {toCategoryLabel(categoryId)}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  ) : null}
                                   {usePokemonSatisfactionUi && showFavoritesByTab.items && matchedPokemon.length > 0 ? (
                                     <>
                                       <div className="mt-2 flex flex-wrap gap-1">
@@ -2665,7 +2674,7 @@ export const HomeBuilderPage = () => {
                                         {shouldShowFavoriteOverflowToggle ? null : null}
                                     </div>
                                   ) : null}
-                                  {!usePokemonSatisfactionUi && showFavoritesByTab.items && (selectedPokemon.length === 0 || !showComfortContext) ? (
+                                  {!usePokemonSatisfactionUi && (showFavoritesByTab.items || selectedPokemon.length === 0) && (selectedPokemon.length === 0 || !showComfortContext) ? (
                                       <div className="mt-2 flex flex-wrap gap-1">
                                         {entry.item.favoriteCategoryIds.map((categoryId) => (
                                           <span key={`${entry.item.id}-${categoryId}`} className="pk-chip pk-chip-compact pk-chip-none">
