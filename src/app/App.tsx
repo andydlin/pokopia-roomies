@@ -236,10 +236,7 @@ const AppShell = () => {
               >
                 Pokedex
               </Link>
-            </nav>
-
-            {/* Sign in / Sign out at bottom */}
-            <div className="mt-auto border-t border-[var(--pk-border)]">
+              <div className="mx-5 h-px bg-[var(--pk-border)]" />
               {authState.status === "authenticated" ? (
                 <button
                   type="button"
@@ -257,7 +254,7 @@ const AppShell = () => {
                   Sign in
                 </button>
               ) : null}
-            </div>
+            </nav>
           </div>
         )}
 
