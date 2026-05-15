@@ -1240,12 +1240,7 @@ export const HomeBuilderPage = () => {
       return left.pokemon.name.localeCompare(right.pokemon.name);
     });
   }, [multiFilteredPokemonEntries, pokemonMatchStatsById, selectedPokemon.length]);
-  const pokemonEntriesBySortMode = useMemo(() => {
-    if (pokemonSortMode === "az") {
-      return [...rankedPokemonEntries].sort((left, right) => left.pokemon.name.localeCompare(right.pokemon.name));
-    }
-    return rankedPokemonEntries;
-  }, [pokemonSortMode, rankedPokemonEntries]);
+  const pokemonEntriesBySortMode = rankedPokemonEntries;
   const isPokemonFavoriteFilterActive = activePokemonFavoriteFilters.length > 0;
   const isPokemonHabitatFilterActive = activePokemonHabitatFilters.length > 0;
   const isPokemonFilterActive = isPokemonFavoriteFilterActive || isPokemonHabitatFilterActive;
@@ -1274,10 +1269,6 @@ export const HomeBuilderPage = () => {
     if (isPokemonFilterActive) {
       return [{ id: "filtered", title: "Filtered results", entries: favoriteFilteredRankedPokemonEntries }];
     }
-    if (pokemonSortMode === "az") {
-      return [{ id: "alphabetical", title: "Alphabetical", entries: favoriteFilteredRankedPokemonEntries }];
-    }
-
     if (selectedPokemon.length === 0) {
       return [{ id: "all", title: "All Pokemon", entries: favoriteFilteredRankedPokemonEntries }];
     }
