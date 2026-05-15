@@ -3229,8 +3229,8 @@ export const HomeBuilderPage = () => {
               /* Pokémon tab: Pokémon cards h-scroll */
               <div className="space-y-3">
                 {selectedPokemon.length > 0 ? (
-                  <div className="overflow-x-auto overflow-y-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                    <div className="flex gap-3 px-4 pb-2">
+                  <div className="overflow-x-auto overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 px-4 pt-3 pb-2">
                       {selectedPokemon.map((pokemon) => {
                         const overlapFavoriteIds =
                           selectedPokemonFavoriteSets.excludingSelfByPokemonId.get(pokemon.id) ??
