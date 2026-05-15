@@ -3261,27 +3261,12 @@ export const HomeBuilderPage = () => {
             className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] pb-8 pt-4"
             onClick={(event) => event.stopPropagation()}
           >
-            {/* Close button */}
-            <div className="flex items-center justify-between px-4 pb-3">
-              <p className="text-sm font-semibold text-[var(--pk-text-desc)]">Your Build</p>
-              <button
-                type="button"
-                onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--pk-border)] text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
-                aria-label="Close"
-              >
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </button>
-            </div>
 
             {showInitialSkeleton || isTabTransitionLoading ? (
               <div className="px-4"><BuilderSidebarSkeleton /></div>
             ) : contentActiveTab === "pokemon" ? (
               <div className="space-y-5">
                 <section className="space-y-2">
-                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
                   {selectedPokemon.length > 0 ? (
                     <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                       <div className="flex gap-3 px-4 pb-2">
