@@ -2526,7 +2526,7 @@ export const HomeBuilderPage = () => {
                                   : "Browse all items by favorite-category coverage to find what fits your future team."
                           }
                         >
-                          <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+                          <div className="grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
                         {section.items.map((entry, entryIndex) => {
                           const isOverflowEntry = entryIndex >= MAX_ITEM_CARDS_PER_SECTION;
                           const shouldHideOverflowEntry = isOverflowEntry && !showAllEntries;
@@ -2864,7 +2864,7 @@ export const HomeBuilderPage = () => {
                                     : "No current favorite overlap with your selected group."
                         }
                       >
-                        <div className="grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+                        <div className="grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
                         {section.entries.map((entry, entryIndex) => (
                           (() => {
                     const isOverflowEntry = entryIndex >= MAX_POKEMON_CARDS_PER_SECTION;
@@ -3220,7 +3220,7 @@ export const HomeBuilderPage = () => {
                   <section ref={completeBuildCoverageRef} className="mt-5 rounded-[16px] border border-[#C8DAE2] bg-[#eaf3f7] p-4 scroll-mt-20">
                     <h3 className="text-lg font-extrabold tracking-[-0.02em] text-[#5D7F91]">Helpful Item Picks</h3>
                     <p className="mt-1 text-sm text-[#6c889b]">Optional additions based on your selected favorites.</p>
-                    <div className="mt-3 grid gap-2 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="mt-3 grid gap-2 lg:grid-cols-2 xl:grid-cols-3">
                       {favoriteSections
                         .flatMap((section) => section.items)
                         .slice(0, 6)
