@@ -1875,7 +1875,7 @@ export const HomeBuilderPage = () => {
 
   const shouldShowResultsSkeleton = showInitialSkeleton || isResultsRefreshing;
 
-  const renderItemsContextPanel = (keyPrefix: string) => {
+  const renderItemsContextPanel = (keyPrefix: string, mode: "sidebar" | "sheet" = "sidebar") => {
     const comfortEntries = buildItemEntries.filter(
       (entry) => (entities.itemsById[entry.itemId]?.comfortCategoryIds.length ?? 0) > 0,
     );
@@ -1905,10 +1905,118 @@ export const HomeBuilderPage = () => {
 
     if (selectedPokemonCoverageSummaries.length === 0) {
       return (
-        <div className="rounded-[16px] border border-dashed border-[var(--pk-border)] p-5 text-center">
+        <div className={`rounded-[16px] border border-dashed border-[var(--pk-border)] p-5 text-center ${mode === "sheet" ? "mx-4" : ""}`}>
           <p className="text-sm font-semibold text-[var(--pk-text-primary)]">No Pokémon selected</p>
           <p className="mt-1 text-xs text-[var(--pk-text-desc)]">Add Pokémon to see how comfort items support them.</p>
         </div>
+      );
+    }
+
+    const renderCard = (summary: (typeof selectedPokemonCoverageSummaries)[number]) => {
+      const ITEM_AVATAR_ROW_CAP = 6;
+      const isCoverageExpanded = expandedCoveragePokemonIds.has(summary.pokemon.id);
+      const visibleEntries = isCoverageExpanded ? summary.matchingItemEntries : summary.matchingItemEntries.slice(0, ITEM_AVATAR_ROW_CAP);
+      const hiddenCount = summary.matchingItemEntries.length - ITEM_AVATAR_ROW_CAP;
+      return (
+        <article
+          key={`${keyPrefix}-pokemon-coverage-${summary.pokemon.id}`}
+          className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2"
+        >
+          {mode === "sheet" && (
+            <button
+              type="button"
+              onClick={() => dispatch({ type: "home/remove-pokemon", pokemonId: summary.pokemon.id })}
+              className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] hover:text-[#485864]"
+              aria-label={`Remove ${summary.pokemon.name}`}
+            >
+              <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
+            </button>
+          )}
+          <div className="flex items-center gap-3">
+            <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
+              {summary.pokemon.imageUrl ? (
+                <img src={summary.pokemon.imageUrl} alt={summary.pokemon.name} className="h-8 w-8 object-contain" />
+              ) : null}
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="truncate text-base font-medium text-[#485864]">{summary.pokemon.name}</p>
+              <p className="text-xs text-[#6c889b]">{summary.matchingItemCount} supporting items</p>
+            </div>
+          </div>
+          {summary.matchingItemEntries.length > 0 && (
+            <div className="mt-2 flex flex-wrap gap-1">
+              {visibleEntries.map((entry) => {
+                const item = entities.itemsById[entry.itemId];
+                if (!item) return null;
+                return (
+                  <Tooltip key={`${keyPrefix}-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name}>
+                    <span className="inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                      {item.image ? (
+                        <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
+                      ) : (
+                        <span className="h-6 w-6" />
+                      )}
+                    </span>
+                  </Tooltip>
+                );
+              })}
+              {!isCoverageExpanded && hiddenCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setExpandedCoveragePokemonIds((prev) => new Set([...prev, summary.pokemon.id]))}
+                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                >
+                  +{hiddenCount}
+                </button>
+              )}
+              {isCoverageExpanded && hiddenCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setExpandedCoveragePokemonIds((prev) => { const next = new Set(prev); next.delete(summary.pokemon.id); return next; })}
+                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                >
+                  −
+                </button>
+              )}
+            </div>
+          )}
+          {summary.uncoveredFavoriteCategoryIds.length > 0 && (
+            <div className="mt-2">
+              <p className="text-[11px] font-semibold text-[var(--pk-text-desc)]">
+                Needs coverage ({summary.uncoveredFavoriteCategoryIds.length})
+              </p>
+              <div className="mt-1 flex flex-wrap gap-1">
+                {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
+                  <Chip
+                    key={`uncovered-${summary.pokemon.id}-${categoryId}`}
+                    size="compact"
+                    tone={activeComfortFavoriteFilters.includes(categoryId) ? "primary" : "default"}
+                    onClick={() => toggleComfortFavoriteFilter(categoryId)}
+                  >
+                    {favoriteCategoryById.get(categoryId)?.name ?? categoryId}
+                  </Chip>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+      );
+    };
+
+    if (mode === "sheet") {
+      return (
+        <section className="space-y-2">
+          <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
+          <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex gap-3 px-4 pb-2">
+              {selectedPokemonCoverageSummaries.map((summary) => (
+                <div key={`${keyPrefix}-wrap-${summary.pokemon.id}`} className="w-[80%] shrink-0">
+                  {renderCard(summary)}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       );
     }
 
@@ -1916,86 +2024,7 @@ export const HomeBuilderPage = () => {
       <section className="space-y-2">
         <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
         <div className="space-y-1.5">
-          {selectedPokemonCoverageSummaries.map((summary) => {
-            const ITEM_AVATAR_ROW_CAP = 6;
-            const isCoverageExpanded = expandedCoveragePokemonIds.has(summary.pokemon.id);
-            const visibleEntries = isCoverageExpanded ? summary.matchingItemEntries : summary.matchingItemEntries.slice(0, ITEM_AVATAR_ROW_CAP);
-            const hiddenCount = summary.matchingItemEntries.length - ITEM_AVATAR_ROW_CAP;
-            return (
-              <article
-                key={`${keyPrefix}-pokemon-coverage-${summary.pokemon.id}`}
-                className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
-                    {summary.pokemon.imageUrl ? (
-                      <img src={summary.pokemon.imageUrl} alt={summary.pokemon.name} className="h-8 w-8 object-contain" />
-                    ) : null}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-base font-medium text-[#485864]">{summary.pokemon.name}</p>
-                    <p className="text-xs text-[#6c889b]">{summary.matchingItemCount} supporting items</p>
-                  </div>
-                </div>
-                {summary.matchingItemEntries.length > 0 && (
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    {visibleEntries.map((entry) => {
-                      const item = entities.itemsById[entry.itemId];
-                      if (!item) return null;
-                      return (
-                        <Tooltip key={`${keyPrefix}-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name}>
-                          <span className="inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
-                            {item.image ? (
-                              <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
-                            ) : (
-                              <span className="h-6 w-6" />
-                            )}
-                          </span>
-                        </Tooltip>
-                      );
-                    })}
-                    {!isCoverageExpanded && hiddenCount > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => setExpandedCoveragePokemonIds((prev) => new Set([...prev, summary.pokemon.id]))}
-                        className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
-                      >
-                        +{hiddenCount}
-                      </button>
-                    )}
-                    {isCoverageExpanded && hiddenCount > 0 && (
-                      <button
-                        type="button"
-                        onClick={() => setExpandedCoveragePokemonIds((prev) => { const next = new Set(prev); next.delete(summary.pokemon.id); return next; })}
-                        className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
-                      >
-                        −
-                      </button>
-                    )}
-                  </div>
-                )}
-                {summary.uncoveredFavoriteCategoryIds.length > 0 && (
-                  <div className="mt-2">
-                    <p className="text-[11px] font-semibold text-[var(--pk-text-desc)]">
-                      Needs coverage ({summary.uncoveredFavoriteCategoryIds.length})
-                    </p>
-                    <div className="mt-1 flex flex-wrap gap-1">
-                      {summary.uncoveredFavoriteCategoryIds.map((categoryId) => (
-                        <Chip
-                          key={`uncovered-${summary.pokemon.id}-${categoryId}`}
-                          size="compact"
-                          tone={activeComfortFavoriteFilters.includes(categoryId) ? "primary" : "default"}
-                          onClick={() => toggleComfortFavoriteFilter(categoryId)}
-                        >
-                          {favoriteCategoryById.get(categoryId)?.name ?? categoryId}
-                        </Chip>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </article>
-            );
-          })}
+          {selectedPokemonCoverageSummaries.map((summary) => renderCard(summary))}
         </div>
       </section>
     );
@@ -3353,8 +3382,8 @@ export const HomeBuilderPage = () => {
                 </section>
               </div>
             ) : contentActiveTab === "items" ? (
-              <div className="space-y-3 px-4">
-                {renderItemsContextPanel("sheet-items")}
+              <div className="space-y-3">
+                {renderItemsContextPanel("sheet-items", "sheet")}
               </div>
             ) : null}
           </section>
