@@ -218,21 +218,21 @@ const AppShell = () => {
             <nav className="flex flex-col">
               <Link
                 to="/builder/pokemon"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isBuilderActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isBuilderActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Home Builder
               </Link>
               <div className="mx-5 h-px bg-[var(--pk-border)]" />
               <Link
                 to="/homes"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isHomesActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isHomesActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Saved Homes
               </Link>
               <div className="mx-5 h-px bg-[var(--pk-border)]" />
               <Link
                 to="/pokedex/pokemon"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isPokedexActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isPokedexActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Pokedex
               </Link>
