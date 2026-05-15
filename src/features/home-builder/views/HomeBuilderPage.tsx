@@ -2369,7 +2369,7 @@ export const HomeBuilderPage = () => {
             </div>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pr-4 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pl-4 pr-4 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
             {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
