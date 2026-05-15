@@ -1922,16 +1922,6 @@ export const HomeBuilderPage = () => {
           key={`${keyPrefix}-pokemon-coverage-${summary.pokemon.id}`}
           className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2"
         >
-          {mode === "sheet" && (
-            <button
-              type="button"
-              onClick={() => dispatch({ type: "home/remove-pokemon", pokemonId: summary.pokemon.id })}
-              className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] hover:text-[#485864]"
-              aria-label={`Remove ${summary.pokemon.name}`}
-            >
-              <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
-            </button>
-          )}
           <div className="flex items-center gap-3">
             <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
               {summary.pokemon.imageUrl ? (
@@ -2006,7 +1996,6 @@ export const HomeBuilderPage = () => {
     if (mode === "sheet") {
       return (
         <section className="space-y-2">
-          <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
           <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             <div className="flex gap-3 px-4 pb-2">
               {selectedPokemonCoverageSummaries.map((summary) => (
@@ -2345,37 +2334,35 @@ export const HomeBuilderPage = () => {
               <>
                 {buildItemEntries.length > 0 && (
                   <div
-                    className="sticky z-20 flex items-center gap-2 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] py-2 lg:!top-0"
+                    className="sticky z-20 flex items-center gap-3 overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] px-4 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:!top-0"
                     style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-header-h, 0px))" }}
                   >
-                    <span className="shrink-0 text-xs font-semibold text-[var(--pk-text-desc)]">
-                      Items Added ({buildItemEntries.length})
+                    <span className="shrink-0 rounded-full bg-[var(--pk-border)] px-2 py-0.5 text-xs font-semibold text-[var(--pk-text-desc)]">
+                      {buildItemEntries.length}
                     </span>
-                    <div className="flex gap-1.5 overflow-x-auto [scrollbar-width:none]">
-                      {buildItemEntries.map((entry) => {
-                        const stripItem = entities.itemsById[entry.itemId];
-                        if (!stripItem) return null;
-                        return (
-                          <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
-                            <span className="group/stripitem relative inline-flex shrink-0 rounded-[8px] bg-[var(--pk-border)] p-1">
-                              {stripItem.image ? (
-                                <img src={stripItem.image} alt={stripItem.name} className="h-6 w-6 object-contain" />
-                              ) : (
-                                <span className="h-6 w-6" />
-                              )}
-                              <button
-                                type="button"
-                                aria-label={`Remove ${stripItem.name}`}
-                                onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
-                              >
-                                ✕
-                              </button>
-                            </span>
-                          </Tooltip>
-                        );
-                      })}
-                    </div>
+                    {buildItemEntries.map((entry) => {
+                      const stripItem = entities.itemsById[entry.itemId];
+                      if (!stripItem) return null;
+                      return (
+                        <Tooltip key={`strip-${entry.itemId}`} content={stripItem.name} side="bottom">
+                          <span className="group/stripitem relative inline-flex shrink-0 rounded-[8px] bg-[var(--pk-border)] p-1.5">
+                            {stripItem.image ? (
+                              <img src={stripItem.image} alt={stripItem.name} className="h-8 w-8 object-contain" />
+                            ) : (
+                              <span className="h-8 w-8" />
+                            )}
+                            <button
+                              type="button"
+                              aria-label={`Remove ${stripItem.name}`}
+                              onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
+                              className="absolute -right-1 -top-1 hidden h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-text-desc)] text-[var(--pk-card)] text-[10px] group-hover/stripitem:flex"
+                            >
+                              ✕
+                            </button>
+                          </span>
+                        </Tooltip>
+                      );
+                    })}
                   </div>
                 )}
                 <ResultsBrowserBar>
@@ -3297,7 +3284,6 @@ export const HomeBuilderPage = () => {
                                 imageUrl={pokemon.imageUrl}
                                 onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
                                 chips={chips}
-                                alwaysShowRemove
                               />
                             </div>
                           );
