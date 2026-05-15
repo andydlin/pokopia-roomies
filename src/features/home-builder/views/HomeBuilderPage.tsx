@@ -591,17 +591,7 @@ export const HomeBuilderPage = () => {
   const [activeComfortFavoriteFilters, setActiveComfortFavoriteFilters] = useState<string[]>([]);
   const [activeItemPokemonFilterId, setActiveItemPokemonFilterId] = useState<string | null>(null);
   const pokemonSortMode = "suggested" as const;
-  const [itemSortMode, setItemSortMode] = useState<"suggested" | "az_category">(() => {
-    if (typeof window === "undefined") return "suggested";
-    try {
-      const stored = window.localStorage.getItem(SORT_MODE_BY_TAB_STORAGE_KEY);
-      if (!stored) return "suggested";
-      const parsed = JSON.parse(stored) as { items?: "suggested" | "az_category" };
-      return parsed.items === "az_category" ? "az_category" : "suggested";
-    } catch {
-      return "suggested";
-    }
-  });
+  const itemSortMode = "suggested" as const;
   const [showFavoritesByTab, setShowFavoritesByTab] = useState<Record<"pokemon" | "items" | "favorites", boolean>>(() => {
     if (typeof window === "undefined") {
       return {
@@ -790,7 +780,7 @@ export const HomeBuilderPage = () => {
       ? true
       : contentActiveTab === "favorites"
         ? showFavoritesByTab.favorites
-        : showFavoritesByTab.items;
+        : true;
   const showSidebarDetails = true;
   const tabToPhase = (tab: BrowseTab, pathname: string): BuilderPhase => {
     if (pendingPhaseRef.current) return pendingPhaseRef.current;
@@ -1019,6 +1009,13 @@ export const HomeBuilderPage = () => {
     () => selectNonComfortItemsExcludingMaterials(state.currentHome, state.browse, entities),
     [state.currentHome, state.browse, entities],
   );
+  const itemCategories = useMemo(() => {
+    const seen = new Map<string, string>();
+    Object.values(entities.itemsById).forEach((item) => {
+      if (!seen.has(item.generalCategoryId)) seen.set(item.generalCategoryId, item.generalCategoryLabel);
+    });
+    return [...seen.entries()].map(([id, label]) => ({ id, label })).sort((a, b) => a.label.localeCompare(b.label));
+  }, [entities.itemsById]);
   const pokemonSections = useMemo(() => selectPokemonBrowserSections(state.currentHome, state.browse, entities), [state.currentHome, state.browse, entities]);
   const pokemonResultEntries = useMemo(
     () => [...pokemonSections.best, ...pokemonSections.supporting, ...pokemonSections.neutral],
@@ -1460,15 +1457,6 @@ export const HomeBuilderPage = () => {
     return statsByItemId;
   }, [comfortPokemonFilteredRankedItems, selectedPokemon, selectedPokemonAllFavoriteCategoryIdSet, sharedFavoriteCountByCategoryId]);
   const sortedPlannerItemEntries = useMemo(() => {
-    if (itemSortMode === "az_category") {
-      return [...comfortPokemonFilteredRankedItems].sort((left, right) => {
-        const leftCategory = left.item.generalCategoryLabel || "Other";
-        const rightCategory = right.item.generalCategoryLabel || "Other";
-        const categoryComparison = leftCategory.localeCompare(rightCategory);
-        if (categoryComparison !== 0) return categoryComparison;
-        return left.item.name.localeCompare(right.item.name);
-      });
-    }
     if (activePhase === "comfort_items" && activeItemPokemonFilterId && selectedPokemon.length > 0) {
       const selectedFilterPokemon = selectedPokemon.find((pokemon) => pokemon.id === activeItemPokemonFilterId) ?? null;
       if (!selectedFilterPokemon) return [...comfortPokemonFilteredRankedItems];
@@ -1591,23 +1579,6 @@ export const HomeBuilderPage = () => {
   const itemPlannerSections = useMemo(() => {
     if (isItemFavoriteFilterActive) {
       return [{ id: "filtered", title: "Filtered results", items: sortedPlannerItemEntries }];
-    }
-    if (itemSortMode === "az_category") {
-      const groupedByCategory = new Map<string, typeof sortedPlannerItemEntries>();
-      sortedPlannerItemEntries.forEach((entry) => {
-        const categoryLabel = entry.item.generalCategoryLabel || "Other";
-        if (!groupedByCategory.has(categoryLabel)) {
-          groupedByCategory.set(categoryLabel, []);
-        }
-        groupedByCategory.get(categoryLabel)!.push(entry);
-      });
-      return [...groupedByCategory.entries()]
-        .sort((left, right) => left[0].localeCompare(right[0]))
-        .map(([categoryLabel, items]) => ({
-          id: `az_${categoryLabel.toLowerCase().replace(/[^a-z0-9]+/g, "_")}`,
-          title: categoryLabel,
-          items: [...items].sort((left, right) => left.item.name.localeCompare(right.item.name)),
-        }));
     }
     if (activePhase === "extra_items") {
       const groupedByCategory = new Map<string, typeof sortedPlannerItemEntries>();
@@ -2392,24 +2363,19 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
                     placeholder="Search items"
                   />
-                  <FavoritesToggle
-                    checked={showFavoritesByTab.items}
-                    label="Show details"
-                    onToggle={() => setShowFavoritesByTab((value) => ({ ...value, items: !value.items }))}
-                    disabled={selectedPokemon.length === 0}
-                  />
-                  <SortSegmentedControl
-                    activeValue={itemSortMode}
-                    onSuggested={() => {
-                      startResultsRefresh();
-                      window.setTimeout(() => setItemSortMode("suggested"), 0);
-                    }}
-                    onAlphabetical={() => {
-                      startResultsRefresh();
-                      window.setTimeout(() => setItemSortMode("az_category"), 0);
-                    }}
-                    disabled={selectedPokemon.length === 0}
-                  />
+                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[#c2dbe6] px-3 py-1.5 text-sm font-medium text-[#6c889b]">
+                    <select
+                      value={state.browse.items.generalCategoryId ?? ""}
+                      onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
+                      className="appearance-none bg-transparent pr-5 focus:outline-none"
+                    >
+                      <option value="">All categories</option>
+                      {itemCategories.map(({ id, label }) => (
+                        <option key={id} value={id}>{label}</option>
+                      ))}
+                    </select>
+                    <ChevronDown className="h-4 w-4 shrink-0" />
+                  </label>
                   {activePhase === "comfort_items" ? (
                     <ActiveFilterChips
                       chips={[
