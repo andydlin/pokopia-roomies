@@ -249,7 +249,7 @@ const AppShell = () => {
                 <a
                   href="#"
                   onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); openAuthModal("sign_in"); }}
-                  className="flex h-14 w-full items-center px-5 text-[16px] font-medium text-[var(--pk-brand)] transition-colors"
+                  className="flex h-14 w-full items-center px-5 text-[16px] font-medium text-[var(--pk-text-desc)] transition-colors"
                 >
                   Sign in
                 </a>

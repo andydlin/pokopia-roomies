@@ -591,17 +591,7 @@ export const HomeBuilderPage = () => {
   const [activePokemonHabitatFilters, setActivePokemonHabitatFilters] = useState<string[]>([]);
   const [activeComfortFavoriteFilters, setActiveComfortFavoriteFilters] = useState<string[]>([]);
   const [activeItemPokemonFilterId, setActiveItemPokemonFilterId] = useState<string | null>(null);
-  const [pokemonSortMode, setPokemonSortMode] = useState<"suggested" | "az">(() => {
-    if (typeof window === "undefined") return "suggested";
-    try {
-      const stored = window.localStorage.getItem(SORT_MODE_BY_TAB_STORAGE_KEY);
-      if (!stored) return "suggested";
-      const parsed = JSON.parse(stored) as { pokemon?: "suggested" | "az" };
-      return parsed.pokemon === "az" ? "az" : "suggested";
-    } catch {
-      return "suggested";
-    }
-  });
+  const pokemonSortMode = "suggested" as const;
   const [itemSortMode, setItemSortMode] = useState<"suggested" | "az_category">(() => {
     if (typeof window === "undefined") return "suggested";
     try {
@@ -798,7 +788,7 @@ export const HomeBuilderPage = () => {
 
   const showFavoritesForContentTab =
     contentActiveTab === "pokemon"
-      ? showFavoritesByTab.pokemon
+      ? true
       : contentActiveTab === "favorites"
         ? showFavoritesByTab.favorites
         : showFavoritesByTab.items;
@@ -2819,24 +2809,6 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/pokemon/set-search", query })}
                     placeholder="Search Pokemon"
                   />
-                  <FavoritesToggle
-                    checked={showFavoritesByTab.pokemon}
-                    label="Show details"
-                    onToggle={() => setShowFavoritesByTab((value) => ({ ...value, pokemon: !value.pokemon }))}
-                    disabled={selectedPokemon.length === 0}
-                  />
-                  <SortSegmentedControl
-                    activeValue={pokemonSortMode}
-                    onSuggested={() => {
-                      startResultsRefresh();
-                      window.setTimeout(() => setPokemonSortMode("suggested"), 0);
-                    }}
-                    onAlphabetical={() => {
-                      startResultsRefresh();
-                      window.setTimeout(() => setPokemonSortMode("az"), 0);
-                    }}
-                    disabled={selectedPokemon.length === 0}
-                  />
                   <ActiveFilterChips
                     chips={[
                       ...activePokemonFavoriteFilters.map((categoryId) => ({
@@ -3003,7 +2975,7 @@ export const HomeBuilderPage = () => {
                     const pokemonSecondaryPillCount =
                       selectedPokemon.length > 1 && section.id !== "none" ? individualMatchCategoryIds.length : 0;
                     const pokemonHasVisibleFavoritePills =
-                      selectedPokemon.length > 0 && showFavoritesByTab.pokemon && pokemonPrimaryPillCount + pokemonSecondaryPillCount > 0;
+                      selectedPokemon.length > 0 && pokemonPrimaryPillCount + pokemonSecondaryPillCount > 0;
                     if (shouldHideOverflowEntry) return null;
 
                     const shouldFadeOverflowEntry = isOverflowEntry;
