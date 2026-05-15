@@ -136,7 +136,7 @@ const AppShell = () => {
 
       <div className={`transition-opacity duration-200 ${showAppShellSkeleton ? "pointer-events-none opacity-0" : "opacity-100"}`}>
         <header className="relative sm:sticky sm:top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
-          <div className="flex h-[52px] w-full items-center justify-between px-5 sm:px-8 lg:px-10">
+          <div className="flex h-[52px] w-full items-center justify-between px-4 lg:px-10">
             <Link
               to="/builder"
               aria-label="Go to Home Builder"

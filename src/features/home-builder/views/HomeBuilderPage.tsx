@@ -1903,7 +1903,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section ref={builderTitleRef} className="w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-5 py-4 sm:px-8 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
+        <section ref={builderTitleRef} className="w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-4 py-4 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h1 className="text-xl font-bold tracking-[-0.03em] text-[var(--pk-text-primary)]">Build Planner</h1>
@@ -1930,7 +1930,7 @@ export const HomeBuilderPage = () => {
           </div>
         </section>
         <div ref={builderHeaderRef} className="sticky z-40 w-full overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pb-0 pt-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
-          <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1 px-5 sm:px-8 lg:px-10">
+          <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1 px-4 lg:px-10">
             {phaseTabs.map((tab) => (
               <button
                 key={tab.id}
@@ -1996,7 +1996,7 @@ export const HomeBuilderPage = () => {
               {/* Mobile toggle strip */}
               <button
                 type="button"
-                className="flex w-full items-center justify-between px-5 py-3 text-left md:hidden"
+                className="flex w-full items-center justify-between px-4 py-3 text-left md:hidden"
                 onClick={() => setMobileContextOpen((o) => !o)}
               >
                 <div className="flex items-center gap-2">
@@ -2015,7 +2015,7 @@ export const HomeBuilderPage = () => {
               </button>
 
               {/* Sidebar content */}
-              <div className={`px-6 pb-12 pt-6 ${mobileContextOpen ? "block" : "hidden md:block"}`}>
+              <div className={`px-4 pb-12 pt-6 lg:px-6 ${mobileContextOpen ? "block" : "hidden md:block"}`}>
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
