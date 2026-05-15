@@ -578,7 +578,6 @@ export const HomeBuilderPage = () => {
   const [itemDetailTrail, setItemDetailTrail] = useState<string[]>([]);
   const [isSummaryPokemonExpanded, setIsSummaryPokemonExpanded] = useState(false);
   const [isSidebarFavoritesExpanded, setIsSidebarFavoritesExpanded] = useState(false);
-  const [mobileContextOpen, setMobileContextOpen] = useState(false);
   const [collapsedPokemonSectionIds, setCollapsedPokemonSectionIds] = useState<PokemonSectionId[]>([]);
   const [expandedPokemonSectionIds, setExpandedPokemonSectionIds] = useState<PokemonSectionId[]>([]);
   const [collapsingPokemonSectionIds, setCollapsingPokemonSectionIds] = useState<PokemonSectionId[]>([]);
@@ -1991,31 +1990,9 @@ export const HomeBuilderPage = () => {
           ) : null}
 
           <div className="grid md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
-            {/* Section: Context sidebar — unified mobile drawer + desktop sidebar */}
-            <div className="app-scrollbar builder-sidebar-panel order-1 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] md:border-b-0 md:border-r">
-              {/* Mobile toggle strip */}
-              <button
-                type="button"
-                className="flex w-full items-center justify-between px-4 py-3 text-left md:hidden"
-                onClick={() => setMobileContextOpen((o) => !o)}
-              >
-                <div className="flex items-center gap-2">
-                  {selectedPokemon.slice(0, 4).map((p) =>
-                    p.imageUrl ? (
-                      <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 object-contain" />
-                    ) : (
-                      <div key={p.id} className="h-8 w-8 rounded-full bg-[var(--pk-border)]" />
-                    ),
-                  )}
-                  <span className="text-sm font-semibold text-[var(--pk-text-primary)]">
-                    {selectedPokemon.length === 0 ? "No Pokémon selected" : `${selectedPokemon.length} Pokémon`}
-                  </span>
-                </div>
-                <ChevronDown className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${mobileContextOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {/* Sidebar content */}
-              <div className={`px-4 pb-12 pt-6 lg:px-6 ${mobileContextOpen ? "block" : "hidden md:block"}`}>
+            {/* Section: Context sidebar — desktop only (mobile uses bottom sheet) */}
+            <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] md:block">
+              <div className="px-4 pb-12 pt-6 lg:px-6">
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
@@ -2369,7 +2346,7 @@ export const HomeBuilderPage = () => {
             </div>
 
             {/* Section: Active tab content */}
-            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pl-4 pr-4 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
+            <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-28 pl-4 pr-4 md:pb-12 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">
             {showInitialSkeleton ? <BuilderResultsSkeleton /> : null}
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
@@ -3253,88 +3230,204 @@ export const HomeBuilderPage = () => {
       </div>
       </div>
 
-      {/* Section: Mobile sticky home toggle */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-ink/10 bg-white/95 p-3 lg:hidden">
+      {/* Section: Mobile sticky context toggle */}
+      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--pk-border)] bg-[var(--pk-canvas)] md:hidden">
         <button
           type="button"
           onClick={() => dispatch({ type: state.ui.isMobileBuilderSheetOpen ? "ui/close-mobile-sheet" : "ui/open-mobile-sheet" })}
-          className="pk-btn pk-btn-primary pk-btn-md w-full"
+          className="flex w-full items-center justify-between px-4 py-3 text-left"
         >
-          {state.ui.isMobileBuilderSheetOpen ? "Close Home" : `Your Home: ${selectedPokemon.length} Pokemon, ${totalItemQuantity} items`}
+          <div className="flex items-center gap-2">
+            {selectedPokemon.slice(0, 4).map((p) =>
+              p.imageUrl ? (
+                <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 object-contain" />
+              ) : (
+                <div key={p.id} className="h-8 w-8 rounded-full bg-[var(--pk-border)]" />
+              ),
+            )}
+            <span className="text-sm font-semibold text-[var(--pk-text-primary)]">
+              {selectedPokemon.length === 0 ? "No Pokémon selected" : `${selectedPokemon.length} Pokémon`}
+            </span>
+          </div>
+          <ChevronUp className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${state.ui.isMobileBuilderSheetOpen ? "rotate-180" : ""}`} />
         </button>
       </div>
 
-      {/* Section: Mobile home sheet */}
+      {/* Section: Mobile context sheet */}
       {state.ui.isMobileBuilderSheetOpen ? (
-        <div className="fixed inset-0 z-40 bg-black/35 lg:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
-          <section className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-white p-4" onClick={(event) => event.stopPropagation()}>
-            <p className="type-overline text-moss/60">Current Home</p>
-            <p className="type-h3 mt-1 text-ink">{state.currentHome.name}</p>
-            {selectedPokemon.length > 0 ? (
-              <div className="-mx-4 mt-3 overflow-x-auto">
-                <div className="flex gap-2 px-4 pb-1">
-                  {selectedPokemon.map((pokemon) => (
-                    <div key={pokemon.id} className="relative flex w-20 shrink-0 flex-col items-center rounded-2xl border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--pk-border)]">
-                        {pokemon.imageUrl ? (
-                          <img src={pokemon.imageUrl} alt={pokemon.name} className="h-9 w-9 object-contain" />
-                        ) : null}
-                      </div>
-                      <p className="mt-1 w-full truncate text-center text-xs font-medium text-ink">{pokemon.name}</p>
-                      <p className="w-full truncate text-center text-[10px] text-ink/60">{getPreferredHabitatLabel(pokemon.idealHabitatId)}</p>
-                      <button
-                        type="button"
-                        onClick={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
-                        className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[var(--pk-border)] bg-white text-sm leading-none text-ink/50 hover:border-ink/30 hover:text-ink"
-                        aria-label={`Remove ${pokemon.name}`}
-                      >
-                        ×
-                      </button>
+        <div className="fixed inset-0 z-40 bg-black/35 md:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
+          <section
+            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] px-4 pb-8 pt-4"
+            onClick={(event) => event.stopPropagation()}
+          >
+            {showInitialSkeleton || isTabTransitionLoading ? (
+              <BuilderSidebarSkeleton />
+            ) : contentActiveTab === "pokemon" ? (
+              <div className="space-y-5">
+                <section className="space-y-2">
+                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
+                  {selectedPokemon.length > 0 ? (
+                    <div className="space-y-1.5">
+                      {selectedPokemon.map((pokemon) => {
+                        const overlapFavoriteIds =
+                          selectedPokemonFavoriteSets.excludingSelfByPokemonId.get(pokemon.id) ??
+                          selectedPokemonFavoriteSets.allSelectedFavoriteIds;
+                        const sharedCount = pokemon.favoriteCategoryIds.filter((categoryId) => (sharedFavoriteCounts.find(([id]) => id === categoryId)?.[1] ?? 0) > 1).length;
+                        const hasFavorites = pokemon.favoriteCategoryIds.length > 0;
+                        const chips = (() => {
+                          if (!hasFavorites) return [];
+                          const originalOrder = new Map(pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]));
+                          return [...pokemon.favoriteCategoryIds]
+                            .sort((left, right) => {
+                              const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
+                              const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
+                              if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
+                              const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
+                              const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
+                              if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
+                              return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
+                            })
+                            .map((categoryId) => ({
+                              id: categoryId,
+                              label: toCategoryLabel(categoryId),
+                              isSelected: activePokemonFavoriteFilters.includes(categoryId),
+                              tone: (overlapFavoriteIds.has(categoryId) ? "primary" : "default") as "primary" | "default",
+                              onToggle: () =>
+                                setActivePokemonFavoriteFilters((previous) =>
+                                  previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
+                                ),
+                            }));
+                        })();
+                        return (
+                          <SidebarPokemonCard
+                            key={`sheet-${pokemon.id}`}
+                            name={pokemon.name}
+                            subtitle={
+                              selectedPokemon.length >= 2 && sharedCount > 0
+                                ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
+                                : getPreferredHabitatLabel(pokemon.idealHabitatId)
+                            }
+                            imageUrl={pokemon.imageUrl}
+                            onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
+                            chips={chips}
+                          />
+                        );
+                      })}
                     </div>
-                  ))}
-                </div>
+                  ) : (
+                    <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
+                      Select Pokemon to get started.
+                    </div>
+                  )}
+                </section>
+
+                <section className="space-y-2">
+                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Preferred Habitats</p>
+                  {selectedPokemon.length >= 2 && sharedHabitatCounts.length > 0 ? (
+                    <div className="flex flex-wrap gap-1.5">
+                      {sharedHabitatCounts.map(([habitatId, count]) => (
+                        <span key={`sheet-habitat-${habitatId}`} className="group/overlap relative inline-flex">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setActivePokemonHabitatFilters((previous) =>
+                                previous.includes(habitatId) ? previous.filter((id) => id !== habitatId) : [...previous, habitatId],
+                              )
+                            }
+                            className={`pk-chip pk-chip-standard transition-colors ${activePokemonHabitatFilters.includes(habitatId) ? "pk-chip-primary" : "pk-chip-surface"}`}
+                          >
+                            {getPreferredHabitatLabel(habitatId)} ({count})
+                          </button>
+                          <OverlapTooltip
+                            items={selectedPokemon
+                              .filter((pokemon) => pokemon.idealHabitatId === habitatId)
+                              .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                            tooltipKeyPrefix={`sheet-habitat-${habitatId}-tooltip`}
+                          />
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-xs italic text-[#8e9aa3]">
+                      {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see shared habitats." : "No shared habitats yet."}
+                    </p>
+                  )}
+                </section>
+
+                <section className="space-y-2">
+                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Group Overlap</p>
+                  {selectedPokemon.length >= 2 && sharedFavoriteCounts.length > 0 ? (
+                    <div className="flex flex-wrap gap-1.5">
+                      {sidebarPrimarySharedFavorites.map(([categoryId, count]) => (
+                        <span key={`sheet-fav-${categoryId}`} className="group/overlap relative inline-flex">
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setActivePokemonFavoriteFilters((previous) =>
+                                previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
+                              )
+                            }
+                            className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
+                          >
+                            {toCategoryLabel(categoryId)} ({count})
+                          </button>
+                          <OverlapTooltip
+                            items={selectedPokemon
+                              .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
+                              .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                            tooltipKeyPrefix={`sheet-fav-${categoryId}-tooltip`}
+                          />
+                        </span>
+                      ))}
+                      {isSidebarFavoritesExpanded
+                        ? sidebarSecondarySharedFavorites.map(([categoryId, count]) => (
+                            <span key={`sheet-fav-extra-${categoryId}`} className="group/overlap relative inline-flex">
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setActivePokemonFavoriteFilters((previous) =>
+                                    previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
+                                  )
+                                }
+                                className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
+                              >
+                                {toCategoryLabel(categoryId)} ({count})
+                              </button>
+                              <OverlapTooltip
+                                items={selectedPokemon
+                                  .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
+                                  .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                                tooltipKeyPrefix={`sheet-fav-extra-${categoryId}-tooltip`}
+                              />
+                            </span>
+                          ))
+                        : null}
+                      {sidebarSecondarySharedFavorites.length > 0 ? (
+                        <button
+                          type="button"
+                          onClick={() => setIsSidebarFavoritesExpanded((value) => !value)}
+                          className="pk-chip-count transition-colors hover:brightness-[0.98]"
+                        >
+                          {isSidebarFavoritesExpanded ? (
+                            <span className="inline-flex items-center gap-1">Show Less <ChevronUp className="h-3.5 w-3.5" /></span>
+                          ) : (
+                            `+${sidebarSecondarySharedFavorites.length} more`
+                          )}
+                        </button>
+                      ) : null}
+                    </div>
+                  ) : (
+                    <p className="text-xs italic text-[#8e9aa3]">
+                      {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see group overlap." : "No shared favorites yet."}
+                    </p>
+                  )}
+                </section>
               </div>
             ) : (
-              <p className="mt-3 text-sm text-ink/50">No Pokémon selected.</p>
+              <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs text-[#6c889b]">
+                Context panel updates per tab. Pokemon context is currently available.
+              </div>
             )}
-            {buildItemEntries.length > 0 ? (
-              <div className="-mx-4 mt-3 overflow-x-auto">
-                <div className="flex gap-2 px-4 pb-1">
-                  {buildItemEntries.map((entry) => (
-                    <div key={entry.itemId} className="relative flex w-20 shrink-0 flex-col items-center rounded-2xl border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--pk-border)]">
-                        {entry.item.image ? (
-                          <img src={entry.item.image} alt={entry.itemName} className="h-9 w-9 object-contain" />
-                        ) : null}
-                      </div>
-                      <p className="mt-1 w-full truncate text-center text-xs font-medium text-ink">{entry.itemName}</p>
-                      <p className="w-full truncate text-center text-[10px] text-ink/60">x{entry.quantityInBuild}</p>
-                      <button
-                        type="button"
-                        onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                        className="absolute -right-1.5 -top-1.5 flex h-5 w-5 items-center justify-center rounded-full border border-[var(--pk-border)] bg-white text-sm leading-none text-ink/50 hover:border-ink/30 hover:text-ink"
-                        aria-label={`Remove ${entry.itemName}`}
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : null}
-            {selectedHabitat ? (
-              <div className="mt-3 flex flex-wrap gap-2">
-                <Chip>{selectedHabitat.name}</Chip>
-              </div>
-            ) : null}
-            <div className="mt-4 flex gap-2">
-              <button type="button" onClick={saveCurrentHomeAsNew} className="pk-btn pk-btn-secondary pk-btn-sm">
-                Save As New
-              </button>
-              <Link to="/homes" className="pk-btn pk-btn-secondary pk-btn-sm">
-                Saved Homes
-              </Link>
-            </div>
           </section>
         </div>
       ) : null}
