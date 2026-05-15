@@ -246,13 +246,13 @@ const AppShell = () => {
                   Sign out
                 </button>
               ) : authState.status === "guest" ? (
-                <button
-                  type="button"
-                  onClick={() => { setMobileMenuOpen(false); openAuthModal("sign_in"); }}
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); openAuthModal("sign_in"); }}
                   className="flex h-14 w-full items-center px-5 text-[16px] font-medium text-[var(--pk-brand)] transition-colors"
                 >
                   Sign in
-                </button>
+                </a>
               ) : null}
             </nav>
           </div>
