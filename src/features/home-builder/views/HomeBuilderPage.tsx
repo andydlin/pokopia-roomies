@@ -3238,16 +3238,17 @@ export const HomeBuilderPage = () => {
           className="flex w-full items-center justify-between px-4 py-3 text-left"
         >
           <div className="flex items-center gap-2">
-            {selectedPokemon.slice(0, 4).map((p) =>
+            <span className="text-sm font-semibold text-[var(--pk-text-primary)]">Your Pokemon</span>
+            {selectedPokemon.slice(0, 6).map((p) =>
               p.imageUrl ? (
                 <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 object-contain" />
               ) : (
                 <div key={p.id} className="h-8 w-8 rounded-full bg-[var(--pk-border)]" />
               ),
             )}
-            <span className="text-sm font-semibold text-[var(--pk-text-primary)]">
-              {selectedPokemon.length === 0 ? "No Pokémon selected" : `${selectedPokemon.length} Pokémon`}
-            </span>
+            {selectedPokemon.length > 6 && (
+              <span className="text-sm font-medium text-[var(--pk-text-desc)]">+{selectedPokemon.length - 6}</span>
+            )}
           </div>
           <ChevronUp className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${state.ui.isMobileBuilderSheetOpen ? "rotate-180" : ""}`} />
         </button>
@@ -3257,174 +3258,162 @@ export const HomeBuilderPage = () => {
       {state.ui.isMobileBuilderSheetOpen ? (
         <div className="fixed inset-0 z-40 bg-black/35 md:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
           <section
-            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] px-4 pb-8 pt-4"
+            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] pb-8 pt-4"
             onClick={(event) => event.stopPropagation()}
           >
+            {/* Close button */}
+            <div className="flex items-center justify-between px-4 pb-3">
+              <p className="text-sm font-semibold text-[var(--pk-text-desc)]">Your Build</p>
+              <button
+                type="button"
+                onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-[var(--pk-border)] text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                aria-label="Close"
+              >
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                  <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+
             {showInitialSkeleton || isTabTransitionLoading ? (
-              <BuilderSidebarSkeleton />
+              <div className="px-4"><BuilderSidebarSkeleton /></div>
             ) : contentActiveTab === "pokemon" ? (
               <div className="space-y-5">
                 <section className="space-y-2">
-                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
+                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Your Pokemon</p>
                   {selectedPokemon.length > 0 ? (
-                    <div className="space-y-1.5">
-                      {selectedPokemon.map((pokemon) => {
-                        const overlapFavoriteIds =
-                          selectedPokemonFavoriteSets.excludingSelfByPokemonId.get(pokemon.id) ??
-                          selectedPokemonFavoriteSets.allSelectedFavoriteIds;
-                        const sharedCount = pokemon.favoriteCategoryIds.filter((categoryId) => (sharedFavoriteCounts.find(([id]) => id === categoryId)?.[1] ?? 0) > 1).length;
-                        const hasFavorites = pokemon.favoriteCategoryIds.length > 0;
-                        const chips = (() => {
-                          if (!hasFavorites) return [];
-                          const originalOrder = new Map(pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]));
-                          return [...pokemon.favoriteCategoryIds]
-                            .sort((left, right) => {
-                              const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
-                              const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
-                              if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
-                              const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
-                              const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
-                              if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
-                              return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
-                            })
-                            .map((categoryId) => ({
-                              id: categoryId,
-                              label: toCategoryLabel(categoryId),
-                              isSelected: activePokemonFavoriteFilters.includes(categoryId),
-                              tone: (overlapFavoriteIds.has(categoryId) ? "primary" : "default") as "primary" | "default",
-                              onToggle: () =>
-                                setActivePokemonFavoriteFilters((previous) =>
-                                  previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
-                                ),
-                            }));
-                        })();
-                        return (
-                          <SidebarPokemonCard
-                            key={`sheet-${pokemon.id}`}
-                            name={pokemon.name}
-                            subtitle={
-                              selectedPokemon.length >= 2 && sharedCount > 0
-                                ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
-                                : getPreferredHabitatLabel(pokemon.idealHabitatId)
-                            }
-                            imageUrl={pokemon.imageUrl}
-                            onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
-                            chips={chips}
-                          />
-                        );
-                      })}
+                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <div className="flex gap-3 px-4 pb-2">
+                        {selectedPokemon.map((pokemon) => {
+                          const overlapFavoriteIds =
+                            selectedPokemonFavoriteSets.excludingSelfByPokemonId.get(pokemon.id) ??
+                            selectedPokemonFavoriteSets.allSelectedFavoriteIds;
+                          const sharedCount = pokemon.favoriteCategoryIds.filter((categoryId) => (sharedFavoriteCounts.find(([id]) => id === categoryId)?.[1] ?? 0) > 1).length;
+                          const hasFavorites = pokemon.favoriteCategoryIds.length > 0;
+                          const chips = (() => {
+                            if (!hasFavorites) return [];
+                            const originalOrder = new Map(pokemon.favoriteCategoryIds.map((categoryId, index) => [categoryId, index]));
+                            return [...pokemon.favoriteCategoryIds]
+                              .sort((left, right) => {
+                                const leftSharedCount = sharedFavoriteCountByCategoryId.get(left) ?? 0;
+                                const rightSharedCount = sharedFavoriteCountByCategoryId.get(right) ?? 0;
+                                if (leftSharedCount !== rightSharedCount) return rightSharedCount - leftSharedCount;
+                                const leftOverlap = overlapFavoriteIds.has(left) ? 1 : 0;
+                                const rightOverlap = overlapFavoriteIds.has(right) ? 1 : 0;
+                                if (leftOverlap !== rightOverlap) return rightOverlap - leftOverlap;
+                                return (originalOrder.get(left) ?? 0) - (originalOrder.get(right) ?? 0);
+                              })
+                              .map((categoryId) => ({
+                                id: categoryId,
+                                label: toCategoryLabel(categoryId),
+                                isSelected: activePokemonFavoriteFilters.includes(categoryId),
+                                tone: (overlapFavoriteIds.has(categoryId) ? "primary" : "default") as "primary" | "default",
+                                onToggle: () =>
+                                  setActivePokemonFavoriteFilters((previous) =>
+                                    previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
+                                  ),
+                              }));
+                          })();
+                          return (
+                            <div key={`sheet-wrap-${pokemon.id}`} className="w-[80%] shrink-0">
+                              <SidebarPokemonCard
+                                key={`sheet-${pokemon.id}`}
+                                name={pokemon.name}
+                                subtitle={
+                                  selectedPokemon.length >= 2 && sharedCount > 0
+                                    ? `${getPreferredHabitatLabel(pokemon.idealHabitatId)} · ${sharedCount} shared favorites`
+                                    : getPreferredHabitatLabel(pokemon.idealHabitatId)
+                                }
+                                imageUrl={pokemon.imageUrl}
+                                onRemove={() => dispatch({ type: "home/remove-pokemon", pokemonId: pokemon.id })}
+                                chips={chips}
+                                alwaysShowRemove
+                              />
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   ) : (
-                    <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
+                    <div className="mx-4 rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs italic text-[#6c889b]">
                       Select Pokemon to get started.
                     </div>
                   )}
                 </section>
 
                 <section className="space-y-2">
-                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Preferred Habitats</p>
+                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Preferred Habitats</p>
                   {selectedPokemon.length >= 2 && sharedHabitatCounts.length > 0 ? (
-                    <div className="flex flex-wrap gap-1.5">
-                      {sharedHabitatCounts.map(([habitatId, count]) => (
-                        <span key={`sheet-habitat-${habitatId}`} className="group/overlap relative inline-flex">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setActivePokemonHabitatFilters((previous) =>
-                                previous.includes(habitatId) ? previous.filter((id) => id !== habitatId) : [...previous, habitatId],
-                              )
-                            }
-                            className={`pk-chip pk-chip-standard transition-colors ${activePokemonHabitatFilters.includes(habitatId) ? "pk-chip-primary" : "pk-chip-surface"}`}
-                          >
-                            {getPreferredHabitatLabel(habitatId)} ({count})
-                          </button>
-                          <OverlapTooltip
-                            items={selectedPokemon
-                              .filter((pokemon) => pokemon.idealHabitatId === habitatId)
-                              .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
-                            tooltipKeyPrefix={`sheet-habitat-${habitatId}-tooltip`}
-                          />
-                        </span>
-                      ))}
+                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <div className="flex gap-1.5 px-4 pb-1">
+                        {sharedHabitatCounts.map(([habitatId, count]) => (
+                          <span key={`sheet-habitat-${habitatId}`} className="group/overlap relative inline-flex shrink-0">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setActivePokemonHabitatFilters((previous) =>
+                                  previous.includes(habitatId) ? previous.filter((id) => id !== habitatId) : [...previous, habitatId],
+                                )
+                              }
+                              className={`pk-chip pk-chip-standard transition-colors ${activePokemonHabitatFilters.includes(habitatId) ? "pk-chip-primary" : "pk-chip-surface"}`}
+                            >
+                              {getPreferredHabitatLabel(habitatId)} ({count})
+                            </button>
+                            <OverlapTooltip
+                              items={selectedPokemon
+                                .filter((pokemon) => pokemon.idealHabitatId === habitatId)
+                                .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                              tooltipKeyPrefix={`sheet-habitat-${habitatId}-tooltip`}
+                            />
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   ) : (
-                    <p className="text-xs italic text-[#8e9aa3]">
+                    <p className="px-4 text-xs italic text-[#8e9aa3]">
                       {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see shared habitats." : "No shared habitats yet."}
                     </p>
                   )}
                 </section>
 
                 <section className="space-y-2">
-                  <p className="text-base font-extrabold tracking-[-0.02em] text-[#485864]">Group Overlap</p>
+                  <p className="px-4 text-base font-extrabold tracking-[-0.02em] text-[#485864]">Group Overlap</p>
                   {selectedPokemon.length >= 2 && sharedFavoriteCounts.length > 0 ? (
-                    <div className="flex flex-wrap gap-1.5">
-                      {sidebarPrimarySharedFavorites.map(([categoryId, count]) => (
-                        <span key={`sheet-fav-${categoryId}`} className="group/overlap relative inline-flex">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setActivePokemonFavoriteFilters((previous) =>
-                                previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
-                              )
-                            }
-                            className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
-                          >
-                            {toCategoryLabel(categoryId)} ({count})
-                          </button>
-                          <OverlapTooltip
-                            items={selectedPokemon
-                              .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
-                              .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
-                            tooltipKeyPrefix={`sheet-fav-${categoryId}-tooltip`}
-                          />
-                        </span>
-                      ))}
-                      {isSidebarFavoritesExpanded
-                        ? sidebarSecondarySharedFavorites.map(([categoryId, count]) => (
-                            <span key={`sheet-fav-extra-${categoryId}`} className="group/overlap relative inline-flex">
-                              <button
-                                type="button"
-                                onClick={() =>
-                                  setActivePokemonFavoriteFilters((previous) =>
-                                    previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
-                                  )
-                                }
-                                className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
-                              >
-                                {toCategoryLabel(categoryId)} ({count})
-                              </button>
-                              <OverlapTooltip
-                                items={selectedPokemon
-                                  .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
-                                  .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
-                                tooltipKeyPrefix={`sheet-fav-extra-${categoryId}-tooltip`}
-                              />
-                            </span>
-                          ))
-                        : null}
-                      {sidebarSecondarySharedFavorites.length > 0 ? (
-                        <button
-                          type="button"
-                          onClick={() => setIsSidebarFavoritesExpanded((value) => !value)}
-                          className="pk-chip-count transition-colors hover:brightness-[0.98]"
-                        >
-                          {isSidebarFavoritesExpanded ? (
-                            <span className="inline-flex items-center gap-1">Show Less <ChevronUp className="h-3.5 w-3.5" /></span>
-                          ) : (
-                            `+${sidebarSecondarySharedFavorites.length} more`
-                          )}
-                        </button>
-                      ) : null}
+                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                      <div className="flex gap-1.5 px-4 pb-1">
+                        {[...sidebarPrimarySharedFavorites, ...sidebarSecondarySharedFavorites].map(([categoryId, count]) => (
+                          <span key={`sheet-fav-${categoryId}`} className="group/overlap relative inline-flex shrink-0">
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setActivePokemonFavoriteFilters((previous) =>
+                                  previous.includes(categoryId) ? previous.filter((id) => id !== categoryId) : [...previous, categoryId],
+                                )
+                              }
+                              className={`pk-chip pk-chip-standard transition-colors ${activePokemonFavoriteFilters.includes(categoryId) ? "pk-chip-primary" : "pk-chip-surface"}`}
+                            >
+                              {toCategoryLabel(categoryId)} ({count})
+                            </button>
+                            <OverlapTooltip
+                              items={selectedPokemon
+                                .filter((pokemon) => pokemon.favoriteCategoryIds.includes(categoryId))
+                                .map((pokemon) => ({ id: pokemon.id, name: pokemon.name, imageUrl: pokemon.imageUrl }))}
+                              tooltipKeyPrefix={`sheet-fav-${categoryId}-tooltip`}
+                            />
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   ) : (
-                    <p className="text-xs italic text-[#8e9aa3]">
+                    <p className="px-4 text-xs italic text-[#8e9aa3]">
                       {selectedPokemon.length === 0 ? "No Pokemon added yet." : selectedPokemon.length === 1 ? "Add 1 more Pokemon to see group overlap." : "No shared favorites yet."}
                     </p>
                   )}
                 </section>
               </div>
             ) : (
-              <div className="rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs text-[#6c889b]">
+              <div className="mx-4 rounded-[16px] border border-dashed border-[#b3c9d2] p-3 text-xs text-[#6c889b]">
                 Context panel updates per tab. Pokemon context is currently available.
               </div>
             )}
