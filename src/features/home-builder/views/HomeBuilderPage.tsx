@@ -578,6 +578,7 @@ export const HomeBuilderPage = () => {
   const [itemDetailTrail, setItemDetailTrail] = useState<string[]>([]);
   const [isSummaryPokemonExpanded, setIsSummaryPokemonExpanded] = useState(false);
   const [isSidebarFavoritesExpanded, setIsSidebarFavoritesExpanded] = useState(false);
+  const [mobileContextOpen, setMobileContextOpen] = useState(false);
   const [collapsedPokemonSectionIds, setCollapsedPokemonSectionIds] = useState<PokemonSectionId[]>([]);
   const [expandedPokemonSectionIds, setExpandedPokemonSectionIds] = useState<PokemonSectionId[]>([]);
   const [collapsingPokemonSectionIds, setCollapsingPokemonSectionIds] = useState<PokemonSectionId[]>([]);
@@ -2009,11 +2010,31 @@ export const HomeBuilderPage = () => {
           ) : null}
 
           <div className="grid gap-4 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
-            {/* Section: Context sidebar */}
-            <aside
-              className="app-scrollbar order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] px-6 pb-12 pt-6 lg:sticky lg:block lg:overflow-x-hidden lg:overflow-y-auto"
-              style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px))", height: "calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-title-h, 0px) - var(--builder-header-h, 0px))" }}
-            >
+            {/* Section: Context sidebar — unified mobile drawer + desktop sidebar */}
+            <div className="app-scrollbar builder-sidebar-panel order-1 border-b border-[var(--pk-border)] bg-[var(--pk-canvas)] lg:border-b-0 lg:border-r">
+              {/* Mobile toggle strip */}
+              <button
+                type="button"
+                className="flex w-full items-center justify-between px-5 py-3 text-left lg:hidden"
+                onClick={() => setMobileContextOpen((o) => !o)}
+              >
+                <div className="flex items-center gap-2">
+                  {selectedPokemon.slice(0, 4).map((p) =>
+                    p.imageUrl ? (
+                      <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 object-contain" />
+                    ) : (
+                      <div key={p.id} className="h-8 w-8 rounded-full bg-[var(--pk-border)]" />
+                    ),
+                  )}
+                  <span className="text-sm font-semibold text-[var(--pk-text-primary)]">
+                    {selectedPokemon.length === 0 ? "No Pokémon selected" : `${selectedPokemon.length} Pokémon`}
+                  </span>
+                </div>
+                <ChevronDown className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${mobileContextOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {/* Sidebar content */}
+              <div className={`px-6 pb-12 pt-6 ${mobileContextOpen ? "block" : "hidden lg:block"}`}>
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
@@ -2363,7 +2384,8 @@ export const HomeBuilderPage = () => {
               Context panel updates per tab. Pokemon context is currently available.
             </div>
           )}
-            </aside>
+              </div>
+            </div>
 
             {/* Section: Active tab content */}
             <div ref={resultsPaneRef} className="order-2 bg-transparent p-0 pb-12 pr-4 builder-results-col app-scrollbar" aria-busy={shouldShowResultsSkeleton} data-testid="builder-results-pane">

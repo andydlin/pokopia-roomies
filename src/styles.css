@@ -111,6 +111,7 @@ body {
   line-height: var(--leading-normal);
   color: var(--pk-text-primary);
   background: transparent;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 h1,
@@ -702,12 +703,26 @@ button.pk-chip.pk-chip-none:active:not(:disabled),
 
 .page-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.9fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1025px) {
   .page-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(20rem, 0.9fr);
+  }
+}
+
+.builder-sidebar-panel {
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .builder-sidebar-panel {
+    position: sticky;
+    top: calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px));
+    height: calc(100dvh - var(--pk-sticky-nav-h) - var(--builder-title-h, 0px) - var(--builder-header-h, 0px));
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 

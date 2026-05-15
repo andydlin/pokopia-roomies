@@ -34,7 +34,7 @@ export const BuilderCandidateCard = ({
       type="button"
       disabled={disabled}
       onClick={() => onAdd(entry.id)}
-      className="relative w-full min-w-[240px] justify-self-start overflow-hidden rounded-[2.8rem] border-[6px] border-[#BBD6DF] text-left transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-50"
+      className="relative w-full justify-self-start overflow-hidden rounded-[2.8rem] border-[6px] border-[#BBD6DF] text-left transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-50"
       style={{ backgroundColor: typeTheme.surfaceColor }}
     >
       <div className="relative flex flex-col">
