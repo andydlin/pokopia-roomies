@@ -3176,20 +3176,40 @@ export const HomeBuilderPage = () => {
           className="flex w-full items-center justify-between px-4 py-3 text-left"
         >
           <div className="flex min-w-0 items-center gap-2 overflow-hidden">
-            {[...buildItemEntries].reverse().slice(0, 6).map((entry) => {
-              const barItem = entities.itemsById[entry.itemId];
-              if (!barItem) return null;
-              return barItem.image ? (
-                <img key={entry.itemId} src={barItem.image} alt={barItem.name} className="h-8 w-8 shrink-0 object-contain" />
-              ) : (
-                <div key={entry.itemId} className="h-8 w-8 shrink-0 rounded-[6px] bg-[var(--pk-border)]" />
-              );
-            })}
-            {buildItemEntries.length > 6 && (
-              <span className="shrink-0 text-sm font-medium text-[var(--pk-text-desc)]">+{buildItemEntries.length - 6}</span>
-            )}
-            {buildItemEntries.length === 0 && selectedPokemon.length === 0 && (
-              <span className="text-sm text-[var(--pk-text-desc)]">Add Pokémon and items to get started</span>
+            {contentActiveTab === "pokemon" ? (
+              <>
+                {selectedPokemon.slice(0, 6).map((p) =>
+                  p.imageUrl ? (
+                    <img key={p.id} src={p.imageUrl} alt={p.name} className="h-8 w-8 shrink-0 object-contain" />
+                  ) : (
+                    <div key={p.id} className="h-8 w-8 shrink-0 rounded-full bg-[var(--pk-border)]" />
+                  ),
+                )}
+                {selectedPokemon.length > 6 && (
+                  <span className="shrink-0 text-sm font-medium text-[var(--pk-text-desc)]">+{selectedPokemon.length - 6}</span>
+                )}
+                {selectedPokemon.length === 0 && (
+                  <span className="text-sm text-[var(--pk-text-desc)]">Select Pokémon to get started</span>
+                )}
+              </>
+            ) : (
+              <>
+                {[...buildItemEntries].reverse().slice(0, 6).map((entry) => {
+                  const barItem = entities.itemsById[entry.itemId];
+                  if (!barItem) return null;
+                  return barItem.image ? (
+                    <img key={entry.itemId} src={barItem.image} alt={barItem.name} className="h-8 w-8 shrink-0 object-contain" />
+                  ) : (
+                    <div key={entry.itemId} className="h-8 w-8 shrink-0 rounded-[6px] bg-[var(--pk-border)]" />
+                  );
+                })}
+                {buildItemEntries.length > 6 && (
+                  <span className="shrink-0 text-sm font-medium text-[var(--pk-text-desc)]">+{buildItemEntries.length - 6}</span>
+                )}
+                {buildItemEntries.length === 0 && (
+                  <span className="text-sm text-[var(--pk-text-desc)]">Add items to get started</span>
+                )}
+              </>
             )}
           </div>
           <ChevronUp className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${state.ui.isMobileBuilderSheetOpen ? "rotate-180" : ""}`} />
