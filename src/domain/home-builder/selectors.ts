@@ -179,6 +179,15 @@ export const selectPokemonBrowserSections = (
     return true;
   });
 
+  if (browseState.pokemon.searchQuery) {
+    const q = browseState.pokemon.searchQuery.trim().toLowerCase();
+    filtered.sort((a, b) => {
+      const aStarts = a.pokemon.name.toLowerCase().startsWith(q) ? 0 : 1;
+      const bStarts = b.pokemon.name.toLowerCase().startsWith(q) ? 0 : 1;
+      return aStarts - bStarts;
+    });
+  }
+
   return groupPokemonBySections(filtered);
 };
 
