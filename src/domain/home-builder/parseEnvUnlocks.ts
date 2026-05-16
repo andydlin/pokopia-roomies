@@ -1,6 +1,6 @@
 export type EnvUnlock = { map: string; level: number };
 
-export function parseEnvUnlocks(obtainabilityDetails: string[]): EnvUnlock[] {
+export function parseEnvUnlocks(obtainabilityDetails: readonly string[]): EnvUnlock[] {
   const raw = obtainabilityDetails.join(" ");
   const seen = new Set<string>();
   const results: EnvUnlock[] = [];
