@@ -1017,6 +1017,7 @@ export const HomeBuilderPage = () => {
         : selectComfortItems(state.currentHome, browseWithoutCategoryFilter, entities);
     const seen = new Map<string, string>();
     tabItems.forEach((entry) => {
+      if (activePhase === "comfort_items" && EXCLUDED_ITEMS_PAGE_MAIN_CATEGORIES.has(entry.item.generalCategoryLabel)) return;
       if (!seen.has(entry.item.generalCategoryId)) seen.set(entry.item.generalCategoryId, entry.item.generalCategoryLabel);
     });
     return [...seen.entries()].map(([id, label]) => ({ id, label })).sort((a, b) => a.label.localeCompare(b.label));
