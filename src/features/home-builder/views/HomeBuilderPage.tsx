@@ -2399,11 +2399,12 @@ export const HomeBuilderPage = () => {
                   {itemPlannerSections.map((section) => {
                       const isNullStateResults = selectedPokemon.length === 0;
                       const isFilteredSection = section.id === "filtered";
-                      const isSectionCollapsed = !isFilteredSection && collapsedItemSectionIds.includes(section.id);
-                      const isSectionExpanded = isFilteredSection || expandedItemSectionIds.includes(section.id);
+                      const isCategoryFiltered = Boolean(state.browse.items.generalCategoryId);
+                      const isSectionCollapsed = !isFilteredSection && !isCategoryFiltered && collapsedItemSectionIds.includes(section.id);
+                      const isSectionExpanded = isFilteredSection || isCategoryFiltered || expandedItemSectionIds.includes(section.id);
                       const isSectionCollapsing = collapsingItemSectionIds.includes(section.id);
                       const isSectionEntering = enteringItemSectionIds.includes(section.id);
-                      const showAllEntries = isSectionExpanded || isSectionCollapsing || isFilteredSection;
+                      const showAllEntries = isSectionExpanded || isSectionCollapsing || isFilteredSection || isCategoryFiltered;
                       const hiddenCount = Math.max(section.items.length - MAX_ITEM_CARDS_PER_SECTION, 0);
                       return (
                         <CollapsibleResultsSection
@@ -2702,7 +2703,7 @@ export const HomeBuilderPage = () => {
                         })}
                           </div>
                         <SeeAllToggle
-                          show={section.items.length > MAX_ITEM_CARDS_PER_SECTION && !isFilteredSection}
+                          show={section.items.length > MAX_ITEM_CARDS_PER_SECTION && !isFilteredSection && !isCategoryFiltered}
                           isExpanded={isSectionExpanded}
                           isCollapsing={isSectionCollapsing}
                           hiddenCount={hiddenCount}
