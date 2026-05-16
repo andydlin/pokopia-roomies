@@ -49,7 +49,7 @@ export const BuilderSearchField = ({
 }) => {
   const hasValue = value.trim().length > 0;
   return (
-    <label className="group/search flex h-10 w-full max-w-[480px] min-w-[220px] items-center gap-2 rounded-[9px] border-[1.5px] border-[#DBEAFE] bg-[#FFFFFF] px-[13px] shadow-[0_1px_3px_rgba(59,130,246,0.08)] transition-[border-color,box-shadow] duration-150 ease-out focus-within:border-[#2563EB] focus-within:shadow-[0_0_0_3px_rgba(37,99,235,0.10),0_1px_3px_rgba(59,130,246,0.08)]">
+    <label className="group/search flex h-10 w-full items-center gap-2 rounded-[9px] border-[1.5px] border-[#DBEAFE] bg-[#FFFFFF] px-[13px] shadow-[0_1px_3px_rgba(59,130,246,0.08)] transition-[border-color,box-shadow] duration-150 ease-out focus-within:border-[#2563EB] focus-within:shadow-[0_0_0_3px_rgba(37,99,235,0.10),0_1px_3px_rgba(59,130,246,0.08)] sm:max-w-[480px]">
       <span className="inline-flex h-[14px] w-[14px] shrink-0 items-center justify-center">
         <SearchRefraction
           strokeWidth={1.8}

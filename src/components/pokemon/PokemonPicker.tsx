@@ -55,7 +55,7 @@ export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) 
             section.items.length > 0 ? (
               <section key={section.id} className="space-y-3">
                 <h3 className="type-overline px-1 text-ink/55">{section.title}</h3>
-                <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
+                <div className="grid grid-cols-1 justify-start gap-4 lg:[grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
                   {section.items.map(({ entry, sharedFavoriteCategoryIds, sharedHabitatIds }) => {
                     return (
                       <BuilderCandidateCard
@@ -75,7 +75,7 @@ export const PokemonPicker = ({ selected, onAdd, maxSize }: PokemonPickerProps) 
             ) : null,
           )
         : (
-            <div className="grid justify-start gap-4 [grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
+            <div className="grid grid-cols-1 justify-start gap-4 lg:[grid-template-columns:repeat(auto-fill,minmax(240px,320px))]">
               {rankedCandidates.map(({ entry }) => {
                 return (
                   <BuilderCandidateCard

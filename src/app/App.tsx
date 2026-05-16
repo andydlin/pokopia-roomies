@@ -6,6 +6,7 @@ import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
 import { PublicBuildPage } from "../features/public-builds/views/PublicBuildPage";
 import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
 import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
+import { ItemDetailPage } from "../pages/ItemDetailPage";
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 import { DesignSystemPage } from "../features/design-system/views/DesignSystemPage";
 import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
@@ -63,6 +64,7 @@ const AppRoutes = () => (
       <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
       <Route path="pokemon" element={<PokedexPokemonPage />} />
       <Route path="items" element={<PokedexItemsPage />} />
+      <Route path="items/:itemId" element={<ItemDetailPage />} />
       <Route path="habitats" element={<PokedexHabitatsPage />} />
     </Route>
 
@@ -136,7 +138,7 @@ const AppShell = () => {
 
       <div className={`transition-opacity duration-200 ${showAppShellSkeleton ? "pointer-events-none opacity-0" : "opacity-100"}`}>
         <header className="relative sm:sticky sm:top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
-          <div className="flex h-[52px] w-full items-center justify-between px-5 sm:px-8 lg:px-10">
+          <div className="flex h-[52px] w-full items-center justify-between px-4 lg:px-10">
             <Link
               to="/builder"
               aria-label="Go to Home Builder"
@@ -218,28 +220,25 @@ const AppShell = () => {
             <nav className="flex flex-col">
               <Link
                 to="/builder/pokemon"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isBuilderActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isBuilderActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Home Builder
               </Link>
               <div className="mx-5 h-px bg-[var(--pk-border)]" />
               <Link
                 to="/homes"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isHomesActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isHomesActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Saved Homes
               </Link>
               <div className="mx-5 h-px bg-[var(--pk-border)]" />
               <Link
                 to="/pokedex/pokemon"
-                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isPokedexActive ? "font-semibold text-[var(--pk-brand)]" : "text-[var(--pk-text-primary)]"}`}
+                className={`flex h-14 items-center px-5 text-[16px] font-medium transition-colors ${isPokedexActive ? "font-semibold text-[var(--pk-text-primary)]" : "text-[var(--pk-text-desc)]"}`}
               >
                 Pokedex
               </Link>
-            </nav>
-
-            {/* Sign in / Sign out at bottom */}
-            <div className="mt-auto border-t border-[var(--pk-border)]">
+              <div className="mx-5 h-px bg-[var(--pk-border)]" />
               {authState.status === "authenticated" ? (
                 <button
                   type="button"
@@ -249,15 +248,15 @@ const AppShell = () => {
                   Sign out
                 </button>
               ) : authState.status === "guest" ? (
-                <button
-                  type="button"
-                  onClick={() => { setMobileMenuOpen(false); openAuthModal("sign_in"); }}
-                  className="flex h-14 w-full items-center px-5 text-[16px] font-medium text-[var(--pk-brand)] transition-colors"
+                <a
+                  href="#"
+                  onClick={(e) => { e.preventDefault(); setMobileMenuOpen(false); openAuthModal("sign_in"); }}
+                  className="flex h-14 w-full items-center px-5 text-[16px] font-medium text-[var(--pk-text-desc)] transition-colors"
                 >
                   Sign in
-                </button>
+                </a>
               ) : null}
-            </div>
+            </nav>
           </div>
         )}
 

@@ -12,12 +12,14 @@ export const SidebarPokemonCard = ({
   imageUrl,
   onRemove,
   chips,
+  alwaysShowRemove = false,
 }: {
   name: string;
   subtitle: string;
   imageUrl?: string | null;
   onRemove: () => void;
   chips: SidebarPokemonCardChip[];
+  alwaysShowRemove?: boolean;
 }) => (
   <article className="group relative rounded-[16px] border border-[var(--pk-border)] bg-white p-2 transition-colors duration-150 hover:border-[#2563EB]">
     <div className="flex w-full items-center gap-3 text-left">
@@ -32,7 +34,7 @@ export const SidebarPokemonCard = ({
     <button
       type="button"
       onClick={onRemove}
-      className="pk-btn pk-btn-secondary pk-btn-icon pk-btn-sm absolute -right-2 -top-2 rounded-full border-[#b3c9d2] text-[#6c889b] opacity-0 transition-opacity hover:text-[#485864] group-hover:opacity-100 focus-visible:opacity-100"
+      className={`absolute -right-2 -top-2 inline-flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-opacity hover:text-[var(--pk-text-primary)] focus-visible:opacity-100 ${alwaysShowRemove ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
       aria-label={`Remove ${name}`}
     >
       <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>

@@ -5,6 +5,7 @@ import { generatedItems } from "../../data/generated/items";
 import { generatedPokemon } from "../../data/generated/pokemon";
 import { habitatTraits as seedHabitatTraits } from "../../data/seed";
 import { inferHabitatTraitIds } from "./traitInference";
+import { parseEnvUnlocks } from "../home-builder/parseEnvUnlocks";
 import type {
   FavoriteCategory,
   Habitat,
@@ -150,6 +151,7 @@ export const mapGeneratedItemsToDomain = (): Item[] =>
         quantity: material.quantity,
       })),
       obtainabilityDetails: [...(baseItem.obtainabilityDetails ?? [])],
+      envUnlocks: parseEnvUnlocks(baseItem.obtainabilityDetails ?? []),
       sources: [
         ...(itemCategoryLabel ? [{ type: "unknown" as const, label: itemCategoryLabel }] : []),
         ...(baseItem.recipeLocation ? [{ type: "craft" as const, label: baseItem.recipeLocation }] : []),

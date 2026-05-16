@@ -54,6 +54,7 @@ export interface Item {
   craftable: boolean;
   materials: CraftMaterial[];
   obtainabilityDetails?: string[];
+  envUnlocks?: Array<{ map: string; level: number }>;
   sources: ItemSource[];
   availabilityConfidence?: "low" | "medium" | "high";
   sourceLabels?: {
