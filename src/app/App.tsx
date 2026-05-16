@@ -53,19 +53,13 @@ const AppRoutes = () => (
       <Route path="/homes/view" element={<BuildViewPage />} />
       <Route path="/homes" element={<SavedHomesPage />} />
       <Route path="/builds/:buildId" element={<PublicBuildPage />} />
-    </Route>
-
-    {/* Routes that render immediately — no HomeBuilder context needed */}
-    <Route path="/auth/callback" element={<AuthCallbackPage />} />
-    <Route path="/design-system" element={<DesignSystemPage />} />
-    <Route path="/auth-preview" element={<AuthPreviewPage />} />
-
-    <Route path="/pokedex" element={<PokedexLayout />}>
-      <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
-      <Route path="pokemon" element={<PokedexPokemonPage />} />
-      <Route path="items" element={<PokedexItemsPage />} />
-      <Route path="items/:itemId" element={<ItemDetailPage />} />
-      <Route path="habitats" element={<PokedexHabitatsPage />} />
+      <Route path="/pokedex" element={<PokedexLayout />}>
+        <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
+        <Route path="pokemon" element={<PokedexPokemonPage />} />
+        <Route path="items" element={<PokedexItemsPage />} />
+        <Route path="items/:itemId" element={<ItemDetailPage />} />
+        <Route path="habitats" element={<PokedexHabitatsPage />} />
+      </Route>
     </Route>
 
     <Route path="*" element={<Navigate to="/builder" replace />} />
