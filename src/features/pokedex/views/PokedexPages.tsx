@@ -142,10 +142,13 @@ export const PokedexItemsPage = () => {
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {items.map((entry) => (
           <article key={entry.id} className="rounded-2xl border border-white/70 bg-white/85 p-4">
-            <div className="flex items-start justify-between gap-2">
+            <Link
+              to={`/pokedex/items/${entry.id}?from=${encodeURIComponent("/pokedex/items")}`}
+              className="flex items-start justify-between gap-2 hover:opacity-80"
+            >
               <p className="type-ui type-ui-strong text-ink">{entry.name}</p>
               {entry.image ? <img src={entry.image} alt={entry.name} className="h-14 w-14 rounded-lg bg-paper object-contain p-1" /> : null}
-            </div>
+            </Link>
             <p className="type-caption mt-1 text-ink/70">{entry.generalCategoryLabel}</p>
             <div className="mt-2 flex flex-wrap gap-1">
               {entry.comfortCategoryIds.length > 0 ? (

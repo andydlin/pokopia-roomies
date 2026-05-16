@@ -154,6 +154,19 @@ export const ItemDetailContent = ({ item }: ItemDetailContentProps) => {
         </div>
       ) : null}
 
+      {item.envUnlocks && item.envUnlocks.length > 0 ? (
+        <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
+          <p className="type-ui type-ui-strong text-ink/75">Shop availability</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {item.envUnlocks.map(({ map, level }) => (
+              <span key={`${item.id}-unlock-${map}-${level}`} className="pk-chip pk-chip-standard pk-chip-default">
+                {map} · Lv. {level}
+              </span>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
       {habitatsForItem.length > 0 ? (
         <div className="mt-4 rounded-xl border border-ink/8 bg-white/70 p-4">
           <p className="type-ui type-ui-strong text-ink/75">Used in habitats</p>

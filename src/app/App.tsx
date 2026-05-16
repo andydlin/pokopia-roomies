@@ -6,6 +6,7 @@ import { BuildViewPage } from "../features/home-builder/views/BuildViewPage";
 import { PublicBuildPage } from "../features/public-builds/views/PublicBuildPage";
 import { PokedexLayout } from "../features/pokedex/views/PokedexLayout";
 import { PokedexHabitatsPage, PokedexItemsPage, PokedexPokemonPage } from "../features/pokedex/views/PokedexPages";
+import { ItemDetailPage } from "../pages/ItemDetailPage";
 import { SavedHomesPage } from "../features/saved-homes/views/SavedHomesPage";
 import { DesignSystemPage } from "../features/design-system/views/DesignSystemPage";
 import { AuthCallbackPage } from "../features/auth/views/AuthCallbackPage";
@@ -63,6 +64,7 @@ const AppRoutes = () => (
       <Route index element={<Navigate to="/pokedex/pokemon" replace />} />
       <Route path="pokemon" element={<PokedexPokemonPage />} />
       <Route path="items" element={<PokedexItemsPage />} />
+      <Route path="items/:itemId" element={<ItemDetailPage />} />
       <Route path="habitats" element={<PokedexHabitatsPage />} />
     </Route>
 
