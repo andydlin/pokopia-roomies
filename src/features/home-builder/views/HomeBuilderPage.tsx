@@ -2339,7 +2339,7 @@ export const HomeBuilderPage = () => {
                 <AddedItemStrip
                   items={[...state.currentHome.itemIds].reverse().flatMap((id) => {
                     const item = entities.itemsById[id];
-                    return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
+                    return item ? [{ id: item.id, name: item.name, image: item.image, generalCategoryLabel: item.generalCategoryLabel }] : [];
                   })}
                   onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
                   className="sticky z-20"
@@ -3202,7 +3202,8 @@ export const HomeBuilderPage = () => {
       </div>
 
       {/* Section: Mobile sticky context toggle */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--pk-border)] bg-[var(--pk-canvas)] md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-30 px-2 pb-2 md:hidden">
+        <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-lg)]">
         <button
           type="button"
           onClick={() => dispatch({ type: state.ui.isMobileBuilderSheetOpen ? "ui/close-mobile-sheet" : "ui/open-mobile-sheet" })}
@@ -3247,6 +3248,7 @@ export const HomeBuilderPage = () => {
           </div>
           <ChevronUp className={`h-4 w-4 text-[var(--pk-text-desc)] transition-transform ${state.ui.isMobileBuilderSheetOpen ? "rotate-180" : ""}`} />
         </button>
+        </div>
       </div>
 
       {/* Section: Mobile context sheet */}
@@ -3322,6 +3324,21 @@ export const HomeBuilderPage = () => {
             ) : contentActiveTab === "items" ? (
               /* Item tabs: items h-scroll first, then Pokémon coverage */
               <div className="space-y-3">
+                {buildItemEntries.length > 0 && (() => {
+                  const catCounts = [...buildItemEntries].reduce<Record<string, number>>((acc, entry) => {
+                    const label = entry.item.generalCategoryLabel ?? "Other";
+                    acc[label] = (acc[label] ?? 0) + 1;
+                    return acc;
+                  }, {});
+                  return (
+                    <div className="flex items-center gap-2 px-4 pt-3">
+                      <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{buildItemEntries.length} {buildItemEntries.length === 1 ? "item" : "items"}</span>
+                      {Object.entries(catCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
+                        <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
+                      ))}
+                    </div>
+                  );
+                })()}
                 {buildItemEntries.length > 0 && (
                   <div className="overflow-x-auto overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                     <div className="flex gap-3 px-4 pb-2 pt-3">

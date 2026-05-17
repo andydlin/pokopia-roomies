@@ -132,7 +132,7 @@ export const PokedexItemsPage = () => {
     () =>
       [...state.currentHome.itemIds].reverse().flatMap((id) => {
         const item = entities.itemsById[id];
-        return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
+        return item ? [{ id: item.id, name: item.name, image: item.image, generalCategoryLabel: item.generalCategoryLabel }] : [];
       }),
     [state.currentHome.itemIds, entities],
   );

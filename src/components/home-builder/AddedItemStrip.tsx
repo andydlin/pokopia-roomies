@@ -8,7 +8,7 @@ export const AddedItemStrip = ({
   className,
   style,
 }: {
-  items: Array<{ id: string; name: string; image?: string | null }>;
+  items: Array<{ id: string; name: string; image?: string | null; generalCategoryLabel?: string | null }>;
   onRemove: (id: string) => void;
   className?: string;
   style?: CSSProperties;
@@ -17,6 +17,12 @@ export const AddedItemStrip = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
   const isTouch = useIsTouchDevice();
+
+  const categoryCounts = items.reduce<Record<string, number>>((acc, item) => {
+    const label = item.generalCategoryLabel ?? "Other";
+    acc[label] = (acc[label] ?? 0) + 1;
+    return acc;
+  }, {});
 
   useLayoutEffect(() => {
     const el = scrollRef.current;
@@ -33,7 +39,13 @@ export const AddedItemStrip = ({
   return (
     <div className={`hidden md:block py-2 ${className ?? ""}`} style={style}>
       <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
-      <div className="relative flex items-start gap-1 p-2">
+      <div className="flex items-center gap-2 px-4 pt-3">
+        <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{items.length} {items.length === 1 ? "item" : "items"}</span>
+        {Object.entries(categoryCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
+          <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
+        ))}
+      </div>
+      <div className="relative flex items-start gap-1 px-2 pb-2">
         <div
           ref={scrollRef}
           className={`flex gap-3 pt-2 pl-2 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
