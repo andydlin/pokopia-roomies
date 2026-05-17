@@ -3203,7 +3203,7 @@ export const HomeBuilderPage = () => {
 
       {/* Section: Mobile sticky context toggle */}
       <div className="fixed inset-x-0 bottom-0 z-30 px-2 pb-2 md:hidden">
-        <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-lg)]">
+        <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[0_-4px_24px_rgba(0,0,0,0.18),0_8px_32px_rgba(0,0,0,0.12)]">
         <button
           type="button"
           onClick={() => dispatch({ type: state.ui.isMobileBuilderSheetOpen ? "ui/close-mobile-sheet" : "ui/open-mobile-sheet" })}
@@ -3253,9 +3253,9 @@ export const HomeBuilderPage = () => {
 
       {/* Section: Mobile context sheet */}
       {state.ui.isMobileBuilderSheetOpen ? (
-        <div className="fixed inset-0 z-40 bg-black/35 md:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
+        <div className="fixed inset-0 z-40 md:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
           <section
-            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] pb-8 pt-4"
+            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-card)] pb-8 pt-4 shadow-[0_-8px_40px_rgba(0,0,0,0.20)]"
             onClick={(event) => event.stopPropagation()}
           >
             {showInitialSkeleton || (isTabTransitionLoading && pendingTabRef.current !== contentActiveTab) ? (
@@ -3331,11 +3331,13 @@ export const HomeBuilderPage = () => {
                     return acc;
                   }, {});
                   return (
-                    <div className="flex items-center gap-2 px-4 pt-3">
-                      <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{buildItemEntries.length} {buildItemEntries.length === 1 ? "item" : "items"}</span>
-                      {Object.entries(catCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
-                        <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
-                      ))}
+                    <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 pt-3">
+                      <div className="flex items-center gap-2 whitespace-nowrap">
+                        <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{buildItemEntries.length} {buildItemEntries.length === 1 ? "item" : "items"}</span>
+                        {Object.entries(catCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
+                          <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
+                        ))}
+                      </div>
                     </div>
                   );
                 })()}
@@ -3347,7 +3349,7 @@ export const HomeBuilderPage = () => {
                         if (!sheetItem) return null;
                         return (
                           <div key={`sheet-item-${entry.itemId}`} className="w-20 shrink-0">
-                            <article className="relative rounded-[12px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2 text-center">
+                            <article className="relative text-center">
                               <button
                                 type="button"
                                 aria-label={`Remove ${sheetItem.name}`}
