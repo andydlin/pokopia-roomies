@@ -122,7 +122,7 @@ const AppShell = () => {
         }`}
         aria-hidden={!showAppShellSkeleton}
       >
-        <header className="flex h-[52px] w-full items-center gap-6 border-b border-[#DBEAFE] bg-white px-6">
+        <header className="flex h-[48px] w-full items-center gap-6 border-b border-[#DBEAFE] bg-white px-6">
           <div className="pk-skeleton h-[22px] w-[110px] rounded-[6px]" />
           <div className="pk-skeleton ml-auto h-[14px] w-[80px] rounded-[4px]" />
           <div className="pk-skeleton h-[14px] w-[80px] rounded-[4px]" />
@@ -132,7 +132,7 @@ const AppShell = () => {
 
       <div className={`transition-opacity duration-200 ${showAppShellSkeleton ? "pointer-events-none opacity-0" : "opacity-100"}`}>
         <header className="relative sm:sticky sm:top-0 z-50 w-full border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
-          <div className="flex h-[52px] w-full items-center justify-between px-4 lg:px-10">
+          <div className="flex h-[48px] w-full items-center justify-between px-4 lg:px-10">
             <Link
               to="/builder"
               aria-label="Go to Home Builder"
@@ -180,7 +180,7 @@ const AppShell = () => {
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-[60] flex flex-col bg-[var(--pk-card)] sm:hidden">
             {/* Header row */}
-            <div className="flex h-[52px] shrink-0 items-center justify-between border-b border-[var(--pk-border)] px-5">
+            <div className="flex h-[48px] shrink-0 items-center justify-between border-b border-[var(--pk-border)] px-5">
               <Link
                 to="/builder"
                 className="text-[20px] font-extrabold tracking-[-0.02em] leading-none"

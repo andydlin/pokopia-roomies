@@ -556,6 +556,71 @@ const HabitatDetailOverlay = ({ habitatId, onClose }: { habitatId: string; onClo
   );
 };
 
+// Component: Desktop added-items strip shown above items browse results
+const AddedItemStrip = ({
+  items,
+  onRemove,
+}: {
+  items: Array<{ id: string; name: string; image?: string | null }>;
+  onRemove: (id: string) => void;
+}) => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const check = () => setHasOverflow(el.scrollWidth > el.clientWidth + 2);
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [items.length]);
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="hidden md:block border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
+      <div className="relative flex items-start gap-1 px-4 py-3">
+        <div
+          ref={scrollRef}
+          className={`flex gap-3 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
+        >
+          {items.map((item) => (
+            <div key={item.id} className="group/strip relative flex shrink-0 flex-col items-center gap-1 w-[64px]">
+              <div className="relative flex h-[52px] w-[64px] items-center justify-center rounded-[10px] bg-[var(--pk-canvas)] p-1">
+                {item.image
+                  ? <img src={item.image} alt={item.name} className="h-10 w-10 object-contain" />
+                  : <div className="h-10 w-10 rounded-[6px] bg-[var(--pk-border)]" />}
+                <button
+                  type="button"
+                  onClick={() => onRemove(item.id)}
+                  aria-label={`Remove ${item.name}`}
+                  className="absolute -right-1.5 -top-1.5 hidden h-[20px] w-[20px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)] group-hover/strip:flex"
+                >
+                  <span className="text-sm leading-none">×</span>
+                </button>
+              </div>
+              <p className="w-full truncate text-center text-[10px] leading-tight text-[var(--pk-text-desc)]">{item.name}</p>
+            </div>
+          ))}
+        </div>
+        {(hasOverflow || isExpanded) ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((v) => !v)}
+            className="ml-auto mt-1 flex shrink-0 items-center gap-1 rounded-[6px] px-2 py-1 text-xs font-medium text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)]"
+            aria-label={isExpanded ? "Collapse item strip" : "Expand item strip"}
+          >
+            {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
 // Component: Unified Home Builder page
 export const HomeBuilderPage = () => {
   const {
@@ -2023,7 +2088,7 @@ export const HomeBuilderPage = () => {
   return (
     <div className="relative pb-24 lg:pb-0">
       <div className="space-y-0">
-        <section ref={builderTitleRef} className="w-full border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] px-4 py-4 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
+        <section ref={builderTitleRef} className="w-full bg-[var(--pk-card)] px-4 py-4 lg:px-10 lg:sticky lg:z-40" style={{ top: "var(--pk-sticky-nav-h)" }}>
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <h1 className="text-xl font-bold tracking-[-0.03em] text-[var(--pk-text-primary)]">Build Planner</h1>
@@ -2049,7 +2114,7 @@ export const HomeBuilderPage = () => {
             </div>
           </div>
         </section>
-        <div ref={builderHeaderRef} className="sticky z-40 w-full overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-brand-light)] pb-0 pt-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
+        <div ref={builderHeaderRef} className="sticky z-40 w-full overflow-x-auto border-b border-[var(--pk-border)] bg-[var(--pk-card)] pb-0 pt-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px))" }}>
           <div ref={tabContainerRef} className="inline-flex items-end justify-start gap-1 px-4 lg:px-10">
             {phaseTabs.map((tab) => (
               <button
@@ -2066,7 +2131,7 @@ export const HomeBuilderPage = () => {
                 }}
                 className={`relative inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-tl-[6px] rounded-tr-[6px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
                   activePhase === tab.id
-                    ? "bg-white text-[var(--pk-brand)]"
+                    ? "bg-[var(--pk-brand-light)] text-[var(--pk-brand)]"
                     : "bg-transparent text-[var(--pk-text-desc)] hover:text-[var(--pk-brand)]"
                 }`}
               >
@@ -2089,7 +2154,7 @@ export const HomeBuilderPage = () => {
                   onChange={(query) => dispatch({ type: "browse/favorites/set-search", query })}
                   placeholder="Search favorites items"
                 />
-                <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[#c2dbe6] px-3 py-1.5 text-sm font-medium text-[#6c889b]">
+                <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
                   <select
                     value={state.browse.favorites.favoriteCategoryId ?? ""}
                     onChange={(event) =>
@@ -2104,7 +2169,7 @@ export const HomeBuilderPage = () => {
                       </option>
                     ))}
                   </select>
-                  <ChevronDown className="h-5 w-5 text-[#6c889b]" />
+                  <ChevronDown className="h-4 w-4 shrink-0" />
                 </label>
               </div>
             </div>
@@ -2112,7 +2177,7 @@ export const HomeBuilderPage = () => {
 
           <div className="grid md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
             {/* Section: Context sidebar — desktop only (mobile uses bottom sheet) */}
-            <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] md:block">
+            <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] md:block">
               <div className="px-4 pb-12 pt-6 lg:px-6">
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
@@ -2339,7 +2404,7 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
                     placeholder="Search items"
                   />
-                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[#c2dbe6] px-3 py-1.5 text-sm font-medium text-[#6c889b]">
+                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
                     <select
                       value={state.browse.items.generalCategoryId ?? ""}
                       onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
@@ -2371,6 +2436,13 @@ export const HomeBuilderPage = () => {
                     />
                   ) : null}
                 </ResultsBrowserBar>
+                <AddedItemStrip
+                  items={[...state.currentHome.itemIds].reverse().flatMap((id) => {
+                    const item = entities.itemsById[id];
+                    return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
+                  })}
+                  onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
+                />
                 <ResultsContent isRefreshing={isResultsRefreshing}>
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
                     <section className="rounded-[16px] border border-[#C8DAE2] bg-[#E8F1F4] p-6">

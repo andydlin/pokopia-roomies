@@ -20,7 +20,7 @@
 
 @media (min-width: 640px) {
   :root {
-    --pk-sticky-nav-h: 52px;
+    --pk-sticky-nav-h: 48px;
   }
 }
 
