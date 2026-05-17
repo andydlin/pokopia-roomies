@@ -62,6 +62,7 @@ const AppRoutes = () => (
       </Route>
     </Route>
 
+    <Route path="/design-system" element={<DesignSystemPage />} />
     <Route path="/auth/callback" element={<AuthCallbackPage />} />
     <Route path="/auth-preview" element={<AuthPreviewPage />} />
     <Route path="*" element={<Navigate to="/builder" replace />} />
