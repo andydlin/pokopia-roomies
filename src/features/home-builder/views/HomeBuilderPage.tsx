@@ -1922,7 +1922,7 @@ export const HomeBuilderPage = () => {
       return (
         <article
           key={`${keyPrefix}-pokemon-coverage-${summary.pokemon.id}`}
-          className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-canvas)] p-2"
+          className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] p-2"
         >
           <div className="flex items-center gap-3">
             <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
