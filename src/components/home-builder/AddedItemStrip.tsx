@@ -33,7 +33,7 @@ export const AddedItemStrip = ({
   return (
     <div className={`hidden md:block py-2 ${className ?? ""}`} style={style}>
       <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
-      <div className="relative flex items-start gap-1 px-4 py-3">
+      <div className="relative flex items-start gap-1 p-2">
         <div
           ref={scrollRef}
           className={`flex gap-3 pt-2 pl-2 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
