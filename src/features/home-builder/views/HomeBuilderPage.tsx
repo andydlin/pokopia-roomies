@@ -2177,7 +2177,7 @@ export const HomeBuilderPage = () => {
 
           <div className="grid md:grid-cols-[320px_minmax(0,1fr)] md:items-start">
             {/* Section: Context sidebar — desktop only (mobile uses bottom sheet) */}
-            <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-card)] md:block">
+            <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] md:block">
               <div className="px-4 pb-12 pt-6 lg:px-6">
           {showInitialSkeleton || isTabTransitionLoading ? (
             <BuilderSidebarSkeleton />
