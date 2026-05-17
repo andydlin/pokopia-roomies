@@ -597,7 +597,7 @@ export const HomeBuilderPage = () => {
     if (typeof window === "undefined") {
       return {
         pokemon: false,
-        items: false,
+        items: true,
         favorites: false,
       };
     }
@@ -607,20 +607,20 @@ export const HomeBuilderPage = () => {
         const parsed = JSON.parse(storedByTab) as Partial<Record<"pokemon" | "items" | "favorites", boolean>>;
         return {
           pokemon: Boolean(parsed.pokemon),
-          items: Boolean(parsed.items),
+          items: parsed.items !== undefined ? Boolean(parsed.items) : true,
           favorites: Boolean(parsed.favorites),
         };
       }
       const legacy = window.localStorage.getItem(SHOW_FAVORITES_STORAGE_KEY) === "true";
       return {
         pokemon: legacy,
-        items: legacy,
+        items: true,
         favorites: legacy,
       };
     } catch {
       return {
         pokemon: false,
-        items: false,
+        items: true,
         favorites: false,
       };
     }
@@ -1633,8 +1633,9 @@ export const HomeBuilderPage = () => {
       const some = sortedPlannerItemEntries.filter(
         (entry) => (itemMatchStatsById.get(entry.item.id)?.coverageCount ?? 0) === 1,
       );
-      const none = sortedPlannerItemEntries
-        .filter((entry) => (itemMatchStatsById.get(entry.item.id)?.coverageCount ?? 0) === 0)
+      const matchedIds = new Set([...best, ...good, ...some].map((e) => e.item.id));
+      const none = comfortFavoriteFilteredRankedItems
+        .filter((entry) => !matchedIds.has(entry.item.id))
         .sort((left, right) => left.item.name.localeCompare(right.item.name));
 
       return [
@@ -1676,7 +1677,7 @@ export const HomeBuilderPage = () => {
       { id: "useful", title: "Useful options", items: useful },
       { id: "more", title: "More items", items: more },
     ].filter((section) => section.items.length > 0);
-  }, [activePhase, isItemFavoriteFilterActive, itemMatchStatsById, itemSortMode, selectedPokemon, selectedPokemonSharedFavoriteCategoryIdSet, sortedPlannerItemEntries]);
+  }, [activePhase, comfortFavoriteFilteredRankedItems, isItemFavoriteFilterActive, itemMatchStatsById, itemSortMode, selectedPokemon, selectedPokemonSharedFavoriteCategoryIdSet, sortedPlannerItemEntries]);
   const itemSectionUsefulRangeById = useMemo(() => {
     const rangeBySectionId = new Map<string, string>();
     if (activePhase === "extra_items" || selectedPokemon.length === 0) return rangeBySectionId;
@@ -2062,10 +2063,11 @@ export const HomeBuilderPage = () => {
                 }}
                 style={{
                   borderBottom: activePhase === tab.id ? "2px solid var(--pk-brand)" : "2px solid transparent",
-                  borderRadius: "0",
+                  borderBottomLeftRadius: "0",
+                  borderBottomRightRadius: "0",
                   fontFamily: "inherit",
                 }}
-                className={`relative inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-tl-[6px] rounded-tr-[6px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
+                className={`relative inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-tl-[8px] rounded-tr-[8px] px-5 py-2.5 text-sm font-semibold leading-none transition-colors duration-150 ${
                   activePhase === tab.id
                     ? "bg-[var(--pk-brand-light)] text-[var(--pk-brand)]"
                     : "bg-transparent text-[var(--pk-text-desc)] hover:text-[var(--pk-brand)]"
@@ -2115,7 +2117,7 @@ export const HomeBuilderPage = () => {
             {/* Section: Context sidebar — desktop only (mobile uses bottom sheet) */}
             <div className="app-scrollbar builder-sidebar-panel order-1 hidden border-r border-[var(--pk-border)] bg-[var(--pk-canvas)] md:block">
               <div className="px-4 pb-12 pt-6 lg:px-6">
-          {showInitialSkeleton || isTabTransitionLoading ? (
+          {showInitialSkeleton || (isTabTransitionLoading && pendingTabRef.current !== contentActiveTab) ? (
             <BuilderSidebarSkeleton />
           ) : contentActiveTab === "pokemon" ? (
             <div className="space-y-5">
@@ -3254,7 +3256,7 @@ export const HomeBuilderPage = () => {
             className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-canvas)] pb-8 pt-4"
             onClick={(event) => event.stopPropagation()}
           >
-            {showInitialSkeleton || isTabTransitionLoading ? (
+            {showInitialSkeleton || (isTabTransitionLoading && pendingTabRef.current !== contentActiveTab) ? (
               <div className="px-4"><BuilderSidebarSkeleton /></div>
             ) : contentActiveTab === "pokemon" ? (
               /* Pokémon tab: Pokémon cards h-scroll */
