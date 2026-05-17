@@ -706,7 +706,7 @@ export const HomeBuilderPage = () => {
       window.localStorage.setItem(SHOW_FAVORITES_BY_TAB_STORAGE_KEY, JSON.stringify(showFavoritesByTab));
       window.localStorage.setItem(
         SHOW_FAVORITES_STORAGE_KEY,
-        showFavoritesByTab.pokemon || showFavoritesByTab.items || showFavoritesByTab.favorites ? "true" : "false",
+        showFavoritesByTab.pokemon || showFavoritesForContentTab || showFavoritesByTab.favorites ? "true" : "false",
       );
     } catch {
       // Ignore storage errors (private mode/quota) and keep in-memory state.
@@ -2552,8 +2552,8 @@ export const HomeBuilderPage = () => {
                           const itemHasVisibleFavoritePills =
                             (activePhase === "extra_items" && entry.item.comfortCategoryIds.length > 0) ||
                             (usePokemonSatisfactionUi
-                              ? (showFavoritesByTab.items && matchedPokemon.length > 0) || (selectedPokemon.length === 0 && entry.item.favoriteCategoryIds.length > 0)
-                              : (showFavoritesByTab.items || selectedPokemon.length === 0) &&
+                              ? (showFavoritesForContentTab && matchedPokemon.length > 0) || (selectedPokemon.length === 0 && entry.item.favoriteCategoryIds.length > 0)
+                              : (showFavoritesForContentTab || selectedPokemon.length === 0) &&
                                 ((selectedPokemon.length > 0 && showComfortContext
                                   ? itemPrimaryPillCount + itemSecondaryPillCount > 0
                                   : entry.item.favoriteCategoryIds.length > 0)));
@@ -2604,7 +2604,7 @@ export const HomeBuilderPage = () => {
                                       ))}
                                     </div>
                                   ) : null}
-                                  {usePokemonSatisfactionUi && showFavoritesByTab.items && matchedPokemon.length > 0 ? (
+                                  {usePokemonSatisfactionUi && showFavoritesForContentTab && matchedPokemon.length > 0 ? (
                                     <>
                                       <div className="mt-2 flex flex-wrap gap-1">
                                         {visibleFavoriteCategoryIds.map((categoryId) => {
@@ -2644,7 +2644,7 @@ export const HomeBuilderPage = () => {
                                       </div>
                                     </>
                                   ) : null}
-                                  {!usePokemonSatisfactionUi && showFavoritesByTab.items && selectedPokemon.length > 0 && showComfortContext && (itemPrimaryPillCount + itemSecondaryPillCount > 0) ? (
+                                  {!usePokemonSatisfactionUi && showFavoritesForContentTab && selectedPokemon.length > 0 && showComfortContext && (itemPrimaryPillCount + itemSecondaryPillCount > 0) ? (
                                     <div className="mt-2 flex flex-wrap gap-1">
                                         {(useComfortGroupModel && section.id !== "none" ? groupMatchCategoryIds : visibleFavoriteCategoryIds).map((categoryId) => {
                                           const overlapPokemon = overlapPokemonByCategoryId.get(categoryId) ?? [];
@@ -2689,7 +2689,7 @@ export const HomeBuilderPage = () => {
                                         {shouldShowFavoriteOverflowToggle ? null : null}
                                     </div>
                                   ) : null}
-                                  {!usePokemonSatisfactionUi && (showFavoritesByTab.items || selectedPokemon.length === 0) && (selectedPokemon.length === 0 || !showComfortContext) ? (
+                                  {!usePokemonSatisfactionUi && (showFavoritesForContentTab || selectedPokemon.length === 0) && (selectedPokemon.length === 0 || !showComfortContext) ? (
                                       <div className="mt-2 flex flex-wrap gap-1">
                                         {entry.item.favoriteCategoryIds.map((categoryId) => (
                                           <span key={`${entry.item.id}-${categoryId}`} className="pk-chip pk-chip-compact pk-chip-none">
