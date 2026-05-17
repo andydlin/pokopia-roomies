@@ -2,6 +2,7 @@ import { type KeyboardEvent, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { favoriteCategories } from "../../../data/favoriteCategories";
 import { Chip } from "../../../components/common/Chip";
+import { AddedItemStrip } from "../../../components/home-builder/AddedItemStrip";
 import { useHomeBuilder } from "../../home-builder/state/HomeBuilderContext";
 
 const categoryLabel = (categoryId: string) =>
@@ -117,7 +118,7 @@ export const PokedexPokemonPage = () => {
 };
 
 export const PokedexItemsPage = () => {
-  const { entities, dispatch } = useHomeBuilder();
+  const { state, entities, dispatch } = useHomeBuilder();
   const [query, setQuery] = useState("");
   const items = useMemo(
     () =>
@@ -125,6 +126,15 @@ export const PokedexItemsPage = () => {
         .map((id) => entities.itemsById[id])
         .filter((entry) => [entry.name, entry.generalCategoryLabel].join(" ").toLowerCase().includes(query.toLowerCase())),
     [entities, query],
+  );
+
+  const addedItems = useMemo(
+    () =>
+      [...state.currentHome.itemIds].reverse().flatMap((id) => {
+        const item = entities.itemsById[id];
+        return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
+      }),
+    [state.currentHome.itemIds, entities],
   );
 
   return (
@@ -138,6 +148,10 @@ export const PokedexItemsPage = () => {
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search items"
         className="type-ui w-full rounded-2xl border border-ink/10 bg-white/90 px-4 py-3"
+      />
+      <AddedItemStrip
+        items={addedItems}
+        onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
       />
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {items.map((entry) => (

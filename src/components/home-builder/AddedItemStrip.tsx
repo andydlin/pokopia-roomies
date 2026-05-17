@@ -1,0 +1,66 @@
+import { useLayoutEffect, useRef, useState } from "react";
+import { ChevronDown, ChevronUp } from "@untitledui/icons";
+
+export const AddedItemStrip = ({
+  items,
+  onRemove,
+}: {
+  items: Array<{ id: string; name: string; image?: string | null }>;
+  onRemove: (id: string) => void;
+}) => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
+
+  useLayoutEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const check = () => setHasOverflow(el.scrollWidth > el.clientWidth + 2);
+    check();
+    const observer = new ResizeObserver(check);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [items.length]);
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="hidden md:block border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
+      <div className="relative flex items-start gap-1 px-4 py-3">
+        <div
+          ref={scrollRef}
+          className={`flex gap-3 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
+        >
+          {items.map((item) => (
+            <div key={item.id} className="group/strip relative flex shrink-0 flex-col items-center gap-1 w-[64px]">
+              <div className="relative flex h-[52px] w-[64px] items-center justify-center rounded-[10px] bg-[var(--pk-canvas)] p-1">
+                {item.image
+                  ? <img src={item.image} alt={item.name} className="h-10 w-10 object-contain" />
+                  : <div className="h-10 w-10 rounded-[6px] bg-[var(--pk-border)]" />}
+                <button
+                  type="button"
+                  onClick={() => onRemove(item.id)}
+                  aria-label={`Remove ${item.name}`}
+                  className="absolute -right-1.5 -top-1.5 hidden h-[20px] w-[20px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)] group-hover/strip:flex"
+                >
+                  <span className="text-sm leading-none">×</span>
+                </button>
+              </div>
+              <p className="w-full truncate text-center text-[10px] leading-tight text-[var(--pk-text-desc)]">{item.name}</p>
+            </div>
+          ))}
+        </div>
+        {(hasOverflow || isExpanded) ? (
+          <button
+            type="button"
+            onClick={() => setIsExpanded((v) => !v)}
+            className="ml-auto mt-1 flex shrink-0 items-center gap-1 rounded-[6px] px-2 py-1 text-xs font-medium text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)]"
+            aria-label={isExpanded ? "Collapse item strip" : "Expand item strip"}
+          >
+            {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          </button>
+        ) : null}
+      </div>
+    </div>
+  );
+};
