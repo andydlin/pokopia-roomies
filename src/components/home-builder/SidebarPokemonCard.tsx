@@ -1,3 +1,5 @@
+import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
+
 type SidebarPokemonCardChip = {
   id: string;
   label: string;
@@ -20,7 +22,10 @@ export const SidebarPokemonCard = ({
   onRemove: () => void;
   chips: SidebarPokemonCardChip[];
   alwaysShowRemove?: boolean;
-}) => (
+}) => {
+  const isTouch = useIsTouchDevice();
+  const showRemove = alwaysShowRemove || isTouch;
+  return (
   <article className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] p-2 transition-colors duration-150 hover:border-[#2563EB]">
     <div className="flex w-full items-center gap-3 text-left">
       <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
@@ -34,7 +39,7 @@ export const SidebarPokemonCard = ({
     <button
       type="button"
       onClick={onRemove}
-      className={`absolute -right-2 -top-2 inline-flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-opacity hover:text-[var(--pk-text-primary)] focus-visible:opacity-100 ${alwaysShowRemove ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+      className={`absolute -right-2 -top-2 inline-flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-opacity hover:text-[var(--pk-text-primary)] focus-visible:opacity-100 ${showRemove ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
       aria-label={`Remove ${name}`}
     >
       <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
@@ -55,4 +60,5 @@ export const SidebarPokemonCard = ({
       </div>
     ) : null}
   </article>
-);
+  );
+};

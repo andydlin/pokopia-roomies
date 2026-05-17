@@ -1,16 +1,22 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { type CSSProperties, useLayoutEffect, useRef, useState } from "react";
 import { ChevronDown, ChevronUp } from "@untitledui/icons";
+import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
 
 export const AddedItemStrip = ({
   items,
   onRemove,
+  className,
+  style,
 }: {
   items: Array<{ id: string; name: string; image?: string | null }>;
   onRemove: (id: string) => void;
+  className?: string;
+  style?: CSSProperties;
 }) => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
+  const isTouch = useIsTouchDevice();
 
   useLayoutEffect(() => {
     const el = scrollRef.current;
@@ -25,23 +31,24 @@ export const AddedItemStrip = ({
   if (items.length === 0) return null;
 
   return (
-    <div className="hidden md:block border-b border-[var(--pk-border)] bg-[var(--pk-card)]">
+    <div className={`hidden md:block py-2 ${className ?? ""}`} style={style}>
+      <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
       <div className="relative flex items-start gap-1 px-4 py-3">
         <div
           ref={scrollRef}
-          className={`flex gap-3 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
+          className={`flex gap-3 pt-2 pl-2 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
         >
           {items.map((item) => (
-            <div key={item.id} className="group/strip relative flex shrink-0 flex-col items-center gap-1 w-[64px]">
-              <div className="relative flex h-[52px] w-[64px] items-center justify-center rounded-[10px] bg-[var(--pk-canvas)] p-1">
+            <div key={item.id} className="group/strip relative flex shrink-0 flex-col items-center gap-1 w-[48px]">
+              <div className="relative flex h-[48px] w-[48px] items-center justify-center rounded-[10px] bg-[var(--pk-border)] p-1">
                 {item.image
-                  ? <img src={item.image} alt={item.name} className="h-10 w-10 object-contain" />
-                  : <div className="h-10 w-10 rounded-[6px] bg-[var(--pk-border)]" />}
+                  ? <img src={item.image} alt={item.name} className="h-8 w-8 object-contain" />
+                  : <div className="h-8 w-8 rounded-[6px] bg-[var(--pk-border)]" />}
                 <button
                   type="button"
                   onClick={() => onRemove(item.id)}
                   aria-label={`Remove ${item.name}`}
-                  className="absolute -right-1.5 -top-1.5 hidden h-[20px] w-[20px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)] group-hover/strip:flex"
+                  className={`absolute -right-1.5 -top-1.5 h-[20px] w-[20px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-colors hover:text-[var(--pk-text-primary)] ${isTouch ? "flex" : "hidden group-hover/strip:flex"}`}
                 >
                   <span className="text-sm leading-none">×</span>
                 </button>
@@ -60,6 +67,7 @@ export const AddedItemStrip = ({
             {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
           </button>
         ) : null}
+      </div>
       </div>
     </div>
   );

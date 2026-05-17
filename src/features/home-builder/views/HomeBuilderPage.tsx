@@ -2334,6 +2334,15 @@ export const HomeBuilderPage = () => {
             {/* Subsection: Items browser */}
             {!showInitialSkeleton && contentActiveTab === "items" ? (
               <>
+                <AddedItemStrip
+                  items={[...state.currentHome.itemIds].reverse().flatMap((id) => {
+                    const item = entities.itemsById[id];
+                    return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
+                  })}
+                  onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
+                  className="sticky z-20"
+                  style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px))" }}
+                />
                 <ResultsBrowserBar>
                   <BuilderSearchField
                     value={state.browse.items.searchQuery}
@@ -2372,13 +2381,6 @@ export const HomeBuilderPage = () => {
                     />
                   ) : null}
                 </ResultsBrowserBar>
-                <AddedItemStrip
-                  items={[...state.currentHome.itemIds].reverse().flatMap((id) => {
-                    const item = entities.itemsById[id];
-                    return item ? [{ id: item.id, name: item.name, image: item.image }] : [];
-                  })}
-                  onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
-                />
                 <ResultsContent isRefreshing={isResultsRefreshing}>
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
                     <section className="rounded-[16px] border border-[#C8DAE2] bg-[#E8F1F4] p-6">

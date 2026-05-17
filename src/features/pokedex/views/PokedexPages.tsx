@@ -143,15 +143,17 @@ export const PokedexItemsPage = () => {
         <p className="type-overline text-moss/60">Pokedex</p>
         <h2 className="type-h2 mt-1 text-ink">Items</h2>
       </section>
+      <AddedItemStrip
+        items={addedItems}
+        onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
+        className="sticky z-20"
+        style={{ top: "var(--pk-sticky-nav-h)" }}
+      />
       <input
         value={query}
         onChange={(event) => setQuery(event.target.value)}
         placeholder="Search items"
         className="type-ui w-full rounded-2xl border border-ink/10 bg-white/90 px-4 py-3"
-      />
-      <AddedItemStrip
-        items={addedItems}
-        onRemove={(id) => dispatch({ type: "home/remove-item", itemId: id })}
       />
       <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
         {items.map((entry) => (
