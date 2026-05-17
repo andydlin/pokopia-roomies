@@ -2365,7 +2365,7 @@ export const HomeBuilderPage = () => {
                     <ChevronDown className="h-4 w-4 shrink-0" />
                   </label>
                   {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
-                    <div className="w-full md:hidden">
+                    <div className="w-full">
                       <p className="mb-1.5 text-xs font-medium text-[var(--pk-text-desc)]">Filter by Pokémon</p>
                       <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                         {selectedPokemon.map((pokemon) => {
