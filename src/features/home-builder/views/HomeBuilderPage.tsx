@@ -2364,6 +2364,34 @@ export const HomeBuilderPage = () => {
                     </select>
                     <ChevronDown className="h-4 w-4 shrink-0" />
                   </label>
+                  {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
+                    <div className="w-full md:hidden">
+                      <p className="mb-1.5 text-xs font-medium text-[var(--pk-text-desc)]">Filter by Pokémon</p>
+                      <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                        {selectedPokemon.map((pokemon) => {
+                          const isActive = activeItemPokemonFilterId === pokemon.id;
+                          return (
+                            <button
+                              key={pokemon.id}
+                              type="button"
+                              onClick={() => setActiveItemPokemonFilterId(isActive ? null : pokemon.id)}
+                              aria-pressed={isActive}
+                              className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-colors ${
+                                isActive
+                                  ? "border-[#2563EB] bg-[#DBEAFE] text-[#1E3A5F]"
+                                  : "border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)]"
+                              }`}
+                            >
+                              {pokemon.imageUrl ? (
+                                <img src={pokemon.imageUrl} alt="" aria-hidden className="h-4 w-4 object-contain" />
+                              ) : null}
+                              {pokemon.name}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  ) : null}
                   {activePhase === "comfort_items" ? (
                     <ActiveFilterChips
                       chips={[
