@@ -3376,7 +3376,7 @@ export const HomeBuilderPage = () => {
                         const sheetItem = entities.itemsById[entry.itemId];
                         if (!sheetItem) return null;
                         return (
-                          <div key={`sheet-item-${entry.itemId}`} className="w-[52px] shrink-0">
+                          <div key={`sheet-item-${entry.itemId}`} className="w-[48px] shrink-0">
                             <article className="relative text-center">
                               <button
                                 type="button"
@@ -3386,7 +3386,7 @@ export const HomeBuilderPage = () => {
                               >
                                 <span className="block h-4 w-4 text-center text-sm leading-[16px]">×</span>
                               </button>
-                              <div className="h-[52px] w-[52px] flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
+                              <div className="h-[48px] w-[48px] flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
                                 {sheetItem.image ? (
                                   <img src={sheetItem.image} alt={sheetItem.name} className="h-8 w-8 object-contain" />
                                 ) : (
