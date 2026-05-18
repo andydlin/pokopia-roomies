@@ -590,7 +590,7 @@ export const HomeBuilderPage = () => {
   const [activePokemonFavoriteFilters, setActivePokemonFavoriteFilters] = useState<string[]>([]);
   const [activePokemonHabitatFilters, setActivePokemonHabitatFilters] = useState<string[]>([]);
   const [activeComfortFavoriteFilters, setActiveComfortFavoriteFilters] = useState<string[]>([]);
-  const [activeItemPokemonFilterId, setActiveItemPokemonFilterId] = useState<string | null>(null);
+  const [activeItemPokemonFilterIds, setActiveItemPokemonFilterIds] = useState<string[]>([]);
   const pokemonSortMode = "suggested" as const;
   const itemSortMode = "suggested" as const;
   const [showFavoritesByTab, setShowFavoritesByTab] = useState<Record<"pokemon" | "items" | "favorites", boolean>>(() => {
@@ -750,11 +750,11 @@ export const HomeBuilderPage = () => {
         activeComfortFavoriteFilters: [...activeComfortFavoriteFilters].sort(),
         activePokemonFavoriteFilters: [...activePokemonFavoriteFilters].sort(),
         activePokemonHabitatFilters: [...activePokemonHabitatFilters].sort(),
-        activeItemPokemonFilterId,
+        activeItemPokemonFilterIds,
       }),
     [
       activeComfortFavoriteFilters,
-      activeItemPokemonFilterId,
+      activeItemPokemonFilterIds,
       activePhase,
       activePokemonFavoriteFilters,
       activePokemonHabitatFilters,
@@ -1124,9 +1124,9 @@ export const HomeBuilderPage = () => {
     ],
     [itemSatisfactionCountByPokemonId, selectedPokemon],
   );
-  const activeItemPokemonFilter = useMemo(
-    () => selectedPokemon.find((pokemon) => pokemon.id === activeItemPokemonFilterId) ?? null,
-    [activeItemPokemonFilterId, selectedPokemon],
+  const activeItemPokemonFilters = useMemo(
+    () => selectedPokemon.filter((pokemon) => activeItemPokemonFilterIds.includes(pokemon.id)),
+    [activeItemPokemonFilterIds, selectedPokemon],
   );
   const buildMaterialsSummary = useMemo(() => selectBuildMaterialsSummary(state.currentHome, entities), [state.currentHome, entities]);
   const materialProgressEntries = buildMaterialsSummary.entries;
@@ -1392,6 +1392,10 @@ export const HomeBuilderPage = () => {
     () => (activePhase === "extra_items" ? extraRankedItems : comfortRankedItems),
     [activePhase, comfortRankedItems, extraRankedItems],
   );
+  const phaseBaseItems = useMemo(
+    () => phaseRankedItems.filter((entry) => !EXCLUDED_ITEMS_PAGE_MAIN_CATEGORIES.has(entry.item.generalCategoryLabel || "")),
+    [phaseRankedItems],
+  );
   const multiFilteredRankedItems = useMemo(() => {
     return phaseRankedItems.filter((entry) => {
       if (EXCLUDED_ITEMS_PAGE_MAIN_CATEGORIES.has(entry.item.generalCategoryLabel || "")) {
@@ -1416,10 +1420,13 @@ export const HomeBuilderPage = () => {
     if (activePhase !== "comfort_items" || selectedPokemon.length === 0) {
       return comfortFavoriteFilteredRankedItems;
     }
-    if (activeItemPokemonFilterId) {
-      const targetPokemon = selectedPokemon.find((pokemon) => pokemon.id === activeItemPokemonFilterId);
-      if (!targetPokemon) return comfortFavoriteFilteredRankedItems;
-      const targetFavoriteIdSet = new Set(targetPokemon.favoriteCategoryIds);
+    if (activeItemPokemonFilterIds.length > 0) {
+      const targetFavoriteIdSet = new Set(
+        selectedPokemon
+          .filter((pokemon) => activeItemPokemonFilterIds.includes(pokemon.id))
+          .flatMap((pokemon) => pokemon.favoriteCategoryIds),
+      );
+      if (targetFavoriteIdSet.size === 0) return comfortFavoriteFilteredRankedItems;
       return comfortFavoriteFilteredRankedItems.filter((entry) =>
         entry.item.favoriteCategoryIds.some((categoryId) => targetFavoriteIdSet.has(categoryId)),
       );
@@ -1429,7 +1436,7 @@ export const HomeBuilderPage = () => {
         pokemon.favoriteCategoryIds.some((categoryId) => entry.item.favoriteCategoryIds.includes(categoryId)),
       ),
     );
-  }, [activeItemPokemonFilterId, activePhase, comfortFavoriteFilteredRankedItems, selectedPokemon]);
+  }, [activeItemPokemonFilterIds, activePhase, comfortFavoriteFilteredRankedItems, selectedPokemon]);
   const itemMatchStatsById = useMemo(() => {
     const selectedPokemonFavoriteIdsById = new Map(
       selectedPokemon.map((pokemon) => [pokemon.id, new Set(pokemon.favoriteCategoryIds)]),
@@ -1470,11 +1477,11 @@ export const HomeBuilderPage = () => {
     return statsByItemId;
   }, [comfortPokemonFilteredRankedItems, selectedPokemon, selectedPokemonAllFavoriteCategoryIdSet, sharedFavoriteCountByCategoryId]);
   const sortedPlannerItemEntries = useMemo(() => {
-    if (activePhase === "comfort_items" && activeItemPokemonFilterId && selectedPokemon.length > 0) {
-      const selectedFilterPokemon = selectedPokemon.find((pokemon) => pokemon.id === activeItemPokemonFilterId) ?? null;
-      if (!selectedFilterPokemon) return [...comfortPokemonFilteredRankedItems];
-      const selectedFavoriteIdSet = new Set(selectedFilterPokemon.favoriteCategoryIds);
-      const otherSelectedPokemon = selectedPokemon.filter((pokemon) => pokemon.id !== selectedFilterPokemon.id);
+    if (activePhase === "comfort_items" && activeItemPokemonFilterIds.length > 0 && selectedPokemon.length > 0) {
+      const filterPokemon = selectedPokemon.filter((pokemon) => activeItemPokemonFilterIds.includes(pokemon.id));
+      if (filterPokemon.length === 0) return [...comfortPokemonFilteredRankedItems];
+      const selectedFavoriteIdSet = new Set(filterPokemon.flatMap((pokemon) => pokemon.favoriteCategoryIds));
+      const otherSelectedPokemon = selectedPokemon.filter((pokemon) => !activeItemPokemonFilterIds.includes(pokemon.id));
       return [...comfortPokemonFilteredRankedItems].sort((left, right) => {
         const leftFavoriteIdSet = new Set(left.item.favoriteCategoryIds);
         const rightFavoriteIdSet = new Set(right.item.favoriteCategoryIds);
@@ -1587,7 +1594,7 @@ export const HomeBuilderPage = () => {
       }
       return left.item.name.localeCompare(right.item.name);
     });
-  }, [activeItemPokemonFilterId, activePhase, comfortPokemonFilteredRankedItems, itemMatchStatsById, itemSortMode, selectedPokemon, selectedPokemonSharedFavoriteCategoryIdSet]);
+  }, [activeItemPokemonFilterIds, activePhase, comfortPokemonFilteredRankedItems, itemMatchStatsById, itemSortMode, selectedPokemon, selectedPokemonSharedFavoriteCategoryIdSet]);
   const isItemFavoriteFilterActive = activePhase === "comfort_items" && activeComfortFavoriteFilters.length > 0;
   const itemPlannerSections = useMemo(() => {
     if (isItemFavoriteFilterActive) {
@@ -1743,10 +1750,9 @@ export const HomeBuilderPage = () => {
   const isMaterialsSummaryEmpty = buildProgressSummary.totalMaterials === 0;
 
   useEffect(() => {
-    if (activeItemPokemonFilterId && !selectedPokemon.some((pokemon) => pokemon.id === activeItemPokemonFilterId)) {
-      setActiveItemPokemonFilterId(null);
-    }
-  }, [activeItemPokemonFilterId, selectedPokemon]);
+    const validIds = new Set(selectedPokemon.map((p) => p.id));
+    setActiveItemPokemonFilterIds((prev) => prev.filter((id) => validIds.has(id)));
+  }, [selectedPokemon]);
   useEffect(() => {
     if (!isItemFiltersPanelOpen) return;
     const previous = document.body.style.overflow;
@@ -2366,7 +2372,7 @@ export const HomeBuilderPage = () => {
                       placeholder="Search items"
                     />
                     {(() => {
-                      const filterCount = activeItemCategoryFilters.length + activeComfortFavoriteFilters.length + (activeItemPokemonFilterId ? 1 : 0);
+                      const filterCount = activeItemCategoryFilters.length + activeComfortFavoriteFilters.length + activeItemPokemonFilterIds.length;
                       const isActive = filterCount > 0;
                       return (
                         <button
@@ -2390,8 +2396,8 @@ export const HomeBuilderPage = () => {
                   </div>
                   {/* Row 2: Active filter chips */}
                   {(() => {
-                    const pokemonChip = activePhase === "comfort_items" && activeItemPokemonFilter
-                      ? [{ key: "pokemon", label: activeItemPokemonFilter.name, imageUrl: activeItemPokemonFilter.imageUrl as string | null | undefined, onRemove: () => setActiveItemPokemonFilterId(null), tone: "pokemon" as const }]
+                    const pokemonChip = activePhase === "comfort_items"
+                      ? activeItemPokemonFilters.map((p) => ({ key: `pokemon-${p.id}`, label: p.name, imageUrl: p.imageUrl as string | null | undefined, onRemove: () => setActiveItemPokemonFilterIds((prev) => prev.filter((id) => id !== p.id)), tone: "pokemon" as const }))
                       : [];
                     const favoriteChips = activePhase === "comfort_items"
                       ? activeComfortFavoriteFilters.map((id) => ({ key: `fav-${id}`, label: toCategoryLabel(id), imageUrl: undefined, onRemove: () => setActiveComfortFavoriteFilters((prev) => prev.filter((f) => f !== id)), tone: "favorite" as const }))
@@ -2426,7 +2432,7 @@ export const HomeBuilderPage = () => {
                         <button
                           type="button"
                           onClick={() => {
-                            setActiveItemPokemonFilterId(null);
+                            setActiveItemPokemonFilterIds([]);
                             setActiveComfortFavoriteFilters([]);
                             setActiveItemCategoryFilters([]);
                           }}
@@ -2442,20 +2448,20 @@ export const HomeBuilderPage = () => {
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
                     <section className="rounded-[16px] border border-[#C8DAE2] bg-[#E8F1F4] p-6">
                       <p className="text-lg font-extrabold text-[#485864]">
-                        {activeItemPokemonFilter
-                          ? `No items match ${activeItemPokemonFilter.name} yet.`
+                        {activeItemPokemonFilters.length > 0
+                          ? `No items match ${activeItemPokemonFilters.map((p) => p.name).join(" & ")} yet.`
                           : "No matching comfort items"}
                       </p>
                       <p className="mt-1 text-sm text-[#6c889b]">
-                        {activeItemPokemonFilter
-                          ? `No available items satisfy ${activeItemPokemonFilter.name}'s favorites.`
+                        {activeItemPokemonFilters.length > 0
+                          ? `No available items satisfy the selected Pokémon's favorites.`
                           : "Try removing one or more favorite filters."}
                       </p>
                       <button
                         type="button"
                         onClick={() => {
                           setActiveComfortFavoriteFilters([]);
-                          setActiveItemPokemonFilterId(null);
+                          setActiveItemPokemonFilterIds([]);
                           setActiveItemCategoryFilters([]);
                         }}
                         className="pk-btn pk-btn-secondary pk-btn-sm mt-3"
@@ -2578,8 +2584,8 @@ export const HomeBuilderPage = () => {
                           );
                           const itemMetadataText = (() => {
                             if (usePokemonSatisfactionUi) {
-                              if (activeItemPokemonFilter) {
-                                return matchedPokemon.length > 0 ? `Helps ${activeItemPokemonFilter.name}` : "";
+                              if (activeItemPokemonFilters.length > 0) {
+                                return matchedPokemon.length > 0 ? `Helps ${matchedPokemon.map((p) => p.name).join(" & ")}` : "";
                               }
                               return matchedPokemon.length > 0 ? `Matches ${matchedPokemon.length} Pokemon` : "";
                             }
@@ -2784,13 +2790,13 @@ export const HomeBuilderPage = () => {
                 {totalVisibleItems === 0 ? (
                   <div className="mt-4 rounded-2xl border border-dashed border-ink/20 bg-white p-4">
                     <p className="type-ui type-ui-strong text-ink">
-                      {activePhase === "comfort_items" && activeItemPokemonFilter
-                        ? `No items match ${activeItemPokemonFilter.name} yet.`
+                      {activePhase === "comfort_items" && activeItemPokemonFilters.length > 0
+                        ? `No items match ${activeItemPokemonFilters.map((p) => p.name).join(" & ")} yet.`
                         : "No items match this exact search."}
                     </p>
                     <p className="type-caption mt-1 text-ink/65">
-                      {activePhase === "comfort_items" && activeItemPokemonFilter
-                        ? `No available items satisfy ${activeItemPokemonFilter.name}'s favorites.`
+                      {activePhase === "comfort_items" && activeItemPokemonFilters.length > 0
+                        ? `No available items satisfy the selected Pokémon's favorites.`
                         : "Try clearing your search text to browse all addable items again."}
                     </p>
                   </div>
@@ -2816,29 +2822,51 @@ export const HomeBuilderPage = () => {
                       ×
                     </button>
                   </div>
-                  {activePhase === "comfort_items" && selectedPokemon.length > 0 && (
-                    <div className="px-5 pb-5">
-                      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Pokémon</p>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedPokemon.map((pokemon) => {
-                          const isActive = activeItemPokemonFilterId === pokemon.id;
-                          return (
-                            <button
-                              key={pokemon.id}
-                              type="button"
-                              onClick={() => setActiveItemPokemonFilterId(isActive ? null : pokemon.id)}
-                              aria-pressed={isActive}
-                              className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
-                            >
-                              {pokemon.imageUrl ? <img src={pokemon.imageUrl} alt="" aria-hidden className="h-4 w-4 object-contain" /> : null}
-                              {pokemon.name}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                  {activePhase === "comfort_items" && (() => {
+                  {(() => {
+                    // Count bases for cross-filtering counts
+                    // Pokemon counts: from post-favorites+category base (ignoring pokemon filter)
+                    const pokemonCountBase = multiFilteredRankedItems;
+                    const getPokemonCount = (pokemon: typeof selectedPokemon[number]) => {
+                      const favSet = new Set(pokemon.favoriteCategoryIds);
+                      return pokemonCountBase.filter((entry) =>
+                        entry.item.favoriteCategoryIds.some((id) => favSet.has(id)),
+                      ).length;
+                    };
+                    // Favorites counts: from post-pokemon+category base (ignoring favorites filter)
+                    const pokemonFilteredBase = activeItemPokemonFilterIds.length > 0
+                      ? multiFilteredRankedItems.filter((entry) =>
+                          activeItemPokemonFilterIds.some((pid) => {
+                            const p = selectedPokemon.find((sp) => sp.id === pid);
+                            return p?.favoriteCategoryIds.some((id) => entry.item.favoriteCategoryIds.includes(id)) ?? false;
+                          }),
+                        )
+                      : multiFilteredRankedItems;
+                    const getFavoriteCount = (categoryId: string) =>
+                      pokemonFilteredBase.filter((entry) => entry.item.favoriteCategoryIds.includes(categoryId)).length;
+                    // Category counts: from post-pokemon+favorites base, WITHOUT category filter
+                    const favoritesFilteredBase = activeComfortFavoriteFilters.length > 0
+                      ? pokemonFilteredBase.filter((entry) =>
+                          activeComfortFavoriteFilters.some((id) => entry.item.favoriteCategoryIds.includes(id)),
+                        )
+                      : pokemonFilteredBase;
+                    // For category counting we need phaseBaseItems (no category filter applied)
+                    const pokemonFilteredPhaseBase = activeItemPokemonFilterIds.length > 0
+                      ? phaseBaseItems.filter((entry) =>
+                          activeItemPokemonFilterIds.some((pid) => {
+                            const p = selectedPokemon.find((sp) => sp.id === pid);
+                            return p?.favoriteCategoryIds.some((id) => entry.item.favoriteCategoryIds.includes(id)) ?? false;
+                          }),
+                        )
+                      : phaseBaseItems;
+                    const favoritesAndPokemonFilteredPhaseBase = activeComfortFavoriteFilters.length > 0
+                      ? pokemonFilteredPhaseBase.filter((entry) =>
+                          activeComfortFavoriteFilters.some((id) => entry.item.favoriteCategoryIds.includes(id)),
+                        )
+                      : pokemonFilteredPhaseBase;
+                    const getCategoryCount = (categoryId: string) =>
+                      favoritesAndPokemonFilteredPhaseBase.filter((entry) => entry.item.generalCategoryId === categoryId).length;
+
+                    // Favorites: only from selected pokemon, with coverage info
                     const comfortEntries = buildItemEntries.filter(
                       (entry) => (entities.itemsById[entry.itemId]?.favoriteCategoryIds.length ?? 0) > 0,
                     );
@@ -2865,59 +2893,94 @@ export const HomeBuilderPage = () => {
                       if (aNeedsCoverage !== bNeedsCoverage) return aNeedsCoverage ? -1 : 1;
                       return toCategoryLabel(a).localeCompare(toCategoryLabel(b));
                     });
+
                     return (
-                      <div className="px-5 pb-5">
-                        <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
-                        {pokemonFavoriteIds.length === 0 ? (
-                          <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
-                        ) : (
+                      <>
+                        {activePhase === "comfort_items" && selectedPokemon.length > 0 && (
+                          <div className="px-5 pb-5">
+                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Pokémon</p>
+                            <div className="flex flex-wrap gap-2">
+                              {selectedPokemon.map((pokemon) => {
+                                const isActive = activeItemPokemonFilterIds.includes(pokemon.id);
+                                const count = getPokemonCount(pokemon);
+                                return (
+                                  <button
+                                    key={pokemon.id}
+                                    type="button"
+                                    onClick={() => setActiveItemPokemonFilterIds((prev) =>
+                                      isActive ? prev.filter((id) => id !== pokemon.id) : [...prev, pokemon.id]
+                                    )}
+                                    aria-pressed={isActive}
+                                    className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+                                  >
+                                    {pokemon.imageUrl ? <img src={pokemon.imageUrl} alt="" aria-hidden className="h-4 w-4 object-contain" /> : null}
+                                    {pokemon.name}
+                                    <span className="opacity-50">{count}</span>
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                        {activePhase === "comfort_items" && (
+                          <div className="px-5 pb-5">
+                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
+                            {pokemonFavoriteIds.length === 0 ? (
+                              <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
+                            ) : (
+                              <div className="flex flex-wrap gap-2">
+                                {pokemonFavoriteIds.map((categoryId) => {
+                                  const isActive = activeComfortFavoriteFilters.includes(categoryId);
+                                  const needsCoverage = needsCoverageSet.has(categoryId);
+                                  const count = getFavoriteCount(categoryId);
+                                  return (
+                                    <button
+                                      key={categoryId}
+                                      type="button"
+                                      onClick={() => setActiveComfortFavoriteFilters((prev) =>
+                                        isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
+                                      )}
+                                      aria-pressed={isActive}
+                                      className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-best" : needsCoverage ? "pk-chip-default border-[var(--pk-destructive)]/40 text-[var(--pk-destructive)]" : "pk-chip-default"}`}
+                                    >
+                                      {toCategoryLabel(categoryId)}
+                                      {needsCoverage && !isActive && (
+                                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-60" aria-label="needs coverage" />
+                                      )}
+                                      <span className="opacity-50">{count}</span>
+                                    </button>
+                                  );
+                                })}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                        <div className="px-5 pb-8">
+                          <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
                           <div className="flex flex-wrap gap-2">
-                            {pokemonFavoriteIds.map((categoryId) => {
-                              const isActive = activeComfortFavoriteFilters.includes(categoryId);
-                              const needsCoverage = needsCoverageSet.has(categoryId);
+                            {itemCategories.map(({ id, label }) => {
+                              const isActive = activeItemCategoryFilters.includes(id);
+                              const count = getCategoryCount(id);
                               return (
                                 <button
-                                  key={categoryId}
+                                  key={id}
                                   type="button"
-                                  onClick={() => setActiveComfortFavoriteFilters((prev) =>
-                                    isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
+                                  onClick={() => setActiveItemCategoryFilters((prev) =>
+                                    isActive ? prev.filter((f) => f !== id) : [...prev, id]
                                   )}
                                   aria-pressed={isActive}
-                                  className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-best" : needsCoverage ? "pk-chip-default border-[var(--pk-destructive)]/40 text-[var(--pk-destructive)]" : "pk-chip-default"}`}
+                                  className={`pk-chip pk-chip-standard inline-flex items-center gap-2 ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
                                 >
-                                  {toCategoryLabel(categoryId)}
-                                  {needsCoverage && (
-                                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-60" aria-label="needs coverage" />
-                                  )}
+                                  {label}
+                                  <span className="opacity-50">{count}</span>
                                 </button>
                               );
                             })}
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      </>
                     );
                   })()}
-                  <div className="px-5 pb-8">
-                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
-                    <div className="flex flex-wrap gap-2">
-                      {itemCategories.map(({ id, label }) => {
-                        const isActive = activeItemCategoryFilters.includes(id);
-                        return (
-                          <button
-                            key={id}
-                            type="button"
-                            onClick={() => setActiveItemCategoryFilters((prev) =>
-                              isActive ? prev.filter((f) => f !== id) : [...prev, id]
-                            )}
-                            aria-pressed={isActive}
-                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
                 </div>
               </div>
             ) : null}
