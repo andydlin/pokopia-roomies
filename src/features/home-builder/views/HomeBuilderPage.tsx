@@ -2898,7 +2898,7 @@ export const HomeBuilderPage = () => {
                       <>
                         {activePhase === "comfort_items" && selectedPokemon.length > 0 && (
                           <div className="px-5 pb-5">
-                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Pokémon</p>
+                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Selected Pokemon</p>
                             <div className="flex flex-wrap gap-2">
                               {selectedPokemon.map((pokemon) => {
                                 const isActive = activeItemPokemonFilterIds.includes(pokemon.id);
@@ -2924,15 +2924,14 @@ export const HomeBuilderPage = () => {
                         )}
                         {activePhase === "comfort_items" && (
                           <div className="px-5 pb-5">
-                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
+                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Shared favorites</p>
                             {pokemonFavoriteIds.length === 0 ? (
                               <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
                             ) : (
                               <div className="flex flex-wrap gap-2">
                                 {pokemonFavoriteIds.map((categoryId) => {
                                   const isActive = activeComfortFavoriteFilters.includes(categoryId);
-                                  const needsCoverage = needsCoverageSet.has(categoryId);
-                                  const count = getFavoriteCount(categoryId);
+                                  const sharedCount = selectedPokemon.filter((p) => p.favoriteCategoryIds.includes(categoryId)).length;
                                   return (
                                     <button
                                       key={categoryId}
@@ -2941,13 +2940,9 @@ export const HomeBuilderPage = () => {
                                         isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
                                       )}
                                       aria-pressed={isActive}
-                                      className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-best" : needsCoverage ? "pk-chip-default border-[var(--pk-destructive)]/40 text-[var(--pk-destructive)]" : "pk-chip-default"}`}
+                                      className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
                                     >
-                                      {toCategoryLabel(categoryId)}
-                                      {needsCoverage && !isActive && (
-                                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-60" aria-label="needs coverage" />
-                                      )}
-                                      <span className="opacity-50">{count}</span>
+                                      {toCategoryLabel(categoryId)} ({sharedCount})
                                     </button>
                                   );
                                 })}
@@ -2969,7 +2964,7 @@ export const HomeBuilderPage = () => {
                                     isActive ? prev.filter((f) => f !== id) : [...prev, id]
                                   )}
                                   aria-pressed={isActive}
-                                  className={`pk-chip pk-chip-standard inline-flex items-center gap-2 ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
+                                  className={`pk-chip pk-chip-standard inline-flex items-center gap-2 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
                                 >
                                   {label}
                                   <span className="opacity-50">{count}</span>
