@@ -2355,8 +2355,8 @@ export const HomeBuilderPage = () => {
                       onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
                       placeholder="Search items"
                     />
-                    {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (() => {
-                      const filterCount = (activeItemPokemonFilterId ? 1 : 0) + activeComfortFavoriteFilters.length;
+                    {(() => {
+                      const filterCount = (activeItemPokemonFilterId ? 1 : 0) + activeComfortFavoriteFilters.length + (state.browse.items.generalCategoryId ? 1 : 0);
                       return (
                         <button
                           type="button"
@@ -2371,20 +2371,7 @@ export const HomeBuilderPage = () => {
                           )}
                         </button>
                       );
-                    })() : null}
-                    <label className="flex h-9 shrink-0 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
-                      <select
-                        value={state.browse.items.generalCategoryId ?? ""}
-                        onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
-                        className="appearance-none bg-transparent pr-5 focus:outline-none"
-                      >
-                        <option value="">Category</option>
-                        {itemCategories.map(({ id, label }) => (
-                          <option key={id} value={id}>{label}</option>
-                        ))}
-                      </select>
-                      <ChevronDown className="h-4 w-4 shrink-0" />
-                    </label>
+                    })()}
                   </div>
                   {/* Row 2: Active filter chips */}
                   {(() => {
@@ -2792,7 +2779,7 @@ export const HomeBuilderPage = () => {
             ) : null}
 
             {/* Item filters panel */}
-            {isItemFiltersPanelOpen && activePhase === "comfort_items" ? (
+            {isItemFiltersPanelOpen ? (
               <div className="fixed inset-0 z-50" onClick={() => setIsItemFiltersPanelOpen(false)}>
                 {/* Mobile: bottom sheet */}
                 <div
@@ -2809,7 +2796,26 @@ export const HomeBuilderPage = () => {
                       ×
                     </button>
                   </div>
-                  {selectedPokemon.length > 0 && (
+                  <div className="px-5 pb-5">
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
+                    <div className="flex flex-wrap gap-2">
+                      {itemCategories.map(({ id, label }) => {
+                        const isActive = state.browse.items.generalCategoryId === id;
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            onClick={() => dispatch({ type: "browse/items/set-general-category", categoryId: isActive ? null : id })}
+                            aria-pressed={isActive}
+                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
+                          >
+                            {label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {activePhase === "comfort_items" && selectedPokemon.length > 0 && (
                     <div className="px-5 pb-5">
                       <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Pokémon</p>
                       <div className="flex flex-wrap gap-2">
@@ -2831,27 +2837,29 @@ export const HomeBuilderPage = () => {
                       </div>
                     </div>
                   )}
-                  <div className="px-5 pb-8">
-                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
-                    <div className="flex flex-wrap gap-2">
-                      {favoriteCategoryOptions.map((category) => {
-                        const isActive = activeComfortFavoriteFilters.includes(category.id);
-                        return (
-                          <button
-                            key={category.id}
-                            type="button"
-                            onClick={() => setActiveComfortFavoriteFilters((prev) =>
-                              isActive ? prev.filter((id) => id !== category.id) : [...prev, category.id]
-                            )}
-                            aria-pressed={isActive}
-                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-best" : "pk-chip-default"}`}
-                          >
-                            {toCategoryLabel(category.id)}
-                          </button>
-                        );
-                      })}
+                  {activePhase === "comfort_items" && (
+                    <div className="px-5 pb-8">
+                      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
+                      <div className="flex flex-wrap gap-2">
+                        {favoriteCategoryOptions.map((category) => {
+                          const isActive = activeComfortFavoriteFilters.includes(category.id);
+                          return (
+                            <button
+                              key={category.id}
+                              type="button"
+                              onClick={() => setActiveComfortFavoriteFilters((prev) =>
+                                isActive ? prev.filter((id) => id !== category.id) : [...prev, category.id]
+                              )}
+                              aria-pressed={isActive}
+                              className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-best" : "pk-chip-default"}`}
+                            >
+                              {toCategoryLabel(category.id)}
+                            </button>
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             ) : null}
