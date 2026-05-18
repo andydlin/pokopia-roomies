@@ -2922,34 +2922,48 @@ export const HomeBuilderPage = () => {
                             </div>
                           </div>
                         )}
-                        {activePhase === "comfort_items" && (
+                        {activePhase === "comfort_items" && pokemonFavoriteIds.length === 0 && (
                           <div className="px-5 pb-5">
-                            <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Shared favorites</p>
-                            {pokemonFavoriteIds.length === 0 ? (
-                              <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
-                            ) : (
-                              <div className="flex flex-wrap gap-2">
-                                {pokemonFavoriteIds.map((categoryId) => {
-                                  const isActive = activeComfortFavoriteFilters.includes(categoryId);
-                                  const sharedCount = selectedPokemon.filter((p) => p.favoriteCategoryIds.includes(categoryId)).length;
-                                  return (
-                                    <button
-                                      key={categoryId}
-                                      type="button"
-                                      onClick={() => setActiveComfortFavoriteFilters((prev) =>
-                                        isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
-                                      )}
-                                      aria-pressed={isActive}
-                                      className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
-                                    >
-                                      {toCategoryLabel(categoryId)} ({sharedCount})
-                                    </button>
-                                  );
-                                })}
-                              </div>
-                            )}
+                            <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
                           </div>
                         )}
+                        {activePhase === "comfort_items" && (() => {
+                          const needsCoverageIds = pokemonFavoriteIds.filter((id) => needsCoverageSet.has(id));
+                          const sharedIds = pokemonFavoriteIds.filter((id) => !needsCoverageSet.has(id) && selectedPokemon.filter((p) => p.favoriteCategoryIds.includes(id)).length >= 2);
+                          const renderChip = (categoryId: string) => {
+                            const isActive = activeComfortFavoriteFilters.includes(categoryId);
+                            const sharedCount = selectedPokemon.filter((p) => p.favoriteCategoryIds.includes(categoryId)).length;
+                            return (
+                              <button
+                                key={categoryId}
+                                type="button"
+                                onClick={() => setActiveComfortFavoriteFilters((prev) =>
+                                  isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
+                                )}
+                                aria-pressed={isActive}
+                                className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+                              >
+                                {toCategoryLabel(categoryId)} ({sharedCount})
+                              </button>
+                            );
+                          };
+                          return (
+                            <>
+                              {needsCoverageIds.length > 0 && (
+                                <div className="px-5 pb-5">
+                                  <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Needs coverage</p>
+                                  <div className="flex flex-wrap gap-2">{needsCoverageIds.map(renderChip)}</div>
+                                </div>
+                              )}
+                              {sharedIds.length > 0 && (
+                                <div className="px-5 pb-5">
+                                  <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Shared favorites</p>
+                                  <div className="flex flex-wrap gap-2">{sharedIds.map(renderChip)}</div>
+                                </div>
+                              )}
+                            </>
+                          );
+                        })()}
                         <div className="px-5 pb-8">
                           <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
                           <div className="flex flex-wrap gap-2">
