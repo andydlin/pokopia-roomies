@@ -3371,22 +3371,22 @@ export const HomeBuilderPage = () => {
                 })()}
                 {buildItemEntries.length > 0 && (
                   <div className="overflow-x-auto overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                    <div className="flex gap-3 px-4 pb-2 pt-3">
+                    <div className="flex gap-2 px-4 pb-2 pt-3">
                       {[...buildItemEntries].reverse().map((entry) => {
                         const sheetItem = entities.itemsById[entry.itemId];
                         if (!sheetItem) return null;
                         return (
-                          <div key={`sheet-item-${entry.itemId}`} className="w-20 shrink-0">
+                          <div key={`sheet-item-${entry.itemId}`} className="w-[52px] shrink-0">
                             <article className="relative text-center">
                               <button
                                 type="button"
                                 aria-label={`Remove ${sheetItem.name}`}
                                 onClick={() => dispatch({ type: "home/remove-item", itemId: entry.itemId })}
-                                className="absolute -right-2 -top-2 inline-flex h-[26px] w-[26px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-opacity hover:text-[var(--pk-text-primary)] focus-visible:opacity-100 opacity-100"
+                                className="absolute -right-1.5 -top-1.5 inline-flex h-[20px] w-[20px] items-center justify-center rounded-full border border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)] transition-opacity hover:text-[var(--pk-text-primary)] focus-visible:opacity-100 opacity-100"
                               >
-                                <span className="block h-5 w-5 text-center text-lg leading-[20px]">×</span>
+                                <span className="block h-4 w-4 text-center text-sm leading-[16px]">×</span>
                               </button>
-                              <div className="aspect-square flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
+                              <div className="h-[52px] w-[52px] flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
                                 {sheetItem.image ? (
                                   <img src={sheetItem.image} alt={sheetItem.name} className="h-8 w-8 object-contain" />
                                 ) : (
