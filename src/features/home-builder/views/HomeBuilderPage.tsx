@@ -628,6 +628,8 @@ export const HomeBuilderPage = () => {
   const [expandedResultPokemonIds, setExpandedResultPokemonIds] = useState<string[]>([]);
   const [expandedResultItemIds, setExpandedResultItemIds] = useState<string[]>([]);
   const [expandedCoveragePokemonIds, setExpandedCoveragePokemonIds] = useState<Set<string>>(new Set());
+  const [sheetItemCategoryFilter, setSheetItemCategoryFilter] = useState<string | null>(null);
+  const [isItemFiltersPanelOpen, setIsItemFiltersPanelOpen] = useState(false);
   const tabContainerRef = useRef<HTMLDivElement | null>(null);
   const tabButtonRefs = useRef<Partial<Record<BuilderPhase, HTMLButtonElement | null>>>({
     pokemon: null,
@@ -1926,7 +1928,7 @@ export const HomeBuilderPage = () => {
           className="group relative rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] p-2"
         >
           <div className="flex items-center gap-3">
-            <div className="rounded-[12px] bg-[var(--pk-border)] p-1.5">
+            <div className="rounded-[12px] bg-[var(--pk-image-well)] p-1.5">
               {summary.pokemon.imageUrl ? (
                 <img src={summary.pokemon.imageUrl} alt={summary.pokemon.name} className="h-8 w-8 object-contain" />
               ) : null}
@@ -1943,7 +1945,7 @@ export const HomeBuilderPage = () => {
                 if (!item) return null;
                 return (
                   <Tooltip key={`${keyPrefix}-img-${summary.pokemon.id}-${entry.itemId}`} content={item.name}>
-                    <span className="inline-flex rounded-[8px] bg-[var(--pk-border)] p-1">
+                    <span className="inline-flex rounded-[8px] p-1">
                       {item.image ? (
                         <img src={item.image} alt={item.name} className="h-6 w-6 object-contain" />
                       ) : (
@@ -1957,7 +1959,7 @@ export const HomeBuilderPage = () => {
                 <button
                   type="button"
                   onClick={() => setExpandedCoveragePokemonIds((prev) => new Set([...prev, summary.pokemon.id]))}
-                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-none-bg)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
                 >
                   +{hiddenCount}
                 </button>
@@ -1966,7 +1968,7 @@ export const HomeBuilderPage = () => {
                 <button
                   type="button"
                   onClick={() => setExpandedCoveragePokemonIds((prev) => { const next = new Set(prev); next.delete(summary.pokemon.id); return next; })}
-                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-border)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                  className="inline-flex items-center rounded-[8px] bg-[var(--pk-none-bg)] px-1.5 text-xs font-medium text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
                 >
                   −
                 </button>
@@ -2346,70 +2348,89 @@ export const HomeBuilderPage = () => {
                   style={{ top: "calc(var(--pk-sticky-nav-h) + var(--builder-title-h, 0px) + var(--builder-header-h, 0px))" }}
                 />
                 <ResultsBrowserBar>
-                  <BuilderSearchField
-                    value={state.browse.items.searchQuery}
-                    onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
-                    placeholder="Search items"
-                  />
-                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
-                    <select
-                      value={state.browse.items.generalCategoryId ?? ""}
-                      onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
-                      className="appearance-none bg-transparent pr-5 focus:outline-none"
-                    >
-                      <option value="">All categories</option>
-                      {itemCategories.map(({ id, label }) => (
-                        <option key={id} value={id}>{label}</option>
-                      ))}
-                    </select>
-                    <ChevronDown className="h-4 w-4 shrink-0" />
-                  </label>
-                  {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
-                    <div className="w-full">
-                      <p className="mb-1.5 text-xs font-medium text-[var(--pk-text-desc)]">Filter by Pokémon</p>
-                      <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                        {selectedPokemon.map((pokemon) => {
-                          const isActive = activeItemPokemonFilterId === pokemon.id;
-                          return (
-                            <button
-                              key={pokemon.id}
-                              type="button"
-                              onClick={() => setActiveItemPokemonFilterId(isActive ? null : pokemon.id)}
-                              aria-pressed={isActive}
-                              className={`inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-xs font-medium transition-colors ${
-                                isActive
-                                  ? "border-[#2563EB] bg-[#DBEAFE] text-[#1E3A5F]"
-                                  : "border-[var(--pk-border)] bg-[var(--pk-card)] text-[var(--pk-text-desc)]"
-                              }`}
-                            >
-                              {pokemon.imageUrl ? (
-                                <img src={pokemon.imageUrl} alt="" aria-hidden className="h-4 w-4 object-contain" />
-                              ) : null}
-                              {pokemon.name}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  ) : null}
-                  {activePhase === "comfort_items" ? (
-                    <ActiveFilterChips
-                      chips={[
-                        ...(activeItemPokemonFilter
-                          ? [{ key: "pokemon-filter", label: `Showing items for ${activeItemPokemonFilter.name}`, onRemove: () => setActiveItemPokemonFilterId(null) }]
-                          : []),
-                        ...activeComfortFavoriteFilters.map((categoryId) => ({
-                          key: `active-comfort-filter-${categoryId}`,
-                          label: toCategoryLabel(categoryId),
-                          onRemove: () => setActiveComfortFavoriteFilters((previous) => previous.filter((id) => id !== categoryId)),
-                        })),
-                      ]}
-                      onClearAll={() => {
-                        setActiveComfortFavoriteFilters([]);
-                        setActiveItemPokemonFilterId(null);
-                      }}
+                  {/* Row 1: Search + Filters button + Category dropdown */}
+                  <div className="flex w-full items-center gap-2">
+                    <BuilderSearchField
+                      value={state.browse.items.searchQuery}
+                      onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
+                      placeholder="Search items"
                     />
-                  ) : null}
+                    {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (() => {
+                      const filterCount = (activeItemPokemonFilterId ? 1 : 0) + activeComfortFavoriteFilters.length;
+                      return (
+                        <button
+                          type="button"
+                          onClick={() => setIsItemFiltersPanelOpen(true)}
+                          className={`pk-btn pk-btn-sm shrink-0 inline-flex items-center gap-1.5 ${filterCount > 0 ? "pk-btn-secondary border-[var(--pk-brand)] text-[var(--pk-brand)]" : "pk-btn-secondary"}`}
+                        >
+                          Filters
+                          {filterCount > 0 && (
+                            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-brand)] text-[10px] font-bold leading-none text-white">
+                              {filterCount}
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })() : null}
+                    <label className="flex h-9 shrink-0 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
+                      <select
+                        value={state.browse.items.generalCategoryId ?? ""}
+                        onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
+                        className="appearance-none bg-transparent pr-5 focus:outline-none"
+                      >
+                        <option value="">Category</option>
+                        {itemCategories.map(({ id, label }) => (
+                          <option key={id} value={id}>{label}</option>
+                        ))}
+                      </select>
+                      <ChevronDown className="h-4 w-4 shrink-0" />
+                    </label>
+                  </div>
+                  {/* Row 2: Active filter chips */}
+                  {(() => {
+                    const pokemonChip = activePhase === "comfort_items" && activeItemPokemonFilter
+                      ? { key: "pokemon", label: activeItemPokemonFilter.name, imageUrl: activeItemPokemonFilter.imageUrl, onRemove: () => setActiveItemPokemonFilterId(null), tone: "pokemon" as const }
+                      : null;
+                    const favoriteChips = activePhase === "comfort_items"
+                      ? activeComfortFavoriteFilters.map((id) => ({ key: `fav-${id}`, label: toCategoryLabel(id), onRemove: () => setActiveComfortFavoriteFilters((prev) => prev.filter((f) => f !== id)), tone: "favorite" as const }))
+                      : [];
+                    const categoryChip = state.browse.items.generalCategoryId
+                      ? { key: "category", label: itemCategories.find((c) => c.id === state.browse.items.generalCategoryId)?.label ?? "", onRemove: () => dispatch({ type: "browse/items/set-general-category", categoryId: null }), tone: "category" as const }
+                      : null;
+                    const allChips = [...(pokemonChip ? [pokemonChip] : []), ...favoriteChips, ...(categoryChip ? [categoryChip] : [])];
+                    if (allChips.length === 0) return null;
+                    return (
+                      <div className="flex w-full flex-wrap items-center gap-1.5">
+                        {allChips.map((chip) => (
+                          <button
+                            key={chip.key}
+                            type="button"
+                            onClick={chip.onRemove}
+                            className={`pk-chip pk-chip-compact inline-flex items-center gap-1 ${
+                              chip.tone === "pokemon" ? "pk-chip-primary" :
+                              chip.tone === "favorite" ? "pk-chip-best" :
+                              "pk-chip-some"
+                            }`}
+                          >
+                            {"imageUrl" in chip && chip.imageUrl ? <img src={chip.imageUrl} alt="" aria-hidden className="h-3.5 w-3.5 object-contain" /> : null}
+                            {chip.label}
+                            <span aria-hidden className="opacity-60">×</span>
+                          </button>
+                        ))}
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setActiveItemPokemonFilterId(null);
+                            setActiveComfortFavoriteFilters([]);
+                            dispatch({ type: "browse/items/set-general-category", categoryId: null });
+                          }}
+                          className="text-xs text-[var(--pk-text-desc)] underline-offset-2 hover:text-[var(--pk-text-primary)] hover:underline"
+                        >
+                          Clear all
+                        </button>
+                      </div>
+                    );
+                  })()}
                 </ResultsBrowserBar>
                 <ResultsContent isRefreshing={isResultsRefreshing}>
                   {activePhase === "comfort_items" && (activeComfortFavoriteFilters.length > 0 || selectedPokemon.length > 0) && itemPlannerSections.length === 0 ? (
@@ -2661,7 +2682,7 @@ export const HomeBuilderPage = () => {
                                       </div>
                                       <div className="mt-1.5 flex flex-wrap gap-1.5">
                                         {matchedPokemon.map((pokemon) => (
-                                          <span key={`${entry.item.id}-matched-pokemon-${pokemon.id}`} className="inline-flex items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1">
+                                          <span key={`${entry.item.id}-matched-pokemon-${pokemon.id}`} className="inline-flex items-center justify-center rounded-[10px] p-1">
                                             {pokemon.imageUrl ? (
                                               <img src={pokemon.imageUrl} alt={pokemon.name} className="h-6 w-6 object-contain" />
                                             ) : (
@@ -2768,6 +2789,71 @@ export const HomeBuilderPage = () => {
                   </div>
                 ) : null}
               </>
+            ) : null}
+
+            {/* Item filters panel */}
+            {isItemFiltersPanelOpen && activePhase === "comfort_items" ? (
+              <div className="fixed inset-0 z-50" onClick={() => setIsItemFiltersPanelOpen(false)}>
+                {/* Mobile: bottom sheet */}
+                <div
+                  className="absolute inset-x-0 bottom-0 max-h-[80dvh] overflow-y-auto rounded-t-[24px] bg-[var(--pk-card)] shadow-[0_-8px_40px_rgba(0,0,0,0.20)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:inset-x-auto md:bottom-auto md:left-1/2 md:top-1/2 md:w-full md:max-w-sm md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-[24px]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="flex items-center justify-between px-5 pb-3 pt-5">
+                    <h2 className="text-base font-semibold text-[var(--pk-text-primary)]">Filters</h2>
+                    <button
+                      type="button"
+                      onClick={() => setIsItemFiltersPanelOpen(false)}
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full text-xl text-[var(--pk-text-desc)] hover:text-[var(--pk-text-primary)]"
+                    >
+                      ×
+                    </button>
+                  </div>
+                  {selectedPokemon.length > 0 && (
+                    <div className="px-5 pb-5">
+                      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Pokémon</p>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedPokemon.map((pokemon) => {
+                          const isActive = activeItemPokemonFilterId === pokemon.id;
+                          return (
+                            <button
+                              key={pokemon.id}
+                              type="button"
+                              onClick={() => setActiveItemPokemonFilterId(isActive ? null : pokemon.id)}
+                              aria-pressed={isActive}
+                              className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+                            >
+                              {pokemon.imageUrl ? <img src={pokemon.imageUrl} alt="" aria-hidden className="h-4 w-4 object-contain" /> : null}
+                              {pokemon.name}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                  <div className="px-5 pb-8">
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
+                    <div className="flex flex-wrap gap-2">
+                      {favoriteCategoryOptions.map((category) => {
+                        const isActive = activeComfortFavoriteFilters.includes(category.id);
+                        return (
+                          <button
+                            key={category.id}
+                            type="button"
+                            onClick={() => setActiveComfortFavoriteFilters((prev) =>
+                              isActive ? prev.filter((id) => id !== category.id) : [...prev, category.id]
+                            )}
+                            aria-pressed={isActive}
+                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-best" : "pk-chip-default"}`}
+                          >
+                            {toCategoryLabel(category.id)}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : null}
 
             {/* Subsection: Pokemon browser */}
@@ -3283,7 +3369,7 @@ export const HomeBuilderPage = () => {
       {state.ui.isMobileBuilderSheetOpen ? (
         <div className="fixed inset-0 z-40 md:hidden" onClick={() => dispatch({ type: "ui/close-mobile-sheet" })}>
           <section
-            className="absolute inset-x-0 bottom-0 max-h-[75dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-card)] pb-8 pt-4 shadow-[0_-8px_40px_rgba(0,0,0,0.20)]"
+            className="absolute inset-x-0 bottom-0 max-h-[35dvh] overflow-y-auto rounded-t-3xl bg-[var(--pk-card)] pb-8 pt-4 pr-4 shadow-[0_-8px_40px_rgba(0,0,0,0.20)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             onClick={(event) => event.stopPropagation()}
           >
             {showInitialSkeleton || (isTabTransitionLoading && pendingTabRef.current !== contentActiveTab) ? (
@@ -3360,19 +3446,32 @@ export const HomeBuilderPage = () => {
                   }, {});
                   return (
                     <div className="overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-4 pt-3">
-                      <div className="flex items-center gap-2 whitespace-nowrap">
-                        <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{buildItemEntries.length} {buildItemEntries.length === 1 ? "item" : "items"}</span>
-                        {Object.entries(catCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
-                          <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
-                        ))}
+                      <div className="flex items-center gap-1.5 whitespace-nowrap">
+                        <span className="text-[12px] font-semibold text-[var(--pk-text-primary)] mr-1">{buildItemEntries.length} {buildItemEntries.length === 1 ? "item" : "items"}</span>
+                        {Object.entries(catCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => {
+                          const isActive = sheetItemCategoryFilter === label;
+                          return (
+                            <button
+                              key={label}
+                              type="button"
+                              onClick={() => setSheetItemCategoryFilter(isActive ? null : label)}
+                              className={`pk-chip pk-chip-compact ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+                            >
+                              {label} ({count})
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   );
                 })()}
                 {buildItemEntries.length > 0 && (
                   <div className="overflow-x-auto overflow-y-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                    <div className="flex gap-2 px-4 pb-2 pt-3">
-                      {[...buildItemEntries].reverse().map((entry) => {
+                    <div className="flex gap-2 px-4 pt-3">
+                      {[...buildItemEntries].reverse().filter((entry) => {
+                        if (!sheetItemCategoryFilter) return true;
+                        return (entry.item.generalCategoryLabel ?? "Other") === sheetItemCategoryFilter;
+                      }).map((entry) => {
                         const sheetItem = entities.itemsById[entry.itemId];
                         if (!sheetItem) return null;
                         return (
@@ -3386,7 +3485,7 @@ export const HomeBuilderPage = () => {
                               >
                                 <span className="block h-4 w-4 text-center text-sm leading-[16px]">×</span>
                               </button>
-                              <div className="h-[48px] w-[48px] flex items-center justify-center rounded-[8px] bg-[var(--pk-border)]">
+                              <div className="h-[48px] w-[48px] flex items-center justify-center rounded-[8px] bg-[var(--pk-image-well)]">
                                 {sheetItem.image ? (
                                   <img src={sheetItem.image} alt={sheetItem.name} className="h-8 w-8 object-contain" />
                                 ) : (

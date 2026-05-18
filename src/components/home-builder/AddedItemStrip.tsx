@@ -16,6 +16,7 @@ export const AddedItemStrip = ({
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [isExpanded, setIsExpanded] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
+  const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const isTouch = useIsTouchDevice();
 
   const categoryCounts = items.reduce<Record<string, number>>((acc, item) => {
@@ -23,6 +24,8 @@ export const AddedItemStrip = ({
     acc[label] = (acc[label] ?? 0) + 1;
     return acc;
   }, {});
+
+  const filteredItems = categoryFilter ? items.filter((item) => (item.generalCategoryLabel ?? "Other") === categoryFilter) : items;
 
   useLayoutEffect(() => {
     const el = scrollRef.current;
@@ -39,20 +42,30 @@ export const AddedItemStrip = ({
   return (
     <div className={`hidden md:block py-2 ${className ?? ""}`} style={style}>
       <div className="rounded-[16px] border border-[var(--pk-border)] bg-[var(--pk-card)] shadow-[var(--pk-shadow-md)]">
-      <div className="flex items-center gap-2 px-4 pt-3">
-        <span className="text-[12px] font-semibold text-[var(--pk-text-primary)]">{items.length} {items.length === 1 ? "item" : "items"}</span>
-        {Object.entries(categoryCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => (
-          <span key={label} className="text-[12px] text-[var(--pk-text-desc)]">· {label} {count}</span>
-        ))}
+      <div className="flex items-center gap-1.5 px-4 pt-3">
+        <span className="mr-1 text-[12px] font-semibold text-[var(--pk-text-primary)]">{items.length} {items.length === 1 ? "item" : "items"}</span>
+        {Object.entries(categoryCounts).sort(([a], [b]) => a.localeCompare(b)).map(([label, count]) => {
+          const isActive = categoryFilter === label;
+          return (
+            <button
+              key={label}
+              type="button"
+              onClick={() => setCategoryFilter(isActive ? null : label)}
+              className={`pk-chip pk-chip-compact ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+            >
+              {label} ({count})
+            </button>
+          );
+        })}
       </div>
       <div className="relative flex items-start gap-1 px-2 pb-2">
         <div
           ref={scrollRef}
           className={`flex gap-3 pt-2 pl-2 ${isExpanded ? "flex-wrap" : "overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"}`}
         >
-          {items.map((item) => (
+          {filteredItems.map((item) => (
             <div key={item.id} className="group/strip relative flex shrink-0 flex-col items-center gap-1 w-[48px]">
-              <div className="relative flex h-[48px] w-[48px] items-center justify-center rounded-[10px] bg-[var(--pk-border)] p-1">
+              <div className="relative flex h-[48px] w-[48px] items-center justify-center rounded-[10px] bg-[var(--pk-image-well)] p-1">
                 {item.image
                   ? <img src={item.image} alt={item.name} className="h-8 w-8 object-contain" />
                   : <div className="h-8 w-8 rounded-[6px] bg-[var(--pk-border)]" />}
