@@ -1748,6 +1748,12 @@ export const HomeBuilderPage = () => {
     }
   }, [activeItemPokemonFilterId, selectedPokemon]);
   useEffect(() => {
+    if (!isItemFiltersPanelOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
+  }, [isItemFiltersPanelOpen]);
+  useEffect(() => {
     const visibleResultPokemonIdSet = new Set(multiFilteredPokemonEntries.map((entry) => entry.pokemon.id));
     setExpandedResultPokemonIds((previousIds) => {
       const nextIds = previousIds.filter((pokemonId) => visibleResultPokemonIdSet.has(pokemonId));
@@ -2794,8 +2800,8 @@ export const HomeBuilderPage = () => {
 
             {/* Item filters panel */}
             {isItemFiltersPanelOpen ? (
-              <div className="fixed inset-0 z-50" onClick={() => setIsItemFiltersPanelOpen(false)}>
-                {/* Mobile: bottom sheet */}
+              <div className="fixed inset-0 z-50 bg-black/40" onClick={() => setIsItemFiltersPanelOpen(false)}>
+                {/* Mobile: bottom sheet / Desktop: centered dialog */}
                 <div
                   className="absolute inset-x-0 bottom-0 max-h-[80dvh] overflow-y-auto rounded-t-[24px] bg-[var(--pk-card)] shadow-[0_-8px_40px_rgba(0,0,0,0.20)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:inset-x-auto md:bottom-auto md:left-1/2 md:top-1/2 md:w-full md:max-w-sm md:-translate-x-1/2 md:-translate-y-1/2 md:rounded-[24px]"
                   onClick={(e) => e.stopPropagation()}
@@ -2809,27 +2815,6 @@ export const HomeBuilderPage = () => {
                     >
                       ×
                     </button>
-                  </div>
-                  <div className="px-5 pb-5">
-                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
-                    <div className="flex flex-wrap gap-2">
-                      {itemCategories.map(({ id, label }) => {
-                        const isActive = activeItemCategoryFilters.includes(id);
-                        return (
-                          <button
-                            key={id}
-                            type="button"
-                            onClick={() => setActiveItemCategoryFilters((prev) =>
-                              isActive ? prev.filter((f) => f !== id) : [...prev, id]
-                            )}
-                            aria-pressed={isActive}
-                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
-                    </div>
                   </div>
                   {activePhase === "comfort_items" && selectedPokemon.length > 0 && (
                     <div className="px-5 pb-5">
@@ -2881,7 +2866,7 @@ export const HomeBuilderPage = () => {
                       return toCategoryLabel(a).localeCompare(toCategoryLabel(b));
                     });
                     return (
-                      <div className="px-5 pb-8">
+                      <div className="px-5 pb-5">
                         <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
                         {pokemonFavoriteIds.length === 0 ? (
                           <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
@@ -2912,6 +2897,27 @@ export const HomeBuilderPage = () => {
                       </div>
                     );
                   })()}
+                  <div className="px-5 pb-8">
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
+                    <div className="flex flex-wrap gap-2">
+                      {itemCategories.map(({ id, label }) => {
+                        const isActive = activeItemCategoryFilters.includes(id);
+                        return (
+                          <button
+                            key={id}
+                            type="button"
+                            onClick={() => setActiveItemCategoryFilters((prev) =>
+                              isActive ? prev.filter((f) => f !== id) : [...prev, id]
+                            )}
+                            aria-pressed={isActive}
+                            className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
+                          >
+                            {label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             ) : null}
