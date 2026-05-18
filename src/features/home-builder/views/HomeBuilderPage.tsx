@@ -591,6 +591,7 @@ export const HomeBuilderPage = () => {
   const [activePokemonHabitatFilters, setActivePokemonHabitatFilters] = useState<string[]>([]);
   const [activeComfortFavoriteFilters, setActiveComfortFavoriteFilters] = useState<string[]>([]);
   const [activeItemPokemonFilterId, setActiveItemPokemonFilterId] = useState<string | null>(null);
+  const [showItemFiltersSheet, setShowItemFiltersSheet] = useState(false);
   const pokemonSortMode = "suggested" as const;
   const itemSortMode = "suggested" as const;
   const [showFavoritesByTab, setShowFavoritesByTab] = useState<Record<"pokemon" | "items" | "favorites", boolean>>(() => {
@@ -2351,19 +2352,22 @@ export const HomeBuilderPage = () => {
                     onChange={(query) => dispatch({ type: "browse/items/set-search", query })}
                     placeholder="Search items"
                   />
-                  <label className="flex h-9 items-center gap-2 rounded-[8px] bg-[var(--pk-border)] px-3 py-1.5 text-sm font-medium text-[var(--pk-text-desc)]">
-                    <select
-                      value={state.browse.items.generalCategoryId ?? ""}
-                      onChange={(e) => dispatch({ type: "browse/items/set-general-category", categoryId: e.target.value || null })}
-                      className="appearance-none bg-transparent pr-5 focus:outline-none"
-                    >
-                      <option value="">All categories</option>
-                      {itemCategories.map(({ id, label }) => (
-                        <option key={id} value={id}>{label}</option>
-                      ))}
-                    </select>
-                    <ChevronDown className="h-4 w-4 shrink-0" />
-                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setShowItemFiltersSheet(true)}
+                    className={`flex h-9 items-center gap-1.5 rounded-[8px] px-3 py-1.5 text-sm font-medium transition-colors ${
+                      state.browse.items.generalCategoryId
+                        ? "bg-[#DBEAFE] text-[#1E3A5F]"
+                        : "bg-[var(--pk-border)] text-[var(--pk-text-desc)]"
+                    }`}
+                  >
+                    <svg viewBox="0 0 16 16" fill="none" className="h-3.5 w-3.5 shrink-0" aria-hidden>
+                      <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                    {state.browse.items.generalCategoryId
+                      ? (itemCategories.find((c) => c.id === state.browse.items.generalCategoryId)?.label ?? "Category")
+                      : "Category"}
+                  </button>
                   {activePhase === "comfort_items" && selectedPokemon.length > 0 ? (
                     <div className="w-full">
                       <p className="mb-1.5 text-xs font-medium text-[var(--pk-text-desc)]">Filter by Pokémon</p>
@@ -3467,6 +3471,57 @@ export const HomeBuilderPage = () => {
                   </button>
                 </div>
               </div>
+            </div>
+          </section>
+        </div>
+      ) : null}
+
+      {/* Section: Item category filters sheet */}
+      {showItemFiltersSheet ? (
+        <div className="fixed inset-0 z-50 flex items-end" onClick={() => setShowItemFiltersSheet(false)}>
+          <section
+            className="w-full rounded-t-3xl bg-[var(--pk-card)] pb-8 pt-5 shadow-[0_-8px_40px_rgba(0,0,0,0.18)]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-5 pb-4">
+              <p className="text-base font-extrabold tracking-[-0.02em] text-[var(--pk-text-primary)]">Category</p>
+              {state.browse.items.generalCategoryId ? (
+                <button
+                  type="button"
+                  onClick={() => dispatch({ type: "browse/items/set-general-category", categoryId: null })}
+                  className="text-xs font-medium text-[#2563EB]"
+                >
+                  Clear
+                </button>
+              ) : null}
+            </div>
+            <div className="flex flex-wrap gap-2 px-5">
+              {itemCategories.map(({ id, label }) => {
+                const isActive = state.browse.items.generalCategoryId === id;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={() => {
+                      dispatch({ type: "browse/items/set-general-category", categoryId: isActive ? null : id });
+                      setShowItemFiltersSheet(false);
+                    }}
+                    aria-pressed={isActive}
+                    className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-primary" : "pk-chip-default"}`}
+                  >
+                    {label}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-5 px-5">
+              <button
+                type="button"
+                onClick={() => setShowItemFiltersSheet(false)}
+                className="pk-btn pk-btn-secondary pk-btn-md w-full"
+              >
+                Done
+              </button>
             </div>
           </section>
         </div>
