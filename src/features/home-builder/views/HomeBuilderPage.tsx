@@ -630,6 +630,7 @@ export const HomeBuilderPage = () => {
   const [expandedCoveragePokemonIds, setExpandedCoveragePokemonIds] = useState<Set<string>>(new Set());
   const [sheetItemCategoryFilter, setSheetItemCategoryFilter] = useState<string | null>(null);
   const [isItemFiltersPanelOpen, setIsItemFiltersPanelOpen] = useState(false);
+  const [activeItemCategoryFilters, setActiveItemCategoryFilters] = useState<string[]>([]);
   const tabContainerRef = useRef<HTMLDivElement | null>(null);
   const tabButtonRefs = useRef<Partial<Record<BuilderPhase, HTMLButtonElement | null>>>({
     pokemon: null,
@@ -1396,9 +1397,12 @@ export const HomeBuilderPage = () => {
       if (EXCLUDED_ITEMS_PAGE_MAIN_CATEGORIES.has(entry.item.generalCategoryLabel || "")) {
         return false;
       }
+      if (activeItemCategoryFilters.length > 0 && !activeItemCategoryFilters.includes(entry.item.generalCategoryId)) {
+        return false;
+      }
       return true;
     });
-  }, [phaseRankedItems]);
+  }, [phaseRankedItems, activeItemCategoryFilters]);
   const comfortFavoriteFilteredRankedItems = useMemo(() => {
     if (activePhase !== "comfort_items" || activeComfortFavoriteFilters.length === 0) {
       return multiFilteredRankedItems;
@@ -2356,16 +2360,21 @@ export const HomeBuilderPage = () => {
                       placeholder="Search items"
                     />
                     {(() => {
-                      const filterCount = (activeItemPokemonFilterId ? 1 : 0) + activeComfortFavoriteFilters.length + (state.browse.items.generalCategoryId ? 1 : 0);
+                      const filterCount = activeItemCategoryFilters.length + activeComfortFavoriteFilters.length + (activeItemPokemonFilterId ? 1 : 0);
+                      const isActive = filterCount > 0;
                       return (
                         <button
                           type="button"
                           onClick={() => setIsItemFiltersPanelOpen(true)}
-                          className={`pk-btn pk-btn-sm shrink-0 inline-flex items-center gap-1.5 ${filterCount > 0 ? "pk-btn-secondary border-[var(--pk-brand)] text-[var(--pk-brand)]" : "pk-btn-secondary"}`}
+                          className={`inline-flex h-10 shrink-0 items-center gap-1.5 rounded-[9px] border-[1.5px] bg-white px-3 text-sm font-medium transition-[border-color,box-shadow] duration-150 ease-out focus-visible:outline-none focus-visible:shadow-[0_0_0_3px_rgba(37,99,235,0.12)] ${isActive ? "border-[#2563EB] text-[#2563EB]" : "border-[#DBEAFE] text-[var(--pk-text-desc)] hover:border-[#93C5FD]"}`}
+                          aria-label="Open item filters"
                         >
-                          Filters
-                          {filterCount > 0 && (
-                            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-[var(--pk-brand)] text-[10px] font-bold leading-none text-white">
+                          <svg viewBox="0 0 16 16" fill="none" className="h-4 w-4 shrink-0" aria-hidden>
+                            <path d="M2 4h12M4.5 8h7M7 12h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                          </svg>
+                          <span className="hidden sm:inline">Filters</span>
+                          {isActive && (
+                            <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-[#2563EB] text-[10px] font-bold leading-none text-white">
                               {filterCount}
                             </span>
                           )}
@@ -2376,15 +2385,19 @@ export const HomeBuilderPage = () => {
                   {/* Row 2: Active filter chips */}
                   {(() => {
                     const pokemonChip = activePhase === "comfort_items" && activeItemPokemonFilter
-                      ? { key: "pokemon", label: activeItemPokemonFilter.name, imageUrl: activeItemPokemonFilter.imageUrl, onRemove: () => setActiveItemPokemonFilterId(null), tone: "pokemon" as const }
-                      : null;
-                    const favoriteChips = activePhase === "comfort_items"
-                      ? activeComfortFavoriteFilters.map((id) => ({ key: `fav-${id}`, label: toCategoryLabel(id), onRemove: () => setActiveComfortFavoriteFilters((prev) => prev.filter((f) => f !== id)), tone: "favorite" as const }))
+                      ? [{ key: "pokemon", label: activeItemPokemonFilter.name, imageUrl: activeItemPokemonFilter.imageUrl as string | null | undefined, onRemove: () => setActiveItemPokemonFilterId(null), tone: "pokemon" as const }]
                       : [];
-                    const categoryChip = state.browse.items.generalCategoryId
-                      ? { key: "category", label: itemCategories.find((c) => c.id === state.browse.items.generalCategoryId)?.label ?? "", onRemove: () => dispatch({ type: "browse/items/set-general-category", categoryId: null }), tone: "category" as const }
-                      : null;
-                    const allChips = [...(pokemonChip ? [pokemonChip] : []), ...favoriteChips, ...(categoryChip ? [categoryChip] : [])];
+                    const favoriteChips = activePhase === "comfort_items"
+                      ? activeComfortFavoriteFilters.map((id) => ({ key: `fav-${id}`, label: toCategoryLabel(id), imageUrl: undefined, onRemove: () => setActiveComfortFavoriteFilters((prev) => prev.filter((f) => f !== id)), tone: "favorite" as const }))
+                      : [];
+                    const categoryChips = activeItemCategoryFilters.map((id) => ({
+                      key: `cat-${id}`,
+                      label: itemCategories.find((c) => c.id === id)?.label ?? id,
+                      imageUrl: undefined,
+                      onRemove: () => setActiveItemCategoryFilters((prev) => prev.filter((f) => f !== id)),
+                      tone: "category" as const,
+                    }));
+                    const allChips = [...pokemonChip, ...favoriteChips, ...categoryChips];
                     if (allChips.length === 0) return null;
                     return (
                       <div className="flex w-full flex-wrap items-center gap-1.5">
@@ -2399,7 +2412,7 @@ export const HomeBuilderPage = () => {
                               "pk-chip-some"
                             }`}
                           >
-                            {"imageUrl" in chip && chip.imageUrl ? <img src={chip.imageUrl} alt="" aria-hidden className="h-3.5 w-3.5 object-contain" /> : null}
+                            {chip.imageUrl ? <img src={chip.imageUrl} alt="" aria-hidden className="h-3.5 w-3.5 object-contain" /> : null}
                             {chip.label}
                             <span aria-hidden className="opacity-60">×</span>
                           </button>
@@ -2409,7 +2422,7 @@ export const HomeBuilderPage = () => {
                           onClick={() => {
                             setActiveItemPokemonFilterId(null);
                             setActiveComfortFavoriteFilters([]);
-                            dispatch({ type: "browse/items/set-general-category", categoryId: null });
+                            setActiveItemCategoryFilters([]);
                           }}
                           className="text-xs text-[var(--pk-text-desc)] underline-offset-2 hover:text-[var(--pk-text-primary)] hover:underline"
                         >
@@ -2437,6 +2450,7 @@ export const HomeBuilderPage = () => {
                         onClick={() => {
                           setActiveComfortFavoriteFilters([]);
                           setActiveItemPokemonFilterId(null);
+                          setActiveItemCategoryFilters([]);
                         }}
                         className="pk-btn pk-btn-secondary pk-btn-sm mt-3"
                       >
@@ -2800,12 +2814,14 @@ export const HomeBuilderPage = () => {
                     <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Category</p>
                     <div className="flex flex-wrap gap-2">
                       {itemCategories.map(({ id, label }) => {
-                        const isActive = state.browse.items.generalCategoryId === id;
+                        const isActive = activeItemCategoryFilters.includes(id);
                         return (
                           <button
                             key={id}
                             type="button"
-                            onClick={() => dispatch({ type: "browse/items/set-general-category", categoryId: isActive ? null : id })}
+                            onClick={() => setActiveItemCategoryFilters((prev) =>
+                              isActive ? prev.filter((f) => f !== id) : [...prev, id]
+                            )}
                             aria-pressed={isActive}
                             className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-some" : "pk-chip-default"}`}
                           >
@@ -2837,29 +2853,65 @@ export const HomeBuilderPage = () => {
                       </div>
                     </div>
                   )}
-                  {activePhase === "comfort_items" && (
-                    <div className="px-5 pb-8">
-                      <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
-                      <div className="flex flex-wrap gap-2">
-                        {favoriteCategoryOptions.map((category) => {
-                          const isActive = activeComfortFavoriteFilters.includes(category.id);
-                          return (
-                            <button
-                              key={category.id}
-                              type="button"
-                              onClick={() => setActiveComfortFavoriteFilters((prev) =>
-                                isActive ? prev.filter((id) => id !== category.id) : [...prev, category.id]
-                              )}
-                              aria-pressed={isActive}
-                              className={`pk-chip pk-chip-standard ${isActive ? "pk-chip-best" : "pk-chip-default"}`}
-                            >
-                              {toCategoryLabel(category.id)}
-                            </button>
-                          );
-                        })}
+                  {activePhase === "comfort_items" && (() => {
+                    const comfortEntries = buildItemEntries.filter(
+                      (entry) => (entities.itemsById[entry.itemId]?.favoriteCategoryIds.length ?? 0) > 0,
+                    );
+                    const needsCoverageSet = new Set<string>();
+                    selectedPokemon.forEach((pokemon) => {
+                      const favIdSet = new Set(pokemon.favoriteCategoryIds);
+                      const matchingEntries = comfortEntries.filter((entry) =>
+                        (entities.itemsById[entry.itemId]?.favoriteCategoryIds ?? []).some((id) => favIdSet.has(id)),
+                      );
+                      const coveredIds = new Set(
+                        pokemon.favoriteCategoryIds.filter((categoryId) =>
+                          matchingEntries.some((entry) =>
+                            (entities.itemsById[entry.itemId]?.favoriteCategoryIds ?? []).includes(categoryId),
+                          ),
+                        ),
+                      );
+                      pokemon.favoriteCategoryIds.forEach((categoryId) => {
+                        if (!coveredIds.has(categoryId)) needsCoverageSet.add(categoryId);
+                      });
+                    });
+                    const pokemonFavoriteIds = [...selectedPokemonAllFavoriteCategoryIdSet].sort((a, b) => {
+                      const aNeedsCoverage = needsCoverageSet.has(a);
+                      const bNeedsCoverage = needsCoverageSet.has(b);
+                      if (aNeedsCoverage !== bNeedsCoverage) return aNeedsCoverage ? -1 : 1;
+                      return toCategoryLabel(a).localeCompare(toCategoryLabel(b));
+                    });
+                    return (
+                      <div className="px-5 pb-8">
+                        <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--pk-text-desc)]">Favorites</p>
+                        {pokemonFavoriteIds.length === 0 ? (
+                          <p className="text-xs italic text-[var(--pk-text-desc)]">Add Pokémon to filter by their favorites.</p>
+                        ) : (
+                          <div className="flex flex-wrap gap-2">
+                            {pokemonFavoriteIds.map((categoryId) => {
+                              const isActive = activeComfortFavoriteFilters.includes(categoryId);
+                              const needsCoverage = needsCoverageSet.has(categoryId);
+                              return (
+                                <button
+                                  key={categoryId}
+                                  type="button"
+                                  onClick={() => setActiveComfortFavoriteFilters((prev) =>
+                                    isActive ? prev.filter((id) => id !== categoryId) : [...prev, categoryId]
+                                  )}
+                                  aria-pressed={isActive}
+                                  className={`pk-chip pk-chip-standard inline-flex items-center gap-1.5 ${isActive ? "pk-chip-best" : needsCoverage ? "pk-chip-default border-[var(--pk-destructive)]/40 text-[var(--pk-destructive)]" : "pk-chip-default"}`}
+                                >
+                                  {toCategoryLabel(categoryId)}
+                                  {needsCoverage && (
+                                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-current opacity-60" aria-label="needs coverage" />
+                                  )}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
                       </div>
-                    </div>
-                  )}
+                    );
+                  })()}
                 </div>
               </div>
             ) : null}
